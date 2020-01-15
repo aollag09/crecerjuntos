@@ -24,18 +24,18 @@ dependencies {
     testCompile 'junit:junit:4.12'
 }
 
-/*sourceSets {
+sourceSets {
     main {
         java {
-            srcDir 'src/main/java'
+            srcDir 'app/src/main/java'
         }
     }
 
     test {
         java {
-            srcDir 'src/test/java'
+            srcDir 'app/src/test/java'
         }
     }
-}*/
+}
 
 
