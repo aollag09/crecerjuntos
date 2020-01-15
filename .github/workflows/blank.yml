@@ -1,0 +1,15 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - name: Enable gradlew execution
+      run: chmod +x gradlew
+    - name: Gradle build
+      run: ./gradlew build
