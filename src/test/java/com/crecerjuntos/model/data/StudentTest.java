@@ -19,10 +19,10 @@ public class StudentTest {
     public void test_default_values() {
         Student s1 = new Student("id1");
         Assert.assertEquals(s1.getName(), Student.DEFAULT_NAME);
-        Assert.assertEquals(s1.getSection(), Student.DEFAULT_SECTION);
+        Assert.assertEquals(s1.getSection(), Section.DEFAULT_NAME);
 
         Student s2 = new Student("id1", "toto");
-        Assert.assertEquals(s2.getSection(), Student.DEFAULT_SECTION);
+        Assert.assertEquals(s2.getSection(), Section.DEFAULT_NAME);
     }
 
 }
