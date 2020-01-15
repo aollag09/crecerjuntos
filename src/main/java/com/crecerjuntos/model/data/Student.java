@@ -5,7 +5,6 @@ import com.google.common.base.Objects;
 public class Student {
 
     public static final String DEFAULT_NAME = "Anonymous";
-    public static final String DEFAULT_SECTION = "No Section";
 
     /** Private generated id */
     private final String id;
@@ -25,13 +24,13 @@ public class Student {
     public Student( final String id, final String name) {
         this.id = id;
         this.name = name;
-        this.section = DEFAULT_SECTION;
+        this.section = Section.DEFAULT_NAME;
     }
 
     public Student( final String id ){
         this.id = id;
         this.name = DEFAULT_NAME;
-        this.section = DEFAULT_SECTION;
+        this.section = Section.DEFAULT_NAME;
     }
 
     @Override
