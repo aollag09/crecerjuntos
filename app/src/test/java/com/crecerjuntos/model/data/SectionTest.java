@@ -14,10 +14,4 @@ public class SectionTest {
         Assert.assertNotEquals(s1, s3);
         Assert.assertNotEquals(s2, s3);
     }
-
-    @Test
-    public void test_default(){
-        Section sd = new Section("id");
-        Assert.assertEquals(sd.getName(), Section.DEFAULT_NAME);
-    }
 }

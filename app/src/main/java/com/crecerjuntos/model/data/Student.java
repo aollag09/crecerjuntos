@@ -2,20 +2,29 @@ package com.crecerjuntos.model.data;
 
 import com.google.common.base.Objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="student")
 public class Student {
 
     public static final String DEFAULT_NAME = "Anonymous";
 
     /** Private generated id */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private final String id;
 
     /** Public unique name */
+    @Column(unique = true, nullable = false)
     private final String name;
 
     /** Id of the associated section */
-    private final String section;
+    @ManyToOne
+    @JoinColumn(columnDefinition = "string", name="sectionId")
+    private final Section section;
 
-    public Student( final String id, final String name, final String section ) {
+    public Student( final String id, final String name, final Section section ) {
         this.id = id;
         this.name = name;
         this.section = section;
@@ -24,13 +33,13 @@ public class Student {
     public Student( final String id, final String name) {
         this.id = id;
         this.name = name;
-        this.section = Section.DEFAULT_NAME;
+        this.section = null;
     }
 
     public Student( final String id ){
         this.id = id;
         this.name = DEFAULT_NAME;
-        this.section = Section.DEFAULT_NAME;
+        this.section = null;
     }
 
     @Override
@@ -54,7 +63,7 @@ public class Student {
         return name;
     }
 
-    public String getSection() {
+    public Section getSection() {
         return section;
     }
 

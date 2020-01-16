@@ -2,24 +2,24 @@ package com.crecerjuntos.model.data;
 
 import com.google.common.base.Objects;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="section")
 public class Section {
 
-    public static final String DEFAULT_NAME = "No Section";
-
     /** Unique, private & generated id */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private final String id;
 
     /** Public name of the section aka class */
+    @Column
     private final String name;
 
     public Section(final String id, final String name) {
         this.id = id;
         this.name = name;
-    }
-
-    public Section(final String id){
-        this.id = id;
-        this.name = DEFAULT_NAME;
     }
 
     public String getId() {
