@@ -12,6 +12,10 @@ allprojects{
     }
 }
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '6.0.1'
+}
+
 subprojects{
     version = '1.0'
 }
