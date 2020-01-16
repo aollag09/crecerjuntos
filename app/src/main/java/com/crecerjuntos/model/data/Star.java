@@ -16,5 +16,12 @@ public class Star {
     /** Number of Stars, between 0 and 5 */
     private final int stars;
 
+    public Star( final String id, final String studentId, final String exercice, final int stars){
+        this.id = id;
+        this.studentId = studentId;
+        this.exercice = exercice;
+        this.stars = stars;
+    }
+
 
 }

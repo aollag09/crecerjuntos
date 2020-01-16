@@ -16,5 +16,30 @@
       <option name="name" value="BintrayJCenter" />
       <option name="url" value="https://jcenter.bintray.com/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenRepo" />
+      <option name="name" value="MavenRepo" />
+      <option name="url" value="https://repo.maven.apache.org/maven2/" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Vaadin Addons" />
+      <option name="name" value="Vaadin Addons" />
+      <option name="url" value="http://maven.vaadin.com/vaadin-addons" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Vaadin Snapshots" />
+      <option name="name" value="Vaadin Snapshots" />
+      <option name="url" value="http://oss.sonatype.org/content/repositories/vaadin-snapshots" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Vaadin Pre-releases" />
+      <option name="name" value="Vaadin Pre-releases" />
+      <option name="url" value="https://maven.vaadin.com/vaadin-prereleases" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Gradle Plugin Portal" />
+      <option name="name" value="Gradle Plugin Portal" />
+      <option name="url" value="https://plugins.gradle.org/m2/" />
+    </remote-repository>
   </component>
 </project>
