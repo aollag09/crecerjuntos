@@ -41,5 +41,15 @@
       <option name="name" value="Gradle Plugin Portal" />
       <option name="url" value="https://plugins.gradle.org/m2/" />
     </remote-repository>
+    <remote-repository>
+      <option name="id" value="Bintray.com Maven repository" />
+      <option name="name" value="Bintray.com Maven repository" />
+      <option name="url" value="https://plugins.gradle.org/m2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="MavenLocal" />
+      <option name="name" value="MavenLocal" />
+      <option name="url" value="file:$MAVEN_REPOSITORY$" />
+    </remote-repository>
   </component>
 </project>

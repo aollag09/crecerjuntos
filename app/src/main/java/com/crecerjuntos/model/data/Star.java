@@ -23,5 +23,32 @@ public class Star {
         this.stars = stars;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Star star = (Star) o;
+        return Objects.equal(id, star.id);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public String getExercice() {
+        return exercice;
+    }
+
+    public int getStars() {
+        return stars;
+    }
 }
