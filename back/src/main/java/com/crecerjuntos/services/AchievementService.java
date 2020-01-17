@@ -1,8 +1,8 @@
-package services;
+package com.crecerjuntos.services;
 
 import com.crecerjuntos.model.data.Achievement;
 import com.crecerjuntos.model.data.Student;
-import infrastructure.AchievementDao;
+import com.crecerjuntos.infrastructure.AchievementDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -4,6 +4,7 @@ plugins {
     id 'idea'
     id 'org.springframework.boot' version '2.0.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
+    id "io.github.divinespear.jpa-schema-generate" version "0.3.5.1"
 }
 
 dependencies {
@@ -40,5 +41,11 @@ sourceSets {
 }
 
 bootJar {
-    mainClassName = 'App'
+    mainClassName = 'com.crecerjuntos.App'
+}
+
+generateSchema {
+    vendor = 'hibernate'
+    packageToScan = [ 'com.crecejuntos.model.data' ]
+    databaseProductName = "PostgreSQL"
 }

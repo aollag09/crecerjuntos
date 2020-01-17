@@ -1,4 +1,4 @@
-package api;
+package com.crecerjuntos.api;
 
 import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.data.Achievement;
@@ -9,7 +9,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import services.AchievementService;
+import com.crecerjuntos.services.AchievementService;
 
 import java.util.List;
 
