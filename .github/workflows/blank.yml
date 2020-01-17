@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Enable gradlew execution
       run: chmod +x gradlew
+    - name: Set up gradle wrapper
+      run: gradle wrapper --version 4.10.3
     - name: Gradle build
-      run: ./gradlew build
+      run: . gradlew build
