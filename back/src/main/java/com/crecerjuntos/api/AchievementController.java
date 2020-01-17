@@ -15,20 +15,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/achievements")
-public class AchievementController implements IAchievementAccess {
+public class AchievementController {
 
-    @Autowired
+    /*@Autowired
     private AchievementService achievementService;
 
     @Override
-    @RequestMapping(value = "/student", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/student/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Achievement> get(Student student) {
         return achievementService.findByStudent(student);
     }
 
     @Override
+    @RequestMapping(value = "/student/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Achievement> getDone(Student student) {
-        return null;
+        return achievementService.findDoneByStudent(student);
     }
 
     @Override
@@ -44,5 +45,5 @@ public class AchievementController implements IAchievementAccess {
     @Override
     public List<Achievement> getLasts(Section section, int nbAchievements) {
         return null;
-    }
+    }*/
 }
