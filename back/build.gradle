@@ -46,6 +46,6 @@ bootJar {
 
 generateSchema {
     vendor = 'hibernate'
-    packageToScan = [ 'com.crecejuntos.model.data' ]
+    packageToScan = [ 'com.crecerjuntos.model.data' ]
     databaseProductName = "PostgreSQL"
 }
