@@ -10,5 +10,5 @@
 
 rootProject.name = 'crecerjuntos'
 
-include 'app'
+include 'back'
 include 'front'
