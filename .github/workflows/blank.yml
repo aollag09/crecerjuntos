@@ -11,5 +11,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Enable gradlew execution
       run: chmod +x gradlew
-    - name: Gradle build
+    - name: Build project
       run: ./gradlew build
+    - name: Build web application
+      run: ./gradlew buildProduct
