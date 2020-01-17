@@ -12,4 +12,4 @@ jobs:
     - name: Enable gradlew execution
       run: chmod +x gradlew
     - name: Gradle build
-      run: . gradlew build
+      run: ./gradlew build
