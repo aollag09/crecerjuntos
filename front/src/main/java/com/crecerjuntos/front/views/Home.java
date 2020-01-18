@@ -6,11 +6,14 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 
 /*
@@ -22,12 +25,13 @@ import com.vaadin.flow.server.PWA;
 @PWA(name = "Crecer Juntos Project", shortName = "CrecerJuntos")
 @Route("")
 @PageTitle("Crecer Juntos Home")
-public class Home extends Div {
+public class Home extends VerticalLayout {
 
   public Home() {
     HorizontalLayout layout = new HorizontalLayout();
     layout.add(buildTeresa());
     layout.add(buildLogin());
+    setAlignItems(FlexComponent.Alignment.CENTER);
     add(layout);
   }
 
@@ -42,13 +46,16 @@ public class Home extends Div {
     Text text = new Text("Please enter the following information");
     login.add(text);
 
-    TextField userName = new TextField("User Name");
+    TextField userName = new TextField("Username");
+    userName.setSizeFull();
     login.add(userName);
 
     ComboBox<String> section = new ComboBox<>("Section Name");
+    section.setSizeFull();
     login.add(section);
 
     Button log = new Button("Login");
+    log.setSizeFull();
     login.add(log);
 
     return login;
