@@ -1,6 +1,8 @@
 package com.crecerjuntos.front.view;
 
-import com.crecerjuntos.front.Constants;
+import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.front.util.LoginServices;
+import com.crecerjuntos.front.util.Section;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
@@ -13,9 +15,9 @@ import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.VaadinSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,6 +52,8 @@ public class Login extends VerticalLayout {
     login.add(username);
 
     ComboBox<String> section = new ComboBox<>("Section Name");
+    section.setDataProvider(new ListDataProvider<>(Section.list()));
+    section.setValue(Section.PRIMARIO.getName());
     section.addClassName("home-layout__login");
     login.add(section);
 
@@ -61,19 +65,12 @@ public class Login extends VerticalLayout {
             Notification.show("The username should not be empty");
           } else {
             if (getUI().isPresent()) {
-              VaadinSession session = UI.getCurrent().getSession();
 
-              // Store user name in the current session
-              LOGGER.info(
-                  "New session : username : "
-                      + username.getValue()
-                      + " section : "
-                      + section.getValue());
-              session.setAttribute(Constants.Session.USERNAME, username.getValue());
-              session.setAttribute(Constants.Session.SECTION, section.getValue());
+              // log in current user
+              LoginServices.login(username.getValue(), section.getValue());
 
               // Go to user dashboard
-              UI.getCurrent().navigate(Dashboard.class);
+              UI.getCurrent().navigate(Home.class);
 
             } else {
               throw new RuntimeException("UI is not accessible");

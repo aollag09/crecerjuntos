@@ -1,6 +1,6 @@
 package com.crecerjuntos.front.view;
 
-import com.crecerjuntos.front.Constants;
+import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exercice.Exercice;
 import com.crecerjuntos.front.exercice.ExerciceEnum;

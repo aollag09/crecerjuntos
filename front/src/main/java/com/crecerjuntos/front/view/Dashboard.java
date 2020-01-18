@@ -1,6 +1,6 @@
 package com.crecerjuntos.front.view;
 
-import com.crecerjuntos.front.Constants;
+import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.MainAppLayout;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.H2;
@@ -24,16 +24,9 @@ public class Dashboard extends VerticalLayout {
   }
 
   private void initView() {
-    H2 title = new H2("Welcome " + getUserName());
+    H2 title = new H2("Dashboard");
     add(title);
   }
 
-  private String getUserName() {
-    VaadinSession session = UI.getCurrent().getSession();
-    String username = "";
-    if (Objects.nonNull(session)
-        && Objects.nonNull(session.getAttribute(Constants.Session.USERNAME)))
-      username = session.getAttribute(Constants.Session.USERNAME).toString();
-    return username;
-  }
+
 }
