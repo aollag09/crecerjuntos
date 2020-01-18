@@ -8,7 +8,7 @@ import java.util.List;
 
 public class GoalKeeper extends Exercise {
 
-  public GoalKeeper(String name, List<Level> levels) {
+  public GoalKeeper() {
     super("GoalKeeper", buildLevels());
   }
 
