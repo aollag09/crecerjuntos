@@ -17,6 +17,8 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.VaadinSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /*
  * Tells Vaadin to activate automatic PWA features Progressive Web Apps (PWA) combine new
@@ -30,6 +32,8 @@ import com.vaadin.flow.server.VaadinSession;
 @CssImport("stylesheets/shared-styles.css")
 @PageTitle("Crecer Juntos Home")
 public class Home extends VerticalLayout {
+
+  public static final Logger LOGGER = LoggerFactory.getLogger(Home.class);
 
   public Home() {
     HorizontalLayout layout = new HorizontalLayout();
@@ -66,9 +70,10 @@ public class Home extends VerticalLayout {
             Notification.show("The username should not be empty");
           } else {
             if (getUI().isPresent()) {
-              VaadinSession session = getUI().get().getSession();
+              VaadinSession session = UI.getCurrent().getSession();
 
               // Store user name in the current session
+              LOGGER.info("New session : username : " + username.getValue() + " section : " + section.getValue());
               session.setAttribute(Constants.SESSION_USERNAME, username.getValue());
               session.setAttribute(Constants.SESSION_SECTION, section.getValue());
 
