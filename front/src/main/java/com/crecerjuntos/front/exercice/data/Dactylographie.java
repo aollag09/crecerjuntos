@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Dactylographie extends Exercise {
 
-  protected Dactylographie() {
+  public Dactylographie() {
     super("Dactylographie", buildLevels());
   }
 
