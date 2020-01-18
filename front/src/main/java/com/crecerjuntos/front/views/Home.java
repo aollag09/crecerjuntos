@@ -1,18 +1,17 @@
 package com.crecerjuntos.front.views;
 
-import com.crecerjuntos.front.MainLayout;
-import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.PWA;
-
-/*
- * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
- * from the class name, if not given
- */
-@Route(value = "", layout = MainLayout.class)
-@PageTitle("Crecer Juntos")
 
 /*
  * Tells Vaadin to activate automatic PWA features Progressive Web Apps (PWA) combine new
@@ -21,10 +20,37 @@ import com.vaadin.flow.server.PWA;
  * flow.
  */
 @PWA(name = "Crecer Juntos Project", shortName = "CrecerJuntos")
-public class Home extends VerticalLayout {
+@Route("")
+@PageTitle("Crecer Juntos Home")
+public class Home extends Div {
 
   public Home() {
-    H2 title = new H2("Welcome to Crecer Juntos");
-    add(title);
+    HorizontalLayout layout = new HorizontalLayout();
+    layout.add(buildTeresa());
+    layout.add(buildLogin());
+    add(layout);
+  }
+
+  private Component buildTeresa() {
+    Image img = new Image();
+    return img;
+  }
+
+  private Component buildLogin() {
+    VerticalLayout login = new VerticalLayout();
+
+    Text text = new Text("Please enter the following information");
+    login.add(text);
+
+    TextField userName = new TextField("User Name");
+    login.add(userName);
+
+    ComboBox<String> section = new ComboBox<>("Section Name");
+    login.add(section);
+
+    Button log = new Button("Login");
+    login.add(log);
+
+    return login;
   }
 }
