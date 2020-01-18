@@ -13,6 +13,7 @@
 # Build
 .gradle
 build
+log
 
 # Package Files #
 *.jar
