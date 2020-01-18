@@ -16,8 +16,9 @@ repositories {
 
 dependencies {
     implementation 'com.google.guava:guava:23.0'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.0.0.RELEASE'
 
     // JAX-B dependencies for JDK 9+
     implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
@@ -26,11 +27,13 @@ dependencies {
     // Dependency needed for the tuple serializer
     implementation "org.javassist:javassist:3.26.0-GA"
 
-    runtimeOnly 'org.postgresql:postgresql'
+    // postgresql db
+    runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    // test
+    /*testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
+    }*/
 }
 
 test {

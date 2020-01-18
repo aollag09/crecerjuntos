@@ -3,8 +3,6 @@ package com.crecerjuntos.model;
 import com.google.common.base.Objects;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -60,15 +58,11 @@ public class Achievement {
     /**
      * Progression should be between 0 and 100
      */
-    @Min(0)
-    @Max(100)
     public final double progression;
 
     /**
      * Score, should be between 0 and 100
      */
-    @Min(0)
-    @Max(100)
     public final int score;
 
     public Achievement(){
