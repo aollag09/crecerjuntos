@@ -13,7 +13,9 @@ public enum ExerciceEnum {
 
   private Exercice exercice;
 
-  ExerciceEnum(Exercice exercice) {}
+  ExerciceEnum(Exercice exercice) {
+    this.exercice = exercice;
+  }
 
   public Exercice get() {
     return exercice;
@@ -21,6 +23,6 @@ public enum ExerciceEnum {
 
   public static List<Exercice> list() {
     List<ExerciceEnum> list = Arrays.asList(ExerciceEnum.values());
-    return list.stream().map(ee -> ee.get()).collect(Collectors.toList());
+    return list.stream().map(ExerciceEnum::get).collect(Collectors.toList());
   }
 }
