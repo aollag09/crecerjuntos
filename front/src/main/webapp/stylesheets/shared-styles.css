@@ -34,8 +34,14 @@ vaadin-vertical-layout, vaadin-grid {
     flex: auto;
 }
 
+.main-layout__root {
+    padding: 0;
+    spacing: 0;
+}
+
 .main-layout__header {
     display: flex;
+    width: 100%
     flex: none;
     align-items: center;
     height: var(--main-layout-header-height);
@@ -52,7 +58,19 @@ vaadin-vertical-layout, vaadin-grid {
 .main-layout__nav {
     display: flex;
     flex: 1;
-    justify-content: center;
+    width: 200px;
+}
+
+.main-layout__content{
+    width:100%;
+}
+
+.main-layout__center{
+    width:100%;
+}
+
+.main-layout__footer{
+    width:100%
 }
 
 .main-layout__nav-item {

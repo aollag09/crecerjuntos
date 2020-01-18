@@ -1,12 +1,12 @@
 package com.crecerjuntos.front.views;
 
-import com.crecerjuntos.front.MainLayout;
+import com.crecerjuntos.front.MainAppLayout;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value = "exercices", layout = MainLayout.class)
+@Route(value = "exercices", layout = MainAppLayout.class)
 @PageTitle("Exercices")
 public class Exercices extends VerticalLayout {
 
