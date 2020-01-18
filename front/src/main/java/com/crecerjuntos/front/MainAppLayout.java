@@ -1,13 +1,14 @@
 package com.crecerjuntos.front;
 
-import com.crecerjuntos.front.views.Dashboard;
-import com.crecerjuntos.front.views.Exercices;
-import com.crecerjuntos.front.views.Home;
+import com.crecerjuntos.front.view.Dashboard;
+import com.crecerjuntos.front.view.Exercices;
+import com.crecerjuntos.front.view.Home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
+import com.vaadin.flow.component.tabs.TabVariant;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
@@ -59,7 +60,7 @@ public class MainAppLayout extends AppLayout {
     final RouterLink link = new RouterLink("", target);
     link.add(icon.create());
     link.add(title);
-    return new Tab(link);
+    return createTab(link);
   }
 
   private Tab buildLogOut(String contextPath) {
@@ -67,6 +68,12 @@ public class MainAppLayout extends AppLayout {
     logout.add(VaadinIcon.EXIT.create());
     logout.add("Logout");
     logout.setHref(contextPath + "/logout");
-    return new Tab(logout);
+    return createTab(logout);
+  }
+
+  private Tab createTab(final Component component) {
+    Tab tab = new Tab(component);
+    tab.addThemeVariants(TabVariant.LUMO_ICON_ON_TOP);
+    return tab;
   }
 }

@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.exercices;
+package com.crecerjuntos.front.exercice.view;
 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 

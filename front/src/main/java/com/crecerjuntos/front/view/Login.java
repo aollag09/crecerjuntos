@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.views;
+package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.Constants;
 import com.vaadin.flow.component.Component;
