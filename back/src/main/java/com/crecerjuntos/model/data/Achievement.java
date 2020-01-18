@@ -3,14 +3,13 @@ package com.crecerjuntos.model.data;
 import com.google.common.base.Objects;
 import org.hibernate.annotations.ColumnDefault;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.sql.Date;
+import java.time.LocalDate;
 
+@Entity
 public class Achievement {
     @Override
     public boolean equals(Object o) {
@@ -28,9 +27,13 @@ public class Achievement {
         return Objects.hashCode(student.getId(), sessionId, timestamp, exercise);
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "studentId")
-    @Column(nullable = false)
+    /** Unique, private & generated id */
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private final String id;
+
+    @ManyToOne
+    @JoinColumn(name = "studentId", nullable = false)
     public final Student student;
 
     /**
@@ -69,13 +72,20 @@ public class Achievement {
     @Max(100)
     public final int score;
 
-    public Achievement(final Student student,
-                       final String sessionId,
-                       final Date timestamp,
-                       final String exercise,
-                       final int level,
-                       final double progression,
-                       final int score) {
+    public Achievement(){
+        this("0", new Student(), "0", Date.valueOf(LocalDate.now()), "No exercise", 0, 0, 0);
+    }
+
+    public Achievement(
+            final String id,
+            final Student student,
+            final String sessionId,
+            final Date timestamp,
+            final String exercise,
+            final int level,
+            final double progression,
+            final int score) {
+        this.id = id;
         this.student = student;
         this.sessionId = sessionId;
         this.timestamp = timestamp;
@@ -96,5 +106,37 @@ public class Achievement {
                 ", progression=" + progression +
                 ", score=" + score +
                 '}';
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public String getExercise() {
+        return exercise;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public double getProgression() {
+        return progression;
+    }
+
+    public int getScore() {
+        return score;
     }
 }

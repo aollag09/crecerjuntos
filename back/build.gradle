@@ -4,19 +4,26 @@ plugins {
     id 'idea'
     id 'org.springframework.boot' version '2.0.5.RELEASE'
     id 'io.spring.dependency-management' version '1.0.7.RELEASE'
-    id "io.github.divinespear.jpa-schema-generate" version "0.3.5.1"
 }
 
 dependencies {
     implementation 'com.google.guava:guava:23.0'
-    implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
+    //implementation 'org.springframework.boot:spring-boot-dependencies:2.0.5.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    runtimeOnly 'org.postgresql:postgresql'
+
     implementation 'org.hibernate.validator:hibernate-validator:6.1.1.Final'
-    implementation 'org.glassfish:jakarta.el:3.0.3'
+    implementation 'org.postgresql:postgresql:9.4.1212'
 
+    // JAX-B dependencies for JDK 9+
+    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
 
-    runtimeOnly 'com.h2database:h2'
+    // Dependency needed for the tuple serializer
+    implementation "org.javassist:javassist:3.26.0-GA"
+
+    implementation "org.apache.tomcat:tomcat-dbcp:9.0.1"
 
     // This dependency is found on compile classpath of this component and consumers.
 
@@ -42,10 +49,4 @@ sourceSets {
 
 bootJar {
     mainClassName = 'com.crecerjuntos.App'
-}
-
-generateSchema {
-    vendor = 'hibernate'
-    packageToScan = [ 'com.crecerjuntos.model.data' ]
-    databaseProductName = "PostgreSQL"
 }

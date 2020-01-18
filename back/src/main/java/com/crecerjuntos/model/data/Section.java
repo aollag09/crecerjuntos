@@ -3,19 +3,23 @@ package com.crecerjuntos.model.data;
 import com.google.common.base.Objects;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-@Table(name="section")
 public class Section {
 
-    /** Unique, private & generated id */
+    /** Unique, private & generated id*/
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private final String id;
+    private String id;
 
     /** Public name of the section aka class */
     @Column
-    private final String name;
+    private String name;
+
+    public Section(){
+        this("0", "Default Section");
+    }
 
     public Section(final String id, final String name) {
         this.id = id;
@@ -49,5 +53,13 @@ public class Section {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 '}';
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -21,8 +21,12 @@ public class Student {
 
     /** Id of the associated section */
     @ManyToOne
-    @JoinColumn(columnDefinition = "string", name="sectionId")
+    @JoinColumn(columnDefinition = "varchar", name="sectionId")
     private final Section section;
+
+    public Student() {
+        this("0", DEFAULT_NAME, new Section());
+    }
 
     public Student( final String id, final String name, final Section section ) {
         this.id = id;
