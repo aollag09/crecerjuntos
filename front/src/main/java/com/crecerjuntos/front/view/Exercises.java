@@ -2,8 +2,8 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.MainAppLayout;
-import com.crecerjuntos.front.exercice.Exercice;
-import com.crecerjuntos.front.exercice.ExerciceEnum;
+import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -11,14 +11,14 @@ import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value = Constants.Routes.EXERCICES, layout = MainAppLayout.class)
+@Route(value = Constants.Routes.EXERCISES, layout = MainAppLayout.class)
 @PageTitle("Exercices")
-public class Exercices extends VerticalLayout {
+public class Exercises extends VerticalLayout {
 
   @Id("grid")
-  private Grid<Exercice> grid;
+  private Grid<Exercise> grid;
 
-  public Exercices() {
+  public Exercises() {
     H2 title = new H2("Exercices");
     add(title);
     buildGrid();
@@ -26,9 +26,9 @@ public class Exercices extends VerticalLayout {
 
   private void buildGrid() {
     grid = new Grid<>();
-    grid.setItems(ExerciceEnum.list());
-    grid.addColumn(Exercice::getName).setHeader("Exercice Name");
-    grid.addColumn(Exercice::getNbLevels).setHeader("Number of Levels");
+    grid.setItems(ExerciseEnum.list());
+    grid.addColumn(Exercise::getName).setHeader("Exercice Name");
+    grid.addColumn(Exercise::getNbLevels).setHeader("Number of Levels");
     add(grid);
   }
 }

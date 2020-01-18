@@ -1,7 +1,7 @@
 package com.crecerjuntos.front;
 
 import com.crecerjuntos.front.view.Dashboard;
-import com.crecerjuntos.front.view.Exercices;
+import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
@@ -50,7 +50,7 @@ public class MainAppLayout extends AppLayout {
     final List<Tab> tabs = new ArrayList<>(nbtabs);
     tabs.add(buildTab(VaadinIcon.HOME, "Home", Home.class));
     tabs.add(buildTab(VaadinIcon.CLOCK, "Dashboard", Dashboard.class));
-    tabs.add(buildTab(VaadinIcon.PENCIL, "Exercices", Exercices.class));
+    tabs.add(buildTab(VaadinIcon.PENCIL, "Exercices", Exercises.class));
     final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
     tabs.add(buildLogOut(contextPath));
     return tabs.toArray(new Tab[nbtabs]);

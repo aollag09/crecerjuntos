@@ -1,8 +1,7 @@
 package com.crecerjuntos.front.test.exercice;
 
-import com.crecerjuntos.front.exercice.Exercice;
-import com.crecerjuntos.front.exercice.ExerciceEnum;
-import org.hamcrest.CoreMatchers;
+import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercice.ExerciseEnum;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,12 +11,12 @@ public class ExerciceEnumTest {
 
   @Test
   public void get() {
-    Assert.assertNotNull(ExerciceEnum.DACTYLOGRAPHIE.get());
+    Assert.assertNotNull(ExerciseEnum.DACTYLOGRAPHIE.get());
   }
 
   @Test
   public void list() {
-    List<Exercice> list = ExerciceEnum.list();
+    List<Exercise> list = ExerciseEnum.list();
     Assert.assertNotNull(list);
     Assert.assertTrue(list.size() > 0);
     list.forEach(Assert::assertNotNull);

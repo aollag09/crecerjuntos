@@ -1,15 +1,19 @@
 package com.crecerjuntos.front.exercice.data;
 
-import com.crecerjuntos.front.exercice.Exercice;
+import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercice.Level;
 
-public class GoalKeeper extends Exercice {
-    @Override
-    public String getName() {
-        return "Goal Keeper";
-    }
+import java.util.ArrayList;
+import java.util.List;
 
-    @Override
-    public int getNbLevels() {
-        return 3;
-    }
+public class GoalKeeper extends Exercise {
+
+  protected GoalKeeper(String name, List<Level> levels) {
+    super("GoalKeeper", buildLevels());
+  }
+
+  private static List<Level> buildLevels() {
+    List<Level> levels = new ArrayList<Level>();
+    return levels;
+  }
 }

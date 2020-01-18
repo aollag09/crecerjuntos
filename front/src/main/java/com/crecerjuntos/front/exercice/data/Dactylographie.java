@@ -1,16 +1,20 @@
 package com.crecerjuntos.front.exercice.data;
 
-import com.crecerjuntos.front.exercice.Exercice;
+import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercice.Level;
 
-public class Dactylographie extends Exercice {
+import java.util.ArrayList;
+import java.util.List;
 
-  @Override
-  public String getName() {
-    return "Dactylographie";
+public class Dactylographie extends Exercise {
+
+  protected Dactylographie() {
+    super("Dactylographie", buildLevels());
   }
 
-  @Override
-  public int getNbLevels() {
-    return 3;
+  private static List<Level> buildLevels() {
+    List<Level> levels = new ArrayList<Level>();
+    return levels;
   }
+
 }
