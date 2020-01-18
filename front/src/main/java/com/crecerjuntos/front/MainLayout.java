@@ -18,7 +18,7 @@ import com.vaadin.flow.theme.lumo.Lumo;
 /* Define the default theme of the application */
 @Theme(Lumo.class)
 /* Import custom style sheet */
-@CssImport("shared-styles.css")
+@CssImport("stylesheets/shared-styles.css")
 @Viewport("width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes")
 public class MainLayout extends Div implements RouterLayout {
 

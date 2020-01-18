@@ -1,20 +1,22 @@
 package com.crecerjuntos.front.views;
 
+import com.crecerjuntos.front.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.login.LoginForm;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
+import com.vaadin.flow.server.VaadinSession;
 
 /*
  * Tells Vaadin to activate automatic PWA features Progressive Web Apps (PWA) combine new
@@ -24,6 +26,8 @@ import com.vaadin.flow.server.PWA;
  */
 @PWA(name = "Crecer Juntos Project", shortName = "CrecerJuntos")
 @Route("")
+/* Import custom style sheet */
+@CssImport("stylesheets/shared-styles.css")
 @PageTitle("Crecer Juntos Home")
 public class Home extends VerticalLayout {
 
@@ -36,7 +40,7 @@ public class Home extends VerticalLayout {
   }
 
   private Component buildTeresa() {
-    Image img = new Image();
+    Image img = new Image("resources/img/teresa.jpg", "teresa");
     return img;
   }
 
@@ -46,16 +50,36 @@ public class Home extends VerticalLayout {
     Text text = new Text("Please enter the following information");
     login.add(text);
 
-    TextField userName = new TextField("Username");
-    userName.setSizeFull();
-    login.add(userName);
+    TextField username = new TextField("Username");
+    username.addClassName("home-layout__login");
+    login.add(username);
 
     ComboBox<String> section = new ComboBox<>("Section Name");
-    section.setSizeFull();
+    section.addClassName("home-layout__login");
     login.add(section);
 
     Button log = new Button("Login");
-    log.setSizeFull();
+    log.addClassName("home-layout__login");
+    log.addClickListener(
+        event -> {
+          if (username.isEmpty()) {
+            Notification.show("The username should not be empty");
+          } else {
+            if (getUI().isPresent()) {
+              VaadinSession session = getUI().get().getSession();
+
+              // Store user name in the current session
+              session.setAttribute(Constants.SESSION_USERNAME, username.getValue());
+              session.setAttribute(Constants.SESSION_SECTION, section.getValue());
+
+              // Go to user dashboard
+              UI.getCurrent().navigate(Dashboard.class);
+
+            } else {
+              throw new RuntimeException("UI is not accessible");
+            }
+          }
+        });
     login.add(log);
 
     return login;

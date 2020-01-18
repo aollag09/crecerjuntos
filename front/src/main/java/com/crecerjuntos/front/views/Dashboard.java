@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.views;
 
+import com.crecerjuntos.front.Constants;
 import com.crecerjuntos.front.MainLayout;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -19,7 +20,11 @@ public class Dashboard extends VerticalLayout {
   }
 
   private void initView() {
-    H2 title = new H2("Welcome to Crecer Juntos");
+    String username =
+        getUI().isPresent()
+            ? getUI().get().getSession().getAttribute(Constants.SESSION_USERNAME).toString()
+            : "";
+    H2 title = new H2("Welcome " + username + "to Crecer Juntos");
     add(title);
   }
 }

@@ -93,6 +93,10 @@ vaadin-vertical-layout, vaadin-grid {
         pointer-events: none;
 }
 
+.home-layout__login{
+  width: 200px;
+}
+
 vaadin-dialog-overlay h3 {
     margin-top: 0;
 }
