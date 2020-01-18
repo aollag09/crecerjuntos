@@ -22,7 +22,7 @@ dependencies {
     compile group: 'ch.qos.logback', name:'logback-core', version: '1.0.9'
 
     // back end
-    compile project(':back');
+    // compile project(':back');
     
     // Use JUnit test framework
     testCompile 'junit:junit:4.12'
