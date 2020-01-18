@@ -15,7 +15,7 @@ import java.util.Objects;
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@Route(value = "dashboard", layout = MainAppLayout.class)
+@Route(value = Constants.Routes.DASHBOARD, layout = MainAppLayout.class)
 @PageTitle("Crecer Juntos Dashboard")
 public class Dashboard extends VerticalLayout {
 
@@ -32,8 +32,8 @@ public class Dashboard extends VerticalLayout {
     VaadinSession session = UI.getCurrent().getSession();
     String username = "";
     if (Objects.nonNull(session)
-        && Objects.nonNull(session.getAttribute(Constants.SESSION_USERNAME)))
-      username = session.getAttribute(Constants.SESSION_USERNAME).toString();
+        && Objects.nonNull(session.getAttribute(Constants.Session.USERNAME)))
+      username = session.getAttribute(Constants.Session.USERNAME).toString();
     return username;
   }
 }

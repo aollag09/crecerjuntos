@@ -19,7 +19,7 @@ import com.vaadin.flow.server.VaadinSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Route("")
+@Route(Constants.Routes.LOGIN)
 /* Import custom style sheet */
 @CssImport("stylesheets/shared-styles.css")
 @PageTitle("Crecer Juntos Login")
@@ -69,8 +69,8 @@ public class Login extends VerticalLayout {
                       + username.getValue()
                       + " section : "
                       + section.getValue());
-              session.setAttribute(Constants.SESSION_USERNAME, username.getValue());
-              session.setAttribute(Constants.SESSION_SECTION, section.getValue());
+              session.setAttribute(Constants.Session.USERNAME, username.getValue());
+              session.setAttribute(Constants.Session.SECTION, section.getValue());
 
               // Go to user dashboard
               UI.getCurrent().navigate(Dashboard.class);
