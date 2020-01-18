@@ -6,6 +6,7 @@ import com.crecerjuntos.front.view.Home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.TabVariant;
@@ -31,11 +32,15 @@ import java.util.List;
     themeColor = "#227aef")
 public class MainAppLayout extends AppLayout {
 
-  private final Tabs menu;
-
   public MainAppLayout() {
-    menu = buildMenu();
-    addToNavbar(true, menu);
+    buildNavBar();
+  }
+
+  private void buildNavBar() {
+    Span appName = new Span("Crecer Juntos");
+    this.addToNavbar(appName);
+    Tabs menu = buildMenu();
+    this.addToNavbar(true, menu);
   }
 
   private Tabs buildMenu() {
