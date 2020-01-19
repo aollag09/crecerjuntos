@@ -4,8 +4,6 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exercice.Exercise;
 import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
-import com.vaadin.flow.component.UI;
-import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.Div;
@@ -16,7 +14,6 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
-import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -42,20 +39,23 @@ public class Exercises extends VerticalLayout {
 
   private void buildExercise(final Exercise exercise) {
 
-    HorizontalLayout exerciseCard = new HorizontalLayout();
-    exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
+    VerticalLayout exerciceCard = new VerticalLayout();
+    exerciceCard.addClassName(Constants.ClassStyle.Exercises.CARD);
+
+    HorizontalLayout exerciceHeader = new HorizontalLayout();
+    exerciceHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
     Span status = new Span("ready");
     status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
-    exerciseCard.add(status);
+    exerciceHeader.add(status);
 
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
     gameInfo.addClassName(Constants.ClassStyle.Exercises.GAME_INFO);
-    H3 name = new H3(sanitizeExerciseName(exercise.getName()));
+    H3 name = new H3(exercise.getName());
     name.addClassName(Constants.ClassStyle.Exercises.NAME);
-    exerciseCard.add(name);
+    exerciceHeader.add(name);
 
     // Difficulty, number of levels, time
     HorizontalLayout details = new HorizontalLayout();
@@ -75,76 +75,25 @@ public class Exercises extends VerticalLayout {
     time.add(space() + exercise.getAverageTime() + " hours");
 
     details.add(difficulty, nbLevels, time);
-    exerciseCard.add(details);
+    exerciceHeader.add(details);
 
-    add(exerciseCard);
+    VerticalLayout levels = new VerticalLayout();
+    levels.addClassName(Constants.ClassStyle.Exercises.LEVELS);
+    for (int levelId = 0; levelId < exercise.getNbLevels(); levelId++) {
+      HorizontalLayout level = new HorizontalLayout();
+      level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
+      level.add(VaadinIcon.CIRCLE_THIN.create());
+      level.add(space());
+      level.add(exercise.getLevel(levelId).getName());
+      levels.add(level);
+    }
+
+    exerciceCard.add(exerciceHeader);
+    exerciceCard.add(levels);
+    add(exerciceCard);
   }
 
   private String space() {
-    return "    ";
-  }
-
-  private String sanitizeExerciseName(final String exerciseName) {
-    final int size = 50;
-    int delta = size - exerciseName.length();
-    StringBuilder sanitized = new StringBuilder(new String(exerciseName));
-    if (delta > 0) {
-      for (int i = 0; i < delta; i++) {
-        sanitized.append(" ");
-      }
-    }
-    return sanitized.toString();
-  }
-
-  private void buildExercises() {
-
-    grid = new Grid<>();
-    grid.setItems(ExerciseEnum.list());
-    grid.setDetailsVisibleOnClick(true);
-
-    grid.addColumn(
-        new ComponentRenderer<>(
-            exercice -> {
-
-              // Status
-              Span status = new Span("ready");
-              status.addClassName("exercises-layout__status-ready");
-
-              // Name
-              VerticalLayout gameInfo = new VerticalLayout();
-              H3 name = new H3(exercice.getName());
-              name.addClassName("exercises-layout__name");
-              gameInfo.add(name);
-
-              // Difficulty, number of levels, time
-              HorizontalLayout details = new HorizontalLayout();
-              Div difficulty = new Div();
-              difficulty.add(VaadinIcon.FLAG.create());
-              difficulty.add(exercice.getDifficulty().name());
-
-              Div nbLevels = new Div();
-              nbLevels.add(VaadinIcon.LIST.create());
-              nbLevels.add(exercice.getNbLevels() + " levels");
-
-              Div time = new Div();
-              time.add(VaadinIcon.TIMER.create());
-              time.add(exercice.getAverageTime() + " hours");
-
-              details.add(difficulty, nbLevels, time);
-              gameInfo.add(details);
-
-              // button for saving the name to backend
-              Button go =
-                  new Button(
-                      "Go",
-                      event -> {
-                        UI.getCurrent().navigate(Constants.Routes.LOGIN);
-                      });
-
-              return new HorizontalLayout(status, gameInfo, go);
-            }));
-
-    grid.addClassName("exercise-layout__grid");
-    add(grid);
+    return "      ";
   }
 }

@@ -45,4 +45,8 @@ public abstract class Exercise {
   public List<Level> getLevels() {
     return levels;
   }
+
+  public Level getLevel(final int levelId) {
+    return levels.get(levelId);
+  }
 }

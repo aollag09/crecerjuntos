@@ -32,8 +32,11 @@ public class Constants {
       public static final String STATUS_READY = PREFIX + "status-ready";
       public static final String NAME = PREFIX + "name";
       public static final String DETAIL = PREFIX + "detail";
-      public static final String GAME_INFO = PREFIX+"game-info";
+      public static final String GAME_INFO = PREFIX + "game-info";
       public static final String CARD = PREFIX + "card";
+      public static final String HEADER = PREFIX + "header";
+      public static final String LEVELS = PREFIX + "levels";
+      public static final String LEVEL = PREFIX + "level";
     }
   }
 

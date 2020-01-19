@@ -55,7 +55,6 @@ html {
     margin: auto;
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    background-color: aliceblue;
     padding: 30px;
 }
 
@@ -104,13 +103,22 @@ html {
 }
 
 .exercises-layout__card{
-    background-color: aliceblue;
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     width: -webkit-fill-available;
     max-width: 1200px;
     margin: 20px 100px;
     padding: 15px 30px;
+}
+
+.exercises-layout__header{
+}
+
+.exercises-layout__levels{
+}
+
+.exercises-layout__level{
+    margin-left: 50px;
 }
 
 
