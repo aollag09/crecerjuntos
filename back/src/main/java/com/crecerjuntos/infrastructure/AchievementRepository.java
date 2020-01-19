@@ -16,12 +16,12 @@ public interface AchievementRepository extends JpaRepository<Achievement, Long> 
   @Query("SELECT a FROM Achievement a WHERE student_id = ?1")
   List<Achievement> findDoneByStudent(Long studentId);
 
-  @Query("SELECT a FROM Achievement a WHERE student_id = ?1 ORDER BY timestamp LIMIT ?2")
-  List<Achievement> findLastsByStudent(Long studentId, int nbAchievements);
+    @Query("SELECT a FROM Achievement a WHERE student_id = ?1 ORDER BY timestamp DESC")
+    List<Achievement> findLastsByStudent(Long studentId, int nbAchievements);
 
-  @Query("SELECT a FROM Achievement a WHERE section_id = ?1")
-  List<Achievement> findBySection(Long sectionId);
+    @Query("SELECT a FROM Achievement a WHERE section_id = ?1")
+    List<Achievement> findBySection(Long sectionId);
 
-  @Query("SELECT a FROM Achievement a WHERE section_id = ?1 ORDER BY timestamp LIMIT ?2")
-  List<Achievement> findLastsBySection(Long sectionId, int nbAchievements);
+    @Query("SELECT a FROM Achievement a WHERE section_id = ?1 ORDER BY timestamp DESC")
+    List<Achievement> findLastsBySection(Long sectionId, int nbAchievements);
 }
