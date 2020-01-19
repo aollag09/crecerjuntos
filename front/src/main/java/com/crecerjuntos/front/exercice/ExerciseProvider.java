@@ -1,7 +1,3 @@
 package com.crecerjuntos.front.exercice;
 
-public class ExerciseProvider {
-
-
-
-}
+public class ExerciseProvider {}

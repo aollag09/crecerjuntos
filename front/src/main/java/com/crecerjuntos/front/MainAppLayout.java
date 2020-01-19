@@ -5,6 +5,7 @@ import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Anchor;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -30,6 +31,7 @@ import java.util.List;
     startPath = "login",
     backgroundColor = "#227aef",
     themeColor = "#227aef")
+@StyleSheet("stylesheets/crecerjuntos.css")
 public class MainAppLayout extends AppLayout {
 
   public MainAppLayout() {
@@ -38,6 +40,7 @@ public class MainAppLayout extends AppLayout {
 
   private void buildNavBar() {
     Span appName = new Span("Crecer Juntos");
+    appName.addClassName("main-layout__span");
     this.addToNavbar(appName);
     Tabs menu = buildMenu();
     this.addToNavbar(true, menu);
@@ -47,6 +50,7 @@ public class MainAppLayout extends AppLayout {
     Tabs tabs = new Tabs();
     tabs.add(buildTabs());
     tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
+    tabs.addClassName("main-layout__tabs");
     return tabs;
   }
 
@@ -79,6 +83,7 @@ public class MainAppLayout extends AppLayout {
   private Tab createTab(final Component component) {
     Tab tab = new Tab(component);
     tab.addThemeVariants(TabVariant.LUMO_ICON_ON_TOP);
+    tab.addClassName("main-layout__tab");
     return tab;
   }
 }

@@ -8,7 +8,7 @@ import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 
 @Route(Constants.Routes.LOGIN)
 /* Import custom style sheet */
-@CssImport("stylesheets/shared-styles.css")
+@StyleSheet("crecerjuntos.css")
 @PageTitle("Crecer Juntos Login")
 public class Login extends VerticalLayout {
 
