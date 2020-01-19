@@ -20,8 +20,6 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-import java.util.List;
-
 @Route(value = Constants.Routes.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Exercices")
@@ -35,12 +33,67 @@ public class Exercises extends VerticalLayout {
   public Exercises() {
     H2 title = new H2("Exercices");
     add(title);
-    buildExercises();
+    buildExercisesDiv();
   }
 
   private void buildExercisesDiv() {
+    ExerciseEnum.list().forEach(this::buildExercise);
+  }
 
-    List<Exercise> exercises = ExerciseEnum.list();
+  private void buildExercise(final Exercise exercise) {
+
+    HorizontalLayout exerciseCard = new HorizontalLayout();
+    exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
+
+    // Status
+    Span status = new Span("ready");
+    status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
+    exerciseCard.add(status);
+
+    // Name
+    VerticalLayout gameInfo = new VerticalLayout();
+    gameInfo.addClassName(Constants.ClassStyle.Exercises.GAME_INFO);
+    H3 name = new H3(sanitizeExerciseName(exercise.getName()));
+    name.addClassName(Constants.ClassStyle.Exercises.NAME);
+    exerciseCard.add(name);
+
+    // Difficulty, number of levels, time
+    HorizontalLayout details = new HorizontalLayout();
+    Div difficulty = new Div();
+    difficulty.addClassName(Constants.ClassStyle.Exercises.DETAIL);
+    difficulty.add(VaadinIcon.FLAG.create());
+    difficulty.add(space() + exercise.getDifficulty());
+
+    Div nbLevels = new Div();
+    nbLevels.addClassName(Constants.ClassStyle.Exercises.DETAIL);
+    nbLevels.add(VaadinIcon.LIST.create());
+    nbLevels.add(space() + exercise.getNbLevels() + " levels");
+
+    Div time = new Div();
+    time.addClassName(Constants.ClassStyle.Exercises.DETAIL);
+    time.add(VaadinIcon.TIMER.create());
+    time.add(space() + exercise.getAverageTime() + " hours");
+
+    details.add(difficulty, nbLevels, time);
+    exerciseCard.add(details);
+
+    add(exerciseCard);
+  }
+
+  private String space() {
+    return "    ";
+  }
+
+  private String sanitizeExerciseName(final String exerciseName) {
+    final int size = 50;
+    int delta = size - exerciseName.length();
+    StringBuilder sanitized = new StringBuilder(new String(exerciseName));
+    if (delta > 0) {
+      for (int i = 0; i < delta; i++) {
+        sanitized.append(" ");
+      }
+    }
+    return sanitized.toString();
   }
 
   private void buildExercises() {
