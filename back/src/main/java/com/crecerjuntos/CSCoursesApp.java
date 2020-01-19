@@ -33,16 +33,16 @@ public class CSCoursesApp implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info("Registering proceso basico-> {}", new Section(0L, "Proceso Basico"));
-        logger.info("Registering aceleracion-> {}", new Section(1L, "Aceleracion"));
-        logger.info("Registering segundo -> {}", new Section(2L, "Segundo"));
-        logger.info("Registering tercero -> {}", new Section(3L, "Tercero"));
-        logger.info("Registering quarto -> {}", new Section(4L, "Quarto"));
-        logger.info("Registering quinto -> {}", new Section(5L, "Quinto"));
-        logger.info("Registering sexto -> {}", new Section(6L, "Sexto"));
-        logger.info("Registering septimo -> {}", new Section(7L, "Septimo"));
-        logger.info("Registering octavo -> {}", new Section(8L, "Octavo"));
-        logger.info("Registering noveno -> {}", new Section(9L, "Noveno"));
+        logger.info("Registering aceleracion-> {}", sectionRepository.save(new Section(1L, "Aceleracion")));
+        logger.info("Registering segundo -> {}", sectionRepository.save(new Section(2L, "Segundo")));
+        logger.info("Registering tercero -> {}", sectionRepository.save(new Section(3L, "Tercero")));
+        logger.info("Registering quarto -> {}", sectionRepository.save(new Section(4L, "Quarto")));
+        logger.info("Registering quinto -> {}", sectionRepository.save(new Section(5L, "Quinto")));
+        logger.info("Registering sexto -> {}", sectionRepository.save(new Section(6L, "Sexto")));
+        logger.info("Registering septimo -> {}", sectionRepository.save(new Section(7L, "Septimo")));
+        logger.info("Registering octavo -> {}", sectionRepository.save(new Section(8L, "Octavo")));
+        logger.info("Registering noveno -> {}", sectionRepository.save(new Section(9L, "Noveno")));
+        logger.info("Registering proceso basico-> {}", sectionRepository.save(new Section(10L, "Proceso Basico")));
     }
 
 }
