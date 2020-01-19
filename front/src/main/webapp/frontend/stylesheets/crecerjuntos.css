@@ -21,8 +21,8 @@ html {
 
 .main-layout__logo-teresa{
    display: block;
-    max-width: 60px;
-    max-height: 60px;
+    max-width: 55px;
+    max-height: 55px;
     width: auto;
     height: auto;
     margin: 10px;
@@ -103,6 +103,7 @@ html {
 }
 
 .exercises-layout__card{
+    background-image: linear-gradient(var(--lumo-contrast-10pct), transparent);
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     width: -webkit-fill-available;
@@ -119,6 +120,16 @@ html {
 
 .exercises-layout__level{
     margin-left: 50px;
+}
+
+.exercises-layout__icon{
+    color: var(--lumo-primary-color);
+    margin-right: 10px;
+}
+
+.exercises-layout__anchor{
+    color: var(--lumo-body-text-color);
+    font-size: large;
 }
 
 

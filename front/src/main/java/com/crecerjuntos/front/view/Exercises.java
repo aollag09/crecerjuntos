@@ -4,12 +4,11 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exercice.Exercise;
 import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.html.Div;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.Span;
+import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -39,61 +38,67 @@ public class Exercises extends VerticalLayout {
 
   private void buildExercise(final Exercise exercise) {
 
-    VerticalLayout exerciceCard = new VerticalLayout();
-    exerciceCard.addClassName(Constants.ClassStyle.Exercises.CARD);
+    VerticalLayout exerciseCard = new VerticalLayout();
+    exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
 
-    HorizontalLayout exerciceHeader = new HorizontalLayout();
-    exerciceHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
+    HorizontalLayout exerciseHeader = new HorizontalLayout();
+    exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
     Span status = new Span("ready");
     status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
-    exerciceHeader.add(status);
+    exerciseHeader.add(status);
 
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
     gameInfo.addClassName(Constants.ClassStyle.Exercises.GAME_INFO);
     H3 name = new H3(exercise.getName());
     name.addClassName(Constants.ClassStyle.Exercises.NAME);
-    exerciceHeader.add(name);
+    exerciseHeader.add(name);
 
     // Difficulty, number of levels, time
     HorizontalLayout details = new HorizontalLayout();
     Div difficulty = new Div();
     difficulty.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    difficulty.add(VaadinIcon.FLAG.create());
-    difficulty.add(space() + exercise.getDifficulty());
+    difficulty.add(buildIcon(VaadinIcon.FLAG));
+    difficulty.add(exercise.getDifficulty().toString());
 
     Div nbLevels = new Div();
     nbLevels.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    nbLevels.add(VaadinIcon.LIST.create());
-    nbLevels.add(space() + exercise.getNbLevels() + " levels");
+    nbLevels.add(buildIcon(VaadinIcon.LIST));
+    nbLevels.add(exercise.getNbLevels() + " levels");
 
     Div time = new Div();
     time.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    time.add(VaadinIcon.TIMER.create());
-    time.add(space() + exercise.getAverageTime() + " hours");
+    time.add(buildIcon(VaadinIcon.TIMER));
+    time.add(exercise.getAverageTime() + " hours");
 
     details.add(difficulty, nbLevels, time);
-    exerciceHeader.add(details);
+    exerciseHeader.add(details);
 
     VerticalLayout levels = new VerticalLayout();
     levels.addClassName(Constants.ClassStyle.Exercises.LEVELS);
     for (int levelId = 0; levelId < exercise.getNbLevels(); levelId++) {
       HorizontalLayout level = new HorizontalLayout();
       level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
-      level.add(VaadinIcon.CIRCLE_THIN.create());
-      level.add(space());
-      level.add(exercise.getLevel(levelId).getName());
+      level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
+
+      Anchor anchor = new Anchor();
+      anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
+      anchor.setText(exercise.getLevel(levelId).getName());
+      level.add(anchor);
+
       levels.add(level);
     }
 
-    exerciceCard.add(exerciceHeader);
-    exerciceCard.add(levels);
-    add(exerciceCard);
+    exerciseCard.add(exerciseHeader);
+    exerciseCard.add(levels);
+    add(exerciseCard);
   }
 
-  private String space() {
-    return "      ";
+  public Component buildIcon(final VaadinIcon vIcon) {
+    Icon icon = vIcon.create();
+    icon.addClassName(Constants.ClassStyle.Exercises.ICON);
+    return icon;
   }
 }

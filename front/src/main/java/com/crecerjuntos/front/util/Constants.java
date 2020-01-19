@@ -37,6 +37,8 @@ public class Constants {
       public static final String HEADER = PREFIX + "header";
       public static final String LEVELS = PREFIX + "levels";
       public static final String LEVEL = PREFIX + "level";
+      public static final String ICON = PREFIX + "icon";
+      public static final String ANCHOR = PREFIX + "anchor";
     }
   }
 
