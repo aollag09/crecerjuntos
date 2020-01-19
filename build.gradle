@@ -6,13 +6,15 @@
  * user guide available at https://docs.gradle.org/4.4.1/userguide/tutorial_java_projects.html
  */
 
-allprojects{
-    repositories{
+allprojects {
+    repositories {
         jcenter()
+        mavenCentral()
     }
 }
 
-subprojects{
+
+subprojects {
     version = '1.0'
 }
 

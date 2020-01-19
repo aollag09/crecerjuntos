@@ -36,8 +36,11 @@ public class Constants {
     public static final String DASHBOARD = "dashboard";
     public static final String EXERCISES = "exercises";
     public static final String HOME = "home";
+    public static final String ADMIN = "admin";
     public static final String LOGIN = "";
   }
 
-  public class Titles {}
+  public class Title {
+    public static final String ADMIN = "Crecer Juntos Admin";
+  }
 }

@@ -8,5 +8,5 @@
 
 rootProject.name = 'crecerjuntos'
 
-include 'back'
-include 'front'
+include ':back'
+include ':front'
