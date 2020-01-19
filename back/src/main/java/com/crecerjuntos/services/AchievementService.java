@@ -7,16 +7,17 @@ import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+
 
 import java.util.List;
 
-@Service
 public class AchievementService implements IAchievementAccess, IAuthoringServices {
 
-    @Autowired
-    AchievementRepository achievementRepository;
+    private AchievementRepository achievementRepository;
+
+    public AchievementService(AchievementRepository achievementRepository){
+        this.achievementRepository = achievementRepository;
+    }
 
     @Override
     public List<Achievement> get(Student student) {

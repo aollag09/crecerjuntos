@@ -30,7 +30,7 @@ public class Achievement {
   private final Long id;
 
   @ManyToOne
-  @JoinColumn(name = "studentId", nullable = false)
+  @JoinColumn(name = "student_id", nullable = false)
   public final Student student;
 
   /** Session id */

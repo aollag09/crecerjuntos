@@ -1,32 +1,29 @@
 plugins {
     id 'java-library'
-    id 'org.springframework.boot' version '2.0.0.RELEASE'
-
 }
-
-apply plugin: 'io.spring.dependency-management'
 
 dependencies {
     implementation 'com.google.guava:guava:23.0'
 
-    // Spring
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.0.0.RELEASE'
+    implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
 
-    // JAX-B dependencies for JDK 9+
-    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
-    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
 
-    // Dependency needed for the tuple serializer
-    implementation "org.javassist:javassist:3.26.0-GA"
+
+//    // JAX-B dependencies for JDK 9+
+//    implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.2"
+//    implementation "org.glassfish.jaxb:jaxb-runtime:2.3.2"
+//
+//    // Dependency needed for the tuple serializer
+//    implementation "org.javassist:javassist:3.26.0-GA"
 
     // postgresql db
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
 
     // test
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }
-    testImplementation "com.h2database:h2"
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
 }
 
 sourceCompatibility = 1.8
