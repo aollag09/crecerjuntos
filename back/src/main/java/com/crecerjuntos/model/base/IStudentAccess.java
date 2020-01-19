@@ -8,13 +8,13 @@ import java.util.List;
 
 public interface IStudentAccess {
 
-    Student byName(final String name);
+  Student byName(final String name);
 
-    Student byId(final Long id);
+  Student byId(final Long id);
 
-    List<Student> search(final String name);
+  List<Student> search(final String name);
 
-    List<Student> getStudents(final Section section);
+  List<Student> getStudents(final Section section);
 
-    Student getStudent(final Achievement achievement);
+  Student getStudent(final Achievement achievement);
 }

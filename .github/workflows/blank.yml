@@ -6,12 +6,12 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    
+
     steps:
-    - uses: actions/checkout@v1
-    - name: Enable gradlew execution
-      run: chmod +x gradlew
-    - name: Build project
-      run: ./gradlew build
-    - name: Build web application
-      run: ./gradlew buildProduct
+      - uses: actions/checkout@v1
+      - name: Enable gradlew execution
+        run: chmod +x gradlew
+      - name: Build project
+        run: ./gradlew build
+      - name: Build web application
+        run: ./gradlew buildProduct

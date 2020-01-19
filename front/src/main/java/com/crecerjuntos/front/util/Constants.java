@@ -1,7 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.vaadin.flow.router.PageTitle;
-
 public class Constants {
 
   public class Session {
@@ -15,12 +13,10 @@ public class Constants {
 
   public class ClassStyle {
 
-
-    public class Main{
+    public class Main {
       private static final String PREFIX = "main-layout__";
       public static final String LOGO_TERESA = PREFIX + "logo-teresa";
       public static final String TABS = PREFIX + "tabs";
-
     }
 
     public class Login {

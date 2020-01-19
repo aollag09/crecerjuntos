@@ -18,7 +18,8 @@ public abstract class Exercise {
   /** Average time to complete exercise in hour */
   protected long time;
 
-  protected Exercise(final String name, final List<Level> levels, final Difficulty difficulty, final long time) {
+  protected Exercise(
+      final String name, final List<Level> levels, final Difficulty difficulty, final long time) {
     this.name = name;
     this.levels = levels;
     this.difficulty = difficulty;
@@ -33,7 +34,7 @@ public abstract class Exercise {
     return this.difficulty;
   }
 
-  public long getAverageTime(){
+  public long getAverageTime() {
     return this.time;
   }
 

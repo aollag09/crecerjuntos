@@ -20,6 +20,8 @@ import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import java.util.List;
+
 @Route(value = Constants.Routes.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Exercices")
@@ -34,6 +36,11 @@ public class Exercises extends VerticalLayout {
     H2 title = new H2("Exercices");
     add(title);
     buildExercises();
+  }
+
+  private void buildExercisesDiv() {
+
+    List<Exercise> exercises = ExerciseEnum.list();
   }
 
   private void buildExercises() {

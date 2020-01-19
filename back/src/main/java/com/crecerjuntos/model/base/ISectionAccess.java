@@ -8,14 +8,13 @@ import java.util.List;
 
 public interface ISectionAccess {
 
-    Section byName(final String name);
+  Section byName(final String name);
 
-    Section byId(final Long id);
+  Section byId(final Long id);
 
-    List<Section> search(final String name);
+  List<Section> search(final String name);
 
-    Section getSection(final Student student);
+  Section getSection(final Student student);
 
-    Section getSection(final Achievement achievement);
-
+  Section getSection(final Achievement achievement);
 }
