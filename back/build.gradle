@@ -23,14 +23,12 @@ dependencies {
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
 
     // test
-    /*testImplementation('org.springframework.boot:spring-boot-starter-test') {
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-    }*/
+    }
+    testImplementation "com.h2database:h2"
 }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-test {
-    useJUnitPlatform()
-}
