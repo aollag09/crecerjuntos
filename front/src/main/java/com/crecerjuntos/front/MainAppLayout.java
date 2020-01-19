@@ -1,5 +1,6 @@
 package com.crecerjuntos.front;
 
+import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.view.Dashboard;
 import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
@@ -7,6 +8,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
@@ -31,7 +33,7 @@ import java.util.List;
     startPath = "login",
     backgroundColor = "#227aef",
     themeColor = "#227aef")
-@StyleSheet("stylesheets/crecerjuntos.css")
+@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 public class MainAppLayout extends AppLayout {
 
   public MainAppLayout() {
@@ -39,6 +41,9 @@ public class MainAppLayout extends AppLayout {
   }
 
   private void buildNavBar() {
+    Image image = new Image("resources/img/teresa.png", "teresa");
+    image.addClassName(Constants.ClassStyle.Main.LOGO_TERESA);
+    this.addToNavbar(image);
     Span appName = new Span("Crecer Juntos");
     appName.addClassName("main-layout__span");
     this.addToNavbar(appName);
@@ -50,7 +55,7 @@ public class MainAppLayout extends AppLayout {
     Tabs tabs = new Tabs();
     tabs.add(buildTabs());
     tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
-    tabs.addClassName("main-layout__tabs");
+    tabs.addClassName(Constants.ClassStyle.Main.TABS);
     return tabs;
   }
 
@@ -58,8 +63,8 @@ public class MainAppLayout extends AppLayout {
     final int nbtabs = 4;
     final List<Tab> tabs = new ArrayList<>(nbtabs);
     tabs.add(buildTab(VaadinIcon.HOME, "Home", Home.class));
+    tabs.add(buildTab(VaadinIcon.PENCIL, "Exercises", Exercises.class));
     tabs.add(buildTab(VaadinIcon.CLOCK, "Dashboard", Dashboard.class));
-    tabs.add(buildTab(VaadinIcon.PENCIL, "Exercices", Exercises.class));
     final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
     tabs.add(buildLogOut(contextPath));
     return tabs.toArray(new Tab[nbtabs]);

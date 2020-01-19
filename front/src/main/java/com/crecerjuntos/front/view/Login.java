@@ -9,9 +9,9 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
-import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -22,8 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Route(Constants.Routes.LOGIN)
-/* Import custom style sheet */
-@StyleSheet("crecerjuntos.css")
+@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
 public class Login extends VerticalLayout {
 
@@ -33,32 +32,38 @@ public class Login extends VerticalLayout {
     HorizontalLayout layout = new HorizontalLayout();
     layout.add(buildTeresa());
     layout.add(buildLogin());
-    setAlignItems(FlexComponent.Alignment.CENTER);
+    layout.addClassName(Constants.ClassStyle.Login.PANEL);
     add(layout);
   }
 
   private Component buildTeresa() {
-    return new Image("resources/img/teresa.jpg", "teresa");
+    Image image = new Image("resources/img/teresa.png", "teresa");
+    image.addClassName(Constants.ClassStyle.Login.TERESA);
+    return image;
   }
 
   private Component buildLogin() {
     VerticalLayout login = new VerticalLayout();
+    login.addClassName(Constants.ClassStyle.Login.LOGIN);
+
+    H2 title = new H2("Crecer Juntos");
+    login.add(title);
 
     Text text = new Text("Please enter the following information");
     login.add(text);
 
     TextField username = new TextField("Username");
-    username.addClassName("home-layout__login");
+    username.addClassName(Constants.ClassStyle.Login.FORM);
     login.add(username);
 
     ComboBox<String> section = new ComboBox<>("Section Name");
     section.setDataProvider(new ListDataProvider<>(Section.list()));
     section.setValue(Section.PRIMARIO.getName());
-    section.addClassName("home-layout__login");
+    section.addClassName(Constants.ClassStyle.Login.FORM);
     login.add(section);
 
     Button log = new Button("Login");
-    log.addClassName("home-layout__login");
+    log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickListener(
         event -> {
           if (username.isEmpty()) {

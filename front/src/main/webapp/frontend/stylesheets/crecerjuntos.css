@@ -11,12 +11,21 @@ html {
 
 /** Main Layout */
 .main-layout__span{
-    margin-left:    15px;
+    margin-left:    5px;
     margin-right:   40px;
     margin-top:     20px;
     margin-bottom:  15px;
     font-size: x-large;
     font-weight: bold;
+}
+
+.main-layout__logo-teresa{
+   display: block;
+    max-width: 60px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+    margin: 10px;
 }
 
 .main-layout__tabs{
@@ -26,6 +35,30 @@ html {
 .main-layout__tab{
     margin-left:    10px;
     margin-right:   10px;
+}
+
+/** Login layout */
+.login-layout__panel{
+    margin: auto;
+    margin-top: 70px;
+}
+
+.login-layout__teresa{
+    display: block;
+    max-width: 540px;
+    max-height: 540px;
+    width: auto;
+    height: auto;
+}
+
+.login-layout__login{
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px;
+}
+
+.login-layout__form{
+    width: 250px;
 }
 
 /** Exercise Layout */
