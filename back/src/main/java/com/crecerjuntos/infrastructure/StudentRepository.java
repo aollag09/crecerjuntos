@@ -1,6 +1,5 @@
 package com.crecerjuntos.infrastructure;
 
-import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 
 import java.util.List;

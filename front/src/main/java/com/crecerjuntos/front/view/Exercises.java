@@ -6,13 +6,11 @@ import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
-import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinServlet;
@@ -21,11 +19,6 @@ import com.vaadin.flow.server.VaadinServlet;
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Exercices")
 public class Exercises extends VerticalLayout {
-
-  @Id("grid")
-  private Grid<Exercise> grid;
-
-  private Grid exercices;
 
   public Exercises() {
     H2 title = new H2("Exercices");

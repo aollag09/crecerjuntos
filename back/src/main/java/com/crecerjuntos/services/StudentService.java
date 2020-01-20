@@ -16,11 +16,13 @@ public class StudentService implements IStudentAccess, IAuthoringServices {
 
   private StudentRepository studentRepository;
 
-  public StudentService(StudentRepository studentRepository){
+  public StudentService(StudentRepository studentRepository) {
     this.studentRepository = studentRepository;
   }
 
-  public StudentService() {this.studentRepository = new StudentRepositoryImpl(JpaEntityManagerFactory.getEntityManager()); }
+  public StudentService() {
+    this.studentRepository = new StudentRepositoryImpl(JpaEntityManagerFactory.getEntityManager());
+  }
 
   @Override
   public Student byName(String name) {
