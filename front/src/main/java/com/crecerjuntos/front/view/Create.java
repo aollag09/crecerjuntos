@@ -70,12 +70,19 @@ public class Create extends VerticalLayout {
           } else {
             if (getUI().isPresent()) {
 
-              // create & log in current user
-              LoginServices.create(username.getValue(), section.getValue());
-              LoginServices.login(username.getValue(), section.getValue());
-              // Go to user dashboard
-              UI.getCurrent().navigate(Home.class);
-
+              boolean exists = LoginServices.exists(username.getValue());
+              if (exists) {
+                Notification.show(
+                    "The username "
+                        + username.getValue()
+                        + " already exists, please pick another one");
+              } else {
+                // create & log in current user
+                LoginServices.create(username.getValue(), section.getValue());
+                LoginServices.login(username.getValue(), section.getValue());
+                // Go to user dashboard
+                UI.getCurrent().navigate(Home.class);
+              }
             } else {
               throw new RuntimeException("UI is not accessible");
             }

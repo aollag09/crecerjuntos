@@ -83,7 +83,7 @@ public class Login extends VerticalLayout {
               } else {
                 Notification.show(
                     "The username "
-                        + username
+                        + username.getValue()
                         + " doesn't exists, please create the account first");
               }
             } else {
