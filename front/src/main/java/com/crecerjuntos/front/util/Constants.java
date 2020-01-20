@@ -54,5 +54,6 @@ public class Constants {
 
   public class Title {
     public static final String ADMIN = "Crecer Juntos Admin";
+    public static final String DACTYLOGRAPHIE = "Dactylographie Exercise";
   }
 }
