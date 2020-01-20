@@ -8,7 +8,7 @@ public interface StudentRepository {
 
   Student findByName(final String name);
 
-  List<Student> findStudentsBySection(final Long sectionId);
+  List<Student> findStudentsBySection(final String sectionNName);
 
   List<Student> findByPartialName(final String s);
 

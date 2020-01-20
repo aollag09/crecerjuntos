@@ -1,18 +1,51 @@
 package com.crecerjuntos.model;
 
-import com.google.common.base.Objects;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public enum Section {
+  PRIMARIO("Primario"),
+  SECONDARIO("Secondario"),
+  TERCERO("Tercero"),
+  QUARTO("Quarto"),
+  QUINTO("Quinto"),
+  SEXTO("Sexto"),
+  SEPTIMO("Septimo"),
+  OCTAVO("Octavo"),
+  NOVEMO("Novemo"),
+  PROCESSO_BASICO("Processo Basico"),
+  ACCELERATION("Acceleration");
+
+  private String name;
+
+  Section(final String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public static List<String> list() {
+    List<Section> list = Arrays.asList(Section.values());
+    return list.stream().map(section -> section.getName()).collect(Collectors.toList());
+  }
+}
+
+
+
+/**import com.google.common.base.Objects;
 
 import javax.persistence.*;
 
 @Entity
 public class Section {
 
-  /** Unique, private & generated id */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  /** Public name of the section aka class */
   @Column private String name;
 
   public Section() {
@@ -57,4 +90,4 @@ public class Section {
   public void setName(String name) {
     this.name = name;
   }
-}
+}**/

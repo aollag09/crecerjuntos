@@ -25,7 +25,7 @@ public class Student {
   private final Section section;
 
   public Student() {
-    this(0L, DEFAULT_NAME, new Section());
+    this(0L, DEFAULT_NAME, Section.DEFAULT);
   }
 
   public Student(final Long id, final String name, final Section section) {
@@ -37,13 +37,13 @@ public class Student {
   public Student(final Long id, final String name) {
     this.id = id;
     this.name = name;
-    this.section = null;
+    this.section = Section.DEFAULT;
   }
 
   public Student(final Long id) {
     this.id = id;
     this.name = DEFAULT_NAME;
-    this.section = null;
+    this.section = Section.DEFAULT;
   }
 
   @Override

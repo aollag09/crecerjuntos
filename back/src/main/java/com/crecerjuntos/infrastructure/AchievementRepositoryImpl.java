@@ -18,7 +18,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public List<Achievement> findByStudent(Long studentId) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE student_id = ?studentId", Achievement.class);
+            "SELECT a FROM Achievement a WHERE student_id = :studentId", Achievement.class);
     q.setParameter("studentId", studentId);
     return q.getResultList();
   }
@@ -27,7 +27,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public List<Achievement> findDoneByStudent(Long studentId) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE student_id = ?studentId AND progress >= 100",
+            "SELECT a FROM Achievement a WHERE student_id = :studentId AND progress >= 100",
             Achievement.class);
     q.setParameter("studentId", studentId);
     return q.getResultList();
@@ -37,7 +37,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public List<Achievement> findLastsByStudent(Long studentId, int nbAchievements) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE student_id = ?studentId ORDER BY timestamp DESC",
+            "SELECT a FROM Achievement a WHERE student_id = :studentId ORDER BY timestamp DESC",
             Achievement.class);
     q.setParameter("studentId", studentId);
     return q.getResultList().subList(0, nbAchievements);
@@ -47,7 +47,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public List<Achievement> findBySection(Long sectionId) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE section_id = ?sectionId", Achievement.class);
+            "SELECT a FROM Achievement a WHERE section_id = :sectionId", Achievement.class);
     q.setParameter("sectionId", sectionId);
     return q.getResultList();
   }
@@ -56,7 +56,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public List<Achievement> findLastsBySection(Long sectionId, int nbAchievements) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE student_id = ?sectionId ORDER BY timestamp DESC",
+            "SELECT a FROM Achievement a WHERE student_id = :sectionId ORDER BY timestamp DESC",
             Achievement.class);
     q.setParameter("sectionId", sectionId);
     return q.getResultList().subList(0, nbAchievements);

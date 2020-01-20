@@ -45,7 +45,7 @@ public class AchievementService implements IAchievementAccess, IAuthoringService
   public List<Achievement> getLasts(Section section, int nbAchievements) {
     // TODO: replace with pageable
     return achievementRepository
-        .findLastsBySection(section.getId(), nbAchievements)
+        .findLastsBySection(section.getName(), nbAchievements)
         .subList(0, nbAchievements);
   }
 
