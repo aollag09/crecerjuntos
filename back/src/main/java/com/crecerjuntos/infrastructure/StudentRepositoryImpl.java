@@ -17,7 +17,7 @@ public class StudentRepositoryImpl implements StudentRepository {
   @Override
   public Student findByName(String name) {
     TypedQuery<Student> q =
-        em.createQuery("SELECT s FROM Student s WHERE name = ?name", Student.class);
+        em.createQuery("SELECT s FROM Student s WHERE name = :name", Student.class);
     q.setParameter("name", name);
     List<Student> potentialStudents = q.getResultList();
     if (potentialStudents.size() == 1) return potentialStudents.get(0);
@@ -27,7 +27,7 @@ public class StudentRepositoryImpl implements StudentRepository {
   @Override
   public List<Student> findStudentsBySection(Long sectionId) {
     TypedQuery<Student> q =
-        em.createQuery("SELECT s FROM Student s WHERE section_id = ?sectionId", Student.class);
+        em.createQuery("SELECT s FROM Student s WHERE section_id = :sectionId", Student.class);
     q.setParameter("sectionId", sectionId);
     return q.getResultList();
   }
@@ -42,7 +42,7 @@ public class StudentRepositoryImpl implements StudentRepository {
 
   @Override
   public Student findById(Long id) {
-    TypedQuery<Student> q = em.createQuery("SELECT s FROM Student s WHERE id = ?id", Student.class);
+    TypedQuery<Student> q = em.createQuery("SELECT s FROM Student s WHERE id = :id", Student.class);
     q.setParameter("id", id);
     List<Student> potentialStudents = q.getResultList();
     if (potentialStudents.size() == 1) return potentialStudents.get(0);
