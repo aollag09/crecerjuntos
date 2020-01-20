@@ -2,24 +2,24 @@ package com.crecerjuntos.front.util;
 
 public class Constants {
 
-  public class Session {
+  public static class Session {
     public static final String USERNAME = "username";
     public static final String SECTION = "section";
   }
 
-  public class StyleSheet {
+  public static class StyleSheet {
     public static final String CERCER_JUNTOS = "stylesheets/crecerjuntos.css";
   }
 
-  public class ClassStyle {
+  public static class ClassStyle {
 
-    public class Main {
+    public static class Main {
       private static final String PREFIX = "main-layout__";
       public static final String LOGO_TERESA = PREFIX + "logo-teresa";
       public static final String TABS = PREFIX + "tabs";
     }
 
-    public class Login {
+    public static class Login {
       private static final String PREFIX = "login-layout__";
       public static final String PANEL = PREFIX + "panel";
       public static final String TERESA = PREFIX + "teresa";
@@ -27,7 +27,7 @@ public class Constants {
       public static final String FORM = PREFIX + "form";
     }
 
-    public class Exercises {
+    public static class Exercises {
       private static final String PREFIX = "exercises-layout__";
       public static final String STATUS_READY = PREFIX + "status-ready";
       public static final String NAME = PREFIX + "name";
@@ -42,18 +42,23 @@ public class Constants {
     }
   }
 
-  public class Routes {
+  public static class Route {
     public static final String DASHBOARD = "dashboard";
     public static final String EXERCISES = "exercises";
     public static final String HOME = "home";
     public static final String ADMIN = "admin";
     public static final String LOGIN = "";
+    public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
     public static final String GOALKEEPER = "exercise/goalkeeper";
   }
 
-  public class Title {
+  public static class Title {
     public static final String ADMIN = "Crecer Juntos Admin";
     public static final String DACTYLOGRAPHIE = "Dactylographie Exercise";
+  }
+
+  public static class Resource {
+    public static final String IMG_TERESA = "resources/img/teresa.png";
   }
 }

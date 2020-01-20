@@ -7,9 +7,8 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
 
-@Route(value = Constants.Routes.HOME, layout = MainAppLayout.class)
+@com.vaadin.flow.router.Route(value = Constants.Route.HOME, layout = MainAppLayout.class)
 @PageTitle("Crecer Juntos Home")
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 public class Home extends VerticalLayout {

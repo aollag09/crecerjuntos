@@ -10,7 +10,6 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
 
 import java.util.List;
 
@@ -18,7 +17,7 @@ import java.util.List;
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@Route(value = Constants.Routes.ADMIN, layout = MainAppLayout.class)
+@com.vaadin.flow.router.Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {

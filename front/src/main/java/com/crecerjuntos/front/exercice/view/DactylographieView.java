@@ -10,14 +10,13 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-@Route(value = Constants.Routes.DACTYLOGRAPHIE, layout = ExerciseLayout.class)
+@com.vaadin.flow.router.Route(value = Constants.Route.DACTYLOGRAPHIE, layout = ExerciseLayout.class)
 @PageTitle(Constants.Title.DACTYLOGRAPHIE)
 public class DactylographieView extends VerticalLayout {
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class Dactylographie extends Exercise {
 
   public Dactylographie() {
-    super("Dactylographie", buildLevels(), Difficulty.Easy, 2, Constants.Routes.DACTYLOGRAPHIE);
+    super("Dactylographie", buildLevels(), Difficulty.Easy, 2, Constants.Route.DACTYLOGRAPHIE);
   }
 
   private static List<Level> buildLevels() {

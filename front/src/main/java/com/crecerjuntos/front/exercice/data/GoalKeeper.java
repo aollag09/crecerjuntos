@@ -11,7 +11,7 @@ import java.util.List;
 public class GoalKeeper extends Exercise {
 
   public GoalKeeper() {
-    super("GoalKeeper", buildLevels(), Difficulty.Medium, 1, Constants.Routes.GOALKEEPER);
+    super("GoalKeeper", buildLevels(), Difficulty.Medium, 1, Constants.Route.GOALKEEPER);
   }
 
   private static List<Level> buildLevels() {

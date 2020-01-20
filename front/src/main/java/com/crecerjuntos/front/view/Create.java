@@ -17,20 +17,16 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-@com.vaadin.flow.router.Route(Constants.Route.LOGIN)
+@com.vaadin.flow.router.Route(Constants.Route.CREATE)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
-public class Login extends VerticalLayout {
+public class Create extends VerticalLayout {
 
-  public static final Logger LOGGER = LoggerFactory.getLogger(Login.class);
-
-  public Login() {
+  public Create() {
     HorizontalLayout layout = new HorizontalLayout();
     layout.add(buildTeresa());
-    layout.add(buildLogin());
+    layout.add(buildCreate());
     layout.addClassName(Constants.ClassStyle.Login.PANEL);
     add(layout);
   }
@@ -41,27 +37,31 @@ public class Login extends VerticalLayout {
     return image;
   }
 
-  private Component buildLogin() {
-    VerticalLayout login = new VerticalLayout();
-    login.addClassName(Constants.ClassStyle.Login.LOGIN);
+  private Component buildCreate() {
+    VerticalLayout create = new VerticalLayout();
+    create.addClassName(Constants.ClassStyle.Login.LOGIN);
 
     H2 title = new H2("Crecer Juntos");
-    login.add(title);
+    create.add(title);
 
     Text text = new Text("Please enter the following information");
-    login.add(text);
+    create.add(text);
 
     TextField username = new TextField("Username");
     username.addClassName(Constants.ClassStyle.Login.FORM);
-    login.add(username);
+    create.add(username);
+
+    TextField mail = new TextField("Mail");
+    mail.addClassName(Constants.ClassStyle.Login.FORM);
+    create.add(mail);
 
     ComboBox<String> section = new ComboBox<>("Section Name");
     section.setDataProvider(new ListDataProvider<>(Section.list()));
     section.setValue(Section.PRIMARIO.getName());
     section.addClassName(Constants.ClassStyle.Login.FORM);
-    login.add(section);
+    create.add(section);
 
-    Button log = new Button("Login");
+    Button log = new Button("Create Account");
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickListener(
         event -> {
@@ -70,37 +70,19 @@ public class Login extends VerticalLayout {
           } else {
             if (getUI().isPresent()) {
 
-              // Check user is created
-              boolean exists = LoginServices.exists(username.getValue());
-              if (exists) {
+              // create & log in current user
+              LoginServices.create(username.getValue(), section.getValue());
+              LoginServices.login(username.getValue(), section.getValue());
+              // Go to user dashboard
+              UI.getCurrent().navigate(Home.class);
 
-                // log in current user
-                LoginServices.login(username.getValue(), section.getValue());
-
-                // Go to user dashboard
-                UI.getCurrent().navigate(Home.class);
-
-              } else {
-                Notification.show(
-                    "The username "
-                        + username
-                        + " doesn't exists, please create the account first");
-              }
             } else {
               throw new RuntimeException("UI is not accessible");
             }
           }
         });
-    login.add(log);
+    create.add(log);
 
-    Button create = new Button("Create Account");
-    create.addClassName(Constants.ClassStyle.Login.FORM);
-    create.addClickListener(
-        event -> {
-          UI.getCurrent().navigate(Create.class);
-        });
-    login.add(create);
-
-    return login;
+    return create;
   }
 }

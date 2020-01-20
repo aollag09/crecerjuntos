@@ -12,10 +12,9 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.VaadinServlet;
 
-@Route(value = Constants.Routes.EXERCISES, layout = MainAppLayout.class)
+@com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Exercices")
 public class Exercises extends VerticalLayout {
