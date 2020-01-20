@@ -9,6 +9,9 @@ public abstract class Exercise {
   /** Name of the exercise */
   protected String name;
 
+  /** URI of the exercise */
+  protected String uri;
+
   /** Levels */
   protected List<Level> levels;
 
@@ -19,11 +22,16 @@ public abstract class Exercise {
   protected long time;
 
   protected Exercise(
-      final String name, final List<Level> levels, final Difficulty difficulty, final long time) {
+      final String name,
+      final List<Level> levels,
+      final Difficulty difficulty,
+      final long time,
+      final String uri) {
     this.name = name;
     this.levels = levels;
     this.difficulty = difficulty;
     this.time = time;
+    this.uri = uri;
   }
 
   public String getName() {
@@ -48,5 +56,9 @@ public abstract class Exercise {
 
   public Level getLevel(final int levelId) {
     return levels.get(levelId);
+  }
+
+  public String getUri() {
+    return uri;
   }
 }

@@ -48,6 +48,8 @@ public class Constants {
     public static final String HOME = "home";
     public static final String ADMIN = "admin";
     public static final String LOGIN = "";
+    public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
+    public static final String GOALKEEPER = "exercise/goalkeeper";
   }
 
   public class Title {

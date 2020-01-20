@@ -15,6 +15,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.polymertemplate.Id;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import com.vaadin.flow.server.VaadinServlet;
 
 @Route(value = Constants.Routes.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
@@ -86,6 +87,10 @@ public class Exercises extends VerticalLayout {
       Anchor anchor = new Anchor();
       anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
       anchor.setText(exercise.getLevel(levelId).getName());
+      anchor.setHref(
+          VaadinServlet.getCurrent().getServletContext().getContextPath()
+              + "/"
+              + exercise.getUri());
       level.add(anchor);
 
       levels.add(level);
