@@ -14,7 +14,9 @@ import com.vaadin.flow.router.PageTitle;
 public class Home extends VerticalLayout {
 
   public Home() {
-    H2 title = new H2("Welcome " + LoginServices.getUserName());
+    H2 title =
+        new H2(
+            getTranslation(Constants.Resource.Strings.Home.WELCOME, LoginServices.getUserName()));
     add(title);
   }
 }

@@ -94,6 +94,11 @@ public class Constants {
         public static final String DASHBOARD = PREFIX + "dashboard";
         public static final String LOGOUT = PREFIX + "logout";
       }
+
+      public class Home {
+        private static final String PREFIX = "home-";
+        public static final String WELCOME = PREFIX + "welcome";
+      }
     }
   }
 }
