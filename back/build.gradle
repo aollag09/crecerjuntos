@@ -24,6 +24,8 @@ dependencies {
     // test
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+
 }
 
 sourceCompatibility = 1.8
