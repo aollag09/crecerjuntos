@@ -1,6 +1,8 @@
 package com.crecerjuntos.services;
 
+import com.crecerjuntos.config.JpaEntityManagerFactory;
 import com.crecerjuntos.infrastructure.AchievementRepository;
+import com.crecerjuntos.infrastructure.AchievementRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Star;
@@ -13,6 +15,10 @@ import java.util.List;
 public class AchievementService implements IAchievementAccess {
 
   private AchievementRepository achievementRepository;
+
+  public AchievementService(){
+    this.achievementRepository = new AchievementRepositoryImpl(JpaEntityManagerFactory.getEntityManager());
+  }
 
   public AchievementService(AchievementRepository achievementRepository) {
     this.achievementRepository = achievementRepository;

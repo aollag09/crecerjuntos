@@ -2,7 +2,7 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
-import com.crecerjuntos.front.util.Section;
+import com.crecerjuntos.model.Section;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;

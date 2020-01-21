@@ -3,6 +3,7 @@ package com.crecerjuntos.front.util;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
+import com.crecerjuntos.services.AuthoringService;
 import com.crecerjuntos.services.StudentService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.server.VaadinSession;
@@ -24,7 +25,7 @@ public class LoginServices {
 
     // Register new student in database
     LOGGER.info("Create Student User {}", student);
-    IAuthoringServices authoringServices = new StudentService();
+    IAuthoringServices authoringServices = new AuthoringService();
     authoringServices.add(student);
   }
 
