@@ -20,8 +20,7 @@ public class Student {
   private final String name;
 
   /** Id of the associated section */
-  @ManyToOne(cascade = CascadeType.ALL)
-  @JoinColumn(columnDefinition = "int8", name = "section_id")
+  @Enumerated(EnumType.STRING)
   private final Section section;
 
   public Student() {

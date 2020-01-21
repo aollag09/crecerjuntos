@@ -44,21 +44,21 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   }
 
   @Override
-  public List<Achievement> findBySection(Long sectionId) {
+  public List<Achievement> findBySection(String sectionName) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE section_id = :sectionId", Achievement.class);
-    q.setParameter("sectionId", sectionId);
+            "SELECT a FROM Achievement a WHERE section = :sectionName", Achievement.class);
+    q.setParameter("sectionName", sectionName);
     return q.getResultList();
   }
 
   @Override
-  public List<Achievement> findLastsBySection(Long sectionId, int nbAchievements) {
+  public List<Achievement> findLastsBySection(String sectionName, int nbAchievements) {
     TypedQuery<Achievement> q =
         em.createQuery(
-            "SELECT a FROM Achievement a WHERE student_id = :sectionId ORDER BY timestamp DESC",
+            "SELECT a FROM Achievement a WHERE section = :sectionName ORDER BY timestamp DESC",
             Achievement.class);
-    q.setParameter("sectionId", sectionId);
+    q.setParameter("sectionName", sectionName);
     return q.getResultList().subList(0, nbAchievements);
   }
 

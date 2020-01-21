@@ -41,7 +41,7 @@ public class StudentService implements IStudentAccess, IAuthoringServices {
 
   @Override
   public List<Student> getStudents(Section section) {
-    return studentRepository.findStudentsBySection(section.getId());
+    return studentRepository.findStudentsBySection(section.getName());
   }
 
   @Override

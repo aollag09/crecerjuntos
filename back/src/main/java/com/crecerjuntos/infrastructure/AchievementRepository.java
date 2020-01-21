@@ -12,9 +12,9 @@ public interface AchievementRepository {
 
   List<Achievement> findLastsByStudent(Long studentId, int nbAchievements);
 
-  List<Achievement> findBySection(Long sectionId);
+  List<Achievement> findBySection(String sectionName);
 
-  List<Achievement> findLastsBySection(Long sectionId, int nbAchievements);
+  List<Achievement> findLastsBySection(String sectionName, int nbAchievements);
 
   Achievement save(Achievement achievement);
 

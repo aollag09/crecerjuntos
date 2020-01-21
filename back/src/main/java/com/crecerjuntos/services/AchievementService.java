@@ -38,7 +38,7 @@ public class AchievementService implements IAchievementAccess, IAuthoringService
 
   @Override
   public List<Achievement> get(Section section) {
-    return achievementRepository.findBySection(section.getId());
+    return achievementRepository.findBySection(section.getName());
   }
 
   @Override

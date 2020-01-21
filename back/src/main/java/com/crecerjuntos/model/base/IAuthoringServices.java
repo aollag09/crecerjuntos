@@ -11,10 +11,6 @@ public interface IAuthoringServices {
 
   void remove(final Student student);
 
-  void add(final Section section);
-
-  void remove(final Section section);
-
   void add(final Achievement achievement);
 
   void remove(final Achievement achievement);

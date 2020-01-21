@@ -25,10 +25,10 @@ public class StudentRepositoryImpl implements StudentRepository {
   }
 
   @Override
-  public List<Student> findStudentsBySection(Long sectionId) {
+  public List<Student> findStudentsBySection(String sectionName) {
     TypedQuery<Student> q =
-        em.createQuery("SELECT s FROM Student s WHERE section_id = :sectionId", Student.class);
-    q.setParameter("sectionId", sectionId);
+        em.createQuery("SELECT s FROM Student s WHERE section = :sectionName", Student.class);
+    q.setParameter("sectionName", sectionName);
     return q.getResultList();
   }
 

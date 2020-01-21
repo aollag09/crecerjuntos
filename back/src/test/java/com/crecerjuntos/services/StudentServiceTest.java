@@ -1,32 +1,41 @@
 package com.crecerjuntos.services;
 
-import com.crecerjuntos.infrastructure.SectionRepository;
+import com.crecerjuntos.config.JpaEntityManagerFactory;
+import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
-
+import org.junit.Before;
+import org.junit.Test;
+import javax.persistence.EntityManager;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class StudentServiceTest {
 
-  private StudentService studentService;
+    StudentService studentService;
+    AuthoringService authoringService;
+    EntityManager em;
 
-  private SectionRepository sectionRepository;
 
-  // FIXME @Test
-  public void searchTest() {
-    Section testSection = new Section(0L, "Test Section");
-    sectionRepository.save(testSection);
-    // Add a test student in repository
-    Student testStudent = new Student(1234L, "Pedro test", testSection);
-    studentService.add(testStudent);
+    @Before
+    public void setUp(){
+        em = JpaEntityManagerFactory.getEntityManager();
+        studentService = new StudentService(new StudentRepositoryImpl(em));
+    }
 
-    // Search
-    List<Student> res = studentService.search("e");
+    @Test
+    public void searchTest(){
+        // Add a test student in repository
+        Student testStudent = new Student(1234L, "Pedro test", Section.DEFAULT);
+        authoringService.add(testStudent);
 
-    // Check that the student was found by search
-    assertEquals(res.size(), 1);
-    assertEquals(res.get(0).getName(), "Pedro test");
+        // Search
+        List<Student> res  = studentService.search("edro");
+
+
+        //Check that the student was found by search
+        assertEquals(1, res.size());
+        assertEquals("Pedro test", res.get(0).getName());
+    }
   }
-}
