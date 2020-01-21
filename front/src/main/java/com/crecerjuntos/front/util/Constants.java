@@ -1,5 +1,7 @@
 package com.crecerjuntos.front.util;
 
+import com.vaadin.flow.component.Component;
+
 public class Constants {
 
   public static class Session {
@@ -68,5 +70,18 @@ public class Constants {
 
   public static class Resource {
     public static final String IMG_TERESA = "resources/img/teresa.png";
+
+    public class Strings {
+      public class Login {
+        private static final String PREFIX = "login-";
+        public static final String SECTION = PREFIX + "section";
+        public static final String TITLE = PREFIX + "title";
+        public static final String USERNAME = PREFIX + "username";
+        public static final String CREATE = PREFIX + "create";
+        public static final String LOGIN = PREFIX + "login";
+        public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
+        public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
+      }
+    }
   }
 }

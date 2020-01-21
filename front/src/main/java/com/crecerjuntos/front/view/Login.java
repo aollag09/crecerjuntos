@@ -5,7 +5,6 @@ import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.Section;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -19,8 +18,6 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Route(Constants.Route.LOGIN)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
@@ -45,29 +42,27 @@ public class Login extends VerticalLayout {
     VerticalLayout login = new VerticalLayout();
     login.addClassName(Constants.ClassStyle.Login.LOGIN);
 
-    H2 title = new H2("Crecer Juntos");
+    H2 title = new H2(getTranslation(Constants.Resource.Strings.Login.TITLE));
     login.add(title);
 
-    Text text = new Text("Please enter the following information");
-    login.add(text);
-
-    TextField username = new TextField("Username");
+    TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
     login.add(username);
 
-    ComboBox<String> section = new ComboBox<>("Section Name");
+    ComboBox<String> section =
+        new ComboBox<>(getTranslation(Constants.Resource.Strings.Login.SECTION));
     section.setDataProvider(new ListDataProvider<>(Section.list()));
     section.setValue(Section.PRIMARIO.getName());
     section.addClassName(Constants.ClassStyle.Login.FORM);
     login.add(section);
 
-    Button log = new Button("Login");
+    Button log = new Button(getTranslation(Constants.Resource.Strings.Login.LOGIN));
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickShortcut(Key.ENTER);
     log.addClickListener(
         event -> {
           if (username.isEmpty()) {
-            Notification.show("The username should not be empty");
+            Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_USERNAME));
           } else {
             if (getUI().isPresent()) {
 
@@ -83,9 +78,8 @@ public class Login extends VerticalLayout {
 
               } else {
                 Notification.show(
-                    "The username "
-                        + username.getValue()
-                        + " doesn't exists, please create the account first");
+                    getTranslation(
+                        Constants.Resource.Strings.Login.DOES_NOT_EXIST, username.getValue()));
               }
             } else {
               throw new RuntimeException("UI is not accessible");
@@ -94,7 +88,7 @@ public class Login extends VerticalLayout {
         });
     login.add(log);
 
-    Button create = new Button("Create Account");
+    Button create = new Button(getTranslation(Constants.Resource.Strings.Login.CREATE));
     create.addClassName(Constants.ClassStyle.Login.FORM);
     create.addClickListener(
         event -> {
