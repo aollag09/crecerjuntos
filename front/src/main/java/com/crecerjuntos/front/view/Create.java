@@ -4,6 +4,7 @@ import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.Section;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -63,6 +64,7 @@ public class Create extends VerticalLayout {
 
     Button log = new Button("Create Account");
     log.addClassName(Constants.ClassStyle.Login.FORM);
+    log.addClickShortcut(Key.ENTER);
     log.addClickListener(
         event -> {
           if (username.isEmpty()) {
