@@ -16,11 +16,11 @@ import com.vaadin.flow.server.VaadinServlet;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
-@PageTitle("Exercices")
+@PageTitle("Crecer Juntos Exercices")
 public class Exercises extends VerticalLayout {
 
   public Exercises() {
-    H2 title = new H2("Exercices");
+    H2 title = new H2(getTranslation(Constants.Resource.Strings.Exercises.TITLE));
     add(title);
     buildExercisesDiv();
   }
@@ -30,7 +30,6 @@ public class Exercises extends VerticalLayout {
   }
 
   private void buildExercise(final Exercise exercise) {
-
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
 
@@ -59,12 +58,16 @@ public class Exercises extends VerticalLayout {
     Div nbLevels = new Div();
     nbLevels.addClassName(Constants.ClassStyle.Exercises.DETAIL);
     nbLevels.add(buildIcon(VaadinIcon.LIST));
-    nbLevels.add(exercise.getNbLevels() + " levels");
+    nbLevels.add(
+        exercise.getNbLevels() + " " + getTranslation(Constants.Resource.Strings.Exercises.LEVELS));
 
     Div time = new Div();
     time.addClassName(Constants.ClassStyle.Exercises.DETAIL);
     time.add(buildIcon(VaadinIcon.TIMER));
-    time.add(exercise.getAverageTime() + " hours");
+    time.add(
+        exercise.getAverageTime()
+            + " "
+            + getTranslation(Constants.Resource.Strings.Exercises.HOURS));
 
     details.add(difficulty, nbLevels, time);
     exerciseHeader.add(details);

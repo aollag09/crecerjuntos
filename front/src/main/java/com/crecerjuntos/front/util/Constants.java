@@ -104,6 +104,13 @@ public class Constants {
         private static final String PREFIX = "dashboard-";
         public static final String TITLE = PREFIX + "title";
       }
+
+      public static class Exercises {
+        private static final String PREXIX = "exercises-";
+        public static final String TITLE = PREXIX + "title";
+        public static final String LEVELS = PREXIX + "levels";
+        public static final String HOURS = PREXIX + "hours";
+      }
     }
   }
 }
