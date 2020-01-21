@@ -41,11 +41,11 @@ public class MainAppLayout extends AppLayout {
   }
 
   private void buildNavBar() {
-    Image image = new Image("resources/img/teresa.png", "teresa");
+    Image image = new Image(Constants.Resource.IMG_TERESA, "teresa");
     image.addClassName(Constants.ClassStyle.Main.LOGO_TERESA);
     this.addToNavbar(image);
-    Span appName = new Span("Crecer Juntos");
-    appName.addClassName("main-layout__span");
+    Span appName = new Span(getTranslation(Constants.Resource.Strings.TITLE));
+    appName.addClassName(Constants.ClassStyle.Main.SPAN);
     this.addToNavbar(appName);
     Tabs menu = buildMenu();
     this.addToNavbar(true, menu);
@@ -62,9 +62,19 @@ public class MainAppLayout extends AppLayout {
   private Tab[] buildTabs() {
     final int nbtabs = 4;
     final List<Tab> tabs = new ArrayList<>(nbtabs);
-    tabs.add(buildTab(VaadinIcon.HOME, "Home", Home.class));
-    tabs.add(buildTab(VaadinIcon.PENCIL, "Exercises", Exercises.class));
-    tabs.add(buildTab(VaadinIcon.CLOCK, "Dashboard", Dashboard.class));
+    tabs.add(
+        buildTab(
+            VaadinIcon.HOME, getTranslation(Constants.Resource.Strings.Main.HOME), Home.class));
+    tabs.add(
+        buildTab(
+            VaadinIcon.PENCIL,
+            getTranslation(Constants.Resource.Strings.Main.EXERCISES),
+            Exercises.class));
+    tabs.add(
+        buildTab(
+            VaadinIcon.CLOCK,
+            getTranslation(Constants.Resource.Strings.Main.DASHBOARD),
+            Dashboard.class));
     final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
     tabs.add(buildLogOut(contextPath));
     return tabs.toArray(new Tab[nbtabs]);
@@ -80,7 +90,7 @@ public class MainAppLayout extends AppLayout {
   private Tab buildLogOut(String contextPath) {
     final Anchor logout = new Anchor();
     logout.add(VaadinIcon.EXIT.create());
-    logout.add("Logout");
+    logout.add(getTranslation(Constants.Resource.Strings.Main.LOGOUT));
     logout.setHref(contextPath + "/" + Constants.Route.LOGOUT);
     return createTab(logout);
   }
@@ -88,7 +98,7 @@ public class MainAppLayout extends AppLayout {
   private Tab createTab(final Component component) {
     Tab tab = new Tab(component);
     tab.addThemeVariants(TabVariant.LUMO_ICON_ON_TOP);
-    tab.addClassName("main-layout__tab");
+    tab.addClassName(Constants.ClassStyle.Main.TAB);
     return tab;
   }
 }

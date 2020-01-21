@@ -1,6 +1,8 @@
 package com.crecerjuntos.front.util;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.router.PageTitle;
+import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
 
 public class Constants {
 
@@ -19,6 +21,8 @@ public class Constants {
       private static final String PREFIX = "main-layout__";
       public static final String LOGO_TERESA = PREFIX + "logo-teresa";
       public static final String TABS = PREFIX + "tabs";
+      public static final String TAB = PREFIX + "tab";
+      public static final String SPAN = PREFIX + "span";
     }
 
     public static class Login {
@@ -71,16 +75,26 @@ public class Constants {
   public static class Resource {
     public static final String IMG_TERESA = "resources/img/teresa.png";
 
-    public class Strings {
-      public class Login {
+    public static class Strings {
+
+      public static final String TITLE = "app-title";
+
+      public static class Login {
         private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
-        public static final String TITLE = PREFIX + "title";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
         public static final String LOGIN = PREFIX + "login";
         public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
+      }
+
+      public static class Main {
+        private static final String PREFIX = "main-";
+        public static final String HOME = PREFIX + "home";
+        public static final String EXERCISES = PREFIX + "exercises";
+        public static final String DASHBOARD = PREFIX + "dashboard";
+        public static final String LOGOUT = PREFIX + "logout";
       }
     }
   }

@@ -42,7 +42,7 @@ public class Login extends VerticalLayout {
     VerticalLayout login = new VerticalLayout();
     login.addClassName(Constants.ClassStyle.Login.LOGIN);
 
-    H2 title = new H2(getTranslation(Constants.Resource.Strings.Login.TITLE));
+    H2 title = new H2(getTranslation(Constants.Resource.Strings.TITLE));
     login.add(title);
 
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
