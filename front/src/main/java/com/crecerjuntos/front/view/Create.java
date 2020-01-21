@@ -5,7 +5,6 @@ import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.Section;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
@@ -42,42 +41,37 @@ public class Create extends VerticalLayout {
     VerticalLayout create = new VerticalLayout();
     create.addClassName(Constants.ClassStyle.Login.LOGIN);
 
-    H2 title = new H2("Crecer Juntos");
+    H2 title = new H2(getTranslation(Constants.Resource.Strings.TITLE));
     create.add(title);
 
-    Text text = new Text("Please enter the following information");
-    create.add(text);
-
-    TextField username = new TextField("Username");
+    TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(username);
 
-    TextField mail = new TextField("Mail");
+    TextField mail = new TextField(getTranslation(Constants.Resource.Strings.Login.MAIL));
     mail.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(mail);
 
-    ComboBox<String> section = new ComboBox<>("Section Name");
+    ComboBox<String> section =
+        new ComboBox<>(getTranslation(Constants.Resource.Strings.Login.SECTION));
     section.setDataProvider(new ListDataProvider<>(Section.list()));
     section.setValue(Section.PRIMARIO.getName());
     section.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(section);
 
-    Button log = new Button("Create Account");
+    Button log = new Button(getTranslation(Constants.Resource.Strings.Login.CREATE));
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickShortcut(Key.ENTER);
     log.addClickListener(
         event -> {
           if (username.isEmpty()) {
-            Notification.show("The username should not be empty");
+            Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_USERNAME));
           } else {
             if (getUI().isPresent()) {
 
               boolean exists = LoginServices.exists(username.getValue());
               if (exists) {
-                Notification.show(
-                    "The username "
-                        + username.getValue()
-                        + " already exists, please pick another one");
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.ALREADY_EXIST, username.getValue()));
               } else {
                 // create & log in current user
                 LoginServices.create(username.getValue(), section.getValue());

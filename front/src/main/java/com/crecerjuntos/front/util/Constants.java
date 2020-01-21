@@ -1,9 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.router.PageTitle;
-import jdk.nashorn.internal.runtime.regexp.joni.ast.StringNode;
-
 public class Constants {
 
   public static class Session {
@@ -84,9 +80,11 @@ public class Constants {
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
+        public static final String MAIL = PREFIX + "mail";
         public static final String LOGIN = PREFIX + "login";
         public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
+        public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
       }
 
       public static class Main {
