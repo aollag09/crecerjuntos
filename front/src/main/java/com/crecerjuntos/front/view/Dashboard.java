@@ -21,7 +21,7 @@ public class Dashboard extends VerticalLayout {
   }
 
   private void initView() {
-    H2 title = new H2("Dashboard");
+    H2 title = new H2(getTranslation(Constants.Resource.Strings.Dashboard.TITLE));
     add(title);
   }
 }
