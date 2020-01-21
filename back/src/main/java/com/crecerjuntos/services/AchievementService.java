@@ -10,7 +10,7 @@ import com.crecerjuntos.model.base.IAuthoringServices;
 
 import java.util.List;
 
-public class AchievementService implements IAchievementAccess, IAuthoringServices {
+public class AchievementService implements IAchievementAccess {
 
   private AchievementRepository achievementRepository;
 
@@ -49,43 +49,4 @@ public class AchievementService implements IAchievementAccess, IAuthoringService
         .subList(0, nbAchievements);
   }
 
-  @Override
-  public void add(Student student) {
-    throw new IllegalArgumentException("Cannot add student with AchievementService");
-  }
-
-  @Override
-  public void remove(Student student) {
-    throw new IllegalArgumentException("Cannot remove student with AchievementService");
-  }
-
-  @Override
-  public void add(Section section) {
-    throw new IllegalArgumentException("Cannot add section with AchievementService");
-  }
-
-  @Override
-  public void remove(Section section) {
-    throw new IllegalArgumentException("Cannot remove section with AchievementService");
-  }
-
-  @Override
-  public void add(Achievement achievement) {
-    achievementRepository.save(achievement);
-  }
-
-  @Override
-  public void remove(Achievement achievement) {
-    achievementRepository.delete(achievement);
-  }
-
-  @Override
-  public void add(Star star) {
-    throw new IllegalArgumentException("Cannot add star with AchievementService");
-  }
-
-  @Override
-  public void remove(Star star) {
-    throw new IllegalArgumentException("Cannot remove star with AchievementService");
-  }
 }

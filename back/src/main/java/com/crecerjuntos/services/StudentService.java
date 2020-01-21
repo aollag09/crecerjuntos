@@ -12,7 +12,7 @@ import com.crecerjuntos.model.base.IStudentAccess;
 
 import java.util.List;
 
-public class StudentService implements IStudentAccess, IAuthoringServices {
+public class StudentService implements IStudentAccess {
 
   private StudentRepository studentRepository;
 
@@ -48,45 +48,5 @@ public class StudentService implements IStudentAccess, IAuthoringServices {
   public Student getStudent(Achievement achievement) {
     // TODO: Remove from this interface ?
     return achievement.getStudent();
-  }
-
-  @Override
-  public void add(Student student) {
-    studentRepository.save(student);
-  }
-
-  @Override
-  public void remove(Student student) {
-    studentRepository.delete(student);
-  }
-
-  @Override
-  public void add(Section section) {
-    throw new IllegalArgumentException("Cannot add section with StudentService");
-  }
-
-  @Override
-  public void remove(Section section) {
-    throw new IllegalArgumentException("Cannot remove section with StudentService");
-  }
-
-  @Override
-  public void add(Achievement achievement) {
-    throw new IllegalArgumentException("Cannot add achievement with StudentService");
-  }
-
-  @Override
-  public void remove(Achievement achievement) {
-    throw new IllegalArgumentException("Cannot remove achievement with StudentService");
-  }
-
-  @Override
-  public void add(Star star) {
-    throw new IllegalArgumentException("Cannot add star with StudentService");
-  }
-
-  @Override
-  public void remove(Star star) {
-    throw new IllegalArgumentException("Cannot remove star with StudentService");
   }
 }
