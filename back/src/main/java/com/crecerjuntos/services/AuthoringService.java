@@ -10,11 +10,14 @@ import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.persistence.EntityManager;
 
 public class AuthoringService implements IAuthoringServices {
+
+    Logger logger = LoggerFactory.getLogger(AuthoringService.class);
 
     private AchievementRepository achievementRepository;
 
@@ -54,11 +57,11 @@ public class AuthoringService implements IAuthoringServices {
 
     @Override
     public void add(Star star) {
-        throw new NotImplementedException();
+        logger.warn("Star was not added : not implemented yet");
     }
 
     @Override
     public void remove(Star star) {
-        throw new NotImplementedException();
+        logger.warn("Star was not removed : not implemented yet");
     }
 }

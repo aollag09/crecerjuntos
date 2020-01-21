@@ -5,6 +5,9 @@ plugins {
 dependencies {
     implementation 'com.google.guava:guava:23.0'
 
+    //Logging
+    implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.2'
+
     implementation group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
 
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
