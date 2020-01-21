@@ -44,7 +44,7 @@ public class Exercises extends VerticalLayout {
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
     gameInfo.addClassName(Constants.ClassStyle.Exercises.GAME_INFO);
-    H3 name = new H3(exercise.getName());
+    H3 name = new H3(getTranslation(exercise.getName()));
     name.addClassName(Constants.ClassStyle.Exercises.NAME);
     exerciseHeader.add(name);
 
@@ -81,7 +81,7 @@ public class Exercises extends VerticalLayout {
 
       Anchor anchor = new Anchor();
       anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
-      anchor.setText(exercise.getLevel(levelId).getName());
+      anchor.setText(getTranslation(exercise.getLevel(levelId).getName()));
       anchor.setHref(
           VaadinServlet.getCurrent().getServletContext().getContextPath()
               + "/"

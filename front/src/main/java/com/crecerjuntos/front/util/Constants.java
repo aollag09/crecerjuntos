@@ -111,6 +111,19 @@ public class Constants {
         public static final String LEVELS = PREXIX + "levels";
         public static final String HOURS = PREXIX + "hours";
       }
+
+      public static class Dactylographie {
+        private static final String PREFIX = "dactylographie-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
+      }
+
+      public static class GoogleSearch {
+        private static final String PREFIX = "google-search-";
+        public static final String TITLE = PREFIX + "title";
+      }
     }
   }
 }

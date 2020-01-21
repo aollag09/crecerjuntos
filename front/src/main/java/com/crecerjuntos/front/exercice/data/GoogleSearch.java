@@ -8,10 +8,15 @@ import com.crecerjuntos.front.util.Difficulty;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoalKeeper extends Exercise {
+public class GoogleSearch extends Exercise {
 
-  public GoalKeeper() {
-    super("GoalKeeper", buildLevels(), Difficulty.Medium, 1, Constants.Route.GOALKEEPER);
+  public GoogleSearch() {
+    super(
+        Constants.Resource.Strings.GoogleSearch.TITLE,
+        buildLevels(),
+        Difficulty.Medium,
+        1,
+        Constants.Route.GOALKEEPER);
   }
 
   private static List<Level> buildLevels() {

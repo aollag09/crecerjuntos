@@ -1,7 +1,7 @@
 package com.crecerjuntos.front.exercice;
 
 import com.crecerjuntos.front.exercice.data.Dactylographie;
-import com.crecerjuntos.front.exercice.data.GoalKeeper;
+import com.crecerjuntos.front.exercice.data.GoogleSearch;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public enum ExerciseEnum {
   DACTYLOGRAPHIE(new Dactylographie()),
-  GOALKEEPER(new GoalKeeper());
+  GOALKEEPER(new GoogleSearch());
 
   private Exercise exercise;
 

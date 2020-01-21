@@ -11,14 +11,14 @@ import java.util.List;
 public class Dactylographie extends Exercise {
 
   public Dactylographie() {
-    super("Dactylographie", buildLevels(), Difficulty.Easy, 2, Constants.Route.DACTYLOGRAPHIE);
+    super(Constants.Resource.Strings.Dactylographie.TITLE, buildLevels(), Difficulty.Easy, 2, Constants.Route.DACTYLOGRAPHIE);
   }
 
   private static List<Level> buildLevels() {
     List<Level> levels = new ArrayList<Level>();
-    levels.add(new Level(1, "Level 1 : Dactylographie Simple Characters"));
-    levels.add(new Level(2, "Level 2 : Dactylographie Numbers Characters"));
-    levels.add(new Level(3, "Level 3 : Dactylographie Words"));
+    levels.add(new Level(1, Constants.Resource.Strings.Dactylographie.LVL1_NAME));
+    levels.add(new Level(2, Constants.Resource.Strings.Dactylographie.LVL2_NAME));
+    levels.add(new Level(3, Constants.Resource.Strings.Dactylographie.LVL3_NAME));
     return levels;
   }
 }
