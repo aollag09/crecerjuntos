@@ -53,6 +53,11 @@ public class LoginServices {
 
   public static void logout() {
     VaadinSession session = UI.getCurrent().getSession();
+    LOGGER.info(
+        "Logout : username : "
+            + session.getAttribute(Constants.Session.USERNAME)
+            + " section : "
+            + session.getAttribute(Constants.Session.SECTION));
     session.setAttribute(Constants.Session.USERNAME, "");
     session.setAttribute(Constants.Session.SECTION, "");
   }

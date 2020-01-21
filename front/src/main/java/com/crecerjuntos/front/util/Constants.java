@@ -51,6 +51,7 @@ public class Constants {
     public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
     public static final String GOALKEEPER = "exercise/goalkeeper";
+    public static final String LOGOUT = "logout";
   }
 
   public static class Title {

@@ -35,11 +35,13 @@ public class DactylographieView extends VerticalLayout {
   private Random random;
   private List<String> words;
   private UI ui;
+  private long startime;
 
   public DactylographieView() {
     add(new H2(Constants.Title.DACTYLOGRAPHIE));
     ui = getUI().isPresent() ? getUI().get() : null;
     exercise = ExerciseEnum.DACTYLOGRAPHIE.get();
+    startime = System.currentTimeMillis();
 
     counter = 0;
     random = new Random(SEED);
@@ -84,5 +86,8 @@ public class DactylographieView extends VerticalLayout {
     model.setText(current);
   }
 
-  private void endGame() {}
+  private void endGame() {
+
+
+  }
 }

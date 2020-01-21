@@ -81,7 +81,7 @@ public class MainAppLayout extends AppLayout {
     final Anchor logout = new Anchor();
     logout.add(VaadinIcon.EXIT.create());
     logout.add("Logout");
-    logout.setHref(contextPath + "/logout");
+    logout.setHref(contextPath + "/" + Constants.Route.LOGOUT);
     return createTab(logout);
   }
 

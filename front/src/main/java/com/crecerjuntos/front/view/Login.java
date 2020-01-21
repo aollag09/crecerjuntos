@@ -17,15 +17,14 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@com.vaadin.flow.router.Route(Constants.Route.LOGIN)
+@Route(Constants.Route.LOGIN)
 @StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
 public class Login extends VerticalLayout {
-
-  public static final Logger LOGGER = LoggerFactory.getLogger(Login.class);
 
   public Login() {
     HorizontalLayout layout = new HorizontalLayout();
