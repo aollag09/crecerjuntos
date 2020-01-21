@@ -40,6 +40,13 @@ public class Constants {
       public static final String ICON = PREFIX + "icon";
       public static final String ANCHOR = PREFIX + "anchor";
     }
+
+    public class Dactylographie {
+      private static final String PREFIX = "dactylographie-layout__";
+      public static final String CONTENT = PREFIX + "content";
+      public static final String MODEL = PREFIX + "model";
+      public static final String TEXT_FIELD = PREFIX + "text-field";
+    }
   }
 
   public static class Route {

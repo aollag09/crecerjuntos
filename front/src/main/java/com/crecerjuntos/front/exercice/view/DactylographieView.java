@@ -5,6 +5,7 @@ import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -47,11 +48,18 @@ public class DactylographieView extends VerticalLayout {
     random = new Random(SEED);
     words = new ArrayList<>(WORD_LVL1);
 
+    VerticalLayout content = new VerticalLayout();
+    content.addClassName(Constants.ClassStyle.Dactylographie.CONTENT);
+
+    Div modelDiv = new Div();
+    modelDiv.addClassName(Constants.ClassStyle.Dactylographie.MODEL);
     model = new Text("");
-    add(model);
+    modelDiv.add(model);
+    content.add(modelDiv);
 
     textField = new TextField();
-    add(textField);
+    textField.addClassName(Constants.ClassStyle.Dactylographie.TEXT_FIELD);
+    content.add(textField);
     textField.setValueChangeMode(ValueChangeMode.EAGER);
     textField.addValueChangeListener(
         event -> {
@@ -68,6 +76,7 @@ public class DactylographieView extends VerticalLayout {
           }
         });
 
+    add(content);
     next();
   }
 
@@ -86,8 +95,9 @@ public class DactylographieView extends VerticalLayout {
     model.setText(current);
   }
 
-  private void endGame() {
+  private void endGame() {}
 
-
+  private int computeScore() {
+    return -1;
   }
 }

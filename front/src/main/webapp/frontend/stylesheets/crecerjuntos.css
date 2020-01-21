@@ -132,4 +132,21 @@ html {
     font-size: large;
 }
 
+/** Dactylographie layout*/
+.dactylographie-layout__content{
+}
 
+.dactylographie-layout__model{
+    font-size: xx-large;
+    margin: auto;
+    border-radius: var(--lumo-border-radius);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px 50px;
+}
+
+.dactylographie-layout__text-field{
+    margin: auto;
+    margin-top: 30px;
+    font-size: larger;
+    --lumo-text-field-size: var(--lumo-size-xl);
+}
