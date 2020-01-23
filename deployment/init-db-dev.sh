@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-if [[ -v "${GITHUB_WORKSPACE}" ]]; then
-  SCRIPT_PATH="${GITHUB_WORKSPACE}/database/init.sql"
+if [[ -z "${GITHUB_WORKSPACE}" ]]; then
+    SCRIPT_PATH="../database/init.sql"
 else
-  SCRIPT_PATH="../database/init.sql"
+  SCRIPT_PATH="${GITHUB_WORKSPACE}/database/init.sql"
 fi
 
 # Launch database container
