@@ -75,25 +75,42 @@ public class Exercises extends VerticalLayout {
     VerticalLayout levels = new VerticalLayout();
     levels.addClassName(Constants.ClassStyle.Exercises.LEVELS);
     for (int levelId = 0; levelId < exercise.getNbLevels(); levelId++) {
-      HorizontalLayout level = new HorizontalLayout();
-      level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
-      level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
-
-      Anchor anchor = new Anchor();
-      anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
-      anchor.setText(getTranslation(exercise.getLevel(levelId).getName()));
-      anchor.setHref(
-          VaadinServlet.getCurrent().getServletContext().getContextPath()
-              + "/"
-              + exercise.getUri());
-      level.add(anchor);
-
-      levels.add(level);
+      levels.add(buildLevel(exercise, levelId));
     }
 
     exerciseCard.add(exerciseHeader);
     exerciseCard.add(levels);
     add(exerciseCard);
+  }
+
+  private HorizontalLayout buildLevel(final Exercise exercise, final int levelId) {
+    HorizontalLayout level = new HorizontalLayout();
+    level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
+    level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
+
+    Anchor anchor = new Anchor();
+    anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
+    anchor.setText(getTranslation(exercise.getLevel(levelId).getName()));
+    anchor.setHref(buildLevelURI(exercise, levelId));
+    level.add(anchor);
+    return level;
+  }
+
+  private String buildLevelURI(final Exercise exercise, final int levelId) {
+    StringBuilder uri = new StringBuilder();
+
+    // build root
+    uri.append(VaadinServlet.getCurrent().getServletContext().getContextPath());
+
+    // append exercise
+    uri.append("/");
+    uri.append(exercise.getUri());
+
+    // append level
+    uri.append("/");
+    uri.append(levelId);
+
+    return uri.toString();
   }
 
   public Component buildIcon(final VaadinIcon vIcon) {

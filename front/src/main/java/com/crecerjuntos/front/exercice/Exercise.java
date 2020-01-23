@@ -15,7 +15,7 @@ public abstract class Exercise {
   /** Levels */
   protected List<Level> levels;
 
-  /** Exercice difficulty */
+  /** Exercise difficulty */
   protected Difficulty difficulty;
 
   /** Average time to complete exercise in hour */

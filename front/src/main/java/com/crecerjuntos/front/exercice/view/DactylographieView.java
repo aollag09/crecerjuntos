@@ -1,10 +1,8 @@
 package com.crecerjuntos.front.exercice.view;
 
-import com.crecerjuntos.front.exercice.Exercise;
 import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -19,34 +17,32 @@ import java.util.Random;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.DACTYLOGRAPHIE, layout = ExerciseLayout.class)
 @PageTitle(Constants.Title.DACTYLOGRAPHIE)
-public class DactylographieView extends VerticalLayout {
+public class DactylographieView extends AbstractExerciseView {
 
   private static final int NB_ROUNDS = 20;
-  private static final long SEED = System.nanoTime();
-  private static final List<String> WORD_LVL1 =
-      Arrays.asList(
-          "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
-          "s", "t", "u", "v", "w", "x", "y", "z");
 
-  private Exercise exercise;
+  private static final List<List<String>> WORDS =
+      Arrays.asList(
+          Arrays.asList(
+              "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+              "r", "s", "t", "u", "v", "w", "x", "y", "z"),
+          Arrays.asList(
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+              "17", "18", "19", "20"));
+
   private Text model;
   private TextField textField;
   private int counter, mistake, success;
   private String current;
-  private Random random;
   private List<String> words;
-  private UI ui;
-  private long startime;
 
   public DactylographieView() {
+    super(ExerciseEnum.DACTYLOGRAPHIE.get());
     add(new H2(Constants.Title.DACTYLOGRAPHIE));
-    ui = getUI().isPresent() ? getUI().get() : null;
-    exercise = ExerciseEnum.DACTYLOGRAPHIE.get();
-    startime = System.currentTimeMillis();
 
     counter = 0;
     random = new Random(SEED);
-    words = new ArrayList<>(WORD_LVL1);
+    words = new ArrayList<>(WORDS.get(level));
 
     VerticalLayout content = new VerticalLayout();
     content.addClassName(Constants.ClassStyle.Dactylographie.CONTENT);
@@ -95,7 +91,9 @@ public class DactylographieView extends VerticalLayout {
     model.setText(current);
   }
 
-  private void endGame() {}
+  private void endGame() {
+    int score = computeScore();
+  }
 
   private int computeScore() {
     return -1;

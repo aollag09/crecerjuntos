@@ -62,6 +62,10 @@ public class Constants {
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
     public static final String GOALKEEPER = "exercise/goalkeeper";
     public static final String LOGOUT = "logout";
+
+    public static class QueryParameters {
+      public static final String LEVEL = "level";
+    }
   }
 
   public static class Title {

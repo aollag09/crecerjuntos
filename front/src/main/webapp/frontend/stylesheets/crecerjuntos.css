@@ -45,8 +45,8 @@ html {
 
 .login-layout__teresa{
     display: block;
-    max-width: 540px;
-    max-height: 540px;
+    width: 540px;
+    height: 540px;
     width: auto;
     height: auto;
 }
