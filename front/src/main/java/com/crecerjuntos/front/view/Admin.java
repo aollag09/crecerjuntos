@@ -18,7 +18,7 @@ import java.util.List;
  * from the class name, if not given
  */
 @com.vaadin.flow.router.Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
-@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
+@StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {
 

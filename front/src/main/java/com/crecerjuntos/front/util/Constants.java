@@ -5,10 +5,11 @@ public class Constants {
   public static class Session {
     public static final String USERNAME = "username";
     public static final String SECTION = "section";
+    public static final String MAIL = "mail";
   }
 
   public static class StyleSheet {
-    public static final String CERCER_JUNTOS = "stylesheets/crecerjuntos.css";
+    public static final String CRECER_JUNTOS = "stylesheets/crecerjuntos.css";
   }
 
   public static class ClassStyle {
@@ -89,6 +90,7 @@ public class Constants {
         public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
         public static final String WRONG_MAIL = PREFIX + "error-wrong-email";
         public static final String NOT_SAME_PASSWORDS = PREFIX + "error-not-same-passwords";
+        public static final String WRONG_PASSWORD = PREFIX + "error-wrong-password";
       }
 
       public static class Main {

@@ -2,25 +2,24 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
-import com.crecerjuntos.model.Section;
+import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.data.provider.ListDataProvider;
+import com.vaadin.flow.component.textfield.EmailField;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 @Route(Constants.Route.LOGIN)
-@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
+@StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
 public class Login extends VerticalLayout {
 
@@ -45,41 +44,46 @@ public class Login extends VerticalLayout {
     H2 title = new H2(getTranslation(Constants.Resource.Strings.TITLE));
     login.add(title);
 
-    TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.MAIL));
-    username.addClassName(Constants.ClassStyle.Login.FORM);
-    login.add(username);
+    EmailField email = new EmailField(getTranslation(Constants.Resource.Strings.Login.MAIL));
+    email.addClassName(Constants.ClassStyle.Login.FORM);
+    email.setClearButtonVisible(true);
+    email.setErrorMessage(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
+    login.add(email);
 
-    ComboBox<String> section =
-        new ComboBox<>(getTranslation(Constants.Resource.Strings.Login.SECTION));
-    section.setDataProvider(new ListDataProvider<>(Section.list()));
-    section.setValue(Section.PRIMARIO.getName());
-    section.addClassName(Constants.ClassStyle.Login.FORM);
-    login.add(section);
+    PasswordField password = new PasswordField();
+    password.addClassName(Constants.ClassStyle.Login.FORM);
 
     Button log = new Button(getTranslation(Constants.Resource.Strings.Login.LOGIN));
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickShortcut(Key.ENTER);
     log.addClickListener(
         event -> {
-          if (username.isEmpty()) {
+          if (email.isEmpty()) {
             Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_USERNAME));
           } else {
             if (getUI().isPresent()) {
 
               // Check user is created
-              boolean exists = LoginServices.exists(username.getValue());
+              Student student = LoginServices.get(email.getValue());
+              boolean exists = student != null;
               if (exists) {
 
-                // log in current user
-                LoginServices.login(username.getValue(), section.getValue());
+                if (student.getPassword().equals(password.getValue())) {
+                  // log in current user
+                  LoginServices.login(student);
 
-                // Go to user dashboard
-                UI.getCurrent().navigate(Home.class);
-
+                  // Go to user dashboard
+                  UI.getCurrent().navigate(Home.class);
+                } else {
+                  Notification.show(
+                      getTranslation(Constants.Resource.Strings.Login.WRONG_PASSWORD));
+                  password.setInvalid(true);
+                  password.setClearButtonVisible(true);
+                }
               } else {
                 Notification.show(
                     getTranslation(
-                        Constants.Resource.Strings.Login.DOES_NOT_EXIST, username.getValue()));
+                        Constants.Resource.Strings.Login.DOES_NOT_EXIST, email.getValue()));
               }
             } else {
               throw new RuntimeException("UI is not accessible");

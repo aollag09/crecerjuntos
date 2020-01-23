@@ -3,6 +3,7 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.model.Section;
+import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
@@ -21,7 +22,7 @@ import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
 
 @com.vaadin.flow.router.Route(Constants.Route.CREATE)
-@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
+@StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
 public class Create extends VerticalLayout {
 
@@ -52,21 +53,24 @@ public class Create extends VerticalLayout {
     mail.setErrorMessage(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
     create.add(mail);
 
-    PasswordField password = new PasswordField(getTranslation(Constants.Resource.Strings.Login.PASSWORD));
+    PasswordField password =
+        new PasswordField(getTranslation(Constants.Resource.Strings.Login.PASSWORD));
     password.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(password);
 
-    PasswordField confirm = new PasswordField(getTranslation(Constants.Resource.Strings.Login.CONFIRM_PASSWORD));
+    PasswordField confirm =
+        new PasswordField(getTranslation(Constants.Resource.Strings.Login.CONFIRM_PASSWORD));
     confirm.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(confirm);
-    confirm.addValueChangeListener(event -> {
-      if( confirm.getValue().equals(password.getValue()) ){
-        confirm.setInvalid(false);
-      } else {
-        confirm.setInvalid(true);
-        Notification.show(getTranslation(Constants.Resource.Strings.Login.NOT_SAME_PASSWORDS));
-      }
-    });
+    confirm.addValueChangeListener(
+        event -> {
+          if (confirm.getValue().equals(password.getValue())) {
+            confirm.setInvalid(false);
+          } else {
+            confirm.setInvalid(true);
+            Notification.show(getTranslation(Constants.Resource.Strings.Login.NOT_SAME_PASSWORDS));
+          }
+        });
 
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
@@ -96,8 +100,13 @@ public class Create extends VerticalLayout {
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               } else {
                 // create & log in current user
-                LoginServices.create(mail.getValue(), username.getValue(), password.getValue(), section.getValue());
-                LoginServices.login(username.getValue(), section.getValue());
+                Student student =
+                    LoginServices.create(
+                        mail.getValue(),
+                        username.getValue(),
+                        password.getValue(),
+                        section.getValue());
+                LoginServices.login(student);
                 // Go to user dashboard
                 UI.getCurrent().navigate(Home.class);
               }

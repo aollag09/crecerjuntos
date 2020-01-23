@@ -18,7 +18,8 @@ public class LoginServices {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(LoginServices.class);
 
-  public static void create(String mail, final String username, final String password, final String section) {
+  public static Student create(
+      String mail, final String username, final String password, final String section) {
     // Create student
     Random random = new Random();
     long id = random.nextLong();
@@ -28,20 +29,18 @@ public class LoginServices {
     LOGGER.info("Create Student User {}", student);
     IAuthoringServices authoringServices = new AuthoringService();
     authoringServices.add(student);
-  }
 
-  public static void login(final String username, final String section) {
-    VaadinSession session = UI.getCurrent().getSession();
-
-    // Store user name in the current session
-    LOGGER.info("Login : username : " + username + " section : " + section);
-    session.setAttribute(Constants.Session.USERNAME, username);
-    session.setAttribute(Constants.Session.SECTION, section);
+    return student;
   }
 
   public static boolean exists(final String mail) {
     IStudentAccess access = new StudentService();
     return access.byMail(mail) != null;
+  }
+
+  public static Student get(final String mail) {
+    IStudentAccess access = new StudentService();
+    return access.byMail(mail);
   }
 
   public static String getUserName() {
@@ -61,6 +60,20 @@ public class LoginServices {
             + " section : "
             + session.getAttribute(Constants.Session.SECTION));
     session.setAttribute(Constants.Session.USERNAME, "");
+    session.setAttribute(Constants.Session.MAIL, "");
     session.setAttribute(Constants.Session.SECTION, "");
+  }
+
+  public static void login(Student student) {
+    VaadinSession session = UI.getCurrent().getSession();
+    String username = student.getName();
+    String mail = student.getMail();
+    String section = student.getSectionName();
+
+    // Store user name in the current session
+    LOGGER.info("Login : username : '{}', mail : '{}', section : '{}'", username, mail, section);
+    session.setAttribute(Constants.Session.USERNAME, username);
+    session.setAttribute(Constants.Session.MAIL, mail);
+    session.setAttribute(Constants.Session.SECTION, section);
   }
 }

@@ -29,7 +29,6 @@ public class Student {
   @Column(nullable = false)
   private final String password;
 
-
   /** Id of the associated section */
   @Enumerated(EnumType.STRING)
   private final Section section;
@@ -38,7 +37,12 @@ public class Student {
     this(0L, DEFAULT_NAME, Section.DEFAULT);
   }
 
-  public Student(final Long id, final String name, final String mail, final String password, final Section section) {
+  public Student(
+      final Long id,
+      final String name,
+      final String mail,
+      final String password,
+      final Section section) {
     this.id = id;
     this.name = name;
     this.mail = mail;
@@ -101,6 +105,10 @@ public class Student {
 
   public String getMail() {
     return mail;
+  }
+
+  public String getPassword() {
+    return password;
   }
 
   @Override

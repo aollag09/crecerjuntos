@@ -12,7 +12,7 @@ import com.vaadin.flow.router.PageTitle;
  * from the class name, if not given
  */
 @com.vaadin.flow.router.Route(value = Constants.Route.DASHBOARD, layout = MainAppLayout.class)
-@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
+@StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle("Crecer Juntos Dashboard")
 public class Dashboard extends VerticalLayout {
 

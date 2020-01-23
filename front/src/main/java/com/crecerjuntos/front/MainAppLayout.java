@@ -33,7 +33,7 @@ import java.util.List;
     startPath = "login",
     backgroundColor = "#227aef",
     themeColor = "#227aef")
-@StyleSheet(Constants.StyleSheet.CERCER_JUNTOS)
+@StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 public class MainAppLayout extends AppLayout {
 
   public MainAppLayout() {
