@@ -9,6 +9,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
+      - name: Startup database
+        run: ./deployment/init-db-dev.sh
       - name: Enable gradlew execution
         run: chmod +x gradlew
       - name: Build project
