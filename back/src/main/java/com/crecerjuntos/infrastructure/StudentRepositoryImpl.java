@@ -25,6 +25,16 @@ public class StudentRepositoryImpl implements StudentRepository {
   }
 
   @Override
+  public Student findByMail(String mail) {
+    TypedQuery<Student> q =
+        em.createQuery("SELECT s FROM Student s WHERE mail = :mail", Student.class);
+    q.setParameter("mail", mail);
+    List<Student> potentialStudents = q.getResultList();
+    if (potentialStudents.size() == 1) return potentialStudents.get(0);
+    else return null;
+  }
+
+  @Override
   public List<Student> findStudentsBySection(String sectionName) {
     TypedQuery<Student> q =
         em.createQuery("SELECT s FROM Student s WHERE section = :sectionName", Student.class);

@@ -32,4 +32,13 @@ public enum Section {
     List<Section> list = Arrays.asList(Section.values());
     return list.stream().map(section -> section.getName()).collect(Collectors.toList());
   }
+
+  public static Section fromString(String section) {
+    for (Section s : Section.values()) {
+      if (s.name.equalsIgnoreCase(section)) {
+        return s;
+      }
+    }
+    return null;
+  }
 }

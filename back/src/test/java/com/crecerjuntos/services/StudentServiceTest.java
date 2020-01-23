@@ -2,7 +2,6 @@ package com.crecerjuntos.services;
 
 import com.crecerjuntos.config.JpaEntityManagerFactory;
 import com.crecerjuntos.infrastructure.StudentRepository;
-import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import org.junit.Before;

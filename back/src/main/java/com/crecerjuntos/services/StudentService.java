@@ -30,6 +30,11 @@ public class StudentService implements IStudentAccess {
   }
 
   @Override
+  public Student byMail(String mail) {
+    return studentRepository.findByMail(mail);
+  }
+
+  @Override
   public Student byId(Long id) {
     return studentRepository.findById(id);
   }

@@ -44,13 +44,13 @@ public class Create extends VerticalLayout {
     H2 title = new H2(getTranslation(Constants.Resource.Strings.TITLE));
     create.add(title);
 
-    TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
-    username.addClassName(Constants.ClassStyle.Login.FORM);
-    create.add(username);
-
     TextField mail = new TextField(getTranslation(Constants.Resource.Strings.Login.MAIL));
     mail.addClassName(Constants.ClassStyle.Login.FORM);
     create.add(mail);
+
+    TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
+    username.addClassName(Constants.ClassStyle.Login.FORM);
+    create.add(username);
 
     ComboBox<String> section =
         new ComboBox<>(getTranslation(Constants.Resource.Strings.Login.SECTION));
@@ -69,12 +69,14 @@ public class Create extends VerticalLayout {
           } else {
             if (getUI().isPresent()) {
 
-              boolean exists = LoginServices.exists(username.getValue());
+              boolean exists = LoginServices.exists(mail.getValue());
               if (exists) {
-                Notification.show(getTranslation(Constants.Resource.Strings.Login.ALREADY_EXIST, username.getValue()));
+                Notification.show(
+                    getTranslation(
+                        Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               } else {
                 // create & log in current user
-                LoginServices.create(username.getValue(), section.getValue());
+                LoginServices.create(mail.getValue(), username.getValue(), section.getValue());
                 LoginServices.login(username.getValue(), section.getValue());
                 // Go to user dashboard
                 UI.getCurrent().navigate(Home.class);

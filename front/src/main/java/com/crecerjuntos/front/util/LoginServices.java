@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.util;
 
+import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
@@ -17,11 +18,11 @@ public class LoginServices {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(LoginServices.class);
 
-  public static void create(final String username, final String section) {
+  public static void create(String mail, final String username, final String section) {
     // Create student
     Random random = new Random();
     long id = random.nextLong();
-    Student student = new Student(id, username);
+    Student student = new Student(id, username, mail, Section.fromString(section));
 
     // Register new student in database
     LOGGER.info("Create Student User {}", student);
@@ -38,9 +39,9 @@ public class LoginServices {
     session.setAttribute(Constants.Session.SECTION, section);
   }
 
-  public static boolean exists(final String username) {
+  public static boolean exists(final String mail) {
     IStudentAccess access = new StudentService();
-    return access.byName(username) != null;
+    return access.byMail(mail) != null;
   }
 
   public static String getUserName() {

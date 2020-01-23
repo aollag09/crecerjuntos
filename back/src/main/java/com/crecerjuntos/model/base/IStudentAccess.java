@@ -10,6 +10,8 @@ public interface IStudentAccess {
 
   Student byName(final String name);
 
+  Student byMail(final String mail);
+
   Student byId(final Long id);
 
   List<Student> search(final String name);

@@ -8,6 +8,8 @@ public interface StudentRepository {
 
   Student findByName(final String name);
 
+  Student findByMail(final String mail);
+
   List<Student> findStudentsBySection(final String sectionNName);
 
   List<Student> findByPartialName(final String s);
@@ -17,4 +19,6 @@ public interface StudentRepository {
   Student save(Student student);
 
   void delete(Student student);
+
+
 }
