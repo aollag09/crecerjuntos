@@ -18,11 +18,11 @@ public class LoginServices {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(LoginServices.class);
 
-  public static void create(String mail, final String username, final String section) {
+  public static void create(String mail, final String username, final String password, final String section) {
     // Create student
     Random random = new Random();
     long id = random.nextLong();
-    Student student = new Student(id, username, mail, Section.fromString(section));
+    Student student = new Student(id, username, mail, password, Section.fromString(section));
 
     // Register new student in database
     LOGGER.info("Create Student User {}", student);

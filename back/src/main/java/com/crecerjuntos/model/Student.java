@@ -18,12 +18,17 @@ public class Student {
   private final Long id;
 
   /** Public first name */
-  @Column(unique = true, nullable = false)
+  @Column(nullable = false)
   private final String name;
 
   /** Email address */
-  @Column(unique = true, nullable = true)
+  @Column(unique = true, nullable = false)
   private final String mail;
+
+  /** Password */
+  @Column(nullable = false)
+  private final String password;
+
 
   /** Id of the associated section */
   @Enumerated(EnumType.STRING)
@@ -33,10 +38,11 @@ public class Student {
     this(0L, DEFAULT_NAME, Section.DEFAULT);
   }
 
-  public Student(final Long id, final String name, final String mail, final Section section) {
+  public Student(final Long id, final String name, final String mail, final String password, final Section section) {
     this.id = id;
     this.name = name;
     this.mail = mail;
+    this.password = password;
     this.section = section;
   }
 
@@ -44,6 +50,7 @@ public class Student {
     this.id = id;
     this.name = name;
     this.mail = DEFAULT_MAIL;
+    this.password = null;
     this.section = section;
   }
 
@@ -51,6 +58,7 @@ public class Student {
     this.id = id;
     this.name = name;
     this.mail = DEFAULT_MAIL;
+    this.password = null;
     this.section = Section.DEFAULT;
   }
 
@@ -58,6 +66,7 @@ public class Student {
     this.id = id;
     this.name = DEFAULT_NAME;
     this.mail = DEFAULT_MAIL;
+    this.password = null;
     this.section = Section.DEFAULT;
   }
 

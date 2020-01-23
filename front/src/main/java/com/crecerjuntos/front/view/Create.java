@@ -14,6 +14,8 @@ import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.EmailField;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
@@ -44,9 +46,27 @@ public class Create extends VerticalLayout {
     H2 title = new H2(getTranslation(Constants.Resource.Strings.TITLE));
     create.add(title);
 
-    TextField mail = new TextField(getTranslation(Constants.Resource.Strings.Login.MAIL));
+    EmailField mail = new EmailField(getTranslation(Constants.Resource.Strings.Login.MAIL));
     mail.addClassName(Constants.ClassStyle.Login.FORM);
+    mail.setClearButtonVisible(true);
+    mail.setErrorMessage(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
     create.add(mail);
+
+    PasswordField password = new PasswordField(getTranslation(Constants.Resource.Strings.Login.PASSWORD));
+    password.addClassName(Constants.ClassStyle.Login.FORM);
+    create.add(password);
+
+    PasswordField confirm = new PasswordField(getTranslation(Constants.Resource.Strings.Login.CONFIRM_PASSWORD));
+    confirm.addClassName(Constants.ClassStyle.Login.FORM);
+    create.add(confirm);
+    confirm.addValueChangeListener(event -> {
+      if( confirm.getValue().equals(password.getValue()) ){
+        confirm.setInvalid(false);
+      } else {
+        confirm.setInvalid(true);
+      }
+    });
+
 
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
@@ -76,7 +96,7 @@ public class Create extends VerticalLayout {
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               } else {
                 // create & log in current user
-                LoginServices.create(mail.getValue(), username.getValue(), section.getValue());
+                LoginServices.create(mail.getValue(), username.getValue(), password.getValue(), section.getValue());
                 LoginServices.login(username.getValue(), section.getValue());
                 // Go to user dashboard
                 UI.getCurrent().navigate(Home.class);

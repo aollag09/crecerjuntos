@@ -81,10 +81,13 @@ public class Constants {
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
         public static final String MAIL = PREFIX + "mail";
+        public static final String PASSWORD = PREFIX + "password";
+        public static final String CONFIRM_PASSWORD = PREFIX + "confirm-password";
         public static final String LOGIN = PREFIX + "login";
         public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
         public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
+        public static final String WRONG_MAIL = PREFIX + "error-wrong-email";
       }
 
       public static class Main {
