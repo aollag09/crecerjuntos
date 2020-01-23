@@ -88,6 +88,7 @@ public class Constants {
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
         public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
         public static final String WRONG_MAIL = PREFIX + "error-wrong-email";
+        public static final String NOT_SAME_PASSWORDS = PREFIX + "error-not-same-passwords";
       }
 
       public static class Main {

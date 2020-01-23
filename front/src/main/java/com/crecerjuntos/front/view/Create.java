@@ -64,9 +64,9 @@ public class Create extends VerticalLayout {
         confirm.setInvalid(false);
       } else {
         confirm.setInvalid(true);
+        Notification.show(getTranslation(Constants.Resource.Strings.Login.NOT_SAME_PASSWORDS));
       }
     });
-
 
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
