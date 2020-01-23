@@ -10,14 +10,20 @@ public class Student {
 
   public static final String DEFAULT_NAME = "Anonymous";
 
+  public static final String DEFAULT_MAIL = null;
+
   /** Private generated id */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private final Long id;
 
-  /** Public unique name */
+  /** Public first name */
   @Column(unique = true, nullable = false)
   private final String name;
+
+  /** Email address */
+  @Column(unique = true, nullable = true)
+  private final String mail;
 
   /** Id of the associated section */
   @Enumerated(EnumType.STRING)
@@ -27,21 +33,31 @@ public class Student {
     this(0L, DEFAULT_NAME, Section.DEFAULT);
   }
 
+  public Student(final Long id, final String name, final String mail, final Section section) {
+    this.id = id;
+    this.name = name;
+    this.mail = mail;
+    this.section = section;
+  }
+
   public Student(final Long id, final String name, final Section section) {
     this.id = id;
     this.name = name;
+    this.mail = DEFAULT_MAIL;
     this.section = section;
   }
 
   public Student(final Long id, final String name) {
     this.id = id;
     this.name = name;
+    this.mail = DEFAULT_MAIL;
     this.section = Section.DEFAULT;
   }
 
   public Student(final Long id) {
     this.id = id;
     this.name = DEFAULT_NAME;
+    this.mail = DEFAULT_MAIL;
     this.section = Section.DEFAULT;
   }
 
@@ -74,18 +90,23 @@ public class Student {
     return section.getName();
   }
 
+  public String getMail() {
+    return mail;
+  }
+
   @Override
   public String toString() {
     return "Student{"
-        + "id='"
+        + "id="
         + id
-        + '\''
         + ", name='"
         + name
         + '\''
-        + ", section='"
-        + section
+        + ", mail='"
+        + mail
         + '\''
+        + ", section="
+        + section
         + '}';
   }
 }
