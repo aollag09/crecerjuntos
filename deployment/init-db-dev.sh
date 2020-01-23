@@ -1,4 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+if [[ -v "${GITHUB_WORKSPACE}" ]]; then
+  SCRIPT_PATH="${GITHUB_WORKSPACE}/database/init.sql"
+else
+  SCRIPT_PATH="../database/init.sql"
+fi
 
 # Launch database container
 if lsof -Pi :5432 -sTCP:LISTEN -t >/dev/null ; then
@@ -14,4 +20,5 @@ else
 fi
 
 # Check database was created and if not, create it
-docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec crecer_juntos psql -U postgres -f ../database/init.sql
+echo "Applying initialization script of file ${SCRIPT_PATH}"
+docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec crecer_juntos psql -U postgres -f "${SCRIPT_PATH}"
