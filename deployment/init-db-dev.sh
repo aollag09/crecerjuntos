@@ -14,4 +14,4 @@ else
 fi
 
 # Check database was created and if not, create it
-docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec -it crecer_juntos psql -U postgres -f ../database/init.sql
+docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec crecer_juntos psql -U postgres -f ../database/init.sql
