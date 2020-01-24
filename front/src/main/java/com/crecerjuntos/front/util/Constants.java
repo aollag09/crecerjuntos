@@ -61,7 +61,10 @@ public class Constants {
     public static final String LOGIN = "";
     public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
-    public static final String GOALKEEPER = "exercise/goalkeeper";
+    public static final String GOOGLE_SEARCH = "exercise/google-search";
+    public static final String WORD = "exercise/word";
+    public static final String EXCEL = "exercise/excel";
+    public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
 
     public static class QueryParameters {
@@ -125,6 +128,34 @@ public class Constants {
 
       public static class Dactylographie {
         private static final String PREFIX = "dactylographie-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+      }
+
+      public static class Word {
+        private static final String PREFIX = "word-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String LVL4_NAME = PREFIX + "level4-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+      }
+
+    public static class Excel {
+        private static final String PREFIX = "excel-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+      }
+
+    public static class PowerPoint {
+        private static final String PREFIX = "power-point-";
         public static final String TITLE = PREFIX + "title";
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";

@@ -8,19 +8,20 @@ import com.crecerjuntos.front.util.Difficulty;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GoogleSearch extends Exercise {
+public class Excel extends Exercise {
 
-  public GoogleSearch() {
+  public Excel() {
     super(
-        Constants.Resource.Strings.GoogleSearch.TITLE,
+        Constants.Resource.Strings.Excel.TITLE,
         buildLevels(),
-        Difficulty.Medium,
-        1,
-        Constants.Route.GOOGLE_SEARCH);
+        Difficulty.Easy,
+        2,
+        Constants.Route.EXCEL);
   }
 
   private static List<Level> buildLevels() {
     List<Level> levels = new ArrayList<Level>();
+    levels.add(new Level(1, Constants.Resource.Strings.Excel.LVL1_NAME));
     return levels;
   }
 }
