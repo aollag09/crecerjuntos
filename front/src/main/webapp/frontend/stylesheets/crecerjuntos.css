@@ -44,11 +44,8 @@ html {
 }
 
 .login-layout__teresa{
-    display: block;
-    width: 540px;
-    height: 540px;
     width: auto;
-    height: auto;
+    height: 500px;
 }
 
 .login-layout__login{
