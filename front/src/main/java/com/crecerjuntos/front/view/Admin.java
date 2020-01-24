@@ -34,8 +34,13 @@ public class Admin extends VerticalLayout {
 
   private Grid<Student> buildStudents() {
     Grid<Student> grid = new Grid<>();
+    grid.addColumn(Student::getMail).setHeader("Mail");
     grid.addColumn(Student::getName).setHeader("Name");
     grid.addColumn(Student::getSectionName).setHeader("Section");
+
+    grid.setDetailsVisibleOnClick(true);
+    grid.setColumnReorderingAllowed(true);
+
     List<Student> studentList = studentAccess.search("");
     grid.setItems(studentList);
     return grid;
