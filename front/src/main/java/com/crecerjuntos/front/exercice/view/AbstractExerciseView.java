@@ -14,19 +14,19 @@ public abstract class AbstractExerciseView extends VerticalLayout
   protected static final long SEED = System.nanoTime();
 
   /** Randomness */
-  protected Random random;
+  protected final Random random;
 
   /** Associated exercise data */
-  protected Exercise exercise;
+  protected final Exercise exercise;
 
   /** Time when the user start the current exercise */
-  protected long startTime;
+  protected final long startTime;
 
   /** The selected level of the exercice */
   protected int level;
 
   /** Identifier of the current user session */
-  protected String session;
+  protected final String session;
 
   protected AbstractExerciseView(final Exercise exercise) {
     this.random = new Random(SEED);

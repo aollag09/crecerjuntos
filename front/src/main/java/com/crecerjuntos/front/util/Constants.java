@@ -49,6 +49,7 @@ public class Constants {
       public static final String CONTENT = PREFIX + "content";
       public static final String MODEL = PREFIX + "model";
       public static final String TEXT_FIELD = PREFIX + "text-field";
+      public static final String INSTRUCTIONS = PREFIX + "instructions";
     }
   }
 
@@ -128,6 +129,7 @@ public class Constants {
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 
       public static class GoogleSearch {

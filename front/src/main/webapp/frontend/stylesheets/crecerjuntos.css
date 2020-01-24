@@ -147,3 +147,10 @@ html {
     font-size: larger;
     --lumo-text-field-size: var(--lumo-size-xl);
 }
+
+.dactylographie-layout__instructions{
+    margin: auto;
+    font-size: x-large;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}

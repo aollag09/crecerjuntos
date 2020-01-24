@@ -38,10 +38,16 @@ public class DactylographieView extends AbstractExerciseView {
 
   public DactylographieView() {
     super(ExerciseEnum.DACTYLOGRAPHIE.get());
+
     add(new H2(Constants.Title.DACTYLOGRAPHIE));
 
+    Div instructionDiv = new Div();
+    instructionDiv.addClassName(Constants.ClassStyle.Dactylographie.INSTRUCTIONS);
+    Text instruction = new Text(getTranslation(Constants.Resource.Strings.Dactylographie.INSTRUCTIONS));
+    instructionDiv.add(instruction);
+    add(instructionDiv);
+
     counter = 0;
-    random = new Random(SEED);
     words = new ArrayList<>(WORDS.get(level));
 
     VerticalLayout content = new VerticalLayout();
@@ -57,14 +63,17 @@ public class DactylographieView extends AbstractExerciseView {
     textField.addClassName(Constants.ClassStyle.Dactylographie.TEXT_FIELD);
     content.add(textField);
     textField.setValueChangeMode(ValueChangeMode.EAGER);
+    textField.setAutoselect(true);
+
     textField.addValueChangeListener(
         event -> {
           String value = event.getValue();
           String old = event.getOldValue();
           if (!current.startsWith(value)) {
-            textField.setValue(old);
+            textField.setInvalid(true);
             mistake++;
           } else {
+            textField.setInvalid(false);
             if (current.equals(value)) {
               success++;
               next();
