@@ -1,6 +1,13 @@
 package com.crecerjuntos.front.exercice.view;
 
 import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.util.Constants;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -13,14 +20,23 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
   protected static final long SEED = System.nanoTime();
 
+  protected enum State {
+    START,
+    GAME,
+    END
+  }
+
   /** Randomness */
   protected final Random random;
+
+  /** State of the current game */
+  protected State state;
 
   /** Associated exercise data */
   protected final Exercise exercise;
 
   /** Time when the user start the current exercise */
-  protected final long startTime;
+  protected long startTime;
 
   /** The selected level of the exercice */
   protected int level;
@@ -28,12 +44,53 @@ public abstract class AbstractExerciseView extends VerticalLayout
   /** Identifier of the current user session */
   protected final String session;
 
+  // COMMON UI ELEMENTS
+
+  /** Title of the exercise */
+  protected Component title;
+
+  /** Instructions */
+  protected Component instructions;
+
+  /** Start button */
+  protected Button start;
+
   protected AbstractExerciseView(final Exercise exercise) {
     this.random = new Random(SEED);
+    this.state = State.START;
     this.exercise = exercise;
-    this.startTime = System.currentTimeMillis();
     this.session = VaadinSession.getCurrent().getSession().getId();
+    buildStartDiv();
   }
+
+  private void buildStartDiv() {
+    title = new H2(getTranslation(exercise.getName()));
+    add(title);
+
+    VerticalLayout instructionDiv = new VerticalLayout();
+    instructionDiv.addClassName(Constants.ClassStyle.Exercises.INSTRUCTIONS);
+    instructions = new Text(getTranslation(Constants.Resource.Strings.Dactylographie.INSTRUCTIONS));
+    instructionDiv.add(instructions);
+
+    start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START));
+    start.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
+    start.addClassName(Constants.ClassStyle.Exercises.START);
+    start.addClickListener(
+        event -> {
+          start();
+        });
+    instructionDiv.add(start);
+    add(instructionDiv);
+  }
+
+  private void start() {
+    startTime = System.currentTimeMillis();
+    start.setVisible(false);
+    state = State.GAME;
+    onStart();
+  }
+
+  protected abstract void onStart();
 
   protected long getDurationMillis() {
     return System.currentTimeMillis() - startTime;

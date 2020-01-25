@@ -13,6 +13,7 @@ public class Excel extends Exercise {
   public Excel() {
     super(
         Constants.Resource.Strings.Excel.TITLE,
+        Constants.Resource.Strings.Excel.INSTRUCTIONS,
         buildLevels(),
         Difficulty.Easy,
         2,

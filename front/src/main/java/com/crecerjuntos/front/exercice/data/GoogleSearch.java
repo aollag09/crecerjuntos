@@ -13,6 +13,7 @@ public class GoogleSearch extends Exercise {
   public GoogleSearch() {
     super(
         Constants.Resource.Strings.GoogleSearch.TITLE,
+        Constants.Resource.Strings.GoogleSearch.INSTRUCTIONS,
         buildLevels(),
         Difficulty.Medium,
         1,

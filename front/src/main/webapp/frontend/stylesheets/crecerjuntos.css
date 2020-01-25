@@ -129,6 +129,17 @@ html {
     font-size: large;
 }
 
+.exercises-layout__instructions{
+    margin: auto;
+    font-size: x-large;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.exercises-layout__start{
+}
+
 /** Dactylographie layout*/
 .dactylographie-layout__content{
 }
@@ -139,6 +150,7 @@ html {
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
     padding: 10px 50px;
+    user-select: none;
 }
 
 .dactylographie-layout__text-field{
@@ -148,9 +160,3 @@ html {
     --lumo-text-field-size: var(--lumo-size-xl);
 }
 
-.dactylographie-layout__instructions{
-    margin: auto;
-    font-size: x-large;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}

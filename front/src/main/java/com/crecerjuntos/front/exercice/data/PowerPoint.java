@@ -13,6 +13,7 @@ public class PowerPoint extends Exercise {
   public PowerPoint() {
     super(
         Constants.Resource.Strings.PowerPoint.TITLE,
+        Constants.Resource.Strings.PowerPoint.INSTRUCTIONS,
         buildLevels(),
         Difficulty.Easy,
         2,

@@ -42,14 +42,15 @@ public class Constants {
       public static final String LEVEL = PREFIX + "level";
       public static final String ICON = PREFIX + "icon";
       public static final String ANCHOR = PREFIX + "anchor";
+      public static final String INSTRUCTIONS = PREFIX + "instructions";
+      public static final String START = PREFIX + "start";
     }
 
-    public class Dactylographie {
+    public static class Dactylographie {
       private static final String PREFIX = "dactylographie-layout__";
       public static final String CONTENT = PREFIX + "content";
       public static final String MODEL = PREFIX + "model";
       public static final String TEXT_FIELD = PREFIX + "text-field";
-      public static final String INSTRUCTIONS = PREFIX + "instructions";
     }
   }
 
@@ -68,13 +69,12 @@ public class Constants {
     public static final String LOGOUT = "logout";
 
     public static class QueryParameters {
-      public static final String LEVEL = "level";
     }
   }
 
   public static class Title {
     public static final String ADMIN = "Crecer Juntos Admin";
-    public static final String DACTYLOGRAPHIE = "Dactylographie Exercise";
+    public static final String TITLE = "Crecer Juntos";
   }
 
   public static class Resource {
@@ -124,6 +124,7 @@ public class Constants {
         public static final String TITLE = PREXIX + "title";
         public static final String LEVELS = PREXIX + "levels";
         public static final String HOURS = PREXIX + "hours";
+        public static final String START = PREXIX + "start";
       }
 
       public static class Dactylographie {
@@ -166,6 +167,7 @@ public class Constants {
       public static class GoogleSearch {
         private static final String PREFIX = "google-search-";
         public static final String TITLE = PREFIX + "title";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
     }
   }

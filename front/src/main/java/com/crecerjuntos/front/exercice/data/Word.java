@@ -13,6 +13,7 @@ public class Word extends Exercise {
   public Word() {
     super(
         Constants.Resource.Strings.Word.TITLE,
+        Constants.Resource.Strings.Word.INSTRUCTIONS,
         buildLevels(),
         Difficulty.Easy,
         2,
