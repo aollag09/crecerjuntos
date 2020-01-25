@@ -19,6 +19,4 @@ public interface StudentRepository {
   Student save(Student student);
 
   void delete(Student student);
-
-
 }

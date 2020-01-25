@@ -1,7 +1,6 @@
 package com.crecerjuntos.model.base;
 
 import com.crecerjuntos.model.Achievement;
-import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 

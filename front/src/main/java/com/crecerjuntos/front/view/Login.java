@@ -51,7 +51,8 @@ public class Login extends VerticalLayout {
     email.setErrorMessage(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
     login.add(email);
 
-    PasswordField password = new PasswordField(getTranslation(Constants.Resource.Strings.Login.PASSWORD));
+    PasswordField password =
+        new PasswordField(getTranslation(Constants.Resource.Strings.Login.PASSWORD));
     password.addClassName(Constants.ClassStyle.Login.FORM);
     login.add(password);
 

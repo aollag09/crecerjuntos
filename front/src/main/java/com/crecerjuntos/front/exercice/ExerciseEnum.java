@@ -1,10 +1,6 @@
 package com.crecerjuntos.front.exercice;
 
-import com.crecerjuntos.front.exercice.data.Dactylographie;
-import com.crecerjuntos.front.exercice.data.GoogleSearch;
-import com.crecerjuntos.front.exercice.data.Word;
-import com.crecerjuntos.front.exercice.data.Excel;
-import com.crecerjuntos.front.exercice.data.PowerPoint;
+import com.crecerjuntos.front.exercice.data.*;
 
 import java.util.Arrays;
 import java.util.List;

@@ -5,9 +5,7 @@ import com.crecerjuntos.infrastructure.StudentRepository;
 import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Section;
-import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
 
 import java.util.List;

@@ -68,8 +68,7 @@ public class Constants {
     public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
 
-    public static class QueryParameters {
-    }
+    public static class QueryParameters {}
   }
 
   public static class Title {
@@ -146,7 +145,7 @@ public class Constants {
         public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 
-    public static class Excel {
+      public static class Excel {
         private static final String PREFIX = "excel-";
         public static final String TITLE = PREFIX + "title";
         public static final String LVL1_NAME = PREFIX + "level1-name";
@@ -155,7 +154,7 @@ public class Constants {
         public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 
-    public static class PowerPoint {
+      public static class PowerPoint {
         private static final String PREFIX = "power-point-";
         public static final String TITLE = PREFIX + "title";
         public static final String LVL1_NAME = PREFIX + "level1-name";
