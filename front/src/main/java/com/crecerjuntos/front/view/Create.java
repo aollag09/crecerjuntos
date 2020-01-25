@@ -8,6 +8,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
@@ -84,6 +85,7 @@ public class Create extends VerticalLayout {
     create.add(section);
 
     Button log = new Button(getTranslation(Constants.Resource.Strings.Login.CREATE));
+    log.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickShortcut(Key.ENTER);
     log.addClickListener(

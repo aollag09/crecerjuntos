@@ -7,6 +7,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
@@ -55,6 +56,7 @@ public class Login extends VerticalLayout {
     login.add(password);
 
     Button log = new Button(getTranslation(Constants.Resource.Strings.Login.LOGIN));
+    log.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
     log.addClassName(Constants.ClassStyle.Login.FORM);
     log.addClickShortcut(Key.ENTER);
     log.addClickListener(
@@ -94,6 +96,7 @@ public class Login extends VerticalLayout {
     login.add(log);
 
     Button create = new Button(getTranslation(Constants.Resource.Strings.Login.CREATE));
+    create.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
     create.addClassName(Constants.ClassStyle.Login.FORM);
     create.addClickListener(
         event -> {
