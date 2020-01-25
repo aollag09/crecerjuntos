@@ -4,11 +4,13 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SCRIPT_PATH="${DIR}/init.sql"
 
 # Launch database container
-if lsof -Pi :5432 -sTCP:LISTEN -t >/dev/null; then
+#if lsof -Pi :5432 -sTCP:LISTEN -t >/dev/null; then
+echo "Checking if database already launched."
+if nc -zvw3 localhost 5432 && true || false; then
   echo "Postgres default port already taken. Assuming database was launched"
 else
   echo "Making sure no existing container with the wished name"
-  docker ps -q --filter "name=crecer_juntos" | grep -q . && docker stop crecer_juntos && docker rm crecer_juntos
+  docker ps -a --filter "name=crecer_juntos" | grep -q . && docker stop crecer_juntos && docker rm crecer_juntos
   echo "Pulling Postgres docker"
   docker pull postgres:9.5
   echo "Launching docker"
