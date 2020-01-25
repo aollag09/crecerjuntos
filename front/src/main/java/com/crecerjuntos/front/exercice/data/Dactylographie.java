@@ -65,14 +65,14 @@ public class Dactylographie extends Exercise {
     }
   }
 
-  public static class Level3 implements WordsBuilder {
+  public static class Level4 implements WordsBuilder {
     @Override
     public List<String> build() {
       return SPANISH_WORDS.stream().map(String::toLowerCase).collect(Collectors.toList());
     }
   }
 
-  public static class Level4 implements WordsBuilder {
+  public static class Level3 implements WordsBuilder {
     @Override
     public List<String> build() {
       Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
@@ -81,6 +81,7 @@ public class Dactylographie extends Exercise {
               s -> {
                 return !p.matcher(s).find();
               })
+          .map(String::toLowerCase)
           .collect(Collectors.toList());
     }
   }
