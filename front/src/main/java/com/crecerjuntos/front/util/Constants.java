@@ -132,6 +132,8 @@ public class Constants {
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String LVL4_NAME = PREFIX + "level4-name";
+        public static final String LVL5_NAME = PREFIX + "level5-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 

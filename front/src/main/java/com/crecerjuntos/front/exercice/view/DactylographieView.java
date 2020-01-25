@@ -1,6 +1,7 @@
 package com.crecerjuntos.front.exercice.view;
 
 import com.crecerjuntos.front.exercice.ExerciseEnum;
+import com.crecerjuntos.front.exercice.data.Dactylographie;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
@@ -8,123 +9,15 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-@com.vaadin.flow.router.Route(value = Constants.Route.DACTYLOGRAPHIE, layout = ExerciseLayout.class)
+@Route(value = Constants.Route.DACTYLOGRAPHIE, layout = ExerciseLayout.class)
 @PageTitle(Constants.Title.TITLE)
 public class DactylographieView extends AbstractExerciseView {
 
   private static final int NB_ROUNDS = 20;
-
-  private static final List<List<String>> WORDS =
-      Arrays.asList(
-          Arrays.asList(
-              "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
-              "r", "s", "t", "u", "v", "w", "x", "y", "z"),
-          Arrays.asList(
-              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
-              "17", "18", "19", "20"),
-          Arrays.asList(
-              "Adiós",
-              "Agua",
-              "Ahora",
-              "Amar",
-              "Amigo",
-              "Aprender",
-              "Árbol",
-              "Autobús",
-              "Ayer",
-              "Bolígrafo",
-              "Bonito",
-              "Bueno",
-              "Cabeza",
-              "Calle",
-              "Cama",
-              "Canción",
-              "Casa",
-              "Ciudad",
-              "Coche",
-              "Colegio",
-              "Comida",
-              "Contento",
-              "Correr",
-              "Cosa",
-              "Chica",
-              "Chico",
-              "Dar",
-              "Decir",
-              "Deporte",
-              "Día",
-              "Difícil",
-              "Dinero",
-              "Fácil",
-              "Familia",
-              "Feo",
-              "Fiesta",
-              "Flor",
-              "Fuerte",
-              "Galleta",
-              "Gente",
-              "Grande",
-              "Gustar",
-              "Haber",
-              "Habitación",
-              "Hablar",
-              "Hacer",
-              "Hermana",
-              "Hermano",
-              "Hija",
-              "Hijo",
-              "Hogar",
-              "Hola",
-              "Hombre",
-              "Hoy",
-              "Inteligente",
-              "Ir",
-              "Jugar",
-              "Lápiz",
-              "Leer",
-              "Libro",
-              "Llorar",
-              "Madre",
-              "Malo",
-              "Mañana",
-              "Mar",
-              "Mujer",
-              "Música",
-              "Niño",
-              "Noche",
-              "Nombre",
-              "Nuevo",
-              "Número",
-              "Nunca",
-              "Padre",
-              "Pagar",
-              "Papelera",
-              "Parar",
-              "Pensar",
-              "Pequeño",
-              "Poner",
-              "Preguntar",
-              "Puerta",
-              "Rápido",
-              "Reloj",
-              "Responder",
-              "Ropa",
-              "Sentar",
-              "Ser",
-              "Silla",
-              "Sitio",
-              "Sonrisa",
-              "Tarde",
-              "Teléfono",
-              "Televisión",
-              "Tienda",
-              "Trabajar",
-              "Zapato"));
 
   private Text model;
   private TextField textField;
@@ -162,7 +55,7 @@ public class DactylographieView extends AbstractExerciseView {
   @Override
   protected void onStart() {
     counter = 0;
-    words = new ArrayList<>(WORDS.get(level));
+    words = ((Dactylographie) exercise).getWords(level);
 
     VerticalLayout content = new VerticalLayout();
     content.addClassName(Constants.ClassStyle.Dactylographie.CONTENT);
