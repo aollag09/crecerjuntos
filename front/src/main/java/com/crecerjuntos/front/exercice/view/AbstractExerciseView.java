@@ -1,6 +1,7 @@
 package com.crecerjuntos.front.exercice.view;
 
 import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
@@ -86,6 +87,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;
+    ProgressServices.start(exercise, level);
     onStart();
   }
 

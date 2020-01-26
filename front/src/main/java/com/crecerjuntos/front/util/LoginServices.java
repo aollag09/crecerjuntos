@@ -16,17 +16,18 @@ import java.util.Random;
 
 public class LoginServices {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(LoginServices.class);
+  private static final Logger logger = LoggerFactory.getLogger(LoginServices.class);
+  private static final Random random = new Random();
+  private static final IStudentAccess access = new StudentService();
 
   public static Student create(
       String mail, final String username, final String password, final String section) {
     // Create student
-    Random random = new Random();
     long id = random.nextLong();
     Student student = new Student(id, username, mail, password, Section.fromString(section));
 
     // Register new student in database
-    LOGGER.info("Create Student User {}", student);
+    logger.info("Create Student User {}", student);
     IAuthoringServices authoringServices = new AuthoringService();
     authoringServices.add(student);
 
@@ -34,12 +35,10 @@ public class LoginServices {
   }
 
   public static boolean exists(final String mail) {
-    IStudentAccess access = new StudentService();
     return access.byMail(mail) != null;
   }
 
   public static Student get(final String mail) {
-    IStudentAccess access = new StudentService();
     return access.byMail(mail);
   }
 
@@ -49,6 +48,7 @@ public class LoginServices {
     if (Objects.nonNull(session)
         && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
       student = (Student) session.getAttribute(Constants.Session.STUDENT);
+    if (student == null) student = Student.DEFAULT;
     return student;
   }
 
@@ -63,7 +63,7 @@ public class LoginServices {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = getStudent();
     if (student != null) {
-      LOGGER.info(
+      logger.info(
           "Logout : username : " + student.getName() + " section : " + student.getSectionName());
       session.setAttribute(Constants.Session.STUDENT, null);
     }
@@ -76,7 +76,7 @@ public class LoginServices {
     String section = student.getSectionName();
 
     // Store user name in the current session
-    LOGGER.info("Login : username : '{}', mail : '{}', section : '{}'", username, mail, section);
+    logger.info("Login : username : '{}', mail : '{}', section : '{}'", username, mail, section);
     session.setAttribute(Constants.Session.STUDENT, student);
   }
 }

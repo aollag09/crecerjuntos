@@ -15,7 +15,7 @@ public class Dactylographie extends Exercise {
 
   public Dactylographie() {
     super(
-            Constants.Exercises.DACTYLOGRAPHIE_NAME,
+        Constants.Exercises.DACTYLOGRAPHIE_NAME,
         Constants.Resource.Strings.Dactylographie.TITLE,
         Constants.Resource.Strings.Dactylographie.INSTRUCTIONS,
         buildLevels(),
@@ -23,11 +23,11 @@ public class Dactylographie extends Exercise {
         2,
         Constants.Route.DACTYLOGRAPHIE);
     words = new HashMap<>();
-    words.put(0, new Level1());
-    words.put(1, new Level2());
-    words.put(2, new Level3());
-    words.put(3, new Level4());
-    words.put(4, new Level5());
+    words.put(0, new WordsBuilderLevel1());
+    words.put(1, new WordsBuilderLevel2());
+    words.put(2, new WordsBuilderLevel3());
+    words.put(3, new WordsBuilderLevel4());
+    words.put(4, new WordsBuilderLevel5());
   }
 
   private static List<Level> buildLevels() {
@@ -48,7 +48,7 @@ public class Dactylographie extends Exercise {
     List<String> build();
   }
 
-  public static class Level1 implements WordsBuilder {
+  public static class WordsBuilderLevel1 implements WordsBuilder {
     @Override
     public List<String> build() {
       return Arrays.asList(
@@ -57,7 +57,7 @@ public class Dactylographie extends Exercise {
     }
   }
 
-  public static class Level2 implements WordsBuilder {
+  public static class WordsBuilderLevel2 implements WordsBuilder {
     @Override
     public List<String> build() {
       return Arrays.asList(
@@ -66,14 +66,14 @@ public class Dactylographie extends Exercise {
     }
   }
 
-  public static class Level4 implements WordsBuilder {
+  public static class WordsBuilderLevel4 implements WordsBuilder {
     @Override
     public List<String> build() {
       return SPANISH_WORDS.stream().map(String::toLowerCase).collect(Collectors.toList());
     }
   }
 
-  public static class Level3 implements WordsBuilder {
+  public static class WordsBuilderLevel3 implements WordsBuilder {
     @Override
     public List<String> build() {
       Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
@@ -87,7 +87,7 @@ public class Dactylographie extends Exercise {
     }
   }
 
-  public static class Level5 implements WordsBuilder {
+  public static class WordsBuilderLevel5 implements WordsBuilder {
     @Override
     public List<String> build() {
       return new ArrayList<>(SPANISH_WORDS);
