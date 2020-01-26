@@ -44,7 +44,7 @@ public class Exercises extends VerticalLayout {
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
     gameInfo.addClassName(Constants.ClassStyle.Exercises.GAME_INFO);
-    H3 name = new H3(getTranslation(exercise.getName()));
+    H3 name = new H3(getTranslation(exercise.getTitle()));
     name.addClassName(Constants.ClassStyle.Exercises.NAME);
     exerciseHeader.add(name);
 

@@ -12,6 +12,7 @@ public class Excel extends Exercise {
 
   public Excel() {
     super(
+            Constants.Exercises.EXCEL_NAME,
         Constants.Resource.Strings.Excel.TITLE,
         Constants.Resource.Strings.Excel.INSTRUCTIONS,
         buildLevels(),

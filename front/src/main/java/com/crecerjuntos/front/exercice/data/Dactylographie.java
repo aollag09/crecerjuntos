@@ -15,6 +15,7 @@ public class Dactylographie extends Exercise {
 
   public Dactylographie() {
     super(
+            Constants.Exercises.DACTYLOGRAPHIE_NAME,
         Constants.Resource.Strings.Dactylographie.TITLE,
         Constants.Resource.Strings.Dactylographie.INSTRUCTIONS,
         buildLevels(),

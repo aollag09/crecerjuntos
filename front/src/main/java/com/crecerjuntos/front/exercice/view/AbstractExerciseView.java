@@ -63,7 +63,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void buildStartDiv() {
-    title = new H2(getTranslation(exercise.getName()));
+    title = new H2(getTranslation(exercise.getTitle()));
     add(title);
 
     VerticalLayout instructionDiv = new VerticalLayout();
@@ -104,7 +104,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
             "Required level : '"
                 + level
                 + "' of exercise :"
-                + getTranslation(exercise.getName())
+                + getTranslation(exercise.getTitle())
                 + " doesn't exists");
       }
     }

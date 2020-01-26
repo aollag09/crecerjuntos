@@ -76,6 +76,14 @@ public class Constants {
     public static final String TITLE = "Crecer Juntos";
   }
 
+  public static class Exercises{
+    public static final String DACTYLOGRAPHIE_NAME = "Dactylographie";
+    public static final String WORD_NAME = "Word";
+    public static final String EXCEL_NAME = "Excel";
+    public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
+    public static final String POWER_POINT_NAME = "PowerPoint";
+  }
+
   public static class Resource {
     public static final String IMG_TERESA = "resources/img/teresa.png";
 

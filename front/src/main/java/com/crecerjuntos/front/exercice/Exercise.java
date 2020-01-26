@@ -6,8 +6,11 @@ import java.util.List;
 
 public abstract class Exercise {
 
-  /** Name of the exercise */
+  /** Name of the exercise, unique name for the database */
   protected final String name;
+
+  /** Title public translated name of the exercise */
+  protected final String title;
 
   /** Instructions of the exercise */
   protected final String instructions;
@@ -26,12 +29,14 @@ public abstract class Exercise {
 
   protected Exercise(
       final String name,
+      final String title,
       final String instructions,
       final List<Level> levels,
       final Difficulty difficulty,
       final long time,
       final String uri) {
     this.name = name;
+    this.title = title;
     this.instructions = instructions;
     this.levels = levels;
     this.difficulty = difficulty;
@@ -41,6 +46,10 @@ public abstract class Exercise {
 
   public String getName() {
     return this.name;
+  }
+
+  public String getTitle() {
+    return this.title;
   }
 
   public String getInstructions() {
