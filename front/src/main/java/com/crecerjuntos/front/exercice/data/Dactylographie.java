@@ -51,25 +51,20 @@ public class Dactylographie extends Exercise {
   public static class WordsBuilderLevel1 implements WordsBuilder {
     @Override
     public List<String> build() {
-      return Arrays.asList(
-          "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r",
-          "s", "t", "u", "v", "w", "x", "y", "z");
+      return new ArrayList<>(
+          Arrays.asList(
+              "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+              "r", "s", "t", "u", "v", "w", "x", "y", "z"));
     }
   }
 
   public static class WordsBuilderLevel2 implements WordsBuilder {
     @Override
     public List<String> build() {
-      return Arrays.asList(
-          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
-          "17", "18", "19", "20");
-    }
-  }
-
-  public static class WordsBuilderLevel4 implements WordsBuilder {
-    @Override
-    public List<String> build() {
-      return SPANISH_WORDS.stream().map(String::toLowerCase).collect(Collectors.toList());
+      return new ArrayList<>(
+          Arrays.asList(
+              "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+              "17", "18", "19", "20"));
     }
   }
 
@@ -78,12 +73,16 @@ public class Dactylographie extends Exercise {
     public List<String> build() {
       Pattern p = Pattern.compile("[^a-z0-9 ]", Pattern.CASE_INSENSITIVE);
       return SPANISH_WORDS.stream()
-          .filter(
-              s -> {
-                return !p.matcher(s).find();
-              })
+          .filter(s -> !p.matcher(s).find())
           .map(String::toLowerCase)
           .collect(Collectors.toList());
+    }
+  }
+
+  public static class WordsBuilderLevel4 implements WordsBuilder {
+    @Override
+    public List<String> build() {
+      return SPANISH_WORDS.stream().map(String::toLowerCase).collect(Collectors.toList());
     }
   }
 

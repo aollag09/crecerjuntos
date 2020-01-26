@@ -12,8 +12,9 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
-    // This dependency is found on compile classpath of this component and consumers.
+    // Google tools
     implementation 'com.google.guava:guava:23.0'
+    implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
 
     // logging 
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.2'

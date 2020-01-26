@@ -75,7 +75,6 @@ public class DactylographieView extends AbstractExerciseView {
     textField.addValueChangeListener(
         event -> {
           String value = event.getValue();
-          String old = event.getOldValue();
           if (!current.startsWith(value)) {
             textField.setInvalid(true);
             mistake++;
