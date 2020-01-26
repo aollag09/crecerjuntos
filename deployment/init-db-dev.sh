@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+while getopts ":f:" opt; do
+  case $opt in
+    f) filepath="$OPTARG"
+    ;;
+    \?) echo "Usage : ./init-db-dev.sh launch sql database container with local data or new database. ./init-db-dev.sh -f filepath will launch sql database container with databasedump in filepath"
+    ;;
+  esac
+done
+
+echo "Dump is in $filepath"
+
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SCRIPT_PATH="${DIR}/init.sql"
 
@@ -18,7 +29,22 @@ else
 fi
 
 # Check database was created and if not, create it
-echo "Copy to docker initialization script of file ${SCRIPT_PATH}"
-docker cp "${SCRIPT_PATH}" crecer_juntos:/init.sql
-echo "Apply initialization script if database does not exist"
-docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec crecer_juntos psql -U postgres -f init.sql
+if [[ -z $filepath ]]; then
+  echo "Initializing db from scratch"
+  echo "Copy to docker initialization script of file ${SCRIPT_PATH}"
+  docker cp "${SCRIPT_PATH}" crecer_juntos:/init.sql
+  echo "Apply initialization script if database does not exist"
+  docker exec crecer_juntos psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = 'cs_courses'" | grep -q 1 || docker exec crecer_juntos psql -U postgres -f init.sql
+else
+  echo "Initializing db from database dump in $filepath"
+  echo "Remove previous database"
+  docker exec crecer_juntos psql -U postgres -tc "DROP DATABASE cs_courses;"
+  echo "Copy to docker initialization script of file ${SCRIPT_PATH}"
+  docker cp "${SCRIPT_PATH}" crecer_juntos:/init.sql
+  echo "Apply initialization script"
+  docker exec crecer_juntos psql -U postgres -f init.sql
+  echo "Copy to docker database dump file $filepath"
+  docker cp $filepath crecer_juntos:/dump.sql
+  echo "Use database dump"
+  docker exec crecer_juntos psql -U postgres -d cs_courses -f dump.sql
+fi
