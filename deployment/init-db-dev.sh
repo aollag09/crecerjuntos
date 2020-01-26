@@ -4,7 +4,6 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 SCRIPT_PATH="${DIR}/init.sql"
 
 # Launch database container
-#if lsof -Pi :5432 -sTCP:LISTEN -t >/dev/null; then
 echo "Checking if database already launched."
 if nc -zvw3 localhost 5432 && true || false; then
   echo "Postgres default port already taken. Assuming database was launched"
