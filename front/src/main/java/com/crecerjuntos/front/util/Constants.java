@@ -3,9 +3,7 @@ package com.crecerjuntos.front.util;
 public class Constants {
 
   public static class Session {
-    public static final String USERNAME = "username";
-    public static final String SECTION = "section";
-    public static final String MAIL = "mail";
+      public static final String STUDENT = "student";
   }
 
   public static class StyleSheet {

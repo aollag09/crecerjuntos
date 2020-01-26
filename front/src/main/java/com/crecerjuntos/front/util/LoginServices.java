@@ -43,25 +43,30 @@ public class LoginServices {
     return access.byMail(mail);
   }
 
-  public static String getUserName() {
+  public static Student getStudent() {
     VaadinSession session = UI.getCurrent().getSession();
-    String username = "";
+    Student student = null;
     if (Objects.nonNull(session)
-        && Objects.nonNull(session.getAttribute(Constants.Session.USERNAME)))
-      username = session.getAttribute(Constants.Session.USERNAME).toString();
-    return username;
+        && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
+      student = (Student) session.getAttribute(Constants.Session.STUDENT);
+    return student;
+  }
+
+  public static String getUserName() {
+    String name = "";
+    Student student = getStudent();
+    if (student != null) name = student.getName();
+    return name;
   }
 
   public static void logout() {
     VaadinSession session = UI.getCurrent().getSession();
-    LOGGER.info(
-        "Logout : username : "
-            + session.getAttribute(Constants.Session.USERNAME)
-            + " section : "
-            + session.getAttribute(Constants.Session.SECTION));
-    session.setAttribute(Constants.Session.USERNAME, "");
-    session.setAttribute(Constants.Session.MAIL, "");
-    session.setAttribute(Constants.Session.SECTION, "");
+    Student student = getStudent();
+    if (student != null) {
+      LOGGER.info(
+          "Logout : username : " + student.getName() + " section : " + student.getSectionName());
+      session.setAttribute(Constants.Session.STUDENT, null);
+    }
   }
 
   public static void login(Student student) {
@@ -72,8 +77,6 @@ public class LoginServices {
 
     // Store user name in the current session
     LOGGER.info("Login : username : '{}', mail : '{}', section : '{}'", username, mail, section);
-    session.setAttribute(Constants.Session.USERNAME, username);
-    session.setAttribute(Constants.Session.MAIL, mail);
-    session.setAttribute(Constants.Session.SECTION, section);
+    session.setAttribute(Constants.Session.STUDENT, student);
   }
 }
