@@ -3,6 +3,7 @@ package com.crecerjuntos.front.exercice.view;
 import com.crecerjuntos.front.exercice.ExerciseEnum;
 import com.crecerjuntos.front.exercice.data.Dactylographie;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -19,11 +20,12 @@ public class DactylographieView extends AbstractExerciseView {
 
   private static final int NB_ROUNDS = 20;
 
-  private Text model;
-  private TextField textField;
   private int counter, mistake, success;
   private String current;
   private List<String> words;
+
+  private Text model;
+  private TextField textField;
 
   public DactylographieView() {
     super(ExerciseEnum.DACTYLOGRAPHIE.get());
@@ -45,7 +47,13 @@ public class DactylographieView extends AbstractExerciseView {
   }
 
   private void endGame() {
+
+    // update ui
+    model.setVisible(false);
+    textField.setVisible(false);
+
     int score = computeScore();
+    ProgressServices.end(exercise, level, score);
   }
 
   private int computeScore() {

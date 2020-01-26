@@ -10,16 +10,16 @@ public class Star {
   /** Identifier of the student */
   private final String studentId;
 
-  /** Name of the exercice */
-  private final String exercice;
+  /** Name of the exercise */
+  private final String exercise;
 
   /** Number of Stars, between 0 and 5 */
   private final int stars;
 
-  public Star(final Long id, final String studentId, final String exercice, final int stars) {
+  public Star(final Long id, final String studentId, final String exercise, final int stars) {
     this.id = id;
     this.studentId = studentId;
-    this.exercice = exercice;
+    this.exercise = exercise;
     this.stars = stars;
   }
 
@@ -44,8 +44,8 @@ public class Star {
     return studentId;
   }
 
-  public String getExercice() {
-    return exercice;
+  public String getExercise() {
+    return exercise;
   }
 
   public int getStars() {
