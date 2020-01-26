@@ -1,8 +1,8 @@
 package com.crecerjuntos.front.exercice.view;
 
 import com.crecerjuntos.front.exercice.Exercise;
-import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
@@ -101,7 +101,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   public void setParameter(BeforeEvent event, String parameter) {
     if (parameter != null) {
       level = Integer.parseInt(parameter);
-      if (level > exercise.getNbLevels() || level < 0) {
+      if ((level > exercise.getNbLevels()) || (level < 0)) {
         throw new RuntimeException(
             "Required level : '"
                 + level

@@ -12,7 +12,7 @@ public class PowerPoint extends Exercise {
 
   public PowerPoint() {
     super(
-            Constants.Exercises.POWER_POINT_NAME,
+        Constants.Exercises.POWER_POINT_NAME,
         Constants.Resource.Strings.PowerPoint.TITLE,
         Constants.Resource.Strings.PowerPoint.INSTRUCTIONS,
         buildLevels(),

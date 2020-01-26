@@ -3,7 +3,7 @@ package com.crecerjuntos.front.util;
 public class Constants {
 
   public static class Session {
-      public static final String STUDENT = "student";
+    public static final String STUDENT = "student";
   }
 
   public static class StyleSheet {
@@ -74,7 +74,7 @@ public class Constants {
     public static final String TITLE = "Crecer Juntos";
   }
 
-  public static class Exercises{
+  public static class Exercises {
     public static final String DACTYLOGRAPHIE_NAME = "Dactylographie";
     public static final String WORD_NAME = "Word";
     public static final String EXCEL_NAME = "Excel";

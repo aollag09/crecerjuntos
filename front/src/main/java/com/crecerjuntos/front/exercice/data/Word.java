@@ -12,7 +12,7 @@ public class Word extends Exercise {
 
   public Word() {
     super(
-            Constants.Exercises.WORD_NAME,
+        Constants.Exercises.WORD_NAME,
         Constants.Resource.Strings.Word.TITLE,
         Constants.Resource.Strings.Word.INSTRUCTIONS,
         buildLevels(),

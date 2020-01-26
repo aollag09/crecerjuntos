@@ -12,7 +12,7 @@ public class GoogleSearch extends Exercise {
 
   public GoogleSearch() {
     super(
-            Constants.Exercises.GOOGLE_SEARCH_NAME,
+        Constants.Exercises.GOOGLE_SEARCH_NAME,
         Constants.Resource.Strings.GoogleSearch.TITLE,
         Constants.Resource.Strings.GoogleSearch.INSTRUCTIONS,
         buildLevels(),
