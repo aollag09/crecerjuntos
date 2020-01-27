@@ -2,6 +2,7 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.Dactylographie;
+import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Text;
@@ -34,7 +35,7 @@ public class DactylographieView extends AbstractExerciseView {
   private void next() {
     counter++;
     textField.setValue("");
-    if (counter >= NB_ROUNDS) endGame();
+    if (counter >= NB_ROUNDS) end();
     else {
       newWord();
     }
@@ -45,13 +46,6 @@ public class DactylographieView extends AbstractExerciseView {
     current = words.remove(id);
     model.setText(current);
   }
-
-  private void endGame() {
-
-    // update ui
-    ProgressServices.end(exercise, level, score.getScore());
-  }
-
 
   @Override
   protected void onStart() {
@@ -91,4 +85,13 @@ public class DactylographieView extends AbstractExerciseView {
     add(content);
     next();
   }
+
+  @Override
+  protected Score computeScore(){
+    Score score = new Score();
+    score.addKPI( Constants.Resource.Strings.ScoreKPI.DURATION, getDurationString());
+    return score;
+  }
+
+
 }

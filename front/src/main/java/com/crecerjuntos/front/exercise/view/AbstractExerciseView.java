@@ -15,6 +15,7 @@ import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
 
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractExerciseView extends VerticalLayout
     implements HasUrlParameter<String> {
@@ -97,8 +98,23 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
   protected abstract void onStart();
 
+  protected abstract Score computeScore();
+
+  protected void end(){
+      score = computeScore();
+      ProgressServices.end(exercise, level, score.getScore());
+  }
+
   protected long getDurationMillis() {
     return System.currentTimeMillis() - startTime;
+  }
+
+  protected String getDurationString(){
+    long millis = getDurationMillis();
+    return String.format("%d min, %d sec", 
+        TimeUnit.MILLISECONDS.toMinutes(millis),
+        TimeUnit.MILLISECONDS.toSeconds(millis) - 
+        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
   }
 
   @Override

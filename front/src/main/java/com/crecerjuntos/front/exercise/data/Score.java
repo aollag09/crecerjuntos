@@ -18,7 +18,7 @@ public class Score{
         this.score = score;
     }
 
-    public void addKPI( final String name, final Object value){
+    public void addKPI(final String name, final Object value){
         KPI.put(name,value);
     }
 

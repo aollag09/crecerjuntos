@@ -82,6 +82,7 @@ public class Constants {
     public static final String POWER_POINT_NAME = "PowerPoint";
   }
 
+
   public static class Resource {
     public static final String IMG_TERESA = "resources/img/teresa.png";
 
@@ -112,6 +113,14 @@ public class Constants {
         public static final String EXERCISES = PREFIX + "exercises";
         public static final String DASHBOARD = PREFIX + "dashboard";
         public static final String LOGOUT = PREFIX + "logout";
+      }
+
+      public static class ScoreKPI {
+        private static final String PREFIX = "score-kpi-";
+        public static final String DURATION = PREFIX + "duration";
+        public static final String MISTAKES = PREFIX + "mistakes";
+        public static final String SUCCESS = PREFIX + "success";
+        public static final String LONGEST_SEQUENCE = PREFIX + "longest-sequence";
       }
 
       public static class Home {
