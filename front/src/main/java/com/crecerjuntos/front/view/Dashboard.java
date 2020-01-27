@@ -6,12 +6,13 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
 /*
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@com.vaadin.flow.router.Route(value = Constants.Route.DASHBOARD, layout = MainAppLayout.class)
+@Route(value = Constants.Route.DASHBOARD, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle(Constants.Title.TITLE)
 public class Dashboard extends VerticalLayout {

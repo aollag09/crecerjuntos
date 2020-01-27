@@ -4,6 +4,7 @@ import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
+import com.crecerjuntos.front.util.ScoreServices;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.button.Button;
@@ -101,7 +102,13 @@ public abstract class AbstractExerciseView extends VerticalLayout
   protected abstract Score computeScore();
 
   protected void end() {
+    // compute the score based on exercise KPIs
     score = computeScore();
+
+    // save the computed score in the current session
+    ScoreServices.save(score);
+
+    // store the progression & score in the database
     ProgressServices.end(exercise, level, score.getScore());
   }
 

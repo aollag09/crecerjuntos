@@ -1,9 +1,13 @@
 package com.crecerjuntos.front.util;
 
+import com.crecerjuntos.front.exercise.data.Score;
+import com.sun.scenario.effect.impl.prism.ps.PPSBlend_REDPeer;
+
 public class Constants {
 
   public static class Session {
     public static final String STUDENT = "student";
+    public static final String SCORE = "score";
   }
 
   public static class StyleSheet {
@@ -50,6 +54,13 @@ public class Constants {
       public static final String MODEL = PREFIX + "model";
       public static final String TEXT_FIELD = PREFIX + "text-field";
     }
+
+    public class Result {
+      private static final String PREFIX = "result-layout__";
+      public static final String NO_SCORE = PREFIX + "no-score";
+      public static final String EXERCISES = PREFIX + "exercises";
+      public static final String RESULT = PREFIX + "result";
+    }
   }
 
   public static class Route {
@@ -65,7 +76,7 @@ public class Constants {
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
-    public static final String SCORE = "score";
+    public static final String RESULT = "result";
 
     public static class QueryParameters {}
   }
@@ -185,6 +196,12 @@ public class Constants {
         private static final String PREFIX = "google-search-";
         public static final String TITLE = PREFIX + "title";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
+      }
+
+      public static class Result {
+        private static final String PREFIX = "result-";
+        public static final String NO_SCORE = PREFIX + "no-score";
+        public static final String EXERCISES = PREFIX + "exercises";
       }
     }
   }
