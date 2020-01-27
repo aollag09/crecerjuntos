@@ -1,6 +1,6 @@
 package com.crecerjuntos.front.exercise.data;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Score {
@@ -12,7 +12,7 @@ public class Score {
   private int score;
 
   public Score() {
-    KPI = new HashMap<>();
+    KPI = new LinkedHashMap<>();
   }
 
   public void setScore(final int score) {

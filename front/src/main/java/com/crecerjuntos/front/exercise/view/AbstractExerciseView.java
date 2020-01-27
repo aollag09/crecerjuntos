@@ -5,8 +5,10 @@ import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
+import com.crecerjuntos.front.view.Result;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.H2;
@@ -110,6 +112,9 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     // store the progression & score in the database
     ProgressServices.end(exercise, level, score.getScore());
+
+    // Navigate to result page
+    UI.getCurrent().navigate(Result.class);
   }
 
   protected long getDurationMillis() {

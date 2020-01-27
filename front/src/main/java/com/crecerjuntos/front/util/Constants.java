@@ -1,8 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.crecerjuntos.front.exercise.data.Score;
-import com.sun.scenario.effect.impl.prism.ps.PPSBlend_REDPeer;
-
 public class Constants {
 
   public static class Session {
@@ -55,11 +52,14 @@ public class Constants {
       public static final String TEXT_FIELD = PREFIX + "text-field";
     }
 
-    public class Result {
+    public static class Result {
       private static final String PREFIX = "result-layout__";
       public static final String NO_SCORE = PREFIX + "no-score";
       public static final String EXERCISES = PREFIX + "exercises";
       public static final String RESULT = PREFIX + "result";
+      public static final String TITLE = PREFIX + "title";
+      public static final String SCORE = PREFIX + "score";
+      public static final String KPI = PREFIX + "kpi";
     }
   }
 
@@ -202,6 +202,9 @@ public class Constants {
         private static final String PREFIX = "result-";
         public static final String NO_SCORE = PREFIX + "no-score";
         public static final String EXERCISES = PREFIX + "exercises";
+        public static final String SUCCEEDED = PREFIX + "succeeded";
+        public static final String SCORE = PREFIX + "score";
+        public static final String FAILED = PREFIX + "failed";
       }
     }
   }

@@ -175,5 +175,14 @@ html {
 }
 
 .result-layout__exercises{
+    margin-top: 45px;
 }
 
+.result-layout__title{
+    margin-bottom: 45px;
+}
+
+.result-layout__kpi{
+    margin: 15px;
+    font-size: large;
+}
