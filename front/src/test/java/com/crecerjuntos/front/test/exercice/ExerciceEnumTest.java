@@ -1,7 +1,7 @@
-package com.crecerjuntos.front.test.exercice;
+package com.crecerjuntos.front.test.exercise;
 
-import com.crecerjuntos.front.exercice.Exercise;
-import com.crecerjuntos.front.exercice.ExerciseEnum;
+import com.crecerjuntos.front.exercise.Exercise;
+import com.crecerjuntos.front.exercise.ExerciseEnum;
 import org.junit.Assert;
 import org.junit.Test;
 

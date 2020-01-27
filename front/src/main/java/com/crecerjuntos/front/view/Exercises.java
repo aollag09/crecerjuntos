@@ -1,8 +1,8 @@
 package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
-import com.crecerjuntos.front.exercice.Exercise;
-import com.crecerjuntos.front.exercice.ExerciseEnum;
+import com.crecerjuntos.front.exercise.Exercise;
+import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
@@ -16,7 +16,7 @@ import com.vaadin.flow.server.VaadinServlet;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
-@PageTitle("Crecer Juntos Exercices")
+@PageTitle("Crecer Juntos exercises")
 public class Exercises extends VerticalLayout {
 
   public Exercises() {

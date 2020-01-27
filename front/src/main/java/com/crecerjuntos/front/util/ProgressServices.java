@@ -1,6 +1,6 @@
 package com.crecerjuntos.front.util;
 
-import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;

@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.exercice.view;
+package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.MainAppLayout;
 

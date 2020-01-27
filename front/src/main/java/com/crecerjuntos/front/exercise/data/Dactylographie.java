@@ -1,7 +1,7 @@
-package com.crecerjuntos.front.exercice.data;
+package com.crecerjuntos.front.exercise.data;
 
-import com.crecerjuntos.front.exercice.Exercise;
-import com.crecerjuntos.front.exercice.Level;
+import com.crecerjuntos.front.exercise.Exercise;
+import com.crecerjuntos.front.exercise.Level;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.Difficulty;
 

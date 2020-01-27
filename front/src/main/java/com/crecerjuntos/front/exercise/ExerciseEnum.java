@@ -1,6 +1,6 @@
-package com.crecerjuntos.front.exercice;
+package com.crecerjuntos.front.exercise;
 
-import com.crecerjuntos.front.exercice.data.*;
+import com.crecerjuntos.front.exercise.data.*;
 
 import java.util.Arrays;
 import java.util.List;

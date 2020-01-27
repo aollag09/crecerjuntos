@@ -1,6 +1,7 @@
-package com.crecerjuntos.front.exercice.view;
+package com.crecerjuntos.front.exercise.view;
 
-import com.crecerjuntos.front.exercice.Exercise;
+import com.crecerjuntos.front.exercise.Exercise;
+import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Component;
@@ -38,8 +39,11 @@ public abstract class AbstractExerciseView extends VerticalLayout
   /** Time when the user start the current exercise */
   protected long startTime;
 
-  /** The selected level of the exercice */
+  /** The selected level of the exercise */
   protected int level;
+
+  /** The score of the exercise */
+  protected Score score;
 
   /** Identifier of the current user session */
   protected final String session;

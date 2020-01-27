@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.exercice;
+package com.crecerjuntos.front.exercise;
 
 import com.crecerjuntos.front.util.Difficulty;
 

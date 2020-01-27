@@ -1,7 +1,7 @@
-package com.crecerjuntos.front.exercice.view;
+package com.crecerjuntos.front.exercise.view;
 
-import com.crecerjuntos.front.exercice.ExerciseEnum;
-import com.crecerjuntos.front.exercice.data.Dactylographie;
+import com.crecerjuntos.front.exercise.ExerciseEnum;
+import com.crecerjuntos.front.exercise.data.Dactylographie;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Text;
@@ -49,16 +49,9 @@ public class DactylographieView extends AbstractExerciseView {
   private void endGame() {
 
     // update ui
-    model.setVisible(false);
-    textField.setVisible(false);
-
-    int score = computeScore();
-    ProgressServices.end(exercise, level, score);
+    ProgressServices.end(exercise, level, score.getScore());
   }
 
-  private int computeScore() {
-    return -1;
-  }
 
   @Override
   protected void onStart() {
