@@ -1,10 +1,13 @@
 package com.crecerjuntos.front;
 
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.view.Dashboard;
 import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
+import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Anchor;
@@ -75,8 +78,11 @@ public class MainAppLayout extends AppLayout {
             VaadinIcon.CLOCK,
             getTranslation(Constants.Resource.Strings.Main.DASHBOARD),
             Dashboard.class));
+
     final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
     tabs.add(buildLogOut(contextPath));
+
+    tabs.add(buildUserName());
     return tabs.toArray(new Tab[nbtabs]);
   }
 
@@ -93,6 +99,13 @@ public class MainAppLayout extends AppLayout {
     logout.add(getTranslation(Constants.Resource.Strings.Main.LOGOUT));
     logout.setHref(contextPath + "/" + Constants.Route.LOGOUT);
     return createTab(logout);
+  }
+
+  private Tab buildUserName() {
+    Student student = LoginServices.getStudent();
+    Text studentName = new Text("");
+    if (student != null) studentName.setText(student.getName());
+    return createTab(studentName);
   }
 
   private Tab createTab(final Component component) {
