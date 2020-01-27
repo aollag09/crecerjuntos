@@ -29,4 +29,9 @@ public class Word extends Exercise {
     levels.add(new Level(4, Constants.Resource.Strings.Word.LVL4_NAME));
     return levels;
   }
+
+  @Override
+  public long getExpectedTime(int level) {
+    return 0;
+  }
 }

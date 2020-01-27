@@ -44,6 +44,8 @@ public abstract class Exercise {
     this.uri = uri;
   }
 
+  public abstract long getExpectedTime(final int level);
+
   public String getName() {
     return this.name;
   }

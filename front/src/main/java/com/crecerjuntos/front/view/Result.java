@@ -5,6 +5,7 @@ import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -51,7 +52,7 @@ public class Result extends VerticalLayout {
 
     // Add score
     H1 scoreTitle =
-            new H1(getTranslation(Constants.Resource.Strings.Result.SCORE) + score.getScore());
+        new H1(getTranslation(Constants.Resource.Strings.Result.SCORE) + score.getScore());
     scoreTitle.addClassName(Constants.ClassStyle.Result.SCORE);
     result.add(scoreTitle);
 
@@ -86,6 +87,7 @@ public class Result extends VerticalLayout {
     Button exercises = new Button(getTranslation(Constants.Resource.Strings.Result.EXERCISES));
     exercises.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     exercises.addClassName(Constants.ClassStyle.Result.EXERCISES);
+    exercises.addClickShortcut(Key.ENTER);
     exercises.addClickListener(
         event -> {
           UI.getCurrent().navigate(Exercises.class);

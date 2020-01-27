@@ -18,8 +18,6 @@ import java.util.List;
 @PageTitle(Constants.Title.TITLE)
 public class DactylographieView extends AbstractExerciseView {
 
-  private static final int NB_ROUNDS = 20;
-
   private int counter, mistake, success;
   private int longestSequence, currentSequence;
   private String current;
@@ -35,13 +33,14 @@ public class DactylographieView extends AbstractExerciseView {
   private void next() {
     counter++;
     textField.setValue("");
-    if (counter >= NB_ROUNDS) end();
+    if (counter >= Dactylographie.NB_ROUNDS) end();
     else {
       newWord();
     }
   }
 
   private void newWord() {
+    if (words.size() <= 0) words = ((Dactylographie) exercise).getWords(level);
     int id = random.nextInt(words.size());
     current = words.remove(id);
     model.setText(current);
@@ -92,10 +91,20 @@ public class DactylographieView extends AbstractExerciseView {
   @Override
   protected Score computeScore() {
     Score score = new Score();
+
+    // add kpis
     score.addKPI(Constants.Resource.Strings.ScoreKPI.DURATION, getDurationString());
     score.addKPI(Constants.Resource.Strings.ScoreKPI.SUCCESS, success);
     score.addKPI(Constants.Resource.Strings.ScoreKPI.MISTAKES, mistake);
     score.addKPI(Constants.Resource.Strings.ScoreKPI.LONGEST_SEQUENCE, longestSequence);
+
+    // build score
+    int intScore = 100;
+    if (getDurationMillis() > exercise.getExpectedTime(level))
+      intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1.000;
+    intScore -= mistake;
+    score.setScore(intScore);
+
     return score;
   }
 }

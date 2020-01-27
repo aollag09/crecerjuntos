@@ -25,4 +25,9 @@ public class GoogleSearch extends Exercise {
     List<Level> levels = new ArrayList<Level>();
     return levels;
   }
+
+  @Override
+  public long getExpectedTime(int level) {
+    return 0;
+  }
 }

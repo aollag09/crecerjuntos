@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 
 public class Dactylographie extends Exercise {
 
+  public static final int NB_ROUNDS = 20;
+
   private Map<Integer, WordsBuilder> words;
 
   public Dactylographie() {
@@ -38,6 +40,16 @@ public class Dactylographie extends Exercise {
     levels.add(new Level(4, Constants.Resource.Strings.Dactylographie.LVL4_NAME));
     levels.add(new Level(5, Constants.Resource.Strings.Dactylographie.LVL5_NAME));
     return levels;
+  }
+
+  @Override
+  public long getExpectedTime(final int level) {
+    if (level == 0) return 1300 * NB_ROUNDS;
+    if (level == 1) return 1000 * NB_ROUNDS;
+    if (level == 2) return 3000 * NB_ROUNDS;
+    if (level == 3) return 3300 * NB_ROUNDS;
+    if (level == 4) return 4000 * NB_ROUNDS;
+    return 0;
   }
 
   public List<String> getWords(final int level) {

@@ -26,4 +26,9 @@ public class PowerPoint extends Exercise {
     levels.add(new Level(1, Constants.Resource.Strings.PowerPoint.LVL1_NAME));
     return levels;
   }
+
+  @Override
+  public long getExpectedTime(int level) {
+    return 0;
+  }
 }

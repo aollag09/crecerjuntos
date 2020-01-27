@@ -7,6 +7,7 @@ import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -83,6 +84,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
     start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START));
     start.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     start.addClassName(Constants.ClassStyle.Exercises.START);
+    start.addClickShortcut(Key.ENTER);
     start.addClickListener(
         event -> {
           start();
