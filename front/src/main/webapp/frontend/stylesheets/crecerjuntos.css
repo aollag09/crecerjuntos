@@ -186,3 +186,15 @@ html {
     margin: 15px;
     font-size: large;
 }
+
+.result-layout__succeeded{
+    color:green;
+}
+
+.result-layout__to-improved{
+    color:orange;
+}
+
+.result-layout__failed{
+    color:red;
+}

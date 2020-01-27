@@ -58,10 +58,18 @@ public class Result extends VerticalLayout {
 
     // Add title
     H2 title = null;
-    if (score.getScore() >= Constants.Exercises.MINIMUM_SCORE)
+    if (score.getScore() >= Constants.Exercises.GOOD_SCORE) {
       title = new H2(getTranslation(Constants.Resource.Strings.Result.SUCCEEDED));
-    else title = new H2(getTranslation(Constants.Resource.Strings.Result.FAILED));
+      scoreTitle.addClassName(Constants.ClassStyle.Result.SUCCEEDED);
+    } else if (score.getScore() >= Constants.Exercises.MINIMUM_SCORE) {
+      title = new H2(getTranslation(Constants.Resource.Strings.Result.TO_IMPROVE));
+      scoreTitle.addClassName(Constants.ClassStyle.Result.TO_IMPROVED);
+    } else {
+      title = new H2(getTranslation(Constants.Resource.Strings.Result.FAILED));
+      scoreTitle.addClassName(Constants.ClassStyle.Result.FAILED);
+    }
     title.addClassName(Constants.ClassStyle.Result.TITLE);
+
     result.add(title);
 
     // Add KPIs

@@ -60,6 +60,9 @@ public class Constants {
       public static final String TITLE = PREFIX + "title";
       public static final String SCORE = PREFIX + "score";
       public static final String KPI = PREFIX + "kpi";
+      public static final String SUCCEEDED = PREFIX + "succeeded";
+      public static final String TO_IMPROVED = PREFIX + "to-improved";
+      public static final String FAILED = PREFIX + "failed";
     }
   }
 
@@ -92,7 +95,8 @@ public class Constants {
     public static final String EXCEL_NAME = "Excel";
     public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
     public static final String POWER_POINT_NAME = "PowerPoint";
-    public static final int MINIMUM_SCORE = 70;
+    public static final int GOOD_SCORE = 75;
+    public static final int MINIMUM_SCORE = 50;
   }
 
   public static class Resource {
@@ -205,6 +209,7 @@ public class Constants {
         public static final String SUCCEEDED = PREFIX + "succeeded";
         public static final String SCORE = PREFIX + "score";
         public static final String FAILED = PREFIX + "failed";
+        public static final String TO_IMPROVE = PREFIX + "to-improve";
       }
     }
   }
