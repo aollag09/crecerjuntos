@@ -65,6 +65,7 @@ public class DactylographieView extends AbstractExerciseView {
     content.add(textField);
     textField.setValueChangeMode(ValueChangeMode.EAGER);
     textField.setAutoselect(true);
+    textField.setAutofocus(true);
 
     textField.addValueChangeListener(
         event -> {
