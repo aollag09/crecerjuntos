@@ -21,8 +21,9 @@ import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
-@com.vaadin.flow.router.Route(Constants.Route.CREATE)
+@Route(Constants.Route.CREATE)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle("Crecer Juntos Login")
 public class Create extends VerticalLayout {

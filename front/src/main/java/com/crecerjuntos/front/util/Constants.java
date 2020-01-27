@@ -65,6 +65,7 @@ public class Constants {
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
+    public static final String SCORE = "score";
 
     public static class QueryParameters {}
   }
@@ -82,7 +83,6 @@ public class Constants {
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final int MINIMUM_SCORE = 70;
   }
-
 
   public static class Resource {
     public static final String IMG_TERESA = "resources/img/teresa.png";

@@ -4,7 +4,6 @@ import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.Dactylographie;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
-import com.crecerjuntos.front.util.ProgressServices;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -79,9 +78,8 @@ public class DactylographieView extends AbstractExerciseView {
             textField.setInvalid(false);
             if (current.equals(value)) {
               success++;
-              currentSequence ++;
-              if( currentSequence > longestSequence )
-                longestSequence = currentSequence;
+              currentSequence++;
+              if (currentSequence > longestSequence) longestSequence = currentSequence;
               next();
             }
           }
@@ -92,14 +90,12 @@ public class DactylographieView extends AbstractExerciseView {
   }
 
   @Override
-  protected Score computeScore(){
+  protected Score computeScore() {
     Score score = new Score();
-    score.addKPI( Constants.Resource.Strings.ScoreKPI.DURATION, getDurationString());
-    score.addKPI( Constants.Resource.Strings.ScoreKPI.SUCCESS, success);
-    score.addKPI( Constants.Resource.Strings.ScoreKPI.MISTAKES, mistake);
-    score.addKPI( Constants.Resource.Strings.ScoreKPI.LONGEST_SEQUENCE, longestSequence);
+    score.addKPI(Constants.Resource.Strings.ScoreKPI.DURATION, getDurationString());
+    score.addKPI(Constants.Resource.Strings.ScoreKPI.SUCCESS, success);
+    score.addKPI(Constants.Resource.Strings.ScoreKPI.MISTAKES, mistake);
+    score.addKPI(Constants.Resource.Strings.ScoreKPI.LONGEST_SEQUENCE, longestSequence);
     return score;
   }
-
-
 }

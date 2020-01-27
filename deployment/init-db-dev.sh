@@ -2,9 +2,11 @@
 
 while getopts ":f:" opt; do
   case $opt in
-    f) filepath="$OPTARG"
+  f)
+    filepath="$OPTARG"
     ;;
-    \?) echo "Usage : ./init-db-dev.sh launch sql database container with local data or new database. ./init-db-dev.sh -f filepath will launch sql database container with databasedump in filepath"
+  \?)
+    echo "Usage : ./init-db-dev.sh launch sql database container with local data or new database. ./init-db-dev.sh -f filepath will launch sql database container with databasedump in filepath"
     ;;
   esac
 done

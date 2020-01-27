@@ -1,34 +1,33 @@
 package com.crecerjuntos.front.exercise.data;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
-public class Score{
+public class Score {
 
-    /** Details of the result */
-    private Map<String, Object> KPI;
+  /** Details of the result */
+  private Map<String, Object> KPI;
 
-    /** Computed score, value between 0 and 100 */
-    private int score;
+  /** Computed score, value between 0 and 100 */
+  private int score;
 
-    public Score(){
-        KPI = new HashMap<>();
-    }
+  public Score() {
+    KPI = new HashMap<>();
+  }
 
-    public void setScore( final int score){
-        this.score = score;
-    }
+  public void setScore(final int score) {
+    this.score = score;
+  }
 
-    public void addKPI(final String name, final Object value){
-        KPI.put(name,value);
-    }
+  public void addKPI(final String name, final Object value) {
+    KPI.put(name, value);
+  }
 
-    public int getScore(){
-        return this.score;
-    }
+  public int getScore() {
+    return this.score;
+  }
 
-    public Map<String, Object> getKPIs(){
-        return this.KPI;
-    }
-
-
+  public Map<String, Object> getKPIs() {
+    return this.KPI;
+  }
 }

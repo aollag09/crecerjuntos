@@ -100,21 +100,22 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
   protected abstract Score computeScore();
 
-  protected void end(){
-      score = computeScore();
-      ProgressServices.end(exercise, level, score.getScore());
+  protected void end() {
+    score = computeScore();
+    ProgressServices.end(exercise, level, score.getScore());
   }
 
   protected long getDurationMillis() {
     return System.currentTimeMillis() - startTime;
   }
 
-  protected String getDurationString(){
+  protected String getDurationString() {
     long millis = getDurationMillis();
-    return String.format("%d min, %d sec", 
+    return String.format(
+        "%d min, %d sec",
         TimeUnit.MILLISECONDS.toMinutes(millis),
-        TimeUnit.MILLISECONDS.toSeconds(millis) - 
-        TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
+        TimeUnit.MILLISECONDS.toSeconds(millis)
+            - TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes(millis)));
   }
 
   @Override
