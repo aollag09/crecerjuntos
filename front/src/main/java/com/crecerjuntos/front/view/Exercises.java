@@ -16,7 +16,7 @@ import com.vaadin.flow.server.VaadinServlet;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
-@PageTitle("Crecer Juntos exercises")
+@PageTitle(Constants.Title.TITLE)
 public class Exercises extends VerticalLayout {
 
   public Exercises() {

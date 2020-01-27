@@ -25,7 +25,7 @@ import com.vaadin.flow.router.Route;
 
 @Route(Constants.Route.CREATE)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
-@PageTitle("Crecer Juntos Login")
+@PageTitle(Constants.Title.TITLE)
 public class Create extends VerticalLayout {
 
   public Create() {
