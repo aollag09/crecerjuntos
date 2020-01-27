@@ -22,6 +22,7 @@ public class DactylographieView extends AbstractExerciseView {
   private static final int NB_ROUNDS = 20;
 
   private int counter, mistake, success;
+  private int longestSequence, currentSequence;
   private String current;
   private List<String> words;
 
@@ -73,10 +74,14 @@ public class DactylographieView extends AbstractExerciseView {
           if (!current.startsWith(value)) {
             textField.setInvalid(true);
             mistake++;
+            currentSequence = 0;
           } else {
             textField.setInvalid(false);
             if (current.equals(value)) {
               success++;
+              currentSequence ++;
+              if( currentSequence > longestSequence )
+                longestSequence = currentSequence;
               next();
             }
           }
@@ -90,6 +95,9 @@ public class DactylographieView extends AbstractExerciseView {
   protected Score computeScore(){
     Score score = new Score();
     score.addKPI( Constants.Resource.Strings.ScoreKPI.DURATION, getDurationString());
+    score.addKPI( Constants.Resource.Strings.ScoreKPI.SUCCESS, success);
+    score.addKPI( Constants.Resource.Strings.ScoreKPI.MISTAKES, mistake);
+    score.addKPI( Constants.Resource.Strings.ScoreKPI.LONGEST_SEQUENCE, longestSequence);
     return score;
   }
 
