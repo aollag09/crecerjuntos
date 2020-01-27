@@ -9,3 +9,10 @@
 ** You will need PGPASSWORD environment variable or to prompt it when asked
 * Run CSCoursesApp 
 * Make sure sections were created 
+
+
+# Launch UI
+
+* Launch ./gradlew appRun
+* Build product with ./gradlew buildProduct and then launch ./start.sh
+
