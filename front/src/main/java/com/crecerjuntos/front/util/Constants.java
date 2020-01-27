@@ -150,11 +150,11 @@ public class Constants {
       }
 
       public static class Exercises {
-        private static final String PREXIX = "exercises-";
-        public static final String TITLE = PREXIX + "title";
-        public static final String LEVELS = PREXIX + "levels";
-        public static final String HOURS = PREXIX + "hours";
-        public static final String START = PREXIX + "start";
+        private static final String PREFIX = "exercises-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String LEVELS = PREFIX + "levels";
+        public static final String HOURS = PREFIX + "hours";
+        public static final String START = PREFIX + "start";
       }
 
       public static class Dactylographie {
