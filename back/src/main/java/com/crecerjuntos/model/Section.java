@@ -11,12 +11,15 @@ public enum Section {
   TERCERO("Tercero"),
   QUARTO("Quarto"),
   QUINTO("Quinto"),
-  SEXTO("Sexto"),
-  SEPTIMO("Septimo"),
-  OCTAVO("Octavo"),
-  NOVEMO("Novemo"),
-  PROCESSO_BASICO("Processo Basico"),
-  ACCELERATION("Acceleration");
+  SEXTO_1("Sexto 1"),
+  SEXTO_2("Sexto 2"),
+  SEPTIMO_1("Septimo 1"),
+  SEPTIMO_2("Septimo 2"),
+  OCTAVO_1("Octavo 1"),
+  OCTAVO_2("Octavo 2"),
+  NOVENO("Noveno"),
+  PROCESSO_BASICO("Processo Básico"),
+  ACCELERACION("Acceleración");
 
   private String name;
 
