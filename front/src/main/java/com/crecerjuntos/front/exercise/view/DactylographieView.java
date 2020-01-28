@@ -102,7 +102,7 @@ public class DactylographieView extends AbstractExerciseView {
     // build score
     int intScore = 100;
     if (getDurationMillis() > exercise.getExpectedTime(level))
-      intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1.000;
+      intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1000;
     intScore -= mistake;
     score.setScore(intScore);
 
