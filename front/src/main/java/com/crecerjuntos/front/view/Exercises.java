@@ -30,6 +30,8 @@ public class Exercises extends VerticalLayout {
   }
 
   private void buildExercise(final Exercise exercise) {
+
+      
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
 
@@ -37,7 +39,7 @@ public class Exercises extends VerticalLayout {
     exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
-    Span status = new Span("ready");
+    Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
     status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
     exerciseHeader.add(status);
 

@@ -155,6 +155,9 @@ public class Constants {
         public static final String LEVELS = PREFIX + "levels";
         public static final String HOURS = PREFIX + "hours";
         public static final String START = PREFIX + "start";
+        public static final String READY = PREFIX + "ready";
+        public static final String IN_PROGRESS = PREFIX + "in-progress";
+        public static final String DONE = PREFIX + "done";
       }
 
       public static class Dactylographie {
