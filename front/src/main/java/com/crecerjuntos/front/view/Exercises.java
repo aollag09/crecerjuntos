@@ -19,7 +19,9 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.server.VaadinServlet;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
@@ -40,9 +42,9 @@ public class Exercises extends VerticalLayout {
 
     // List the student achievements
     Student student = LoginServices.getStudent();
-    List<Achievement> done = new ArrayList<Achievement>();
+    List<Achievement> dones = new ArrayList<Achievement>();
     if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
-      done = ProgressServices.getDone(student);
+      dones = ProgressServices.getDone(student);
     }
 
     VerticalLayout exerciseCard = new VerticalLayout();
@@ -90,7 +92,7 @@ public class Exercises extends VerticalLayout {
     VerticalLayout levels = new VerticalLayout();
     levels.addClassName(Constants.ClassStyle.Exercises.LEVELS);
     for (int levelId = 0; levelId < exercise.getNbLevels(); levelId++) {
-      levels.add(buildLevel(exercise, levelId));
+      levels.add(buildLevel(exercise, levelId, dones));
     }
 
     exerciseCard.add(exerciseHeader);
@@ -98,10 +100,28 @@ public class Exercises extends VerticalLayout {
     add(exerciseCard);
   }
 
-  private HorizontalLayout buildLevel(final Exercise exercise, final int levelId) {
+  private HorizontalLayout buildLevel(
+      final Exercise exercise, final int levelId, List<Achievement> dones) {
+
+    Optional<Achievement> done =
+        dones.stream()
+            .filter(achievement -> achievement.getExercise().equals(exercise.getName()))
+            .filter(achievement -> achievement.getLevel() == levelId)
+            .max(Comparator.comparingInt(Achievement::getScore));
+
     HorizontalLayout level = new HorizontalLayout();
     level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
-    level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
+
+    if (!done.isPresent()) level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
+    else {
+      if (done.get().getScore() >= Constants.Exercises.GOOD_SCORE) {
+        level.add(buildIconGreen());
+      } else if (done.get().getScore() >= Constants.Exercises.MINIMUM_SCORE) {
+        level.add(buildIconOrange());
+      } else {
+        level.add(buildIconRed());
+      }
+    }
 
     Anchor anchor = new Anchor();
     anchor.addClassName(Constants.ClassStyle.Exercises.ANCHOR);
@@ -128,9 +148,27 @@ public class Exercises extends VerticalLayout {
     return uri.toString();
   }
 
-  public Component buildIcon(final VaadinIcon vIcon) {
+  private Component buildIcon(final VaadinIcon vIcon) {
     Icon icon = vIcon.create();
     icon.addClassName(Constants.ClassStyle.Exercises.ICON);
+    return icon;
+  }
+
+  private Component buildIconGreen() {
+    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
+    icon.addClassName(Constants.ClassStyle.Exercises.ICON_GREEN);
+    return icon;
+  }
+
+  private Component buildIconOrange() {
+    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
+    icon.addClassName(Constants.ClassStyle.Exercises.ICON_ORANGE);
+    return icon;
+  }
+
+  private Component buildIconRed() {
+    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
+    icon.addClassName(Constants.ClassStyle.Exercises.ICON_RED);
     return icon;
   }
 }

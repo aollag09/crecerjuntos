@@ -124,6 +124,21 @@ html {
     margin-right: 10px;
 }
 
+.exercises-layout__icon-green{
+    color: var(--lumo-success-color);
+    margin-right: 10px;
+}
+
+.exercises-layout__icon-orange{
+    color: orange;
+    margin-right: 10px;
+}
+
+.exercises-layout__icon-red{
+    color: red;
+    margin-right: 10px;
+}
+
 .exercises-layout__anchor{
     color: var(--lumo-body-text-color);
     font-size: large;

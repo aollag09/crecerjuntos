@@ -40,6 +40,9 @@ public class Constants {
       public static final String LEVELS = PREFIX + "levels";
       public static final String LEVEL = PREFIX + "level";
       public static final String ICON = PREFIX + "icon";
+      public static final String ICON_GREEN = PREFIX + "icon-green";
+      public static final String ICON_ORANGE = PREFIX + "icon-orange";
+      public static final String ICON_RED = PREFIX + "icon-red";
       public static final String ANCHOR = PREFIX + "anchor";
       public static final String INSTRUCTIONS = PREFIX + "instructions";
       public static final String START = PREFIX + "start";
