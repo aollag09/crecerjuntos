@@ -71,8 +71,10 @@ public class StudentRepositoryImpl implements StudentRepository {
   }
 
   public void delete(Student student) {
+    em.getTransaction().begin();
     if (em.contains(student)) {
       em.remove(student);
     }
+    em.getTransaction().commit();
   }
 }
