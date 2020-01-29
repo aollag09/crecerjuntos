@@ -56,6 +56,14 @@ public class Exercises extends VerticalLayout {
       Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
       status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
       exerciseHeader.add(status);
+    } else if( dones.size() < exercise.getNbLevels()){
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.IN_PROGRESS));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_IN_PROGRESS);
+      exerciseHeader.add(status);
+    } else{
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.DONE));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_SUCCESS);
+      exerciseHeader.add(status);
     }
 
     // Name

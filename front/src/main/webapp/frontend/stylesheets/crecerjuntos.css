@@ -73,6 +73,19 @@ html {
     background: var(--lumo-primary-color-10pct);
 }
 
+.exercises-layout__status-in-progress{
+    display: inline-block;
+    align-self: center;
+    border-radius: var(--lumo-border-radius);
+    background: var(--lumo-shade-10pct);
+    color: var(--lumo-secondary-text-color);
+    padding: 10px 20px;
+    font-size: var(--lumo-font-size-s);
+    text-transform: capitalize;
+    color: var(--lumo-primary-color);
+    background: var(--lumo-primary-color-10pct);
+}
+
 .exercises-layout__status-success{
     display: inline-block;
     align-self: center;
