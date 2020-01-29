@@ -42,6 +42,7 @@ public class Constants {
       public static final String LEVEL = PREFIX + "level";
       public static final String ICON = PREFIX + "icon";
       public static final String BLUE = PREFIX + "blue";
+      public static final String GREY = PREFIX + "grey";
       public static final String GREEN = PREFIX + "green";
       public static final String ORANGE = PREFIX + "orange";
       public static final String RED = PREFIX + "red";

@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
@@ -42,11 +43,7 @@ public class Exercises extends VerticalLayout {
   private void buildExercise(final Exercise exercise) {
 
     // List the student achievements
-    Student student = LoginServices.getStudent();
-    List<Achievement> dones = new ArrayList<Achievement>();
-    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
-      dones = ProgressServices.getDone(student);
-    }
+    List<Achievement> dones = getBestLevelsDone(exercise);
 
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
@@ -55,9 +52,11 @@ public class Exercises extends VerticalLayout {
     exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
-    Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
-    status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
-    exerciseHeader.add(status);
+    if (dones.size() == 0) {
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
+      exerciseHeader.add(status);
+    }else if( dones.size() != ex)
 
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
@@ -106,7 +105,6 @@ public class Exercises extends VerticalLayout {
 
     Optional<Achievement> done =
         dones.stream()
-            .filter(achievement -> achievement.getExercise().equals(exercise.getName()))
             .filter(achievement -> achievement.getLevel() == levelId)
             .max(Comparator.comparingInt(Achievement::getScore));
 
@@ -133,6 +131,22 @@ public class Exercises extends VerticalLayout {
     anchor.setHref(buildLevelURI(exercise, levelId));
     level.add(anchor);
     return level;
+  }
+
+  private List<Achievement> getBestLevelsDone(final Exercise exercise){
+    Student student = LoginServices.getStudent();
+    List<Achievement> dones = new ArrayList<Achievement>();
+    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
+      dones = ProgressServices.getDone(student).stream()
+              .filter(achievement -> exercise.getName().equals(achievement.getExercise()))
+              .collect(Collectors.groupingBy(Achievement::getLevel))
+              .values().stream()
+              .map( achievements -> achievements.stream().max(Comparator.comparingInt(Achievement::getScore)))
+              .filter(Optional::isPresent)
+              .map(Optional::get)
+              .collect(Collectors.toList());
+    }
+    return dones;
   }
 
   private Component buildScore(int score, Color color) {

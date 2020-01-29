@@ -69,7 +69,7 @@ html {
     padding: 10px 20px;
     font-size: var(--lumo-font-size-s);
     text-transform: capitalize;
-    color: var(--lumo-primary-color);
+    color: var(--lumo-tertiary-text-color);
     background: var(--lumo-primary-color-10pct);
 }
 
@@ -137,6 +137,10 @@ html {
 
 .exercises-layout__red{
     color: red;
+}
+
+.exercises-layout__grey{
+    color: var(--lumo-tertiary-text-color);
 }
 
 .exercises-layout__score{
