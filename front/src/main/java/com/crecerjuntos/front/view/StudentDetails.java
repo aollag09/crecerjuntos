@@ -1,21 +1,26 @@
 package com.crecerjuntos.front.view;
 
+import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
-
-
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyNotifier;
 import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Arrays;
 
 public class StudentDetails extends VerticalLayout implements KeyNotifier {
 
+	private Logger logger = LoggerFactory.getLogger(StudentDetails.class) ;
     private final IAuthoringServices authoringService;
     private final IStudentAccess studentAccess;
 
@@ -24,7 +29,10 @@ public class StudentDetails extends VerticalLayout implements KeyNotifier {
 
     // Fields to edit
     TextField name = new TextField("Name");
-    TextField email = new TextField("Email");
+    TextField mail = new TextField("Email");
+    ComboBox<Section> section =  new ComboBox<>("Section");
+
+
     TextField password = new TextField("Password");
 
     Button save = new Button("Save", VaadinIcon.CHECK.create());
@@ -39,11 +47,29 @@ public class StudentDetails extends VerticalLayout implements KeyNotifier {
     public StudentDetails(IStudentAccess studentAccess, IAuthoringServices authoringService){
         this.authoringService = authoringService;
         this.studentAccess = studentAccess;
-        
-		add(name, email, password, actions);
 
-		// bind using naming convention
+        // Put section combo box
+		section.setItemLabelGenerator(Section::getName);
+		section.setItems(Arrays.asList(Section.values()));
+        
+		add(name, mail, section, password, actions);
+
+		// bind fields
 		binder.bindInstanceFields(this);
+
+//		binder.forField(name)
+//				.bind(Student::getName, Student::setName);
+//
+//		binder.forField(mail)
+//				.bind(Student::getMail, Student::setMail);
+//
+//		binder.forField(password)
+//				.bind(Student::getPassword, Student::setPassword);
+
+		// Bind section with enum converter
+//		binder.forField(section)
+//				.withConverter(Section::fromString, Section::getName, "Please use a defined section")
+//				.bind(Student::getSection, Student::setSection);
 
 		// Configure and style components
 		setSpacing(true);
@@ -67,6 +93,7 @@ public class StudentDetails extends VerticalLayout implements KeyNotifier {
 	}
 
 	void save() {
+    	logger.info("Saving student " + student);
 		authoringService.add(student);
 		changeHandler.onChange();
 	}
@@ -75,23 +102,23 @@ public class StudentDetails extends VerticalLayout implements KeyNotifier {
 		void onChange();
 	}
 
-	public final void editStudent(Student student) {
-		if (student == null) {
+	public final void editStudent(Student s) {
+		if (s == null) {
 			setVisible(false);
 			return;
 		}
-		final boolean persisted = student.getId() != null;
+		final boolean persisted = s.getId() != null;
 		if (persisted) {
 			// Find fresh entity for editing
-			student = studentAccess.byId(student.getId());
+			this.student = studentAccess.byId(s.getId());
 		}
 		else {
-			this.student = student;
+			this.student = s;
 		}
 		cancel.setVisible(persisted);
 
 		// Bind student properties to similarly named fields
-		binder.setBean(student);
+		binder.setBean(this.student);
 
 		setVisible(true);
 

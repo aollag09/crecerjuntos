@@ -44,11 +44,12 @@ public class Admin extends VerticalLayout {
 		// Listen changes made by the editor, refresh data from backend
 		studentDetails.setChangeHandler(() -> {
 			studentDetails.setVisible(false);
-			buildStudents();
+			listStudents(students);
 		});
 
     add(new H2("Student List"));
     add(students);
+    add(studentDetails);
   }
 
   private Grid<Student> buildStudents() {
@@ -60,9 +61,14 @@ public class Admin extends VerticalLayout {
     grid.setDetailsVisibleOnClick(true);
     grid.setColumnReorderingAllowed(true);
 
-    List<Student> studentList = studentAccess.search("");
-    grid.setItems(studentList);
+    listStudents(grid);
+
     return grid;
+  }
+
+  private void listStudents(Grid<Student> grid){
+      List<Student> studentList = studentAccess.search("");
+      grid.setItems(studentList);
   }
 
 }
