@@ -37,15 +37,15 @@ public class Admin extends VerticalLayout {
     students = buildStudents();
 
     // Connect selected student to editor or hide if none is selected
-		students.asSingleSelect().addValueChangeListener(e -> {
-			studentDetails.editStudent(e.getValue());
-		});
+    students.asSingleSelect().addValueChangeListener(e -> {
+        studentDetails.editStudent(e.getValue());
+    });
 
-		// Listen changes made by the editor, refresh data from backend
-		studentDetails.setChangeHandler(() -> {
-			studentDetails.setVisible(false);
-			listStudents(students);
-		});
+    // Listen changes made by the editor, refresh data from backend
+    studentDetails.setChangeHandler(() -> {
+        studentDetails.setVisible(false);
+        listStudents(students);
+    });
 
     add(new H2("Student List"));
     add(students);
