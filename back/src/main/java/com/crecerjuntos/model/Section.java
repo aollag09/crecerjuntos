@@ -42,6 +42,7 @@ public enum Section {
         return s;
       }
     }
-    return null;
+    return DEFAULT;
   }
+
 }
