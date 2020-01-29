@@ -30,6 +30,7 @@ public class Dactylographie extends Exercise {
     words.put(2, new WordsBuilderLevel3());
     words.put(3, new WordsBuilderLevel4());
     words.put(4, new WordsBuilderLevel5());
+    words.put(5, new WordsBuilderLevel6());
   }
 
   private static List<Level> buildLevels() {
@@ -39,6 +40,8 @@ public class Dactylographie extends Exercise {
     levels.add(new Level(3, Constants.Resource.Strings.Dactylographie.LVL3_NAME));
     levels.add(new Level(4, Constants.Resource.Strings.Dactylographie.LVL4_NAME));
     levels.add(new Level(5, Constants.Resource.Strings.Dactylographie.LVL5_NAME));
+    levels.add(new Level(6, Constants.Resource.Strings.Dactylographie.LVL6_NAME));
+    //levels.add(new Level(7, Constants.Resource.Strings.Dactylographie.LVL7_NAME));
     return levels;
   }
 
@@ -49,6 +52,7 @@ public class Dactylographie extends Exercise {
     if (level == 2) return 3000 * NB_ROUNDS;
     if (level == 3) return 3300 * NB_ROUNDS;
     if (level == 4) return 4000 * NB_ROUNDS;
+    if (level == 5) return 8000 * NB_ROUNDS;
     return 0;
   }
 
@@ -102,6 +106,36 @@ public class Dactylographie extends Exercise {
     @Override
     public List<String> build() {
       return new ArrayList<>(SPANISH_WORDS);
+    }
+  }
+
+  public static class WordsBuilderLevel6 implements WordsBuilder {
+
+    @Override
+    public List<String> build() {
+      return new ArrayList<>(
+          Arrays.asList(
+              "barack.obama@yahoo.us",
+              "steve.jobs@icloud.com",
+              "emmanuel.macron@hotmail.fr",
+              "jesus.christ@heaven.com",
+              "lionel.messi@gmail.com",
+              "christiano.ronaldo@outlook.com",
+              "paul.pogba@hotmail.fr",
+              "antoine.griezman@gmail.com",
+              "ugo.lloris@outlook.fr",
+              "raphael.nadal@hotmail.es",
+              "roger.federer@gmail.com",
+              "kilian.mbappe@gmail.com",
+              "mickael.jackson@gmail.com",
+              "bill.gates@microsoft.com",
+              "jackie.chan@gmail.com",
+              "emma.watson@gmail.com",
+              "dalai.lama@gmail.com",
+              "pope.francis@gmail.com",
+              "queen.elizabeth2@hotmail.uk",
+              "madonna@gmail.com",
+              "elon.musk@gmail.com"));
     }
   }
 
