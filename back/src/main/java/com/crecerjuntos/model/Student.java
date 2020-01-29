@@ -84,8 +84,16 @@ public class Student implements BaseEntity {
     return name;
   }
 
+  public void setName(String name) {
+    this.name = name;
+  }
+
   public Section getSection() {
     return section;
+  }
+
+  public void setSection(Section section){
+    this.section=section;
   }
 
   public String getSectionName() {
@@ -96,8 +104,16 @@ public class Student implements BaseEntity {
     return mail;
   }
 
+  public void setMail(String mail){
+    this.mail = mail;
+  }
+
   public String getPassword() {
     return password;
+  }
+
+  public void setPassword(String password){
+    this.password = password;
   }
 
   @Override
