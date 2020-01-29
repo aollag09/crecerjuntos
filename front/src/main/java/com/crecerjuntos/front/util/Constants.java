@@ -72,6 +72,11 @@ public class Constants {
       public static final String TO_IMPROVED = PREFIX + "to-improved";
       public static final String FAILED = PREFIX + "failed";
     }
+
+    public static class Logout {
+      private static final String PREFIX = "logout-layout__";
+      public static final String LOGOUT = PREFIX + "logout";
+    }
   }
 
   public static class Route {
@@ -221,6 +226,14 @@ public class Constants {
         public static final String SCORE = PREFIX + "score";
         public static final String FAILED = PREFIX + "failed";
         public static final String TO_IMPROVE = PREFIX + "to-improve";
+      }
+
+      public static class Logout {
+
+        private static final String PREFIX = "logout-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
+        public static final String LOGIN = PREFIX + "login";
       }
     }
   }
