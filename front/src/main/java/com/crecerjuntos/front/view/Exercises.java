@@ -9,6 +9,7 @@ import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
@@ -69,18 +70,18 @@ public class Exercises extends VerticalLayout {
     HorizontalLayout details = new HorizontalLayout();
     Div difficulty = new Div();
     difficulty.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    difficulty.add(buildIcon(VaadinIcon.FLAG));
+    difficulty.add(buildIcon(VaadinIcon.FLAG, Color.BLUE));
     difficulty.add(exercise.getDifficulty().toString());
 
     Div nbLevels = new Div();
     nbLevels.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    nbLevels.add(buildIcon(VaadinIcon.LIST));
+    nbLevels.add(buildIcon(VaadinIcon.LIST, Color.BLUE));
     nbLevels.add(
         exercise.getNbLevels() + " " + getTranslation(Constants.Resource.Strings.Exercises.LEVELS));
 
     Div time = new Div();
     time.addClassName(Constants.ClassStyle.Exercises.DETAIL);
-    time.add(buildIcon(VaadinIcon.TIMER));
+    time.add(buildIcon(VaadinIcon.TIMER, Color.BLUE));
     time.add(
         exercise.getAverageTime()
             + " "
@@ -112,14 +113,17 @@ public class Exercises extends VerticalLayout {
     HorizontalLayout level = new HorizontalLayout();
     level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
 
-    if (!done.isPresent()) level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT));
+    if (!done.isPresent()) level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT, Color.BLUE));
     else {
       if (done.get().getScore() >= Constants.Exercises.GOOD_SCORE) {
-        level.add(buildIconGreen());
+        level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.GREEN));
+        level.add(buildScore(done.get().getScore(), Color.GREEN));
       } else if (done.get().getScore() >= Constants.Exercises.MINIMUM_SCORE) {
-        level.add(buildIconOrange());
+        level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.ORANGE));
+        level.add(buildScore(done.get().getScore(), Color.ORANGE));
       } else {
-        level.add(buildIconRed());
+        level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.RED));
+        level.add(buildScore(done.get().getScore(), Color.RED));
       }
     }
 
@@ -129,6 +133,13 @@ public class Exercises extends VerticalLayout {
     anchor.setHref(buildLevelURI(exercise, levelId));
     level.add(anchor);
     return level;
+  }
+
+  private Component buildScore(int score, Color color) {
+    Span text = new Span(String.valueOf(score));
+    text.addClassName(Constants.ClassStyle.Exercises.SCORE);
+    addColor(text, color);
+    return text;
   }
 
   private String buildLevelURI(final Exercise exercise, final int levelId) {
@@ -148,27 +159,33 @@ public class Exercises extends VerticalLayout {
     return uri.toString();
   }
 
-  private Component buildIcon(final VaadinIcon vIcon) {
+  private Component buildIcon(final VaadinIcon vIcon, final Color color) {
     Icon icon = vIcon.create();
-    icon.addClassName(Constants.ClassStyle.Exercises.ICON);
+    addColor(icon, color);
     return icon;
   }
 
-  private Component buildIconGreen() {
-    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
-    icon.addClassName(Constants.ClassStyle.Exercises.ICON_GREEN);
-    return icon;
+  private void addColor(final HasStyle component, final Color color) {
+    switch (color) {
+      case RED:
+        component.addClassName(Constants.ClassStyle.Exercises.RED);
+        break;
+      case GREEN:
+        component.addClassName(Constants.ClassStyle.Exercises.GREEN);
+        break;
+      case ORANGE:
+        component.addClassName(Constants.ClassStyle.Exercises.ORANGE);
+        break;
+      case BLUE:
+        component.addClassName(Constants.ClassStyle.Exercises.BLUE);
+        break;
+    }
   }
 
-  private Component buildIconOrange() {
-    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
-    icon.addClassName(Constants.ClassStyle.Exercises.ICON_ORANGE);
-    return icon;
-  }
-
-  private Component buildIconRed() {
-    Icon icon = VaadinIcon.CHECK_CIRCLE.create();
-    icon.addClassName(Constants.ClassStyle.Exercises.ICON_RED);
-    return icon;
+  public enum Color {
+    GREEN,
+    ORANGE,
+    RED,
+    BLUE
   }
 }

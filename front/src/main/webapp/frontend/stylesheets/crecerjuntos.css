@@ -120,24 +120,29 @@ html {
 }
 
 .exercises-layout__icon{
+    margin-right: 10px;
+}
+
+.exercises-layout__blue{
     color: var(--lumo-primary-color);
-    margin-right: 10px;
 }
 
-.exercises-layout__icon-green{
+.exercises-layout__green{
     color: var(--lumo-success-color);
-    margin-right: 10px;
 }
 
-.exercises-layout__icon-orange{
+.exercises-layout__orange{
     color: orange;
-    margin-right: 10px;
 }
 
-.exercises-layout__icon-red{
+.exercises-layout__red{
     color: red;
-    margin-right: 10px;
 }
+
+.exercises-layout__score{
+
+}
+
 
 .exercises-layout__anchor{
     color: var(--lumo-body-text-color);
