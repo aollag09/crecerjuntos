@@ -57,20 +57,6 @@ public class StudentDetails extends VerticalLayout implements KeyNotifier {
 		// bind fields
 		binder.bindInstanceFields(this);
 
-//		binder.forField(name)
-//				.bind(Student::getName, Student::setName);
-//
-//		binder.forField(mail)
-//				.bind(Student::getMail, Student::setMail);
-//
-//		binder.forField(password)
-//				.bind(Student::getPassword, Student::setPassword);
-
-		// Bind section with enum converter
-//		binder.forField(section)
-//				.withConverter(Section::fromString, Section::getName, "Please use a defined section")
-//				.bind(Student::getSection, Student::setSection);
-
 		// Configure and style components
 		setSpacing(true);
 
