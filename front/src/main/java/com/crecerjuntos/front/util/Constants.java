@@ -50,7 +50,7 @@ public class Constants {
       public static final String START = PREFIX + "start";
       public static final String SCORE = PREFIX + "score";
       public static final String STATUS_IN_PROGRESS = PREFIX + "status-in-progress";
-      public static final String STATUS_SUCCESS = PREFIX + "success";
+      public static final String STATUS_SUCCESS = PREFIX + "status-success";
     }
 
     public static class Dactylographie {
