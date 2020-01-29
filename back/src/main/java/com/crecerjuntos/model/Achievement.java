@@ -48,7 +48,7 @@ public class Achievement {
   private final int level;
 
   /** Progression should be between 0 and 100 */
-  private final double progression;
+  private final double progress;
 
   /** Score, should be between 0 and 100 */
   private final int score;
@@ -64,7 +64,7 @@ public class Achievement {
       final Date timestamp,
       final String exercise,
       final int level,
-      final double progression,
+      final double progress,
       final int score) {
     this.id = id;
     this.student = student;
@@ -72,7 +72,7 @@ public class Achievement {
     this.timestamp = timestamp;
     this.exercise = exercise;
     this.level = level;
-    this.progression = progression;
+    this.progress = progress;
     this.score = score;
   }
 
@@ -93,7 +93,7 @@ public class Achievement {
         + ", level="
         + level
         + ", progression="
-        + progression
+        + progress
         + ", score="
         + score
         + '}';
@@ -123,8 +123,8 @@ public class Achievement {
     return level;
   }
 
-  public double getProgression() {
-    return progression;
+  public double getProgress() {
+    return progress;
   }
 
   public int getScore() {

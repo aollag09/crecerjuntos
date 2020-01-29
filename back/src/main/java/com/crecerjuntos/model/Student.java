@@ -11,7 +11,7 @@ public class Student {
   public static final String DEFAULT_NAME = "Anonymous";
   public static final String DEFAULT_MAIL = null;
   public static final Student DEFAULT =
-      new Student(1l, DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
+      new Student(1L, DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
 
   /** Private generated id */
   @Id

@@ -33,7 +33,7 @@ public enum Section {
 
   public static List<String> list() {
     List<Section> list = Arrays.asList(Section.values());
-    return list.stream().map(section -> section.getName()).collect(Collectors.toList());
+    return list.stream().map(Section::getName).collect(Collectors.toList());
   }
 
   public static Section fromString(String section) {
