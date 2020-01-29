@@ -4,6 +4,10 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.front.util.LoginServices;
+import com.crecerjuntos.front.util.ProgressServices;
+import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.*;
@@ -13,6 +17,9 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.server.VaadinServlet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
@@ -31,7 +38,13 @@ public class Exercises extends VerticalLayout {
 
   private void buildExercise(final Exercise exercise) {
 
-      
+    // List the student achievements
+    Student student = LoginServices.getStudent();
+    List<Achievement> done = new ArrayList<Achievement>();
+    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
+      done = ProgressServices.getDone(student);
+    }
+
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
 
