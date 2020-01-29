@@ -69,6 +69,19 @@ html {
     padding: 10px 20px;
     font-size: var(--lumo-font-size-s);
     text-transform: capitalize;
+    color: var(--lumo-tertiary-text-color);
+    background: var(--lumo-primary-color-10pct);
+}
+
+.exercises-layout__status-in-progress{
+    display: inline-block;
+    align-self: center;
+    border-radius: var(--lumo-border-radius);
+    background: var(--lumo-shade-10pct);
+    color: var(--lumo-secondary-text-color);
+    padding: 10px 20px;
+    font-size: var(--lumo-font-size-s);
+    text-transform: capitalize;
     color: var(--lumo-primary-color);
     background: var(--lumo-primary-color-10pct);
 }
@@ -137,6 +150,10 @@ html {
 
 .exercises-layout__red{
     color: red;
+}
+
+.exercises-layout__grey{
+    color: var(--lumo-tertiary-text-color);
 }
 
 .exercises-layout__score{
@@ -217,4 +234,13 @@ html {
 
 .result-layout__failed{
     color:red;
+}
+
+/** Logout */
+.logout-layout__logout{
+    margin: auto;
+    font-size: x-large;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    align-items: center;
 }

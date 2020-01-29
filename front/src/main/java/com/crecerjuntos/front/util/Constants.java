@@ -30,7 +30,6 @@ public class Constants {
     }
 
     public static class Exercises {
-
       private static final String PREFIX = "exercises-layout__";
       public static final String STATUS_READY = PREFIX + "status-ready";
       public static final String NAME = PREFIX + "name";
@@ -42,6 +41,7 @@ public class Constants {
       public static final String LEVEL = PREFIX + "level";
       public static final String ICON = PREFIX + "icon";
       public static final String BLUE = PREFIX + "blue";
+      public static final String GREY = PREFIX + "grey";
       public static final String GREEN = PREFIX + "green";
       public static final String ORANGE = PREFIX + "orange";
       public static final String RED = PREFIX + "red";
@@ -49,6 +49,8 @@ public class Constants {
       public static final String INSTRUCTIONS = PREFIX + "instructions";
       public static final String START = PREFIX + "start";
       public static final String SCORE = PREFIX + "score";
+      public static final String STATUS_IN_PROGRESS = PREFIX + "status-in-progress";
+      public static final String STATUS_SUCCESS = PREFIX + "status-success";
     }
 
     public static class Dactylographie {
@@ -69,6 +71,11 @@ public class Constants {
       public static final String SUCCEEDED = PREFIX + "succeeded";
       public static final String TO_IMPROVED = PREFIX + "to-improved";
       public static final String FAILED = PREFIX + "failed";
+    }
+
+    public static class Logout {
+      private static final String PREFIX = "logout-layout__";
+      public static final String LOGOUT = PREFIX + "logout";
     }
   }
 
@@ -174,6 +181,8 @@ public class Constants {
         public static final String LVL3_NAME = PREFIX + "level3-name";
         public static final String LVL4_NAME = PREFIX + "level4-name";
         public static final String LVL5_NAME = PREFIX + "level5-name";
+        public static final String LVL6_NAME = PREFIX + "level6-name";
+        public static final String LVL7_NAME = PREFIX + "level7-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 
@@ -219,6 +228,14 @@ public class Constants {
         public static final String SCORE = PREFIX + "score";
         public static final String FAILED = PREFIX + "failed";
         public static final String TO_IMPROVE = PREFIX + "to-improve";
+      }
+
+      public static class Logout {
+
+        private static final String PREFIX = "logout-";
+        public static final String TITLE = PREFIX + "title";
+        public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
+        public static final String LOGIN = PREFIX + "login";
       }
     }
   }

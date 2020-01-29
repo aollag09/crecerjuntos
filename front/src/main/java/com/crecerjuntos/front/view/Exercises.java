@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @com.vaadin.flow.router.Route(value = Constants.Route.EXERCISES, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
@@ -42,11 +43,7 @@ public class Exercises extends VerticalLayout {
   private void buildExercise(final Exercise exercise) {
 
     // List the student achievements
-    Student student = LoginServices.getStudent();
-    List<Achievement> dones = new ArrayList<Achievement>();
-    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
-      dones = ProgressServices.getDone(student);
-    }
+    List<Achievement> bestLevelsDone = getBestLevelsDone(exercise);
 
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
@@ -55,9 +52,19 @@ public class Exercises extends VerticalLayout {
     exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
-    Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
-    status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
-    exerciseHeader.add(status);
+    if (bestLevelsDone.size() == 0) {
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
+      exerciseHeader.add(status);
+    } else if (bestLevelsDone.size() < exercise.getNbLevels()) {
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.IN_PROGRESS));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_IN_PROGRESS);
+      exerciseHeader.add(status);
+    } else {
+      Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.DONE));
+      status.addClassName(Constants.ClassStyle.Exercises.STATUS_SUCCESS);
+      exerciseHeader.add(status);
+    }
 
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
@@ -93,7 +100,7 @@ public class Exercises extends VerticalLayout {
     VerticalLayout levels = new VerticalLayout();
     levels.addClassName(Constants.ClassStyle.Exercises.LEVELS);
     for (int levelId = 0; levelId < exercise.getNbLevels(); levelId++) {
-      levels.add(buildLevel(exercise, levelId, dones));
+      levels.add(buildLevel(exercise, levelId, bestLevelsDone));
     }
 
     exerciseCard.add(exerciseHeader);
@@ -106,7 +113,6 @@ public class Exercises extends VerticalLayout {
 
     Optional<Achievement> done =
         dones.stream()
-            .filter(achievement -> achievement.getExercise().equals(exercise.getName()))
             .filter(achievement -> achievement.getLevel() == levelId)
             .max(Comparator.comparingInt(Achievement::getScore));
 
@@ -135,6 +141,26 @@ public class Exercises extends VerticalLayout {
     return level;
   }
 
+  private List<Achievement> getBestLevelsDone(final Exercise exercise) {
+    Student student = LoginServices.getStudent();
+    List<Achievement> dones = new ArrayList<Achievement>();
+    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
+      dones =
+          ProgressServices.getDone(student).stream()
+              .filter(achievement -> exercise.getName().equals(achievement.getExercise()))
+              .collect(Collectors.groupingBy(Achievement::getLevel))
+              .values()
+              .stream()
+              .map(
+                  achievements ->
+                      achievements.stream().max(Comparator.comparingInt(Achievement::getScore)))
+              .filter(Optional::isPresent)
+              .map(Optional::get)
+              .collect(Collectors.toList());
+    }
+    return dones;
+  }
+
   private Component buildScore(int score, Color color) {
     Span text = new Span(String.valueOf(score));
     text.addClassName(Constants.ClassStyle.Exercises.SCORE);
@@ -161,6 +187,7 @@ public class Exercises extends VerticalLayout {
 
   private Component buildIcon(final VaadinIcon vIcon, final Color color) {
     Icon icon = vIcon.create();
+    icon.addClassName(Constants.ClassStyle.Exercises.ICON);
     addColor(icon, color);
     return icon;
   }
