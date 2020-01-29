@@ -31,27 +31,27 @@ public class Achievement {
 
   @ManyToOne
   @JoinColumn(name = "student_id", nullable = false)
-  public final Student student;
+  private final Student student;
 
   /** Session id */
-  public final String sessionId;
+  private final String sessionId;
 
   /** Timestamp of the achievement */
-  public final Date timestamp;
+  private final Date timestamp;
 
   /** Name of the current exercise */
   @Column(nullable = false)
-  public final String exercise;
+  private final String exercise;
 
   /** Level of the current exercise, default : 1 */
   @Column(columnDefinition = "integer default 1")
-  public final int level;
+  private final int level;
 
   /** Progression should be between 0 and 100 */
-  public final double progression;
+  private final double progression;
 
   /** Score, should be between 0 and 100 */
-  public final int score;
+  private final int score;
 
   public Achievement() {
     this(0L, new Student(), "0", Date.valueOf(LocalDate.now()), "No exercise", 0, 0, 0);
