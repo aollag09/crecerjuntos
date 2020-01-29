@@ -56,7 +56,7 @@ public class Exercises extends VerticalLayout {
       Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
       status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
       exerciseHeader.add(status);
-    }else if( dones.size() != ex)
+    }
 
     // Name
     VerticalLayout gameInfo = new VerticalLayout();
