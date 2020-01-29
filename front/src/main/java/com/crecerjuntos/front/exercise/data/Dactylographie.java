@@ -31,6 +31,7 @@ public class Dactylographie extends Exercise {
     words.put(3, new WordsBuilderLevel4());
     words.put(4, new WordsBuilderLevel5());
     words.put(5, new WordsBuilderLevel6());
+    words.put(6,new WordsBuilderLevel7());
   }
 
   private static List<Level> buildLevels() {
@@ -41,7 +42,7 @@ public class Dactylographie extends Exercise {
     levels.add(new Level(4, Constants.Resource.Strings.Dactylographie.LVL4_NAME));
     levels.add(new Level(5, Constants.Resource.Strings.Dactylographie.LVL5_NAME));
     levels.add(new Level(6, Constants.Resource.Strings.Dactylographie.LVL6_NAME));
-    //levels.add(new Level(7, Constants.Resource.Strings.Dactylographie.LVL7_NAME));
+    levels.add(new Level(7, Constants.Resource.Strings.Dactylographie.LVL7_NAME));
     return levels;
   }
 
@@ -52,7 +53,8 @@ public class Dactylographie extends Exercise {
     if (level == 2) return 3000 * NB_ROUNDS;
     if (level == 3) return 3300 * NB_ROUNDS;
     if (level == 4) return 4000 * NB_ROUNDS;
-    if (level == 5) return 8000 * NB_ROUNDS;
+    if (level == 5) return 12000 * NB_ROUNDS;
+    if (level == 6) return 13000 * NB_ROUNDS;
     return 0;
   }
 
@@ -136,6 +138,37 @@ public class Dactylographie extends Exercise {
               "queen.elizabeth2@hotmail.uk",
               "madonna@gmail.com",
               "elon.musk@gmail.com"));
+    }
+  }
+
+  public static class WordsBuilderLevel7 implements WordsBuilder {
+
+    @Override
+    public List<String> build() {
+      return new ArrayList<>(
+          Arrays.asList(
+              "She is very intelligent",
+              "She is beautiful",
+              "It is easy",
+              "We are happy",
+              "Medellin is an incredible city",
+              "I'm learning how to use a computer",
+              "There is someone at the door",
+              "I love football",
+              "He works at a factory",
+              "He sat under a tree",
+              "I love being at home",
+              "Love will always find a way",
+              "This is not a book",
+              "Do you have pencils ?",
+              "What is the name of the president ?",
+              "What is your favourite food ?",
+              "How are you ?",
+              "What's your name ?",
+              "Do you have an email account ?",
+              "I'm gonna take a shower",
+              "Should I stay or should I go ?",
+              "I'm almost done"));
     }
   }
 
