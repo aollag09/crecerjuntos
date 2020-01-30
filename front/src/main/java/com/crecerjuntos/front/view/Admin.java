@@ -3,8 +3,10 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IStudentAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
+import com.crecerjuntos.services.AchievementService;
 import com.crecerjuntos.services.StudentService;
 import com.crecerjuntos.services.AuthoringService;
 import com.vaadin.flow.component.dependency.StyleSheet;
@@ -24,6 +26,7 @@ import java.util.List;
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {
 
+  private IAchievementAccess achievementAccess;
   private IStudentAccess studentAccess;
   private IAuthoringServices authoringService;
   private StudentDetails studentDetails;
@@ -32,17 +35,19 @@ public class Admin extends VerticalLayout {
   public Admin() {
     studentAccess = new StudentService();
     authoringService = new AuthoringService();
-    studentDetails = new StudentDetails(studentAccess, authoringService);
+    achievementAccess = new AchievementService();
+
+    studentDetails = new StudentDetails(achievementAccess, studentAccess, authoringService);
 
     students = buildStudents();
 
     // Connect selected student to editor or hide if none is selected
     students.asSingleSelect().addValueChangeListener(e -> {
-        studentDetails.editStudent(e.getValue());
+        studentDetails.showStudentsDetails(e.getValue());
     });
 
     // Listen changes made by the editor, refresh data from backend
-    studentDetails.setChangeHandler(() -> {
+    studentDetails.getStudentEditor().setChangeHandler(() -> {
         studentDetails.setVisible(false);
         listStudents(students);
     });

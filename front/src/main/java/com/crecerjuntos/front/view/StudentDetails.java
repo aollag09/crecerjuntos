@@ -1,122 +1,51 @@
 package com.crecerjuntos.front.view;
 
-import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
-import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.KeyNotifier;
-import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.textfield.TextField;
-import com.vaadin.flow.data.binder.Binder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
-
-public class StudentDetails extends VerticalLayout implements KeyNotifier {
+public class StudentDetails extends HorizontalLayout implements KeyNotifier {
 
 	private Logger logger = LoggerFactory.getLogger(StudentDetails.class) ;
     private final IAuthoringServices authoringService;
     private final IStudentAccess studentAccess;
+    private final IAchievementAccess achievementAccess;
 
-    // Currently modified student
+    // Current student
     private Student student;
 
-    // Fields to edit
-    TextField name = new TextField("Name");
-    TextField mail = new TextField("Email");
-    ComboBox<Section> section =  new ComboBox<>("Section");
+    private StudentEditor studentEditor;
+    private StudentStats studentStats;
 
-
-    TextField password = new TextField("Password");
-
-    Button save = new Button("Save", VaadinIcon.CHECK.create());
-	Button cancel = new Button("Cancel");
-	Button delete = new Button("Delete", VaadinIcon.TRASH.create());
-	HorizontalLayout actions = new HorizontalLayout(save, cancel, delete);
-
-	Binder<Student> binder = new Binder<>(Student.class);
-	private ChangeHandler changeHandler;
-
-
-    public StudentDetails(IStudentAccess studentAccess, IAuthoringServices authoringService){
+    public StudentDetails(IAchievementAccess achievementAccess, IStudentAccess studentAccess, IAuthoringServices authoringService){
         this.authoringService = authoringService;
         this.studentAccess = studentAccess;
+        this.achievementAccess = achievementAccess;
 
-        // Put section combo box
-		section.setItemLabelGenerator(Section::getName);
-		section.setItems(Arrays.asList(Section.values()));
-        
-		add(name, mail, section, password, actions);
+        studentEditor = new StudentEditor(studentAccess, authoringService);
+        add(studentEditor);
 
-		// bind fields
-		binder.bindInstanceFields(this);
+        studentStats = new StudentStats(achievementAccess, studentAccess);
+        add(studentStats);
 
-		// Configure and style components
-		setSpacing(true);
 
-		save.getElement().getThemeList().add("primary");
-		delete.getElement().getThemeList().add("error");
-
-		addKeyPressListener(Key.ENTER, e -> save());
-
-		// wire action buttons to save, delete and reset
-		save.addClickListener(e -> save());
-		delete.addClickListener(e -> delete());
-		cancel.addClickListener(e -> editStudent(student));
-		setVisible(false);
     }
 
+	public final void showStudentsDetails(Student s){
+        studentEditor.show(s);
+        studentStats.show(s);
 
-    void delete() {
-        authoringService.remove(student);
-		changeHandler.onChange();
-	}
+        setVisible(true);
+    }
 
-	void save() {
-    	logger.info("Saving student " + student);
-		authoringService.add(student);
-		changeHandler.onChange();
-	}
-
-	public interface ChangeHandler {
-		void onChange();
-	}
-
-	public final void editStudent(Student s) {
-		if (s == null) {
-			setVisible(false);
-			return;
-		}
-		final boolean persisted = s.getId() != null;
-		if (persisted) {
-			// Find fresh entity for editing
-			this.student = studentAccess.byId(s.getId());
-		}
-		else {
-			this.student = s;
-		}
-		cancel.setVisible(persisted);
-
-		// Bind student properties to similarly named fields
-		binder.setBean(this.student);
-
-		setVisible(true);
-
-		// Focus name initially
-		name.focus();
-	}
-
-	public void setChangeHandler(ChangeHandler handler) {
-		// ChangeHandler is notified when either save or delete
-		// is clicked
-		changeHandler = handler;
-	}
+    public StudentEditor getStudentEditor() {
+        return studentEditor;
+    }
 
 
 
