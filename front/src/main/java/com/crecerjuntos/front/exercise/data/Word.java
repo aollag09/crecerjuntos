@@ -32,7 +32,8 @@ public class Word extends Exercise {
   }
 
   private String getTemplateURL(final int level) throws NonExistingLevel {
-    return null;
+
+    throw new NonExistingLevel(this.name, level);
   }
 
   @Override

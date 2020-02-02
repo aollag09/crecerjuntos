@@ -115,7 +115,9 @@ public class Constants {
 
   public static class Resource {
 
-    public static final String IMG_TERESA = "resources/img/teresa.png";
+    public static class Images {
+      public static final String IMG_TERESA = "resources/img/teresa.png";
+    }
 
     public static class Strings {
 
