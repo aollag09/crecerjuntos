@@ -119,6 +119,10 @@ public abstract class AbstractExerciseView extends VerticalLayout
     UI.getCurrent().navigate(Result.class);
   }
 
+  protected void nonExistingLevel() {
+    UI.getCurrent().navigate(NonExistingLevelView.class);
+  }
+
   protected long getDurationMillis() {
     return System.currentTimeMillis() - startTime;
   }
@@ -136,14 +140,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   public void setParameter(BeforeEvent event, String parameter) {
     if (parameter != null) {
       level = Integer.parseInt(parameter);
-      if ((level > exercise.getNbLevels()) || (level < 0)) {
-        throw new RuntimeException(
-            "Required level : '"
-                + level
-                + "' of exercise :"
-                + getTranslation(exercise.getTitle())
-                + " doesn't exists");
-      }
+      if ((level > exercise.getNbLevels()) || (level < 0)) nonExistingLevel();
     }
   }
 }

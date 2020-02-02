@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.exercise.view;
 
+import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.Dactylographie;
 import com.crecerjuntos.front.exercise.data.Score;
@@ -40,7 +41,13 @@ public class DactylographieView extends AbstractExerciseView {
   }
 
   private void newWord() {
-    if (words.size() <= 0) words = ((Dactylographie) exercise).getWords(level);
+    if (words.size() <= 0) {
+      try {
+        words = ((Dactylographie) exercise).getWords(level);
+      } catch (NonExistingLevel nonExistingLevel) {
+        nonExistingLevel();
+      }
+    }
     int id = random.nextInt(words.size());
     current = words.remove(id);
     model.setText(current);
@@ -49,7 +56,11 @@ public class DactylographieView extends AbstractExerciseView {
   @Override
   protected void onStart() {
     counter = 0;
-    words = ((Dactylographie) exercise).getWords(level);
+    try {
+      words = ((Dactylographie) exercise).getWords(level);
+    } catch (NonExistingLevel nonExistingLevel) {
+      nonExistingLevel();
+    }
 
     VerticalLayout content = new VerticalLayout();
     content.addClassName(Constants.ClassStyle.Dactylographie.CONTENT);
@@ -101,8 +112,12 @@ public class DactylographieView extends AbstractExerciseView {
 
     // build score
     int intScore = 100;
-    if (getDurationMillis() > exercise.getExpectedTime(level))
-      intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1000;
+    try {
+      if (getDurationMillis() > exercise.getExpectedTime(level))
+        intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1000;
+    } catch (NonExistingLevel nonExistingLevel) {
+      nonExistingLevel();
+    }
     intScore -= mistake;
     score.setScore(intScore);
 

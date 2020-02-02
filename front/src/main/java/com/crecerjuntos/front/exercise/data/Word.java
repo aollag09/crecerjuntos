@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.exercise.data;
 
+import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.Level;
 import com.crecerjuntos.front.util.Constants;
@@ -28,6 +29,10 @@ public class Word extends Exercise {
     levels.add(new Level(3, Constants.Resource.Strings.Word.LVL3_NAME));
     levels.add(new Level(4, Constants.Resource.Strings.Word.LVL4_NAME));
     return levels;
+  }
+
+  private String getTemplateURL(final int level) throws NonExistingLevel {
+    return null;
   }
 
   @Override
