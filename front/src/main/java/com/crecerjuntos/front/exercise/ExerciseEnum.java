@@ -8,10 +8,10 @@ import java.util.stream.Collectors;
 
 public enum ExerciseEnum {
   DACTYLOGRAPHIE(new Dactylographie()),
-  WORD(new Word()),
-  EXCEL(new Excel()),
+  WORD(new Word());
+  /*EXCEL(new Excel()),
   POWER_POINT(new PowerPoint()),
-  GOOGLE_SEARCH(new GoogleSearch());
+  GOOGLE_SEARCH(new GoogleSearch());*/
 
   private Exercise exercise;
 
