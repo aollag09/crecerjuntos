@@ -29,7 +29,7 @@ public class Logout extends VerticalLayout {
 
     VerticalLayout logoutDiv = new VerticalLayout();
     logoutDiv.addClassName(Constants.ClassStyle.Logout.LOGOUT);
-    Text text = new Text(getTranslation(Constants.Resource.Strings.Logout.SUCCESSFULLY_LOGOUT));
+    H2 text = new H2(getTranslation(Constants.Resource.Strings.Logout.SUCCESSFULLY_LOGOUT));
     logoutDiv.add(text);
 
     Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGIN));
