@@ -22,7 +22,9 @@ public class BaseEntityRepositoryImpl {
     public BaseEntity save(BaseEntity entity) throws DataBaseException{
         EntityTransaction tr = em.getTransaction();
         try {
-            tr.begin();
+            if(!tr.isActive())
+                tr.begin();
+
             if (entity.getId() == null) {
                 em.persist(entity);
             } else {
@@ -40,7 +42,9 @@ public class BaseEntityRepositoryImpl {
     public void delete(BaseEntity entity) throws DataBaseException {
         EntityTransaction tr = em.getTransaction();
         try {
-            em.getTransaction().begin();
+            if (!tr.isActive())
+                tr.begin();
+
             if (em.contains(entity)) {
                 em.remove(entity);
             }
