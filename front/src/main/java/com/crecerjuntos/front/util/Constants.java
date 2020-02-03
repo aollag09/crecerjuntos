@@ -193,7 +193,7 @@ public class Constants {
         public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
         public static final String ERROR = PREFIX + "common";
         public static final String DB_ERROR = PREFIX + "db-error";
-        public static final String NOT_LOGIN_ERROR = PREFIX + "not-login-error";
+        public static final String NOT_LOGIN_ERROR = PREFIX + "not-login";
       }
 
       public static class Template {
