@@ -93,6 +93,8 @@ public class Constants {
     public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
+    public static final String NON_EXISTING_LEVEL = "exercise/no-level";
+    public static final String ERROR_VIEW = "exercise/error";
 
     public static class QueryParameters {}
   }
@@ -113,7 +115,19 @@ public class Constants {
   }
 
   public static class Resource {
-    public static final String IMG_TERESA = "resources/img/teresa.png";
+
+    public static class Images {
+      public static final String IMG_TERESA = "resources/img/teresa.png";
+    }
+
+    public static class Templates{
+
+      public static class Word{
+        public static final String LEVEL1 = "/resources/template/template-word-1.docx";
+        public static final String LEVEL2 = "/resources/template/template-word-2.docx";
+      }
+
+    }
 
     public static class Strings {
 
@@ -171,6 +185,13 @@ public class Constants {
         public static final String READY = PREFIX + "ready";
         public static final String IN_PROGRESS = PREFIX + "in-progress";
         public static final String DONE = PREFIX + "done";
+        public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
+        public static final String ERROR = PREFIX + "error";
+      }
+
+      public static class Template{
+        private static final String PREFIX = "template-";
+        public static final String DOWNLOAD = PREFIX + "download";
       }
 
       public static class Dactylographie {
@@ -231,7 +252,6 @@ public class Constants {
       }
 
       public static class Logout {
-
         private static final String PREFIX = "logout-";
         public static final String TITLE = PREFIX + "title";
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
@@ -239,4 +259,6 @@ public class Constants {
       }
     }
   }
+
+  public static final String ADMIN_PASSWORD = "teresa";
 }

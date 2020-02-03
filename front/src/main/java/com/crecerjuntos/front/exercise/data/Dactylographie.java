@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.exercise.data;
 
+import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.Level;
 import com.crecerjuntos.front.util.Constants;
@@ -31,7 +32,7 @@ public class Dactylographie extends Exercise {
     words.put(3, new WordsBuilderLevel4());
     words.put(4, new WordsBuilderLevel5());
     words.put(5, new WordsBuilderLevel6());
-    words.put(6,new WordsBuilderLevel7());
+    words.put(6, new WordsBuilderLevel7());
   }
 
   private static List<Level> buildLevels() {
@@ -47,7 +48,7 @@ public class Dactylographie extends Exercise {
   }
 
   @Override
-  public long getExpectedTime(final int level) {
+  public long getExpectedTime(final int level) throws NonExistingLevel {
     if (level == 0) return 1300 * NB_ROUNDS;
     if (level == 1) return 1000 * NB_ROUNDS;
     if (level == 2) return 3000 * NB_ROUNDS;
@@ -55,11 +56,12 @@ public class Dactylographie extends Exercise {
     if (level == 4) return 4000 * NB_ROUNDS;
     if (level == 5) return 12000 * NB_ROUNDS;
     if (level == 6) return 13000 * NB_ROUNDS;
-    return 0;
+    throw new NonExistingLevel(this.name, level);
   }
 
-  public List<String> getWords(final int level) {
-    return words.get(level).build();
+  public List<String> getWords(final int level) throws NonExistingLevel {
+    if (level > 0 && level < words.size()) return words.get(level).build();
+    else throw new NonExistingLevel(this.name, level);
   }
 
   public interface WordsBuilder {

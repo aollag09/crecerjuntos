@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.exercise;
 
+import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.util.Difficulty;
 
 import java.util.List;
@@ -44,7 +45,7 @@ public abstract class Exercise {
     this.uri = uri;
   }
 
-  public abstract long getExpectedTime(final int level);
+  public abstract long getExpectedTime(final int level) throws NonExistingLevel;
 
   public String getName() {
     return this.name;

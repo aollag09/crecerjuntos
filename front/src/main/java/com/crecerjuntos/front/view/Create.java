@@ -37,7 +37,7 @@ public class Create extends VerticalLayout {
   }
 
   private Component buildTeresa() {
-    Image image = new Image(Constants.Resource.IMG_TERESA, "teresa");
+    Image image = new Image(Constants.Resource.Images.IMG_TERESA, "teresa");
     image.addClassName(Constants.ClassStyle.Login.TERESA);
     return image;
   }

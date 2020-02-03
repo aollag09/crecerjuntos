@@ -2,6 +2,8 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
+import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
@@ -17,12 +19,16 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public abstract class AbstractExerciseView extends VerticalLayout
     implements HasUrlParameter<String> {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(AbstractExerciseView.class);
 
   protected static final long SEED = System.nanoTime();
 
@@ -119,6 +125,15 @@ public abstract class AbstractExerciseView extends VerticalLayout
     UI.getCurrent().navigate(Result.class);
   }
 
+  protected void nonExistingLevel() {
+    UI.getCurrent().navigate(NonExistingLevelView.class);
+  }
+
+  protected void error(final String error, final Throwable throwable) {
+    LOGGER.error(error, throwable);
+    UI.getCurrent().navigate(CommonErrorView.class);
+  }
+
   protected long getDurationMillis() {
     return System.currentTimeMillis() - startTime;
   }
@@ -136,14 +151,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   public void setParameter(BeforeEvent event, String parameter) {
     if (parameter != null) {
       level = Integer.parseInt(parameter);
-      if ((level > exercise.getNbLevels()) || (level < 0)) {
-        throw new RuntimeException(
-            "Required level : '"
-                + level
-                + "' of exercise :"
-                + getTranslation(exercise.getTitle())
-                + " doesn't exists");
-      }
+      if ((level > exercise.getNbLevels()) || (level < 0)) nonExistingLevel();
     }
   }
 }
