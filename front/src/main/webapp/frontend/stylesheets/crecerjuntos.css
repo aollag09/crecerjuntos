@@ -238,9 +238,4 @@ html {
 
 /** Logout */
 .logout-layout__logout{
-    margin: auto;
-    font-size: x-large;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    align-items: center;
 }
