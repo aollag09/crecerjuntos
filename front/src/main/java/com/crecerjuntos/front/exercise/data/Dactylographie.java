@@ -60,7 +60,7 @@ public class Dactylographie extends Exercise {
   }
 
   public List<String> getWords(final int level) throws NonExistingLevel {
-    if (level > 0 && level < words.size()) return words.get(level).build();
+    if (level >= 0 && level < words.size()) return words.get(level).build();
     else throw new NonExistingLevel(this.name, level);
   }
 
