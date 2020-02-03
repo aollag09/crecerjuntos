@@ -41,7 +41,7 @@ public class DactylographieView extends AbstractExerciseView {
   }
 
   private void newWord() {
-    if (words.size() <= 0) {
+    if (words == null || words.size() <= 0) {
       try {
         words = ((Dactylographie) exercise).getWords(level);
       } catch (NonExistingLevel nonExistingLevel) {
