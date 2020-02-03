@@ -36,11 +36,7 @@ public class Student implements BaseEntity {
     this(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
   }
 
-  public Student(
-      String name,
-      String mail,
-      String password,
-      Section section) {
+  public Student(String name, String mail, String password, Section section) {
     this.name = name;
     this.mail = mail;
     this.password = password;

@@ -105,14 +105,14 @@ public class Create extends VerticalLayout {
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               } else {
                 // create & log in current user
-                Student student =
-                        null;
+                Student student = null;
                 try {
-                  student = LoginServices.create(
-                      mail.getValue(),
-                      username.getValue(),
-                      password.getValue(),
-                      section.getValue());
+                  student =
+                      LoginServices.create(
+                          mail.getValue(),
+                          username.getValue(),
+                          password.getValue(),
+                          section.getValue());
                 } catch (DatabaseException e) {
                   UI.getCurrent().navigate(DatabaseErrorView.class);
                 }

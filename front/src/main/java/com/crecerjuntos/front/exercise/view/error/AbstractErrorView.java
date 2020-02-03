@@ -25,28 +25,27 @@ public class AbstractErrorView extends VerticalLayout {
     return exercises;
   }
 
-  protected Component buildLogin(){
-      Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGIN));
-      login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
-      login.addClassName(Constants.ClassStyle.Exercises.START);
-      login.addClickShortcut(Key.ENTER);
-      login.addClickListener(
-              event -> {
-                  UI.getCurrent().navigate(Login.class);
-              });
-      return login;
+  protected Component buildLogin() {
+    Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGIN));
+    login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
+    login.addClassName(Constants.ClassStyle.Exercises.START);
+    login.addClickShortcut(Key.ENTER);
+    login.addClickListener(
+        event -> {
+          UI.getCurrent().navigate(Login.class);
+        });
+    return login;
   }
 
-    protected Component buildLogout(){
-        Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGOUT));
-        login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
-        login.addClassName(Constants.ClassStyle.Exercises.START);
-        login.addClickShortcut(Key.ENTER);
-        login.addClickListener(
-                event -> {
-                    UI.getCurrent().navigate(Logout.class);
-                });
-        return login;
-    }
-
+  protected Component buildLogout() {
+    Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGOUT));
+    login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
+    login.addClassName(Constants.ClassStyle.Exercises.START);
+    login.addClickShortcut(Key.ENTER);
+    login.addClickListener(
+        event -> {
+          UI.getCurrent().navigate(Logout.class);
+        });
+    return login;
+  }
 }

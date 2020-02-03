@@ -42,11 +42,11 @@ vaadin {
 vaadin.autoconfigure()
 
 // Gretty server configuration
-gretty{
-    httpPort=1998
-    contextPath= ''
-    debugPort=2006
-    loggingLevel= "INFO"
+gretty {
+    httpPort = 1998
+    contextPath = ''
+    debugPort = 2006
+    loggingLevel = "INFO"
     consoleLogEnabled = true
     fileLogEnabled = true
     logFileName = 'crecer-juntos.log'

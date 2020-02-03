@@ -25,11 +25,11 @@ public class ProgressServices {
   private static final IAuthoringServices authoring = new AuthoringService();
   private static final IAchievementAccess achievementAccess = new AchievementService();
 
-  public static void start(final Exercise exercise, final int level) throws DatabaseException, NotLoginException {
+  public static void start(final Exercise exercise, final int level)
+      throws DatabaseException, NotLoginException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
-    if( student == null )
-      throw new NotLoginException();
+    if (student == null) throw new NotLoginException();
     Achievement achievement =
         new Achievement(
             student,
@@ -44,11 +44,11 @@ public class ProgressServices {
     authoring.add(achievement);
   }
 
-  public static void end(final Exercise exercise, final int level, final int score) throws DatabaseException, NotLoginException {
+  public static void end(final Exercise exercise, final int level, final int score)
+      throws DatabaseException, NotLoginException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
-    if( student == null)
-      throw new NotLoginException();
+    if (student == null) throw new NotLoginException();
     Achievement achievement =
         new Achievement(
             student,
@@ -67,7 +67,7 @@ public class ProgressServices {
     authoring.add(achievement);
   }
 
-  public static List<Achievement> getDone(final Student student){
-      return achievementAccess.getDone(student);
+  public static List<Achievement> getDone(final Student student) {
+    return achievementAccess.getDone(student);
   }
 }

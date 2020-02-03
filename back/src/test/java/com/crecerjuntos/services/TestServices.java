@@ -16,10 +16,9 @@ public class TestServices {
   public static IAchievementAccess achievementAccess = new AchievementService();
   public static IStudentAccess studentAccess = new StudentService();
 
-  public static final Student generateTestStudent() throws Exception{
+  public static final Student generateTestStudent() throws Exception {
     String mail = "student.test" + UUID.randomUUID() + "@gmail.com";
-    Student student =
-        new Student("Test Student", mail, "password", Section.DEFAULT);
+    Student student = new Student("Test Student", mail, "password", Section.DEFAULT);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
   }

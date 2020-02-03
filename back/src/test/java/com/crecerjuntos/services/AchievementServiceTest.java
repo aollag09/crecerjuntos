@@ -12,20 +12,13 @@ import java.util.List;
 public class AchievementServiceTest {
 
   @Test
-  public void create() throws Exception{
+  public void create() throws Exception {
     Student student = TestServices.generateTestStudent();
 
     Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
     double progress = TestServices.random.nextInt(100);
     Achievement achievement =
-        new Achievement(
-            student,
-            "session",
-            date,
-            "exercise-test",
-            0,
-            progress,
-            0);
+        new Achievement(student, "session", date, "exercise-test", 0, progress, 0);
     TestServices.authoringServices.add(achievement);
 
     List<Achievement> lasts = TestServices.achievementAccess.getLasts(student, 1);

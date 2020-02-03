@@ -15,5 +15,4 @@ public interface AchievementRepository {
   List<Achievement> findBySection(String sectionName);
 
   List<Achievement> findLastsBySection(String sectionName, int nbAchievements);
-
 }

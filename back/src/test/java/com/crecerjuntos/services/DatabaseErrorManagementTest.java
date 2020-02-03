@@ -17,9 +17,9 @@ public class DatabaseErrorManagementTest {
     TestServices.authoringServices.remove(student1);
   }
 
-  @Test(expected =  DatabaseException.class)
+  @Test(expected = DatabaseException.class)
   public void test_delete_not_added() throws DatabaseException {
-    Student not_added = new Student ("Peter");
+    Student not_added = new Student("Peter");
     TestServices.authoringServices.remove(not_added);
   }
 
@@ -27,8 +27,7 @@ public class DatabaseErrorManagementTest {
   public void test_create_existing_student() throws Exception {
     Student test = TestServices.generateTestStudent();
     Student sameStudent =
-        new Student(
-            test.getName(), test.getMail(), test.getPassword(), test.getSection());
+        new Student(test.getName(), test.getMail(), test.getPassword(), test.getSection());
     TestServices.authoringServices.add(sameStudent);
   }
 
@@ -63,14 +62,14 @@ public class DatabaseErrorManagementTest {
     // Generate error
     try {
       TestServices.authoringServices.add(
-              new Achievement(
-                      new Student(),
-                      "session",
-                      new java.sql.Date(Calendar.getInstance().getTime().getTime()),
-                      "exo",
-                      0,
-                      100,
-                      0));
+          new Achievement(
+              new Student(),
+              "session",
+              new java.sql.Date(Calendar.getInstance().getTime().getTime()),
+              "exo",
+              0,
+              100,
+              0));
     } catch (DatabaseException e) {
       // That is ok
     }

@@ -1,7 +1,7 @@
 package com.crecerjuntos.services;
 
 import com.crecerjuntos.config.JpaEntityManagerFactory;
-import com.crecerjuntos.infrastructure.*;
+import com.crecerjuntos.infrastructure.BaseEntityRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
@@ -18,8 +18,7 @@ public class AuthoringService implements IAuthoringServices {
 
   private BaseEntityRepositoryImpl baseEntityRepository;
 
-  public AuthoringService(BaseEntityRepositoryImpl baseEntityRepository) {
-  }
+  public AuthoringService(BaseEntityRepositoryImpl baseEntityRepository) {}
 
   public AuthoringService() {
     EntityManager em = JpaEntityManagerFactory.getEntityManager();

@@ -61,5 +61,4 @@ public class AchievementRepositoryImpl implements AchievementRepository {
     q.setParameter("sectionName", sectionName);
     return q.getResultList().subList(0, nbAchievements);
   }
-
 }

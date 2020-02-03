@@ -14,5 +14,4 @@ public class NotLoginErrorView extends AbstractErrorView {
     add(new H2(getTranslation(Constants.Resource.Strings.Errors.NOT_LOGIN_ERROR)));
     add(buildLogin());
   }
-
 }

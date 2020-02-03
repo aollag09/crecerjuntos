@@ -14,6 +14,4 @@ public class NonExistingLevelView extends AbstractErrorView {
     add(new H3(getTranslation(Constants.Resource.Strings.Errors.NON_EXISTING_LEVEL)));
     add(buildStartExercises());
   }
-
-
 }

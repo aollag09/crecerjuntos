@@ -20,7 +20,7 @@ public class Logout extends VerticalLayout {
 
   public Logout() {
     LoginServices.logout();
-  buildLogout();
+    buildLogout();
   }
 
   private void buildLogout() {
@@ -37,9 +37,9 @@ public class Logout extends VerticalLayout {
     login.addClassName(Constants.ClassStyle.Exercises.START);
     login.addClickShortcut(Key.ENTER);
     login.addClickListener(
-            event -> {
-              UI.getCurrent().navigate(Login.class);
-            });
+        event -> {
+          UI.getCurrent().navigate(Login.class);
+        });
     logoutDiv.add(login);
     add(logoutDiv);
   }
