@@ -65,6 +65,7 @@ public class Constants {
     public static class Word {
       private static final String PREFIX = "word-layout__";
       public static final String CONTENT = PREFIX + "content";
+      public static final String TEMPLATE = PREFIX + "template";
     }
 
     public static class Result {

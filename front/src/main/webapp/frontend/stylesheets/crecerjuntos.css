@@ -240,6 +240,10 @@ html {
 .word-layout__content{
 }
 
+.word-layout__template{
+    margin:auto;
+}
+
 /** Logout */
 .logout-layout__logout{
 }

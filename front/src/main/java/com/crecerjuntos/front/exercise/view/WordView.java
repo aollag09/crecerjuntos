@@ -9,6 +9,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -32,7 +33,13 @@ public class WordView extends AbstractExerciseView {
   protected void onStart() {
     VerticalLayout content = new VerticalLayout();
     content.addClassName(Constants.ClassStyle.Word.CONTENT);
-    content.add(buildDownloadTemplate());
+
+    // template
+    Div template = new Div();
+    template.addClassName(Constants.ClassStyle.Word.TEMPLATE);
+    template.add(buildDownloadTemplate());
+    content.add(template);
+
     add(content);
   }
 
