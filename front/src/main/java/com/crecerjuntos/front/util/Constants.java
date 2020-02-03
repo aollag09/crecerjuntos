@@ -1,5 +1,7 @@
 package com.crecerjuntos.front.util;
 
+import com.helger.css.decl.CSSExpressionTermOptimizer;
+
 public class Constants {
 
   public static class Session {
@@ -60,6 +62,11 @@ public class Constants {
       public static final String TEXT_FIELD = PREFIX + "text-field";
     }
 
+    public static class Word {
+      private static final String PREFIX = "word-layout__";
+      public static final String CONTENT = PREFIX + "content";
+    }
+
     public static class Result {
       private static final String PREFIX = "result-layout__";
       public static final String NO_SCORE = PREFIX + "no-score";
@@ -77,6 +84,7 @@ public class Constants {
       private static final String PREFIX = "logout-layout__";
       public static final String LOGOUT = PREFIX + "logout";
     }
+
   }
 
   public static class Route {
@@ -125,8 +133,8 @@ public class Constants {
     public static class Templates {
 
       public static class Word {
-        public static final String LEVEL1 = "/resources/template/template-word-1.docx";
-        public static final String LEVEL2 = "/resources/template/template-word-2.docx";
+        public static final String LEVEL1 = "template/template-word-1.docx";
+        public static final String LEVEL2 = "template/template-word-2.docx";
       }
     }
 
@@ -181,6 +189,7 @@ public class Constants {
         private static final String PREFIX = "exercises-";
         public static final String TITLE = PREFIX + "title";
         public static final String LEVELS = PREFIX + "levels";
+        public static final String LEVEL = PREFIX + "level";
         public static final String HOURS = PREFIX + "hours";
         public static final String START = PREFIX + "start";
         public static final String READY = PREFIX + "ready";

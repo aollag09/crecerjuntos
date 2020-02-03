@@ -9,12 +9,17 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 public class AbstractErrorView extends VerticalLayout {
 
   protected Component buildStartExercises() {
-    Button exercises = new Button(getTranslation(Constants.Resource.Strings.Result.EXERCISES));
+    Button exercises =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Result.EXERCISES),
+            new Icon(VaadinIcon.PENCIL));
     exercises.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     exercises.addClassName(Constants.ClassStyle.Result.EXERCISES);
     exercises.addClickShortcut(Key.ENTER);
@@ -26,7 +31,9 @@ public class AbstractErrorView extends VerticalLayout {
   }
 
   protected Component buildLogin() {
-    Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGIN));
+    Button login =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Logout.LOGIN), new Icon(VaadinIcon.ENTER));
     login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     login.addClassName(Constants.ClassStyle.Exercises.START);
     login.addClickShortcut(Key.ENTER);
@@ -38,7 +45,9 @@ public class AbstractErrorView extends VerticalLayout {
   }
 
   protected Component buildLogout() {
-    Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGOUT));
+    Button login =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Logout.LOGOUT), new Icon(VaadinIcon.EXIT));
     login.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     login.addClassName(Constants.ClassStyle.Exercises.START);
     login.addClickShortcut(Key.ENTER);

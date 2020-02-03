@@ -3,9 +3,11 @@ package com.crecerjuntos.front.exercise.data;
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.Level;
+import com.crecerjuntos.front.util.ClassLoaderUtil;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.Difficulty;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -35,14 +37,14 @@ public class Word extends Exercise {
     return levels;
   }
 
-  public byte[] getTemplate(final int level) throws NonExistingLevel, IOException {
-    URL resource = this.getClass().getResource(getTemplateURL(level));
+  public ByteArrayInputStream getTemplate(final int level) throws NonExistingLevel, IOException {
+    URL resource = ClassLoaderUtil.getResource(getTemplateURL(level), this.getClass());
     if (resource == null) {
       throw new IllegalArgumentException(
           "Template is not found with URL : " + getTemplateURL(level));
     } else {
       File file = new File(resource.getFile());
-      return Files.readAllBytes(file.toPath());
+      return new ByteArrayInputStream(Files.readAllBytes(file.toPath()));
     }
   }
 

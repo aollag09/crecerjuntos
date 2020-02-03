@@ -19,6 +19,8 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
@@ -88,10 +90,10 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     VerticalLayout instructionDiv = new VerticalLayout();
     instructionDiv.addClassName(Constants.ClassStyle.Exercises.INSTRUCTIONS);
-    instructions = new Text(getTranslation(Constants.Resource.Strings.Dactylographie.INSTRUCTIONS));
+    instructions = new Text(getTranslation(exercise.getInstructions()));
     instructionDiv.add(instructions);
 
-    start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START));
+    start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START), new Icon(VaadinIcon.PLAY));
     start.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     start.addClassName(Constants.ClassStyle.Exercises.START);
     start.addClickShortcut(Key.ENTER);
@@ -104,6 +106,14 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void start() {
+    title
+        .getElement()
+        .setText(
+            getTranslation(exercise.getTitle())
+                + " "
+                + getTranslation(Constants.Resource.Strings.Exercises.LEVEL)
+                + ": "
+                + level);
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;

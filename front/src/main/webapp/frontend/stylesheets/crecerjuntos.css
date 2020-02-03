@@ -236,6 +236,10 @@ html {
     color:red;
 }
 
+/** Word layout*/
+.word-layout__content{
+}
+
 /** Logout */
 .logout-layout__logout{
 }
