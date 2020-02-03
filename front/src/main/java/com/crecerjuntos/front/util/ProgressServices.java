@@ -3,20 +3,19 @@ package com.crecerjuntos.front.util;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IAchievementAccess;
+import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.exception.DataBaseException;
-import com.crecerjuntos.services.AuthoringService;
 import com.crecerjuntos.services.AchievementService;
+import com.crecerjuntos.services.AuthoringService;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.server.VaadinSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.xml.crypto.Data;
 import java.util.Calendar;
-import java.util.Random;
 import java.util.List;
+import java.util.Random;
 
 public class ProgressServices {
 

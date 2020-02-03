@@ -5,7 +5,6 @@ import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.Level;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.Difficulty;
-import com.google.common.io.Resources;
 
 import java.io.File;
 import java.io.IOException;

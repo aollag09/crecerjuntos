@@ -1,9 +1,9 @@
 package com.crecerjuntos.model.base;
 
 import com.crecerjuntos.model.Achievement;
-import com.crecerjuntos.model.exception.DataBaseException;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DataBaseException;
 
 public interface IAuthoringServices {
 

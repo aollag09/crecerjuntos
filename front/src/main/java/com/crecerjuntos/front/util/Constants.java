@@ -1,7 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.sun.scenario.effect.impl.prism.ps.PPSBlend_REDPeer;
-
 public class Constants {
 
   public static class Session {

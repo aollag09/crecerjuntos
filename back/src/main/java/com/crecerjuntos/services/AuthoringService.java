@@ -6,10 +6,10 @@ import com.crecerjuntos.infrastructure.AchievementRepositoryImpl;
 import com.crecerjuntos.infrastructure.StudentRepository;
 import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
-import com.crecerjuntos.model.exception.DataBaseException;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
+import com.crecerjuntos.model.exception.DataBaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
