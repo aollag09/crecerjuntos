@@ -22,7 +22,8 @@ public class LoginServices {
   private static final IStudentAccess access = new StudentService();
 
   public static Student create(
-      String mail, final String username, final String password, final String section) throws DataBaseException {
+      String mail, final String username, final String password, final String section)
+      throws DataBaseException {
     // Create student
     long id = random.nextLong();
     Student student = new Student(id, username, mail, password, Section.fromString(section));
@@ -31,6 +32,9 @@ public class LoginServices {
     logger.info("Create Student User {}", student);
     IAuthoringServices authoringServices = new AuthoringService();
     authoringServices.add(student);
+
+    // Reload student with the right id
+    student = access.byMail(student.getMail());
 
     return student;
   }
