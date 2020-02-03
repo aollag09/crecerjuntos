@@ -7,9 +7,6 @@
 
 * Launch deployment/init-db-dev.sh script (this will start a postgresql docker and initialize the database and necessary tables from scratch)
 ** You will need PGPASSWORD environment variable or to prompt it when asked
-* Run CSCoursesApp 
-* Make sure sections were created 
-
 
 # Launch UI
 
