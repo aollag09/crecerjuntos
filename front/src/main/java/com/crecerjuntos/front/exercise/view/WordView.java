@@ -37,7 +37,7 @@ public class WordView extends AbstractExerciseView {
       FileDownloadWrapper buttonWrapper =
           new FileDownloadWrapper(
               new StreamResource(
-                  exercise.getTitle() + "-" + level + ".docx",
+                  exercise.getTitle() + "-" + level + "-template.docx",
                   () -> new ByteArrayInputStream(template)));
       buttonWrapper.wrapComponent(download);
     } catch (NonExistingLevel nonExistingLevel) {
