@@ -62,22 +62,4 @@ public class AchievementRepositoryImpl implements AchievementRepository {
     return q.getResultList().subList(0, nbAchievements);
   }
 
-  public Achievement save(Achievement achievement) {
-    em.getTransaction().begin();
-    if (achievement.getId() == null) {
-      em.persist(achievement);
-    } else {
-      achievement = em.merge(achievement);
-    }
-    em.getTransaction().commit();
-    return achievement;
-  }
-
-  public void delete(Achievement achievement) {
-    em.getTransaction().begin();
-    if (em.contains(achievement)) {
-      em.remove(achievement);
-    }
-    em.getTransaction().commit();
-  }
 }

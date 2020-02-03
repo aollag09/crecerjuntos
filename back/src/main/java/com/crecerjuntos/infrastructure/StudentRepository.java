@@ -1,6 +1,7 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DataBaseException;
 
 import java.util.List;
 
@@ -15,8 +16,4 @@ public interface StudentRepository {
   List<Student> findByPartialName(final String s);
 
   Student findById(final Long id);
-
-  Student save(Student student);
-
-  void delete(Student student);
 }

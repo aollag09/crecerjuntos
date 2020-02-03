@@ -1,8 +1,11 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DataBaseException;
+import org.hibernate.Transaction;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -57,24 +60,5 @@ public class StudentRepositoryImpl implements StudentRepository {
     List<Student> potentialStudents = q.getResultList();
     if (potentialStudents.size() == 1) return potentialStudents.get(0);
     else return null;
-  }
-
-  public Student save(Student student) {
-    em.getTransaction().begin();
-    if (student.getId() == null) {
-      em.persist(student);
-    } else {
-      student = em.merge(student);
-    }
-    em.getTransaction().commit();
-    return student;
-  }
-
-  public void delete(Student student) {
-    em.getTransaction().begin();
-    if (em.contains(student)) {
-      em.remove(student);
-    }
-    em.getTransaction().commit();
   }
 }

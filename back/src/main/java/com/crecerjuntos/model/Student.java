@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements BaseEntity {
 
   public static final String DEFAULT_NAME = "Anonymous";
   public static final String DEFAULT_MAIL = "anonymous@gmail.com";

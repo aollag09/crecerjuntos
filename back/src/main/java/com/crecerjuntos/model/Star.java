@@ -2,7 +2,7 @@ package com.crecerjuntos.model;
 
 import com.google.common.base.Objects;
 
-public class Star {
+public class Star implements BaseEntity {
 
   /** Unique, private & generated id */
   private final Long id;

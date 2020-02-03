@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
-public class Achievement {
+public class Achievement implements BaseEntity {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;

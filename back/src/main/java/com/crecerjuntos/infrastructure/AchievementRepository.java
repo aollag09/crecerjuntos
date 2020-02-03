@@ -16,7 +16,4 @@ public interface AchievementRepository {
 
   List<Achievement> findLastsBySection(String sectionName, int nbAchievements);
 
-  Achievement save(Achievement achievement);
-
-  void delete(Achievement achievement);
 }
