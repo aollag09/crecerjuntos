@@ -11,65 +11,53 @@ public class Student implements BaseEntity {
   public static final String DEFAULT_NAME = "Anonymous";
   public static final String DEFAULT_MAIL = "anonymous@gmail.com";
   public static final Student DEFAULT =
-      new Student(1L, DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
+      new Student(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
 
   /** Private generated id */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private final Long id;
+  private Long id;
 
   /** Public first name */
   @Column(nullable = false)
-  private final String name;
+  private String name;
 
   /** Email address */
   @Column(unique = true, nullable = false)
-  private final String mail;
+  private String mail;
 
   /** Password */
   @Column(nullable = false)
-  private final String password;
+  private String password;
 
   /** Id of the associated section */
   @Enumerated(EnumType.STRING)
-  private final Section section;
+  private Section section;
 
   public Student() {
-    this(0L, DEFAULT_NAME, Section.DEFAULT);
+    this(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
   }
 
   public Student(
-      final Long id,
-      final String name,
-      final String mail,
-      final String password,
-      final Section section) {
-    this.id = id;
+      String name,
+      String mail,
+      String password,
+      Section section) {
     this.name = name;
     this.mail = mail;
     this.password = password;
     this.section = section;
   }
 
-  public Student(final Long id, final String name, final Section section) {
-    this.id = id;
+  public Student(final String name, final Section section) {
     this.name = name;
     this.mail = DEFAULT_MAIL;
     this.password = null;
     this.section = section;
   }
 
-  public Student(final Long id, final String name) {
-    this.id = id;
+  public Student(final String name) {
     this.name = name;
-    this.mail = DEFAULT_MAIL;
-    this.password = null;
-    this.section = Section.DEFAULT;
-  }
-
-  public Student(final Long id) {
-    this.id = id;
-    this.name = DEFAULT_NAME;
     this.mail = DEFAULT_MAIL;
     this.password = null;
     this.section = Section.DEFAULT;

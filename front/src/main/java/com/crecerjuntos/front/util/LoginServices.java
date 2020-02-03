@@ -25,8 +25,7 @@ public class LoginServices {
       String mail, final String username, final String password, final String section)
       throws DataBaseException {
     // Create student
-    long id = random.nextLong();
-    Student student = new Student(id, username, mail, password, Section.fromString(section));
+    Student student = new Student(username, mail, password, Section.fromString(section));
 
     // Register new student in database
     logger.info("Create Student User {}", student);

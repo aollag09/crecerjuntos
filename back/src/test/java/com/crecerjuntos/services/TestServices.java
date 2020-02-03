@@ -19,7 +19,7 @@ public class TestServices {
   public static final Student generateTestStudent() throws Exception{
     String mail = "student.test" + UUID.randomUUID() + "@gmail.com";
     Student student =
-        new Student(random.nextLong(), "Test Student", mail, "password", Section.DEFAULT);
+        new Student("Test Student", mail, "password", Section.DEFAULT);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
   }

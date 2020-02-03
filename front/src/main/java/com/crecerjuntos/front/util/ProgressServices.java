@@ -25,12 +25,10 @@ public class ProgressServices {
   private static final IAchievementAccess achievementAccess = new AchievementService();
 
   public static void start(final Exercise exercise, final int level) throws DataBaseException {
-    long id = random.nextLong();
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
     Achievement achievement =
         new Achievement(
-            id,
             student,
             session.getSession().getId(),
             new java.sql.Date(Calendar.getInstance().getTime().getTime()),
@@ -44,12 +42,10 @@ public class ProgressServices {
   }
 
   public static void end(final Exercise exercise, final int level, final int score) throws DataBaseException{
-    long id = random.nextLong();
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
     Achievement achievement =
         new Achievement(
-            id,
             student,
             session.getSession().getId(),
             new java.sql.Date(Calendar.getInstance().getTime().getTime()),

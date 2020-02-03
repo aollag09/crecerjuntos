@@ -19,7 +19,6 @@ public class AchievementServiceTest {
     double progress = TestServices.random.nextInt(100);
     Achievement achievement =
         new Achievement(
-            TestServices.random.nextLong(),
             student,
             "session",
             date,
