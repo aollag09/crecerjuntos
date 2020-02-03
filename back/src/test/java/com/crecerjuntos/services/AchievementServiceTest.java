@@ -12,7 +12,7 @@ import java.util.List;
 public class AchievementServiceTest {
 
   @Test
-  public void create() {
+  public void create() throws Exception{
     Student student = TestServices.generateTestStudent();
 
     Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());

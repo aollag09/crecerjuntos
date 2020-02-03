@@ -6,6 +6,7 @@ import com.crecerjuntos.infrastructure.AchievementRepositoryImpl;
 import com.crecerjuntos.infrastructure.StudentRepository;
 import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.exception.DataBaseException;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
@@ -35,32 +36,32 @@ public class AuthoringService implements IAuthoringServices {
   }
 
   @Override
-  public void add(Student student) {
+  public void add(Student student) throws DataBaseException {
     studentRepository.save(student);
   }
 
   @Override
-  public void remove(Student student) {
+  public void remove(Student student) throws DataBaseException {
     studentRepository.delete(student);
   }
 
   @Override
-  public void add(Achievement achievement) {
+  public void add(Achievement achievement) throws DataBaseException {
     achievementRepository.save(achievement);
   }
 
   @Override
-  public void remove(Achievement achievement) {
+  public void remove(Achievement achievement) throws DataBaseException {
     achievementRepository.delete(achievement);
   }
 
   @Override
-  public void add(Star star) {
+  public void add(Star star) throws DataBaseException {
     logger.warn("Star was not added : not implemented yet");
   }
 
   @Override
-  public void remove(Star star) {
+  public void remove(Star star) throws DataBaseException {
     logger.warn("Star was not removed : not implemented yet");
   }
 }

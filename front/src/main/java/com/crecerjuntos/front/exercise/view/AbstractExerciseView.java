@@ -3,11 +3,13 @@ package com.crecerjuntos.front.exercise.view;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
+import com.crecerjuntos.model.exception.DataBaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
@@ -103,7 +105,11 @@ public abstract class AbstractExerciseView extends VerticalLayout
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;
-    ProgressServices.start(exercise, level);
+    try {
+      ProgressServices.start(exercise, level);
+    } catch (DataBaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    }
     onStart();
   }
 
@@ -119,7 +125,11 @@ public abstract class AbstractExerciseView extends VerticalLayout
     ScoreServices.save(score);
 
     // store the progression & score in the database
-    ProgressServices.end(exercise, level, score.getScore());
+    try {
+      ProgressServices.end(exercise, level, score.getScore());
+    } catch (DataBaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    }
 
     // Navigate to result page
     UI.getCurrent().navigate(Result.class);

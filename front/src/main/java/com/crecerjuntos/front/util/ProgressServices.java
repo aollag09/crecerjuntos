@@ -5,6 +5,7 @@ import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IAchievementAccess;
+import com.crecerjuntos.model.exception.DataBaseException;
 import com.crecerjuntos.services.AuthoringService;
 import com.crecerjuntos.services.AchievementService;
 import com.vaadin.flow.component.UI;
@@ -12,6 +13,7 @@ import com.vaadin.flow.server.VaadinSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.xml.crypto.Data;
 import java.util.Calendar;
 import java.util.Random;
 import java.util.List;
@@ -23,7 +25,7 @@ public class ProgressServices {
   private static final IAuthoringServices authoring = new AuthoringService();
   private static final IAchievementAccess achievementAccess = new AchievementService();
 
-  public static void start(final Exercise exercise, final int level) {
+  public static void start(final Exercise exercise, final int level) throws DataBaseException {
     long id = random.nextLong();
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
@@ -42,7 +44,7 @@ public class ProgressServices {
     authoring.add(achievement);
   }
 
-  public static void end(final Exercise exercise, final int level, final int score) {
+  public static void end(final Exercise exercise, final int level, final int score) throws DataBaseException{
     long id = random.nextLong();
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();

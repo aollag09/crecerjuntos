@@ -1,5 +1,7 @@
 package com.crecerjuntos.front.util;
 
+import com.sun.scenario.effect.impl.prism.ps.PPSBlend_REDPeer;
+
 public class Constants {
 
   public static class Session {
@@ -95,8 +97,9 @@ public class Constants {
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "exercise/no-level";
     public static final String ERROR_VIEW = "exercise/error";
+      public static final String DB_ERROR_VIEW = "exercise/database-error";
 
-    public static class QueryParameters {}
+      public static class QueryParameters {}
   }
 
   public static class Title {
@@ -187,6 +190,7 @@ public class Constants {
         public static final String DONE = PREFIX + "done";
         public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
         public static final String ERROR = PREFIX + "error";
+        public static final String DB_ERROR = PREFIX + "db-error";
       }
 
       public static class Template{
@@ -256,6 +260,7 @@ public class Constants {
         public static final String TITLE = PREFIX + "title";
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
         public static final String LOGIN = PREFIX + "login";
+        public static final String LOGOUT = PREFIX + "logout";
       }
     }
   }

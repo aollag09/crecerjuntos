@@ -4,6 +4,7 @@ import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
+import com.crecerjuntos.model.exception.DataBaseException;
 import com.crecerjuntos.services.AuthoringService;
 import com.crecerjuntos.services.StudentService;
 import com.vaadin.flow.component.UI;
@@ -21,7 +22,7 @@ public class LoginServices {
   private static final IStudentAccess access = new StudentService();
 
   public static Student create(
-      String mail, final String username, final String password, final String section) {
+      String mail, final String username, final String password, final String section) throws DataBaseException {
     // Create student
     long id = random.nextLong();
     Student student = new Student(id, username, mail, password, Section.fromString(section));
