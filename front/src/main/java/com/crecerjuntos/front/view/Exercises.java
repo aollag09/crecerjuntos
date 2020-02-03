@@ -1,8 +1,10 @@
 package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
+import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
+import com.crecerjuntos.front.exercise.view.error.NotLoginErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.ProgressServices;
@@ -10,6 +12,7 @@ import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.icon.Icon;
@@ -43,7 +46,12 @@ public class Exercises extends VerticalLayout {
   private void buildExercise(final Exercise exercise) {
 
     // List the student achievements
-    List<Achievement> bestLevelsDone = getBestLevelsDone(exercise);
+    List<Achievement> bestLevelsDone = null;
+    try {
+      bestLevelsDone = getBestLevelsDone(exercise);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
+    }
 
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
@@ -141,8 +149,9 @@ public class Exercises extends VerticalLayout {
     return level;
   }
 
-  private List<Achievement> getBestLevelsDone(final Exercise exercise) {
+  private List<Achievement> getBestLevelsDone(final Exercise exercise) throws NotLoginException {
     Student student = LoginServices.getStudent();
+    if (student == null) throw new NotLoginException();
     List<Achievement> dones = new ArrayList<Achievement>();
     if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
       dones =

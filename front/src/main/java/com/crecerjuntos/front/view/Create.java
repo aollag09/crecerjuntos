@@ -5,7 +5,7 @@ import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
@@ -113,7 +113,7 @@ public class Create extends VerticalLayout {
                       username.getValue(),
                       password.getValue(),
                       section.getValue());
-                } catch (DataBaseException e) {
+                } catch (DatabaseException e) {
                   UI.getCurrent().navigate(DatabaseErrorView.class);
                 }
                 LoginServices.login(student);

@@ -4,7 +4,7 @@ import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.crecerjuntos.services.AuthoringService;
 import com.crecerjuntos.services.StudentService;
 import com.vaadin.flow.component.UI;
@@ -23,7 +23,7 @@ public class LoginServices {
 
   public static Student create(
       String mail, final String username, final String password, final String section)
-      throws DataBaseException {
+      throws DatabaseException {
     // Create student
     Student student = new Student(username, mail, password, Section.fromString(section));
 
@@ -52,7 +52,6 @@ public class LoginServices {
     if (Objects.nonNull(session)
         && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
       student = (Student) session.getAttribute(Constants.Session.STUDENT);
-    if (student == null) student = Student.DEFAULT;
     return student;
   }
 

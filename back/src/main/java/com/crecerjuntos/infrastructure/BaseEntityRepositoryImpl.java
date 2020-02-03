@@ -1,8 +1,7 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.BaseEntity;
-import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -19,7 +18,7 @@ public class BaseEntityRepositoryImpl {
         this.em = em;
     }
 
-    public BaseEntity save(BaseEntity entity) throws DataBaseException{
+    public BaseEntity save(BaseEntity entity) throws DatabaseException {
         EntityTransaction tr = em.getTransaction();
         try {
             if(!tr.isActive())
@@ -35,11 +34,11 @@ public class BaseEntityRepositoryImpl {
         }
         catch (Exception e) {
             tr.rollback();
-            throw new DataBaseException(e.getMessage(), e.getCause());
+            throw new DatabaseException(e.getMessage(), e.getCause());
         }
     }
 
-    public void delete(BaseEntity entity) throws DataBaseException {
+    public void delete(BaseEntity entity) throws DatabaseException {
         EntityTransaction tr = em.getTransaction();
         try {
             if (!tr.isActive())
@@ -55,7 +54,7 @@ public class BaseEntityRepositoryImpl {
         }
         catch (Exception e) {
             tr.rollback();
-            throw new DataBaseException(e.getMessage(), e.getCause());
+            throw new DatabaseException(e.getMessage(), e.getCause());
         }
 
     }

@@ -11,7 +11,7 @@ import com.vaadin.flow.router.Route;
 public class NonExistingLevelView extends AbstractErrorView {
 
   public NonExistingLevelView() {
-    add(new H3(getTranslation(Constants.Resource.Strings.Exercises.NON_EXISTING_LEVEL)));
+    add(new H3(getTranslation(Constants.Resource.Strings.Errors.NON_EXISTING_LEVEL)));
     add(buildStartExercises());
   }
 

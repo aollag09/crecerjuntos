@@ -11,7 +11,7 @@ import com.vaadin.flow.router.Route;
 public class CommonErrorView extends AbstractErrorView {
 
   public CommonErrorView() {
-    add(new H2(getTranslation(Constants.Resource.Strings.Exercises.ERROR)));
+    add(new H2(getTranslation(Constants.Resource.Strings.Errors.ERROR)));
     add(buildStartExercises());
   }
 }

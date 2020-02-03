@@ -1,15 +1,17 @@
 package com.crecerjuntos.front.exercise.view;
 
+import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
+import com.crecerjuntos.front.exercise.view.error.NotLoginErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
@@ -107,8 +109,10 @@ public abstract class AbstractExerciseView extends VerticalLayout
     state = State.GAME;
     try {
       ProgressServices.start(exercise, level);
-    } catch (DataBaseException e) {
+    } catch (DatabaseException e) {
       UI.getCurrent().navigate(DatabaseErrorView.class);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
     }
     onStart();
   }
@@ -127,8 +131,10 @@ public abstract class AbstractExerciseView extends VerticalLayout
     // store the progression & score in the database
     try {
       ProgressServices.end(exercise, level, score.getScore());
-    } catch (DataBaseException e) {
+    } catch (DatabaseException e) {
       UI.getCurrent().navigate(DatabaseErrorView.class);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
     }
 
     // Navigate to result page

@@ -2,29 +2,28 @@ package com.crecerjuntos.services;
 
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 import org.junit.Test;
 
-import javax.xml.crypto.Data;
 import java.util.Calendar;
 
 public class DatabaseErrorManagementTest {
 
-  @Test(expected = DataBaseException.class)
-  public void test_delete_non_existing() throws DataBaseException {
+  @Test(expected = DatabaseException.class)
+  public void test_delete_non_existing() throws DatabaseException {
     Student student1 = new Student("Unexisting");
     TestServices.authoringServices.add(student1);
     TestServices.authoringServices.remove(student1);
     TestServices.authoringServices.remove(student1);
   }
 
-  @Test(expected =  DataBaseException.class)
-  public void test_delete_not_added() throws DataBaseException {
+  @Test(expected =  DatabaseException.class)
+  public void test_delete_not_added() throws DatabaseException {
     Student not_added = new Student ("Peter");
     TestServices.authoringServices.remove(not_added);
   }
 
-  @Test(expected = DataBaseException.class)
+  @Test(expected = DatabaseException.class)
   public void test_create_existing_student() throws Exception {
     Student test = TestServices.generateTestStudent();
     Student sameStudent =
@@ -33,7 +32,7 @@ public class DatabaseErrorManagementTest {
     TestServices.authoringServices.add(sameStudent);
   }
 
-  @Test(expected = DataBaseException.class)
+  @Test(expected = DatabaseException.class)
   public void test_start_non_existing_user() throws Exception {
     TestServices.authoringServices.add(
         new Achievement(
@@ -51,7 +50,7 @@ public class DatabaseErrorManagementTest {
     // Generate error
     try {
       TestServices.authoringServices.remove(new Student());
-    } catch (DataBaseException e) {
+    } catch (DatabaseException e) {
       // That is ok
     }
 
@@ -72,7 +71,7 @@ public class DatabaseErrorManagementTest {
                       0,
                       100,
                       0));
-    } catch (DataBaseException e) {
+    } catch (DatabaseException e) {
       // That is ok
     }
 

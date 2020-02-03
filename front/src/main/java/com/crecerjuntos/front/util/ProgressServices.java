@@ -1,11 +1,12 @@
 package com.crecerjuntos.front.util;
 
+import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
-import com.crecerjuntos.model.exception.DataBaseException;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.crecerjuntos.services.AchievementService;
 import com.crecerjuntos.services.AuthoringService;
 import com.vaadin.flow.component.UI;
@@ -24,9 +25,11 @@ public class ProgressServices {
   private static final IAuthoringServices authoring = new AuthoringService();
   private static final IAchievementAccess achievementAccess = new AchievementService();
 
-  public static void start(final Exercise exercise, final int level) throws DataBaseException {
+  public static void start(final Exercise exercise, final int level) throws DatabaseException, NotLoginException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
+    if( student == null )
+      throw new NotLoginException();
     Achievement achievement =
         new Achievement(
             student,
@@ -41,9 +44,11 @@ public class ProgressServices {
     authoring.add(achievement);
   }
 
-  public static void end(final Exercise exercise, final int level, final int score) throws DataBaseException{
+  public static void end(final Exercise exercise, final int level, final int score) throws DatabaseException, NotLoginException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = LoginServices.getStudent();
+    if( student == null)
+      throw new NotLoginException();
     Achievement achievement =
         new Achievement(
             student,

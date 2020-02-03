@@ -1,11 +1,8 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.exception.DataBaseException;
-import org.hibernate.Transaction;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
 

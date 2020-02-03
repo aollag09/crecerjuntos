@@ -10,8 +10,6 @@ public class Student implements BaseEntity {
 
   public static final String DEFAULT_NAME = "Anonymous";
   public static final String DEFAULT_MAIL = "anonymous@gmail.com";
-  public static final Student DEFAULT =
-      new Student(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
 
   /** Private generated id */
   @Id
