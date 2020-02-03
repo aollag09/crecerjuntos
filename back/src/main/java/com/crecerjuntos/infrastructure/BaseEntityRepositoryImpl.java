@@ -48,6 +48,9 @@ public class BaseEntityRepositoryImpl {
             if (em.contains(entity)) {
                 em.remove(entity);
             }
+            else {
+                throw new Exception("Entity not known in database. Please check it has been added before.");
+            }
             em.getTransaction().commit();
         }
         catch (Exception e) {
