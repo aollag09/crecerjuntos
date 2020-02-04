@@ -27,4 +27,88 @@ public class AchievementServiceTest {
     Assert.assertNotNull(lasts.get(0));
     Assert.assertEquals(achievement.getStudent(), lasts.get(0).getStudent());
   }
+
+
+  @Test
+  public void getMaxLevel() throws Exception {
+    Student student = TestServices.generateTestStudent();
+    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+
+    Achievement achievement0 =
+            new Achievement(
+                    student,
+                    "session",
+                    date,
+                    "exercise-test",
+                    0,
+                    100,
+                    85);
+
+    Achievement achievement1 =
+            new Achievement(
+                    student,
+                    "session",
+                    date,
+                    "exercise-test",
+                    1,
+                    100,
+                    80);
+
+    TestServices.authoringServices.add(achievement0);
+    TestServices.authoringServices.add(achievement1);
+
+    Integer maxLevel = TestServices.achievementAccess.getMaxLevel(student, "exercise-test");
+    Assert.assertEquals(Integer.valueOf(1), maxLevel);
+  }
+
+  @Test
+  public void getMaxLevelNotStarted() throws Exception {
+    Student student = TestServices.generateTestStudent();
+
+    Integer maxLevel = TestServices.achievementAccess.getMaxLevel(student, "exercise-test");
+    Assert.assertNull(maxLevel);
+  }
+
+  @Test
+  public void getBestScore() throws Exception {
+    Student student = TestServices.generateTestStudent();
+    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+
+    Achievement achievement0 =
+            new Achievement(
+                    student,
+                    "session",
+                    date,
+                    "exercise-test",
+                    1,
+                    100,
+                    80);
+
+    Achievement achievement1 =
+            new Achievement(
+                    student,
+                    "session",
+                    date,
+                    "exercise-test",
+                    1,
+                    100,
+                    70);
+
+    TestServices.authoringServices.add(achievement0);
+    TestServices.authoringServices.add(achievement1);
+
+    Integer bestScore = TestServices.achievementAccess.getBestScore(student, 1, "exercise-test");
+    Assert.assertEquals(Integer.valueOf(80), bestScore);
+
+  }
+
+  @Test
+  public void getBestScoreLevelNotStarted() throws Exception {
+    Student student = TestServices.generateTestStudent();
+
+    Integer bestScore = TestServices.achievementAccess.getBestScore(student, 1, "exercise-test");
+    Assert.assertNull(bestScore);
+  }
+
 }

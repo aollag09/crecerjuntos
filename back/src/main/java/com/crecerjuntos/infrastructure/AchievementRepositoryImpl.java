@@ -1,9 +1,11 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Student;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import java.util.Collections;
 import java.util.List;
 
 public class AchievementRepositoryImpl implements AchievementRepository {
@@ -60,5 +62,32 @@ public class AchievementRepositoryImpl implements AchievementRepository {
             Achievement.class);
     q.setParameter("sectionName", sectionName);
     return q.getResultList().subList(0, nbAchievements);
+  }
+
+  @Override
+  public Integer getMaxLevel(Long studentId, String exerciseName) {
+    TypedQuery<Integer> q =
+            em.createQuery("SELECT level FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND progress = 100 ORDER BY level DESC",
+                    Integer.class
+                    );
+    q.setParameter("studentId", studentId);
+    q.setParameter("exerciseName", exerciseName);
+    List<Integer> levels = q.getResultList();
+    if (levels.size() > 0) return levels.get(0); else return null;
+  }
+
+  @Override
+  public Integer getBestScore(Long studentId, int level, String exerciseName) {
+    TypedQuery<Integer> q =
+            em.createQuery("SELECT score FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND level = :level",
+                    Integer.class
+                    );
+    q.setParameter("studentId", studentId);
+    q.setParameter("exerciseName", exerciseName);
+    q.setParameter("level", level);
+
+    List<Integer> scores = q.getResultList();
+    if (scores.size() > 0) return Collections.max(scores); else return null;
+
   }
 }

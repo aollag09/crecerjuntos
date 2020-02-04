@@ -20,4 +20,11 @@ public interface IAchievementAccess {
 
   /** Get the lasts achievements for an entire section ordering by timestamp */
   List<Achievement> getLasts(final Section section, final int nbAchievements);
+
+  /** Get the max level finished by a student for a given exercise */
+  Integer getMaxLevel(Student student, String exerciseName);
+
+  /** Get the score of a student on a specific level of an exercise */
+  Integer getBestScore(Student student, int level, String exerciseName);
+
 }

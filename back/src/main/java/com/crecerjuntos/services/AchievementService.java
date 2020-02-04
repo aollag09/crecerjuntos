@@ -53,4 +53,14 @@ public class AchievementService implements IAchievementAccess {
         .findLastsBySection(section.getName(), nbAchievements)
         .subList(0, nbAchievements);
   }
+
+  @Override
+  public Integer getMaxLevel(Student student, String exerciseName) {
+    return achievementRepository.getMaxLevel(student.getId(), exerciseName);
+  }
+
+  @Override
+  public Integer getBestScore(Student student, int level, String exerciseName) {
+    return achievementRepository.getBestScore(student.getId(), level, exerciseName);
+  }
 }
