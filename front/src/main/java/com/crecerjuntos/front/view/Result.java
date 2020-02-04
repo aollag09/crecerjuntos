@@ -14,6 +14,8 @@ import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -92,7 +94,9 @@ public class Result extends VerticalLayout {
   }
 
   private Component buildStartExercises() {
-    Button exercises = new Button(getTranslation(Constants.Resource.Strings.Result.EXERCISES));
+    Button exercises =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Result.EXERCISES), new Icon(VaadinIcon.PLAY));
     exercises.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     exercises.addClassName(Constants.ClassStyle.Result.EXERCISES);
     exercises.addClickShortcut(Key.ENTER);

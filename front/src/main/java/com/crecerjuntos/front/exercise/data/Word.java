@@ -7,7 +7,6 @@ import com.crecerjuntos.front.util.ClassLoaderUtil;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.Difficulty;
 
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -71,7 +70,7 @@ public class Word extends Exercise {
     return 0;
   }
 
-  public class Step {
+  public static class Step {
     private String title;
     private int score;
 
