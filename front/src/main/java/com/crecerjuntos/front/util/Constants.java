@@ -101,12 +101,14 @@ public class Constants {
     public static final String WORD = "exercise/word";
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
+    public static final String CS_FIRST = "exercise/cs-first";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
     public static final String ERROR_VIEW = "error/common";
     public static final String DB_ERROR_VIEW = "error/database";
     public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
+
 
     public static class QueryParameters {}
   }
@@ -124,6 +126,7 @@ public class Constants {
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final int GOOD_SCORE = 75;
     public static final int MINIMUM_SCORE = 50;
+    public static final String CS_FIRST_NAME = "CSFirst";
   }
 
   public static class Resource {
@@ -287,6 +290,13 @@ public class Constants {
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
         public static final String LOGIN = PREFIX + "login";
         public static final String LOGOUT = PREFIX + "logout";
+      }
+
+      public static class CSFirst {
+        private static final String PREFIX = "cs-first-";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String TITLE = PREFIX + "title";
       }
     }
   }
