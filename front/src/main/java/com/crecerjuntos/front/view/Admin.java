@@ -3,8 +3,12 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IStudentAccess;
+import com.crecerjuntos.model.base.IAuthoringServices;
+import com.crecerjuntos.services.AchievementService;
 import com.crecerjuntos.services.StudentService;
+import com.crecerjuntos.services.AuthoringService;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
@@ -22,14 +26,35 @@ import java.util.List;
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {
 
+  private IAchievementAccess achievementAccess;
   private IStudentAccess studentAccess;
+  private IAuthoringServices authoringService;
+  private StudentDetails studentDetails;
   private Grid<Student> students;
 
   public Admin() {
     studentAccess = new StudentService();
-    add(new H2("Student List"));
+    authoringService = new AuthoringService();
+    achievementAccess = new AchievementService();
+
+    studentDetails = new StudentDetails(achievementAccess, studentAccess, authoringService);
+
     students = buildStudents();
+
+    // Connect selected student to editor or hide if none is selected
+    students.asSingleSelect().addValueChangeListener(e -> {
+        studentDetails.showStudentsDetails(e.getValue());
+    });
+
+    // Listen changes made by the editor, refresh data from backend
+    studentDetails.getStudentEditor().setChangeHandler(() -> {
+        studentDetails.setVisible(false);
+        listStudents(students);
+    });
+
+    add(new H2("Student List"));
     add(students);
+    add(studentDetails);
   }
 
   private Grid<Student> buildStudents() {
@@ -41,8 +66,14 @@ public class Admin extends VerticalLayout {
     grid.setDetailsVisibleOnClick(true);
     grid.setColumnReorderingAllowed(true);
 
-    List<Student> studentList = studentAccess.search("");
-    grid.setItems(studentList);
+    listStudents(grid);
+
     return grid;
   }
+
+  private void listStudents(Grid<Student> grid){
+      List<Student> studentList = studentAccess.search("");
+      grid.setItems(studentList);
+  }
+
 }
