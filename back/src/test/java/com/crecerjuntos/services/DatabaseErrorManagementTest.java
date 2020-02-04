@@ -5,6 +5,7 @@ import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.exception.DatabaseException;
 import org.junit.Test;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 
 public class DatabaseErrorManagementTest {
@@ -37,7 +38,7 @@ public class DatabaseErrorManagementTest {
         new Achievement(
             new Student(),
             "session",
-            new java.sql.Date(Calendar.getInstance().getTime().getTime()),
+                TestServices.getTimestamp(),
             "exo",
             0,
             100,
@@ -65,7 +66,7 @@ public class DatabaseErrorManagementTest {
           new Achievement(
               new Student(),
               "session",
-              new java.sql.Date(Calendar.getInstance().getTime().getTime()),
+                  TestServices.getTimestamp(),
               "exo",
               0,
               100,

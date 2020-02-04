@@ -6,6 +6,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class AchievementServiceTest {
   public void create() throws Exception {
     Student student = TestServices.generateTestStudent();
 
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Timestamp date = TestServices.getTimestamp();
     double progress = TestServices.random.nextInt(100);
     Achievement achievement =
         new Achievement(student, "session", date, "exercise-test", 0, progress, 0);
@@ -32,7 +33,7 @@ public class AchievementServiceTest {
   @Test
   public void getMaxLevel() throws Exception {
     Student student = TestServices.generateTestStudent();
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Timestamp date = TestServices.getTimestamp();
 
 
     Achievement achievement0 =
@@ -73,7 +74,7 @@ public class AchievementServiceTest {
   @Test
   public void getBestScore() throws Exception {
     Student student = TestServices.generateTestStudent();
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Timestamp date = TestServices.getTimestamp();
 
     Achievement achievement0 =
             new Achievement(

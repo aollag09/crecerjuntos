@@ -6,6 +6,10 @@ import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -21,5 +25,9 @@ public class TestServices {
     Student student = new Student("Test Student", mail, "password", Section.DEFAULT);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
+  }
+
+  public static Timestamp getTimestamp() {
+    return new Timestamp(new Date().getTime());
   }
 }
