@@ -159,7 +159,7 @@ public class Exercises extends VerticalLayout {
     Student student = LoginServices.getStudent();
     if (student == null) throw new NotLoginException();
     List<Achievement> dones = new ArrayList<Achievement>();
-    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
+    if (!student.getName().equals(Student.DEFAULT_NAME)) {
       dones =
           ProgressServices.getDone(student).stream()
               .filter(achievement -> exercise.getName().equals(achievement.getExercise()))
