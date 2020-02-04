@@ -53,14 +53,14 @@ public class Student implements BaseEntity {
   public Student(final String name, final Section section) {
     this.name = name;
     this.mail = DEFAULT_MAIL;
-    this.password = null;
+    this.password = "";
     this.section = section;
   }
 
   public Student(final String name) {
     this.name = name;
     this.mail = DEFAULT_MAIL;
-    this.password = null;
+    this.password = "";
     this.section = Section.DEFAULT;
   }
 
