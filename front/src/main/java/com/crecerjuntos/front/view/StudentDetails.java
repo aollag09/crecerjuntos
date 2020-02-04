@@ -30,7 +30,7 @@ public class StudentDetails extends HorizontalLayout implements KeyNotifier {
         studentEditor = new StudentEditor(studentAccess, authoringService);
         add(studentEditor);
 
-        studentStats = new StudentStats(achievementAccess, studentAccess);
+        studentStats = new StudentStats(achievementAccess);
         add(studentStats);
 
 

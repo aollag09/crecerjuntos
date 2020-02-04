@@ -9,6 +9,7 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -17,7 +18,7 @@ import com.vaadin.flow.data.binder.Binder;
 
 import java.util.Arrays;
 
-public class StudentEditor extends VerticalLayout {
+public class StudentEditor extends FormLayout {
 
     private final IAuthoringServices authoringService;
     private final IStudentAccess studentAccess;
@@ -29,7 +30,6 @@ public class StudentEditor extends VerticalLayout {
     TextField name = new TextField("Name");
     TextField mail = new TextField("Email");
     ComboBox<Section> section =  new ComboBox<>("Section");
-
 
     TextField password = new TextField("Password");
 
@@ -54,9 +54,6 @@ public class StudentEditor extends VerticalLayout {
 
         // bind fields
         binder.bindInstanceFields(this);
-
-        // Configure and style components
-        setSpacing(true);
 
         save.getElement().getThemeList().add("primary");
         delete.getElement().getThemeList().add("error");
