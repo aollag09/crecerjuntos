@@ -4,7 +4,9 @@ import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
+import com.crecerjuntos.model.exception.DataBaseException;
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -68,12 +70,25 @@ public class StudentEditor extends VerticalLayout {
 
 
     void delete() {
-        authoringService.remove(student);
+        try {
+            authoringService.remove(student);
+        }
+        catch (DataBaseException e) {
+            //TODO: Show error popup
+            UI.getCurrent().navigate(Admin.class);
+        }
         changeHandler.onChange();
     }
 
     void save() {
-        authoringService.add(student);
+        try {
+            authoringService.add(student);
+        }
+        catch (DataBaseException e){
+            //TODO: Show error popup
+            UI.getCurrent().navigate(Admin.class);
+        }
+
         changeHandler.onChange();
     }
 
