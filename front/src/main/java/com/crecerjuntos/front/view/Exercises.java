@@ -123,11 +123,13 @@ public class Exercises extends VerticalLayout {
   private HorizontalLayout buildLevel(
       final Exercise exercise, final int levelId, List<Achievement> dones) {
 
-    Optional<Achievement> done =
-        dones.stream()
-            .filter(achievement -> achievement.getLevel() == levelId)
-            .max(Comparator.comparingInt(Achievement::getScore));
-
+    Optional<Achievement> done = Optional.empty();
+    if (dones != null && dones.size() > 0) {
+      done =
+          dones.stream()
+              .filter(achievement -> achievement.getLevel() == levelId)
+              .max(Comparator.comparingInt(Achievement::getScore));
+    }
     HorizontalLayout level = new HorizontalLayout();
     level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
 
