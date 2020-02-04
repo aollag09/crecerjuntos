@@ -1,5 +1,6 @@
 package com.crecerjuntos.front.view;
 
+import com.crecerjuntos.front.view.error.AdminOperationError;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
@@ -67,8 +68,7 @@ public class StudentEditor extends FormLayout {
     try {
       authoringService.remove(student);
     } catch (DatabaseException e) {
-      // TODO: Show error popup
-      UI.getCurrent().navigate(Admin.class);
+      UI.getCurrent().navigate(AdminOperationError.class);
     }
     changeHandler.onChange();
   }
@@ -77,8 +77,7 @@ public class StudentEditor extends FormLayout {
     try {
       authoringService.add(student);
     } catch (DatabaseException e) {
-      // TODO: Show error popup
-      UI.getCurrent().navigate(Admin.class);
+      UI.getCurrent().navigate(AdminOperationError.class);
     }
 
     changeHandler.onChange();
