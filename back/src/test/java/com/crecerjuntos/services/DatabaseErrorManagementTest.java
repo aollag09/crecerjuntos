@@ -5,9 +5,6 @@ import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.exception.DatabaseException;
 import org.junit.Test;
 
-import java.sql.Timestamp;
-import java.util.Calendar;
-
 public class DatabaseErrorManagementTest {
 
   @Test(expected = DatabaseException.class)
@@ -35,14 +32,7 @@ public class DatabaseErrorManagementTest {
   @Test(expected = DatabaseException.class)
   public void test_start_non_existing_user() throws Exception {
     TestServices.authoringServices.add(
-        new Achievement(
-            new Student(),
-            "session",
-                TestServices.getTimestamp(),
-            "exo",
-            0,
-            100,
-            0));
+        new Achievement(new Student(), "session", TestServices.getTimestamp(), "exo", 0, 100, 0));
   }
 
   @Test
@@ -63,14 +53,7 @@ public class DatabaseErrorManagementTest {
     // Generate error
     try {
       TestServices.authoringServices.add(
-          new Achievement(
-              new Student(),
-              "session",
-                  TestServices.getTimestamp(),
-              "exo",
-              0,
-              100,
-              0));
+          new Achievement(new Student(), "session", TestServices.getTimestamp(), "exo", 0, 100, 0));
     } catch (DatabaseException e) {
       // That is ok
     }

@@ -2,7 +2,14 @@ package com.crecerjuntos.model;
 
 import com.google.common.base.Objects;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
@@ -86,8 +93,8 @@ public class Student implements BaseEntity {
     return section;
   }
 
-  public void setSection(Section section){
-    this.section=section;
+  public void setSection(Section section) {
+    this.section = section;
   }
 
   public String getSectionName() {
@@ -98,7 +105,7 @@ public class Student implements BaseEntity {
     return mail;
   }
 
-  public void setMail(String mail){
+  public void setMail(String mail) {
     this.mail = mail;
   }
 
@@ -106,7 +113,7 @@ public class Student implements BaseEntity {
     return password;
   }
 
-  public void setPassword(String password){
+  public void setPassword(String password) {
     this.password = password;
   }
 

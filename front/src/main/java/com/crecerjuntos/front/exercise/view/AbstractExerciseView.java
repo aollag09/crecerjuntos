@@ -157,7 +157,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
     UI.getCurrent().navigate(Result.class);
   }
 
-  protected Pair<VerticalLayout, NumberField> buildScore(){
+  protected Pair<VerticalLayout, NumberField> buildScore() {
     VerticalLayout layout = new VerticalLayout();
     layout.addClassName(Constants.ClassStyle.Exercises.ADMIN);
     layout.setWidth("400px");

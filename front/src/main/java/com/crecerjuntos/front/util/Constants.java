@@ -66,7 +66,6 @@ public class Constants {
       public static final String CONTENT = PREFIX + "content";
       public static final String TEMPLATE = PREFIX + "template";
       public static final String FORM = PREFIX + "form";
-
     }
 
     public static class Result {
@@ -86,7 +85,6 @@ public class Constants {
       private static final String PREFIX = "logout-layout__";
       public static final String LOGOUT = PREFIX + "logout";
     }
-
   }
 
   public static class Route {
@@ -108,7 +106,6 @@ public class Constants {
     public static final String ERROR_VIEW = "error/common";
     public static final String DB_ERROR_VIEW = "error/database";
     public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
-
 
     public static class QueryParameters {}
   }

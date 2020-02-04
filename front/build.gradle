@@ -42,7 +42,7 @@ vaadin {
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
 // repositories and dependencies sections
 vaadin.autoconfigure()
-vaadin.submitStatistics=true
+vaadin.submitStatistics = true
 
 // Gretty server configuration
 gretty {

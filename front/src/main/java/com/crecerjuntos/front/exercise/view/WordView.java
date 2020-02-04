@@ -103,7 +103,7 @@ public class WordView extends AbstractExerciseView {
   protected Score computeScore() {
     Score score = new Score();
     int finalScore = 0;
-    for ( Map.Entry<Checkbox, Word.Step> entry : steps.entrySet()) {
+    for (Map.Entry<Checkbox, Word.Step> entry : steps.entrySet()) {
       Checkbox box = entry.getKey();
       Word.Step step = entry.getValue();
       int stepScore = box.getValue() ? step.getScore() : 0;
