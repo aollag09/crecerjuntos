@@ -1,7 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.helger.css.decl.CSSExpressionTermOptimizer;
-
 public class Constants {
 
   public static class Session {
@@ -137,8 +135,8 @@ public class Constants {
     public static class Templates {
 
       public static class Word {
-        public static final String LEVEL1 = "template/template-word-1.docx";
-        public static final String LEVEL2 = "template/template-word-2.docx";
+        public static final String LEVEL1 = "template/word-kitchen.docx";
+        public static final String LEVEL2 = "template/word-cv.docx";
       }
     }
 
@@ -242,6 +240,11 @@ public class Constants {
         public static final String STEP_1_3 = PREFIX + "step1.3";
         public static final String STEP_1_4 = PREFIX + "step1.4";
         public static final String STEP_1_5 = PREFIX + "step1.5";
+        public static final String STEP_2_1 = PREFIX + "step2.1";
+        public static final String STEP_2_2 = PREFIX + "step2.2";
+        public static final String STEP_2_3 = PREFIX + "step2.3";
+        public static final String STEP_2_4 = PREFIX + "step2.4";
+        public static final String STEP_2_5 = PREFIX + "step2.5";
       }
 
       public static class Excel {

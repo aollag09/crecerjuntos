@@ -62,6 +62,13 @@ public class Word extends Exercise {
           new Step(Constants.Resource.Strings.Word.STEP_1_3, 20),
           new Step(Constants.Resource.Strings.Word.STEP_1_4, 20),
           new Step(Constants.Resource.Strings.Word.STEP_1_5, 20));
+    } else if (level == 1) {
+      return Arrays.asList(
+          new Step(Constants.Resource.Strings.Word.STEP_2_1, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_2, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_3, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_4, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_5, 20));
     } else throw new NonExistingLevel(this.name, level);
   }
 
