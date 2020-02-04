@@ -65,12 +65,12 @@ public class WordView extends AbstractExerciseView {
             getTranslation(Constants.Resource.Strings.Template.DOWNLOAD),
             new Icon(VaadinIcon.DOWNLOAD));
     try {
-      final ByteArrayInputStream template = ((Word) exercise).getTemplate(level);
+      final byte[] template = ((Word) exercise).getTemplate(level);
       buttonWrapper =
           new FileDownloadWrapper(
               new StreamResource(
                   exercise.getTitle() + "-" + level + "-template.docx",
-                  () -> new ByteArrayInputStream(template.readAllBytes())));
+                  () -> new ByteArrayInputStream(template)));
       buttonWrapper.wrapComponent(download);
       download.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     } catch (NonExistingLevel nonExistingLevel) {

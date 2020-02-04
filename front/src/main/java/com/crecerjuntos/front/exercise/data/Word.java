@@ -38,14 +38,14 @@ public class Word extends Exercise {
     return levels;
   }
 
-  public ByteArrayInputStream getTemplate(final int level) throws NonExistingLevel, IOException {
+  public byte[] getTemplate(final int level) throws NonExistingLevel, IOException {
     URL resource = ClassLoaderUtil.getResource(getTemplateURL(level), this.getClass());
     if (resource == null) {
       throw new IllegalArgumentException(
           "Template is not found with URL : " + getTemplateURL(level));
     } else {
       File file = new File(resource.getFile());
-      return new ByteArrayInputStream(Files.readAllBytes(file.toPath()));
+      return Files.readAllBytes(file.toPath());
     }
   }
 
