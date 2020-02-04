@@ -82,4 +82,5 @@ public abstract class Exercise {
   public String getUri() {
     return uri;
   }
+
 }

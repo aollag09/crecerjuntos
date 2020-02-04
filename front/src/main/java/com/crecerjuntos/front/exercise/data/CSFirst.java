@@ -32,4 +32,13 @@ public class CSFirst extends Exercise {
   public long getExpectedTime(int level) throws NonExistingLevel {
     return 0;
   }
+
+  public String getCSFirstExercise(int level) throws NonExistingLevel {
+    if (level == 0) return "Programar tu superheroe";
+    else throw new NonExistingLevel(name, level);
+  }
+
+  public String getCSFirstCourseId() {
+    return "jjcp6d";
+  }
 }

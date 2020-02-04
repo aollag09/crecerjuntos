@@ -27,7 +27,6 @@ dependencies {
     // Vaadin extra
     implementation group: 'org.vaadin.olli', name: 'file-download-wrapper', version: '3.0.1'
 
-
     // back end
     implementation project(':back')
 
