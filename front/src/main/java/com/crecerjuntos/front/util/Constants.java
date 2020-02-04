@@ -85,6 +85,11 @@ public class Constants {
       private static final String PREFIX = "logout-layout__";
       public static final String LOGOUT = PREFIX + "logout";
     }
+
+    public static class CSFirst {
+      private static final String PREFIX = "cs-first-layout__";
+      public static final String INSTRUCTIONS = PREFIX + "instructions";
+    }
   }
 
   public static class Route {

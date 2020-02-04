@@ -31,7 +31,8 @@ public class CSFirstView extends AbstractExerciseView {
 
   @Override
   protected void onStart() {
-    Div instructions = new Div();
+    VerticalLayout instructions = new VerticalLayout();
+    instructions.addClassName(Constants.ClassStyle.CSFirst.INSTRUCTIONS);
 
     Button go =
         new Button(
@@ -41,17 +42,17 @@ public class CSFirstView extends AbstractExerciseView {
         event -> {
           UI.getCurrent().getPage().setLocation("https://csfirst.withgoogle.com/login");
         });
-    add(go);
+    instructions.add(go);
 
-    add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_1)));
-    add(
+    instructions.add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_1)));
+    instructions.add(
         new Span(
             getTranslation(
                 Constants.Resource.Strings.CSFirst.INSTRUCTION_2,
                 ((CSFirst) exercise).getCSFirstCourseId())));
-    add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_3)));
+    instructions.add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_3)));
     try {
-      add(
+      instructions.add(
           new Span(
               getTranslation(
                   Constants.Resource.Strings.CSFirst.INSTRUCTION_4,

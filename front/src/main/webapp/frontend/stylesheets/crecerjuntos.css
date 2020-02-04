@@ -260,6 +260,12 @@ html {
     font-size:x-large;
 }
 
+/** CS First */
+.cs-first-layout__instructions{
+     margin:auto;
+     width: fit-content;
+     font-size:x-large;
+}
 
 /** Logout */
 .logout-layout__logout{
