@@ -40,13 +40,14 @@ vaadin {
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
 // repositories and dependencies sections
 vaadin.autoconfigure()
+vaadin.submitStatistics=true
 
 // Gretty server configuration
-gretty{
-    httpPort=1998
-    contextPath= ''
-    debugPort=2006
-    loggingLevel= "INFO"
+gretty {
+    httpPort = 1998
+    contextPath = ''
+    debugPort = 2006
+    loggingLevel = "INFO"
     consoleLogEnabled = true
     fileLogEnabled = true
     logFileName = 'crecer-juntos.log'

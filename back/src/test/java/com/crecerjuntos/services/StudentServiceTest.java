@@ -32,7 +32,7 @@ public class StudentServiceTest {
     studentService = new StudentService(studentRepository);
 
     // Add a test student in repository
-    Student testStudent = new Student(1234L, "Pedro test", Section.DEFAULT);
+    Student testStudent = new Student("Pedro test", Section.DEFAULT);
     List<Student> studentList = new ArrayList<>();
     studentList.add(testStudent);
 

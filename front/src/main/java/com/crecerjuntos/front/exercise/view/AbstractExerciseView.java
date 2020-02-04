@@ -1,13 +1,17 @@
 package com.crecerjuntos.front.exercise.view;
 
+import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
+import com.crecerjuntos.front.exercise.view.error.NotLoginErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;
@@ -15,7 +19,11 @@ import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
@@ -84,10 +92,12 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     VerticalLayout instructionDiv = new VerticalLayout();
     instructionDiv.addClassName(Constants.ClassStyle.Exercises.INSTRUCTIONS);
-    instructions = new Text(getTranslation(Constants.Resource.Strings.Dactylographie.INSTRUCTIONS));
+    instructions = new Text(getTranslation(exercise.getInstructions()));
     instructionDiv.add(instructions);
 
-    start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START));
+    start =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Exercises.START), new Icon(VaadinIcon.PLAY));
     start.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     start.addClassName(Constants.ClassStyle.Exercises.START);
     start.addClickShortcut(Key.ENTER);
@@ -100,10 +110,24 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void start() {
+    title
+        .getElement()
+        .setText(
+            getTranslation(exercise.getTitle())
+                + " "
+                + getTranslation(Constants.Resource.Strings.Exercises.LEVEL)
+                + ": "
+                + level);
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;
-    ProgressServices.start(exercise, level);
+    try {
+      ProgressServices.start(exercise, level);
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
+    }
     onStart();
   }
 
@@ -119,10 +143,46 @@ public abstract class AbstractExerciseView extends VerticalLayout
     ScoreServices.save(score);
 
     // store the progression & score in the database
-    ProgressServices.end(exercise, level, score.getScore());
+    try {
+      ProgressServices.end(exercise, level, score.getScore());
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
+    }
 
     // Navigate to result page
     UI.getCurrent().navigate(Result.class);
+  }
+
+  protected Component buildAdminValidation() {
+    VerticalLayout layout = new VerticalLayout();
+    layout.addClassName(Constants.ClassStyle.Exercises.ADMIN);
+    layout.setWidth("400px");
+    layout.setAlignItems(Alignment.CENTER);
+
+    PasswordField password =
+        new PasswordField(getTranslation(Constants.Resource.Strings.Exercises.ADMIN_PASSWORD));
+    password.addClassName(Constants.ClassStyle.Login.FORM);
+    layout.add(password);
+
+    Button validate = new Button(getTranslation(Constants.Resource.Strings.Exercises.VALIDATE));
+    validate.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+    validate.addClickShortcut(Key.ENTER);
+    validate.addClassName(Constants.ClassStyle.Login.FORM);
+    validate.addClickListener(
+        event -> {
+          if (Constants.ADMIN_PASSWORD.equals(password.getValue())) {
+            end();
+          } else {
+            Notification.show(getTranslation(Constants.Resource.Strings.Login.WRONG_PASSWORD));
+            password.setInvalid(true);
+            password.setClearButtonVisible(true);
+          }
+        });
+    layout.add(validate);
+
+    return layout;
   }
 
   protected void nonExistingLevel() {

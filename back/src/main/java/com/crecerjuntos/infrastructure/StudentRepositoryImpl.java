@@ -58,23 +58,4 @@ public class StudentRepositoryImpl implements StudentRepository {
     if (potentialStudents.size() == 1) return potentialStudents.get(0);
     else return null;
   }
-
-  public Student save(Student student) {
-    em.getTransaction().begin();
-    if (student.getId() == null) {
-      em.persist(student);
-    } else {
-      student = em.merge(student);
-    }
-    em.getTransaction().commit();
-    return student;
-  }
-
-  public void delete(Student student) {
-    em.getTransaction().begin();
-    if (em.contains(student)) {
-      em.remove(student);
-    }
-    em.getTransaction().commit();
-  }
 }

@@ -7,7 +7,7 @@ import java.sql.Date;
 import java.time.LocalDate;
 
 @Entity
-public class Achievement {
+public class Achievement implements BaseEntity {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -27,46 +27,44 @@ public class Achievement {
   /** Unique, private & generated id */
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private final Long id;
+  private Long id;
 
   @ManyToOne
   @JoinColumn(name = "student_id", nullable = false)
-  private final Student student;
+  private Student student;
 
   /** Session id */
-  private final String sessionId;
+  private String sessionId;
 
   /** Timestamp of the achievement */
-  private final Date timestamp;
+  private Date timestamp;
 
   /** Name of the current exercise */
   @Column(nullable = false)
-  private final String exercise;
+  private String exercise;
 
   /** Level of the current exercise, default : 1 */
   @Column(columnDefinition = "integer default 1")
-  private final int level;
+  private int level;
 
   /** Progression should be between 0 and 100 */
-  private final double progress;
+  private double progress;
 
   /** Score, should be between 0 and 100 */
-  private final int score;
+  private int score;
 
   public Achievement() {
-    this(0L, new Student(), "0", Date.valueOf(LocalDate.now()), "No exercise", 0, 0, 0);
+    this(new Student(), "0", Date.valueOf(LocalDate.now()), "No exercise", 0, 0, 0);
   }
 
   public Achievement(
-      final Long id,
-      final Student student,
-      final String sessionId,
-      final Date timestamp,
-      final String exercise,
-      final int level,
-      final double progress,
-      final int score) {
-    this.id = id;
+      Student student,
+      String sessionId,
+      Date timestamp,
+      String exercise,
+      int level,
+      double progress,
+      int score) {
     this.student = student;
     this.sessionId = sessionId;
     this.timestamp = timestamp;

@@ -3,15 +3,16 @@ package com.crecerjuntos.front.exercise.data;
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.Level;
+import com.crecerjuntos.front.util.ClassLoaderUtil;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.Difficulty;
-import com.google.common.io.Resources;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Word extends Exercise {
@@ -37,7 +38,7 @@ public class Word extends Exercise {
   }
 
   public byte[] getTemplate(final int level) throws NonExistingLevel, IOException {
-    URL resource = this.getClass().getResource(getTemplateURL(level));
+    URL resource = ClassLoaderUtil.getResource(getTemplateURL(level), this.getClass());
     if (resource == null) {
       throw new IllegalArgumentException(
           "Template is not found with URL : " + getTemplateURL(level));
@@ -53,8 +54,44 @@ public class Word extends Exercise {
     throw new NonExistingLevel(this.name, level);
   }
 
+  public List<Step> getSteps(final int level) throws NonExistingLevel {
+    if (level == 0) {
+      return Arrays.asList(
+          new Step(Constants.Resource.Strings.Word.STEP_1_1, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_2, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_3, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_4, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_5, 20));
+    } else if (level == 1) {
+      return Arrays.asList(
+          new Step(Constants.Resource.Strings.Word.STEP_2_1, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_2, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_3, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_4, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_2_5, 20));
+    } else throw new NonExistingLevel(this.name, level);
+  }
+
   @Override
   public long getExpectedTime(int level) {
     return 0;
+  }
+
+  public static class Step {
+    private String title;
+    private int score;
+
+    public Step(String title, int score) {
+      this.title = title;
+      this.score = score;
+    }
+
+    public String getTitle() {
+      return title;
+    }
+
+    public int getScore() {
+      return score;
+    }
   }
 }

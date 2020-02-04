@@ -1,8 +1,10 @@
 package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
+import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
+import com.crecerjuntos.front.exercise.view.error.NotLoginErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.ProgressServices;
@@ -10,8 +12,13 @@ import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.StyleSheet;
-import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -43,7 +50,12 @@ public class Exercises extends VerticalLayout {
   private void buildExercise(final Exercise exercise) {
 
     // List the student achievements
-    List<Achievement> bestLevelsDone = getBestLevelsDone(exercise);
+    List<Achievement> bestLevelsDone = null;
+    try {
+      bestLevelsDone = getBestLevelsDone(exercise);
+    } catch (NotLoginException e) {
+      UI.getCurrent().navigate(NotLoginErrorView.class);
+    }
 
     VerticalLayout exerciseCard = new VerticalLayout();
     exerciseCard.addClassName(Constants.ClassStyle.Exercises.CARD);
@@ -52,7 +64,7 @@ public class Exercises extends VerticalLayout {
     exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
-    if (bestLevelsDone.size() == 0) {
+    if (bestLevelsDone == null || bestLevelsDone.size() == 0) {
       Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
       status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
       exerciseHeader.add(status);
@@ -111,11 +123,13 @@ public class Exercises extends VerticalLayout {
   private HorizontalLayout buildLevel(
       final Exercise exercise, final int levelId, List<Achievement> dones) {
 
-    Optional<Achievement> done =
-        dones.stream()
-            .filter(achievement -> achievement.getLevel() == levelId)
-            .max(Comparator.comparingInt(Achievement::getScore));
-
+    Optional<Achievement> done = Optional.empty();
+    if (dones != null && dones.size() > 0) {
+      done =
+          dones.stream()
+              .filter(achievement -> achievement.getLevel() == levelId)
+              .max(Comparator.comparingInt(Achievement::getScore));
+    }
     HorizontalLayout level = new HorizontalLayout();
     level.addClassName(Constants.ClassStyle.Exercises.LEVEL);
 
@@ -141,8 +155,9 @@ public class Exercises extends VerticalLayout {
     return level;
   }
 
-  private List<Achievement> getBestLevelsDone(final Exercise exercise) {
+  private List<Achievement> getBestLevelsDone(final Exercise exercise) throws NotLoginException {
     Student student = LoginServices.getStudent();
+    if (student == null) throw new NotLoginException();
     List<Achievement> dones = new ArrayList<Achievement>();
     if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
       dones =

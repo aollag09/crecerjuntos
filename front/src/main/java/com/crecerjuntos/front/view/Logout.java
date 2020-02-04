@@ -3,7 +3,6 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.vaadin.flow.component.Key;
-import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -20,7 +19,7 @@ public class Logout extends VerticalLayout {
 
   public Logout() {
     LoginServices.logout();
-  buildLogout();
+    buildLogout();
   }
 
   private void buildLogout() {
@@ -29,7 +28,7 @@ public class Logout extends VerticalLayout {
 
     VerticalLayout logoutDiv = new VerticalLayout();
     logoutDiv.addClassName(Constants.ClassStyle.Logout.LOGOUT);
-    Text text = new Text(getTranslation(Constants.Resource.Strings.Logout.SUCCESSFULLY_LOGOUT));
+    H2 text = new H2(getTranslation(Constants.Resource.Strings.Logout.SUCCESSFULLY_LOGOUT));
     logoutDiv.add(text);
 
     Button login = new Button(getTranslation(Constants.Resource.Strings.Logout.LOGIN));
@@ -37,9 +36,9 @@ public class Logout extends VerticalLayout {
     login.addClassName(Constants.ClassStyle.Exercises.START);
     login.addClickShortcut(Key.ENTER);
     login.addClickListener(
-            event -> {
-              UI.getCurrent().navigate(Login.class);
-            });
+        event -> {
+          UI.getCurrent().navigate(Login.class);
+        });
     logoutDiv.add(login);
     add(logoutDiv);
   }

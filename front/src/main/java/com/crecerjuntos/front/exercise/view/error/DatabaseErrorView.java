@@ -6,12 +6,12 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@Route(value = Constants.Route.ERROR_VIEW, layout = ExerciseLayout.class)
+@Route(value = Constants.Route.DB_ERROR_VIEW, layout = ExerciseLayout.class)
 @PageTitle(Constants.Title.TITLE)
-public class CommonErrorView extends AbstractErrorView {
+public class DatabaseErrorView extends AbstractErrorView {
 
-  public CommonErrorView() {
-    add(new H2(getTranslation(Constants.Resource.Strings.Errors.ERROR)));
-    add(buildStartExercises());
+  public DatabaseErrorView() {
+    add(new H2(getTranslation(Constants.Resource.Strings.Errors.DB_ERROR)));
+    add(buildLogout());
   }
 }

@@ -51,6 +51,7 @@ public class Constants {
       public static final String SCORE = PREFIX + "score";
       public static final String STATUS_IN_PROGRESS = PREFIX + "status-in-progress";
       public static final String STATUS_SUCCESS = PREFIX + "status-success";
+      public static final String ADMIN = PREFIX + "admin";
     }
 
     public static class Dactylographie {
@@ -58,6 +59,14 @@ public class Constants {
       public static final String CONTENT = PREFIX + "content";
       public static final String MODEL = PREFIX + "model";
       public static final String TEXT_FIELD = PREFIX + "text-field";
+    }
+
+    public static class Word {
+      private static final String PREFIX = "word-layout__";
+      public static final String CONTENT = PREFIX + "content";
+      public static final String TEMPLATE = PREFIX + "template";
+      public static final String FORM = PREFIX + "form";
+
     }
 
     public static class Result {
@@ -77,6 +86,7 @@ public class Constants {
       private static final String PREFIX = "logout-layout__";
       public static final String LOGOUT = PREFIX + "logout";
     }
+
   }
 
   public static class Route {
@@ -93,8 +103,10 @@ public class Constants {
     public static final String POWER_POINT = "exercise/power-point";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
-    public static final String NON_EXISTING_LEVEL = "exercise/no-level";
-    public static final String ERROR_VIEW = "exercise/error";
+    public static final String NON_EXISTING_LEVEL = "error/no-level";
+    public static final String ERROR_VIEW = "error/common";
+    public static final String DB_ERROR_VIEW = "error/database";
+    public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
 
     public static class QueryParameters {}
   }
@@ -120,13 +132,12 @@ public class Constants {
       public static final String IMG_TERESA = "resources/img/teresa.png";
     }
 
-    public static class Templates{
+    public static class Templates {
 
-      public static class Word{
-        public static final String LEVEL1 = "/resources/template/template-word-1.docx";
-        public static final String LEVEL2 = "/resources/template/template-word-2.docx";
+      public static class Word {
+        public static final String LEVEL1 = "template/word-kitchen.docx";
+        public static final String LEVEL2 = "template/word-cv.docx";
       }
-
     }
 
     public static class Strings {
@@ -180,16 +191,25 @@ public class Constants {
         private static final String PREFIX = "exercises-";
         public static final String TITLE = PREFIX + "title";
         public static final String LEVELS = PREFIX + "levels";
+        public static final String LEVEL = PREFIX + "level";
         public static final String HOURS = PREFIX + "hours";
         public static final String START = PREFIX + "start";
         public static final String READY = PREFIX + "ready";
         public static final String IN_PROGRESS = PREFIX + "in-progress";
         public static final String DONE = PREFIX + "done";
-        public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
-        public static final String ERROR = PREFIX + "error";
+        public static final String ADMIN_PASSWORD = PREFIX + "admin-password";
+        public static final String VALIDATE = PREFIX + "validate";
       }
 
-      public static class Template{
+      public static class Errors {
+        private static final String PREFIX = "error-";
+        public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
+        public static final String ERROR = PREFIX + "common";
+        public static final String DB_ERROR = PREFIX + "db-error";
+        public static final String NOT_LOGIN_ERROR = PREFIX + "not-login";
+      }
+
+      public static class Template {
         private static final String PREFIX = "template-";
         public static final String DOWNLOAD = PREFIX + "download";
       }
@@ -215,6 +235,16 @@ public class Constants {
         public static final String LVL3_NAME = PREFIX + "level3-name";
         public static final String LVL4_NAME = PREFIX + "level4-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String STEP_1_1 = PREFIX + "step1.1";
+        public static final String STEP_1_2 = PREFIX + "step1.2";
+        public static final String STEP_1_3 = PREFIX + "step1.3";
+        public static final String STEP_1_4 = PREFIX + "step1.4";
+        public static final String STEP_1_5 = PREFIX + "step1.5";
+        public static final String STEP_2_1 = PREFIX + "step2.1";
+        public static final String STEP_2_2 = PREFIX + "step2.2";
+        public static final String STEP_2_3 = PREFIX + "step2.3";
+        public static final String STEP_2_4 = PREFIX + "step2.4";
+        public static final String STEP_2_5 = PREFIX + "step2.5";
       }
 
       public static class Excel {
@@ -256,6 +286,7 @@ public class Constants {
         public static final String TITLE = PREFIX + "title";
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
         public static final String LOGIN = PREFIX + "login";
+        public static final String LOGOUT = PREFIX + "logout";
       }
     }
   }

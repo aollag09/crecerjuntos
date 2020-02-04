@@ -1,9 +1,11 @@
 package com.crecerjuntos.front.view;
 
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
@@ -103,12 +105,17 @@ public class Create extends VerticalLayout {
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               } else {
                 // create & log in current user
-                Student student =
-                    LoginServices.create(
-                        mail.getValue(),
-                        username.getValue(),
-                        password.getValue(),
-                        section.getValue());
+                Student student = null;
+                try {
+                  student =
+                      LoginServices.create(
+                          mail.getValue(),
+                          username.getValue(),
+                          password.getValue(),
+                          section.getValue());
+                } catch (DatabaseException e) {
+                  UI.getCurrent().navigate(DatabaseErrorView.class);
+                }
                 LoginServices.login(student);
                 // Go to user dashboard
                 UI.getCurrent().navigate(Home.class);

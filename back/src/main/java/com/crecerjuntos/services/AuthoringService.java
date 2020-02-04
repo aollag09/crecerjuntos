@@ -1,14 +1,12 @@
 package com.crecerjuntos.services;
 
 import com.crecerjuntos.config.JpaEntityManagerFactory;
-import com.crecerjuntos.infrastructure.AchievementRepository;
-import com.crecerjuntos.infrastructure.AchievementRepositoryImpl;
-import com.crecerjuntos.infrastructure.StudentRepository;
-import com.crecerjuntos.infrastructure.StudentRepositoryImpl;
+import com.crecerjuntos.infrastructure.BaseEntityRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Star;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
+import com.crecerjuntos.model.exception.DatabaseException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,49 +16,42 @@ public class AuthoringService implements IAuthoringServices {
 
   Logger logger = LoggerFactory.getLogger(AuthoringService.class);
 
-  private AchievementRepository achievementRepository;
+  private BaseEntityRepositoryImpl baseEntityRepository;
 
-  private StudentRepository studentRepository;
-
-  public AuthoringService(
-      AchievementRepository achievementRepository, StudentRepository studentRepository) {
-    this.achievementRepository = achievementRepository;
-    this.studentRepository = studentRepository;
-  }
+  public AuthoringService(BaseEntityRepositoryImpl baseEntityRepository) {}
 
   public AuthoringService() {
     EntityManager em = JpaEntityManagerFactory.getEntityManager();
-    this.studentRepository = new StudentRepositoryImpl(em);
-    this.achievementRepository = new AchievementRepositoryImpl(em);
+    this.baseEntityRepository = new BaseEntityRepositoryImpl(em);
   }
 
   @Override
-  public void add(Student student) {
-    studentRepository.save(student);
+  public void add(Student student) throws DatabaseException {
+    baseEntityRepository.save(student);
   }
 
   @Override
-  public void remove(Student student) {
-    studentRepository.delete(student);
+  public void remove(Student student) throws DatabaseException {
+    baseEntityRepository.delete(student);
   }
 
   @Override
-  public void add(Achievement achievement) {
-    achievementRepository.save(achievement);
+  public void add(Achievement achievement) throws DatabaseException {
+    baseEntityRepository.save(achievement);
   }
 
   @Override
-  public void remove(Achievement achievement) {
-    achievementRepository.delete(achievement);
+  public void remove(Achievement achievement) throws DatabaseException {
+    baseEntityRepository.delete(achievement);
   }
 
   @Override
-  public void add(Star star) {
-    logger.warn("Star was not added : not implemented yet");
+  public void add(Star star) throws DatabaseException {
+    baseEntityRepository.save(star);
   }
 
   @Override
-  public void remove(Star star) {
-    logger.warn("Star was not removed : not implemented yet");
+  public void remove(Star star) throws DatabaseException {
+    baseEntityRepository.delete(star);
   }
 }

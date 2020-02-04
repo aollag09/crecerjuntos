@@ -15,8 +15,4 @@ public interface StudentRepository {
   List<Student> findByPartialName(final String s);
 
   Student findById(final Long id);
-
-  Student save(Student student);
-
-  void delete(Student student);
 }
