@@ -21,7 +21,9 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
@@ -93,7 +95,9 @@ public abstract class AbstractExerciseView extends VerticalLayout
     instructions = new Text(getTranslation(exercise.getInstructions()));
     instructionDiv.add(instructions);
 
-    start = new Button(getTranslation(Constants.Resource.Strings.Exercises.START), new Icon(VaadinIcon.PLAY));
+    start =
+        new Button(
+            getTranslation(Constants.Resource.Strings.Exercises.START), new Icon(VaadinIcon.PLAY));
     start.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     start.addClassName(Constants.ClassStyle.Exercises.START);
     start.addClickShortcut(Key.ENTER);
@@ -149,6 +153,36 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     // Navigate to result page
     UI.getCurrent().navigate(Result.class);
+  }
+
+  protected Component buildAdminValidation() {
+    VerticalLayout layout = new VerticalLayout();
+    layout.addClassName(Constants.ClassStyle.Exercises.ADMIN);
+    layout.setWidth("400px");
+    layout.setAlignItems(Alignment.CENTER);
+
+    PasswordField password =
+        new PasswordField(getTranslation(Constants.Resource.Strings.Exercises.ADMIN_PASSWORD));
+    password.addClassName(Constants.ClassStyle.Login.FORM);
+    layout.add(password);
+
+    Button validate = new Button(getTranslation(Constants.Resource.Strings.Exercises.VALIDATE));
+    validate.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+    validate.addClickShortcut(Key.ENTER);
+    validate.addClassName(Constants.ClassStyle.Login.FORM);
+    validate.addClickListener(
+        event -> {
+          if (Constants.ADMIN_PASSWORD.equals(password.getValue())) {
+            end();
+          } else {
+            Notification.show(getTranslation(Constants.Resource.Strings.Login.WRONG_PASSWORD));
+            password.setInvalid(true);
+            password.setClearButtonVisible(true);
+          }
+        });
+    layout.add(validate);
+
+    return layout;
   }
 
   protected void nonExistingLevel() {

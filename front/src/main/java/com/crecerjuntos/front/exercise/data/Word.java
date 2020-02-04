@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Word extends Exercise {
@@ -54,8 +55,37 @@ public class Word extends Exercise {
     throw new NonExistingLevel(this.name, level);
   }
 
+  public List<Step> getSteps(final int level) throws NonExistingLevel {
+    if (level == 0) {
+      return Arrays.asList(
+          new Step(Constants.Resource.Strings.Word.STEP_1_1, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_2, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_3, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_4, 20),
+          new Step(Constants.Resource.Strings.Word.STEP_1_5, 20));
+    } else throw new NonExistingLevel(this.name, level);
+  }
+
   @Override
   public long getExpectedTime(int level) {
     return 0;
+  }
+
+  public class Step {
+    private String title;
+    private int score;
+
+    public Step(String title, int score) {
+      this.title = title;
+      this.score = score;
+    }
+
+    public String getTitle() {
+      return title;
+    }
+
+    public int getScore() {
+      return score;
+    }
   }
 }

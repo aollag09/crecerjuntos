@@ -177,6 +177,14 @@ html {
 .exercises-layout__start{
 }
 
+.exercises-layout__admin{
+    margin: auto;
+    border-radius: var(--lumo-border-radius);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 30px;
+}
+
+
 /** Dactylographie layout*/
 .dactylographie-layout__content{
 }
@@ -242,7 +250,15 @@ html {
 
 .word-layout__template{
     margin:auto;
+    margin-bottom: 45px;
 }
+
+.word-layout__form{
+    margin:auto;
+    width: fit-content;
+    font-size:x-large;
+}
+
 
 /** Logout */
 .logout-layout__logout{

@@ -53,6 +53,7 @@ public class Constants {
       public static final String SCORE = PREFIX + "score";
       public static final String STATUS_IN_PROGRESS = PREFIX + "status-in-progress";
       public static final String STATUS_SUCCESS = PREFIX + "status-success";
+      public static final String ADMIN = PREFIX + "admin";
     }
 
     public static class Dactylographie {
@@ -66,6 +67,8 @@ public class Constants {
       private static final String PREFIX = "word-layout__";
       public static final String CONTENT = PREFIX + "content";
       public static final String TEMPLATE = PREFIX + "template";
+      public static final String FORM = PREFIX + "form";
+
     }
 
     public static class Result {
@@ -196,6 +199,8 @@ public class Constants {
         public static final String READY = PREFIX + "ready";
         public static final String IN_PROGRESS = PREFIX + "in-progress";
         public static final String DONE = PREFIX + "done";
+        public static final String ADMIN_PASSWORD = PREFIX + "admin-password";
+        public static final String VALIDATE = PREFIX + "validate";
       }
 
       public static class Errors {
@@ -232,6 +237,11 @@ public class Constants {
         public static final String LVL3_NAME = PREFIX + "level3-name";
         public static final String LVL4_NAME = PREFIX + "level4-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String STEP_1_1 = PREFIX + "step1.1";
+        public static final String STEP_1_2 = PREFIX + "step1.2";
+        public static final String STEP_1_3 = PREFIX + "step1.3";
+        public static final String STEP_1_4 = PREFIX + "step1.4";
+        public static final String STEP_1_5 = PREFIX + "step1.5";
       }
 
       public static class Excel {

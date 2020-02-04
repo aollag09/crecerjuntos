@@ -14,7 +14,11 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.StyleSheet;
-import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.html.Anchor;
+import com.vaadin.flow.component.html.Div;
+import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.html.H3;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -60,7 +64,7 @@ public class Exercises extends VerticalLayout {
     exerciseHeader.addClassName(Constants.ClassStyle.Exercises.HEADER);
 
     // Status
-    if (bestLevelsDone.size() == 0) {
+    if (bestLevelsDone == null || bestLevelsDone.size() == 0) {
       Span status = new Span(getTranslation(Constants.Resource.Strings.Exercises.READY));
       status.addClassName(Constants.ClassStyle.Exercises.STATUS_READY);
       exerciseHeader.add(status);

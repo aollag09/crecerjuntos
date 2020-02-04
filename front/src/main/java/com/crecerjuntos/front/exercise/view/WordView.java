@@ -4,11 +4,14 @@ import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.data.Word;
+import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
@@ -20,6 +23,7 @@ import org.vaadin.olli.FileDownloadWrapper;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
+import java.util.List;
 
 @Route(value = Constants.Route.WORD, layout = ExerciseLayout.class)
 @PageTitle(Constants.Title.TITLE)
@@ -40,6 +44,16 @@ public class WordView extends AbstractExerciseView {
     template.add(buildDownloadTemplate());
     content.add(template);
 
+    // form
+    try {
+      content.add(buildForm(level));
+    } catch (NonExistingLevel nonExistingLevel) {
+      UI.getCurrent().navigate(NonExistingLevelView.class);
+    }
+
+    // validation
+    content.add(buildAdminValidation());
+
     add(content);
   }
 
@@ -59,7 +73,6 @@ public class WordView extends AbstractExerciseView {
                   () -> new ByteArrayInputStream(template.readAllBytes())));
       buttonWrapper.wrapComponent(download);
       download.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
-      download.addClickShortcut(Key.ENTER);
     } catch (NonExistingLevel nonExistingLevel) {
       nonExistingLevel();
     } catch (IOException e) {
@@ -68,8 +81,21 @@ public class WordView extends AbstractExerciseView {
     return buttonWrapper;
   }
 
+  public Component buildForm(final int level) throws NonExistingLevel {
+    VerticalLayout form = new VerticalLayout();
+    form.setWidth("500px");
+    form.setAlignItems(Alignment.START);
+    form.addClassName(Constants.ClassStyle.Word.FORM);
+    List<Word.Step> steps = ((Word) exercise).getSteps(level);
+    for (Word.Step step : steps) {
+      Checkbox box = new Checkbox(getTranslation(step.getTitle()));
+      form.add(box);
+    }
+    return form;
+  }
+
   @Override
   protected Score computeScore() {
-    return null;
+    return new Score();
   }
 }
