@@ -4,15 +4,13 @@ import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
-import com.crecerjuntos.model.exception.DataBaseException;
-import com.vaadin.flow.component.Key;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.binder.Binder;
 
@@ -70,7 +68,7 @@ public class StudentEditor extends FormLayout {
         try {
             authoringService.remove(student);
         }
-        catch (DataBaseException e) {
+        catch (DatabaseException e) {
             //TODO: Show error popup
             UI.getCurrent().navigate(Admin.class);
         }
@@ -81,7 +79,7 @@ public class StudentEditor extends FormLayout {
         try {
             authoringService.add(student);
         }
-        catch (DataBaseException e){
+        catch (DatabaseException e){
             //TODO: Show error popup
             UI.getCurrent().navigate(Admin.class);
         }
