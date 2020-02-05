@@ -19,7 +19,7 @@ public interface AchievementRepository {
 
   Integer getMaxLevel(Long studentId, String exerciseName);
 
-  Integer getBestScore(Long student, int level, String exerciseName);
+  Integer getBestScore(Long studentId, int level, String exerciseName);
 
-  Integer getPodium(Student student, int level, String exercise);
+  Integer getPodium(Long studentId, int level, String exercise);
 }

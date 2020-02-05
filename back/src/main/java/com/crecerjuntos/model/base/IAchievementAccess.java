@@ -27,7 +27,9 @@ public interface IAchievementAccess {
   /** Get the score of a student on a specific level of an exercise */
   Integer getBestScore(final Student student, final int level, final String exerciseName);
 
-  /** Get position on the podium for the current student for a dedicated exercise */
-  Integer getPodium(final Student student, final int level, final String exercise );
-
+  /**
+   * Get position on the podium for the current student for a dedicated exercise  1 : first, 2 :
+   * second, 3 : third, -1 : not on podium
+   */
+  Integer getPodium(final Student student, final int level, final String exerciseName);
 }

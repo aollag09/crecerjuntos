@@ -1,11 +1,9 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Achievement;
-import com.crecerjuntos.model.Student;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.util.Collections;
 import java.util.List;
 
 public class AchievementRepositoryImpl implements AchievementRepository {
@@ -79,7 +77,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public Integer getBestScore(Long studentId, int level, String exerciseName) {
     TypedQuery<Integer> q =
         em.createQuery(
-            "SELECT MAX(score) FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND level = :level",
+            "SELECT MAX(score) FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND level = :level AND progress = 100",
             Integer.class);
     q.setParameter("studentId", studentId);
     q.setParameter("exerciseName", exerciseName);
@@ -89,7 +87,23 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   }
 
   @Override
-  public Integer getPodium(Student student, int level, String exercise) {
-    return null;
+  public Integer getPodium(Long studentId, int level, String exerciseName) {
+    int bestStudentScore = getBestScore(studentId, level, exerciseName);
+
+    // Query the 3 best score of the current section
+    TypedQuery<Integer> q =
+        em.createQuery(
+            "SELECT DISTINCT(score) FROM Achievement a WHERE exercise = :exerciseName AND level = :level  "
+                + "AND progress = 100 ORDER BY score DESC",
+            Integer.class);
+    q.setParameter("exerciseName", exerciseName);
+    q.setParameter("level", level);
+    q.setMaxResults(3);
+    List<Integer> podium = q.getResultList();
+    int podiumStep = -1;
+    if (podium.size() > 0 && podium.get(0) == bestStudentScore) podiumStep = 1;
+    else if (podium.size() > 1 && podium.get(1) == bestStudentScore) podiumStep = 2;
+    else if (podium.size() > 2 && podium.get(2) == bestStudentScore) podiumStep = 3;
+    return podiumStep;
   }
 }
