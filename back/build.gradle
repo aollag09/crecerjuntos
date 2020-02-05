@@ -13,7 +13,7 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
 
-    // postgresql db
+    // PostgreSQL database services
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
 
     // test
@@ -26,3 +26,10 @@ dependencies {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+task startTestDatabase(type: Exec) {
+    description("Start the test database docker image")
+    workingDir '../deployment'
+    commandLine './start-database.sh',
+            '-d', 'cs_courses_test'
+}
+test.dependsOn startTestDatabase;

@@ -48,6 +48,8 @@ public class Login extends VerticalLayout {
     EmailField email = new EmailField(getTranslation(Constants.Resource.Strings.Login.MAIL));
     email.addClassName(Constants.ClassStyle.Login.FORM);
     email.setClearButtonVisible(true);
+    email.setAutofocus(true);
+    email.setAutoselect(true);
     email.setErrorMessage(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
     login.add(email);
 

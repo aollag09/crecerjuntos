@@ -5,8 +5,7 @@ import com.crecerjuntos.model.Student;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.sql.Date;
-import java.util.Calendar;
+import java.sql.Timestamp;
 import java.util.List;
 
 public class AchievementServiceTest {
@@ -15,7 +14,7 @@ public class AchievementServiceTest {
   public void create() throws Exception {
     Student student = TestServices.generateTestStudent();
 
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Timestamp date = TestServices.getTimestamp();
     double progress = TestServices.random.nextInt(100);
     Achievement achievement =
         new Achievement(student, "session", date, "exercise-test", 0, progress, 0);
@@ -28,32 +27,16 @@ public class AchievementServiceTest {
     Assert.assertEquals(achievement.getStudent(), lasts.get(0).getStudent());
   }
 
-
   @Test
   public void getMaxLevel() throws Exception {
     Student student = TestServices.generateTestStudent();
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
-
+    Timestamp date = TestServices.getTimestamp();
 
     Achievement achievement0 =
-            new Achievement(
-                    student,
-                    "session",
-                    date,
-                    "exercise-test",
-                    0,
-                    100,
-                    85);
+        new Achievement(student, "session", date, "exercise-test", 0, 100, 85);
 
     Achievement achievement1 =
-            new Achievement(
-                    student,
-                    "session",
-                    date,
-                    "exercise-test",
-                    1,
-                    100,
-                    80);
+        new Achievement(student, "session", date, "exercise-test", 1, 100, 80);
 
     TestServices.authoringServices.add(achievement0);
     TestServices.authoringServices.add(achievement1);
@@ -73,34 +56,19 @@ public class AchievementServiceTest {
   @Test
   public void getBestScore() throws Exception {
     Student student = TestServices.generateTestStudent();
-    Date date = new java.sql.Date(Calendar.getInstance().getTime().getTime());
+    Timestamp date = TestServices.getTimestamp();
 
     Achievement achievement0 =
-            new Achievement(
-                    student,
-                    "session",
-                    date,
-                    "exercise-test",
-                    1,
-                    100,
-                    80);
+        new Achievement(student, "session", date, "exercise-test", 1, 100, 80);
 
     Achievement achievement1 =
-            new Achievement(
-                    student,
-                    "session",
-                    date,
-                    "exercise-test",
-                    1,
-                    100,
-                    70);
+        new Achievement(student, "session", date, "exercise-test", 1, 100, 70);
 
     TestServices.authoringServices.add(achievement0);
     TestServices.authoringServices.add(achievement1);
 
     Integer bestScore = TestServices.achievementAccess.getBestScore(student, 1, "exercise-test");
     Assert.assertEquals(Integer.valueOf(80), bestScore);
-
   }
 
   @Test
@@ -110,5 +78,4 @@ public class AchievementServiceTest {
     Integer bestScore = TestServices.achievementAccess.getBestScore(student, 1, "exercise-test");
     Assert.assertNull(bestScore);
   }
-
 }

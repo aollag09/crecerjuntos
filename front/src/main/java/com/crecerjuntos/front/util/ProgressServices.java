@@ -14,6 +14,7 @@ import com.vaadin.flow.server.VaadinSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.Timestamp;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
@@ -34,7 +35,7 @@ public class ProgressServices {
         new Achievement(
             student,
             session.getSession().getId(),
-            new java.sql.Date(Calendar.getInstance().getTime().getTime()),
+            new Timestamp(Calendar.getInstance().getTime().getTime()),
             exercise.getName(),
             level,
             0,
@@ -53,7 +54,7 @@ public class ProgressServices {
         new Achievement(
             student,
             session.getSession().getId(),
-            new java.sql.Date(Calendar.getInstance().getTime().getTime()),
+            new Timestamp(Calendar.getInstance().getTime().getTime()),
             exercise.getName(),
             level,
             100,

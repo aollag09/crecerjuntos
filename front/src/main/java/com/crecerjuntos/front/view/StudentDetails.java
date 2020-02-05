@@ -11,42 +11,40 @@ import org.slf4j.LoggerFactory;
 
 public class StudentDetails extends HorizontalLayout implements KeyNotifier {
 
-	private Logger logger = LoggerFactory.getLogger(StudentDetails.class) ;
-    private final IAuthoringServices authoringService;
-    private final IStudentAccess studentAccess;
-    private final IAchievementAccess achievementAccess;
+  private Logger logger = LoggerFactory.getLogger(StudentDetails.class);
+  private final IAuthoringServices authoringService;
+  private final IStudentAccess studentAccess;
+  private final IAchievementAccess achievementAccess;
 
-    // Current student
-    private Student student;
+  // Current student
+  private Student student;
 
-    private StudentEditor studentEditor;
-    private StudentStats studentStats;
+  private StudentEditor studentEditor;
+  private StudentStats studentStats;
 
-    public StudentDetails(IAchievementAccess achievementAccess, IStudentAccess studentAccess, IAuthoringServices authoringService){
-        this.authoringService = authoringService;
-        this.studentAccess = studentAccess;
-        this.achievementAccess = achievementAccess;
+  public StudentDetails(
+      IAchievementAccess achievementAccess,
+      IStudentAccess studentAccess,
+      IAuthoringServices authoringService) {
+    this.authoringService = authoringService;
+    this.studentAccess = studentAccess;
+    this.achievementAccess = achievementAccess;
 
-        studentEditor = new StudentEditor(studentAccess, authoringService);
-        add(studentEditor);
+    studentEditor = new StudentEditor(studentAccess, authoringService);
+    add(studentEditor);
 
-        studentStats = new StudentStats(achievementAccess);
-        add(studentStats);
+    studentStats = new StudentStats(achievementAccess);
+    add(studentStats);
+  }
 
+  public final void showStudentsDetails(Student s) {
+    studentEditor.show(s);
+    studentStats.show(s);
 
-    }
+    setVisible(true);
+  }
 
-	public final void showStudentsDetails(Student s){
-        studentEditor.show(s);
-        studentStats.show(s);
-
-        setVisible(true);
-    }
-
-    public StudentEditor getStudentEditor() {
-        return studentEditor;
-    }
-
-
-
+  public StudentEditor getStudentEditor() {
+    return studentEditor;
+  }
 }

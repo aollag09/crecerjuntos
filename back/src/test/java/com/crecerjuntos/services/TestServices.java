@@ -6,6 +6,8 @@ import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
@@ -17,9 +19,17 @@ public class TestServices {
   public static IStudentAccess studentAccess = new StudentService();
 
   public static final Student generateTestStudent() throws Exception {
+    return generateTestStudent("Test Student");
+  }
+
+  public static final Student generateTestStudent(String studentName) throws Exception {
     String mail = "student.test" + UUID.randomUUID() + "@gmail.com";
-    Student student = new Student("Test Student", mail, "password", Section.DEFAULT);
+    Student student = new Student(studentName, mail, "password", Section.DEFAULT);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
+  }
+
+  public static Timestamp getTimestamp() {
+    return new Timestamp(new Date().getTime());
   }
 }

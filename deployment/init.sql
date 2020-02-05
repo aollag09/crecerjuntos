@@ -1,2 +1,2 @@
-create database cs_courses;
-grant all privileges on database cs_courses to postgres;
+create database ##DB_NAME##;
+grant all privileges on database ##DB_NAME## to postgres;

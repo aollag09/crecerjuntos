@@ -1,6 +1,7 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.BaseEntity;
+import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.exception.DatabaseException;
 
 import javax.persistence.EntityManager;
@@ -41,8 +42,10 @@ public class BaseEntityRepositoryImpl {
     try {
       if (!tr.isActive()) tr.begin();
 
-      if (em.contains(entity)) {
-        em.remove(entity);
+      BaseEntity retrievedEntity = em.find(entity.getClass(), entity.getId());
+
+      if (em.contains(retrievedEntity)) {
+        em.remove(retrievedEntity);
       } else {
         throw new Exception("Entity not known in database. Please check it has been added before.");
       }

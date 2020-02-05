@@ -23,10 +23,12 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
+import org.javatuples.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -153,6 +155,24 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     // Navigate to result page
     UI.getCurrent().navigate(Result.class);
+  }
+
+  protected Pair<VerticalLayout, NumberField> buildScore() {
+    VerticalLayout layout = new VerticalLayout();
+    layout.addClassName(Constants.ClassStyle.Exercises.ADMIN);
+    layout.setWidth("400px");
+    layout.setAlignItems(Alignment.CENTER);
+
+    NumberField score = new NumberField(getTranslation(Constants.Resource.Strings.Result.SCORE));
+    score.setMax(100);
+    score.setMin(0);
+    score.setStep(10);
+    score.setValue(50.0);
+    score.setHasControls(true);
+    score.addClassName(Constants.ClassStyle.Login.FORM);
+    layout.add(score);
+
+    return new Pair<>(layout, score);
   }
 
   protected Component buildAdminValidation() {

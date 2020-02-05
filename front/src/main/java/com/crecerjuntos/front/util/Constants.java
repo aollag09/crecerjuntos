@@ -66,7 +66,6 @@ public class Constants {
       public static final String CONTENT = PREFIX + "content";
       public static final String TEMPLATE = PREFIX + "template";
       public static final String FORM = PREFIX + "form";
-
     }
 
     public static class Result {
@@ -87,6 +86,10 @@ public class Constants {
       public static final String LOGOUT = PREFIX + "logout";
     }
 
+    public static class CSFirst {
+      private static final String PREFIX = "cs-first-layout__";
+      public static final String INSTRUCTIONS = PREFIX + "instructions";
+    }
   }
 
   public static class Route {
@@ -101,6 +104,7 @@ public class Constants {
     public static final String WORD = "exercise/word";
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
+    public static final String CS_FIRST = "exercise/cs-first";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
@@ -124,6 +128,7 @@ public class Constants {
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final int GOOD_SCORE = 75;
     public static final int MINIMUM_SCORE = 50;
+    public static final String CS_FIRST_NAME = "CSFirst";
   }
 
   public static class Resource {
@@ -287,6 +292,19 @@ public class Constants {
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
         public static final String LOGIN = PREFIX + "login";
         public static final String LOGOUT = PREFIX + "logout";
+      }
+
+      public static class CSFirst {
+        private static final String PREFIX = "cs-first-";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String INSTRUCTION_1 = PREFIX + "instruction-1";
+        public static final String INSTRUCTION_2 = PREFIX + "instruction-2";
+        public static final String INSTRUCTION_3 = PREFIX + "instruction-3";
+        public static final String INSTRUCTION_4 = PREFIX + "instruction-4";
+
+        public static final String GO = PREFIX + "go";
+        public static final String TITLE = PREFIX + "title";
       }
     }
   }

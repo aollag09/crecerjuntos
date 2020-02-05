@@ -44,5 +44,4 @@ public enum Section {
     }
     return DEFAULT;
   }
-
 }

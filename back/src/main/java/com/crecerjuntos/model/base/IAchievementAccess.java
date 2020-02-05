@@ -26,5 +26,4 @@ public interface IAchievementAccess {
 
   /** Get the score of a student on a specific level of an exercise */
   Integer getBestScore(Student student, int level, String exerciseName);
-
 }

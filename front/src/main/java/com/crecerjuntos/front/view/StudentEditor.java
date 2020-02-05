@@ -18,105 +18,100 @@ import java.util.Arrays;
 
 public class StudentEditor extends FormLayout {
 
-    private final IAuthoringServices authoringService;
-    private final IStudentAccess studentAccess;
+  private final IAuthoringServices authoringService;
+  private final IStudentAccess studentAccess;
 
-    // Current student
-    private Student student;
+  // Current student
+  private Student student;
 
-    // Fields to edit
-    TextField name = new TextField("Name");
-    TextField mail = new TextField("Email");
-    ComboBox<Section> section =  new ComboBox<>("Section");
+  // Fields to edit
+  TextField name = new TextField("Name");
+  TextField mail = new TextField("Email");
+  ComboBox<Section> section = new ComboBox<>("Section");
 
-    TextField password = new TextField("Password");
+  TextField password = new TextField("Password");
 
-    Button save = new Button("Save", VaadinIcon.CHECK.create());
-    Button cancel = new Button("Cancel");
-    Button delete = new Button("Delete", VaadinIcon.TRASH.create());
-    HorizontalLayout actions = new HorizontalLayout(save, cancel, delete);
+  Button save = new Button("Save", VaadinIcon.CHECK.create());
+  Button cancel = new Button("Cancel");
+  Button delete = new Button("Delete", VaadinIcon.TRASH.create());
+  HorizontalLayout actions = new HorizontalLayout(save, cancel, delete);
 
-    Binder<Student> binder = new Binder<>(Student.class);
+  Binder<Student> binder = new Binder<>(Student.class);
 
-    private ChangeHandler changeHandler;
+  private ChangeHandler changeHandler;
 
-    public StudentEditor(IStudentAccess studentAccess, IAuthoringServices authoringService){
-        this.authoringService = authoringService;
-        this.studentAccess = studentAccess;
+  public StudentEditor(IStudentAccess studentAccess, IAuthoringServices authoringService) {
+    this.authoringService = authoringService;
+    this.studentAccess = studentAccess;
 
-        // Put section combo box
-        section.setItemLabelGenerator(Section::getName);
-        section.setItems(Arrays.asList(Section.values()));
+    // Put section combo box
+    section.setItemLabelGenerator(Section::getName);
+    section.setItems(Arrays.asList(Section.values()));
 
-        add(name, mail, section, password, actions);
+    add(name, mail, section, password, actions);
 
-        // bind fields
-        binder.bindInstanceFields(this);
+    // bind fields
+    binder.bindInstanceFields(this);
 
-        save.getElement().getThemeList().add("primary");
-        delete.getElement().getThemeList().add("error");
+    save.getElement().getThemeList().add("primary");
+    delete.getElement().getThemeList().add("error");
 
-        // wire action buttons to save, delete and reset
-        save.addClickListener(e -> save());
-        delete.addClickListener(e -> delete());
-        cancel.addClickListener(e -> show(student));
-        setVisible(false);
+    // wire action buttons to save, delete and reset
+    save.addClickListener(e -> save());
+    delete.addClickListener(e -> delete());
+    cancel.addClickListener(e -> show(student));
+    setVisible(false);
+  }
+
+  void delete() {
+    try {
+      authoringService.remove(student);
+    } catch (DatabaseException e) {
+      // TODO: Show error popup
+      UI.getCurrent().navigate(Admin.class);
+    }
+    changeHandler.onChange();
+  }
+
+  void save() {
+    try {
+      authoringService.add(student);
+    } catch (DatabaseException e) {
+      // TODO: Show error popup
+      UI.getCurrent().navigate(Admin.class);
     }
 
+    changeHandler.onChange();
+  }
 
-    void delete() {
-        try {
-            authoringService.remove(student);
-        }
-        catch (DatabaseException e) {
-            //TODO: Show error popup
-            UI.getCurrent().navigate(Admin.class);
-        }
-        changeHandler.onChange();
+  public interface ChangeHandler {
+    void onChange();
+  }
+
+  public final void show(Student s) {
+    if (s == null) {
+      setVisible(false);
+      return;
     }
-
-    void save() {
-        try {
-            authoringService.add(student);
-        }
-        catch (DatabaseException e){
-            //TODO: Show error popup
-            UI.getCurrent().navigate(Admin.class);
-        }
-
-        changeHandler.onChange();
+    final boolean persisted = s.getId() != null;
+    if (persisted) {
+      // Find fresh entity for editing
+      this.student = studentAccess.byId(s.getId());
+    } else {
+      this.student = s;
     }
+    cancel.setVisible(persisted);
 
-    public interface ChangeHandler {
-        void onChange();
-    }
+    // Bind student properties to similarly named fields
+    binder.setBean(this.student);
 
-    public final void show(Student s) {
-        if (s == null) {
-            setVisible(false);
-            return;
-        }
-        final boolean persisted = s.getId() != null;
-        if (persisted) {
-            // Find fresh entity for editing
-            this.student = studentAccess.byId(s.getId());
-        }
-        else {
-            this.student = s;
-        }
-        cancel.setVisible(persisted);
+    setVisible(true);
 
-        // Bind student properties to similarly named fields
-        binder.setBean(this.student);
+    // Focus name initially
+    name.focus();
+  }
 
-        setVisible(true);
-
-        // Focus name initially
-        name.focus();
-    }
-
-    public void setChangeHandler(ChangeHandler changeHandler) {
-        this.changeHandler = changeHandler;
-    }
-
+  public void setChangeHandler(ChangeHandler changeHandler) {
+    this.changeHandler = changeHandler;
+  }
 }

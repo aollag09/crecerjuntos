@@ -4,7 +4,12 @@ import com.vaadin.flow.i18n.I18NProvider;
 import org.slf4j.LoggerFactory;
 
 import java.text.MessageFormat;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Locale;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
 
 public class TranslationProvider implements I18NProvider {
 

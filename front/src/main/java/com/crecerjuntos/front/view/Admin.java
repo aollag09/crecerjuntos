@@ -4,11 +4,11 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
-import com.crecerjuntos.model.base.IStudentAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
+import com.crecerjuntos.model.base.IStudentAccess;
 import com.crecerjuntos.services.AchievementService;
-import com.crecerjuntos.services.StudentService;
 import com.crecerjuntos.services.AuthoringService;
+import com.crecerjuntos.services.StudentService;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
@@ -42,15 +42,21 @@ public class Admin extends VerticalLayout {
     students = buildStudents();
 
     // Connect selected student to editor or hide if none is selected
-    students.asSingleSelect().addValueChangeListener(e -> {
-        studentDetails.showStudentsDetails(e.getValue());
-    });
+    students
+        .asSingleSelect()
+        .addValueChangeListener(
+            e -> {
+              studentDetails.showStudentsDetails(e.getValue());
+            });
 
     // Listen changes made by the editor, refresh data from backend
-    studentDetails.getStudentEditor().setChangeHandler(() -> {
-        studentDetails.setVisible(false);
-        listStudents(students);
-    });
+    studentDetails
+        .getStudentEditor()
+        .setChangeHandler(
+            () -> {
+              studentDetails.setVisible(false);
+              listStudents(students);
+            });
 
     add(new H2("Student List"));
     add(students);
@@ -71,9 +77,8 @@ public class Admin extends VerticalLayout {
     return grid;
   }
 
-  private void listStudents(Grid<Student> grid){
-      List<Student> studentList = studentAccess.search("");
-      grid.setItems(studentList);
+  private void listStudents(Grid<Student> grid) {
+    List<Student> studentList = studentAccess.search("");
+    grid.setItems(studentList);
   }
-
 }
