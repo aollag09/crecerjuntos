@@ -19,8 +19,12 @@ public class TestServices {
   public static IStudentAccess studentAccess = new StudentService();
 
   public static final Student generateTestStudent() throws Exception {
+    return generateTestStudent("Test Student");
+  }
+
+  public static final Student generateTestStudent(String studentName) throws Exception {
     String mail = "student.test" + UUID.randomUUID() + "@gmail.com";
-    Student student = new Student("Test Student", mail, "password", Section.DEFAULT);
+    Student student = new Student(studentName, mail, "password", Section.DEFAULT);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
   }
