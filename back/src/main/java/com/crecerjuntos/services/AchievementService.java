@@ -63,4 +63,9 @@ public class AchievementService implements IAchievementAccess {
   public Integer getBestScore(Student student, int level, String exerciseName) {
     return achievementRepository.getBestScore(student.getId(), level, exerciseName);
   }
+
+  @Override
+  public Integer getPodium(Student student, int level, String exercise) {
+    return achievementRepository.getPodium(student, level, exercise);
+  }
 }

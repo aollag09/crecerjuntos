@@ -22,8 +22,12 @@ public interface IAchievementAccess {
   List<Achievement> getLasts(final Section section, final int nbAchievements);
 
   /** Get the max level finished by a student for a given exercise */
-  Integer getMaxLevel(Student student, String exerciseName);
+  Integer getMaxLevel(final Student student, final String exerciseName);
 
   /** Get the score of a student on a specific level of an exercise */
-  Integer getBestScore(Student student, int level, String exerciseName);
+  Integer getBestScore(final Student student, final int level, final String exerciseName);
+
+  /** Get position on the podium for the current student for a dedicated exercise */
+  Integer getPodium(final Student student, final int level, final String exercise );
+
 }
