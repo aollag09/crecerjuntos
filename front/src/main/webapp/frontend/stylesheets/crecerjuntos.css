@@ -262,9 +262,10 @@ html {
 
 /** CS First */
 .cs-first-layout__instructions{
-     margin:auto;
-     width: fit-content;
-     font-size:x-large;
+    margin: auto;
+    align-items: center;
+    margin-bottom: 45px;
+    font-size: large;
 }
 
 /** Logout */

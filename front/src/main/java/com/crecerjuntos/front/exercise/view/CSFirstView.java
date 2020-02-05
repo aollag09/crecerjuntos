@@ -32,6 +32,7 @@ public class CSFirstView extends AbstractExerciseView {
   protected void onStart() {
     VerticalLayout instructions = new VerticalLayout();
     instructions.addClassName(Constants.ClassStyle.CSFirst.INSTRUCTIONS);
+    instructions.setWidth("600px");
 
     Button go =
         new Button(
