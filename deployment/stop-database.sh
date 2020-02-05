@@ -2,7 +2,7 @@
 
 name=crecer_juntos
 
-while getopts ":n" opt; do
+while getopts "n:" opt; do
   case $opt in
   n)
     name="$OPTARG"
