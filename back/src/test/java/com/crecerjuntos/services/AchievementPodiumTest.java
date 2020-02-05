@@ -16,6 +16,7 @@ public class AchievementPodiumTest {
     Student s21 = TestServices.generateTestStudent();
     Student s3 = TestServices.generateTestStudent();
     Student s4 = TestServices.generateTestStudent();
+    Student s5 = TestServices.generateTestStudent();
 
     Timestamp date = TestServices.getTimestamp();
     final String exercise = "exercise-test-podium";
@@ -43,5 +44,7 @@ public class AchievementPodiumTest {
         Integer.valueOf(3), TestServices.achievementAccess.getPodium(s3, level, exercise));
     Assert.assertEquals(
         Integer.valueOf(-1), TestServices.achievementAccess.getPodium(s4, level, exercise));
+    Assert.assertEquals(
+        Integer.valueOf(-1), TestServices.achievementAccess.getPodium(s5, level, exercise));
   }
 }

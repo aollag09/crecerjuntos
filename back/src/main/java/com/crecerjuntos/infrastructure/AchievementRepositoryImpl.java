@@ -88,7 +88,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
 
   @Override
   public Integer getPodium(Long studentId, int level, String exerciseName) {
-    int bestStudentScore = getBestScore(studentId, level, exerciseName);
+    Integer bestStudentScore = getBestScore(studentId, level, exerciseName);
 
     // Query the 3 best score of the current section
     TypedQuery<Integer> q =
@@ -99,11 +99,13 @@ public class AchievementRepositoryImpl implements AchievementRepository {
     q.setParameter("exerciseName", exerciseName);
     q.setParameter("level", level);
     q.setMaxResults(3);
+
+    // Analyse podium
     List<Integer> podium = q.getResultList();
     int podiumStep = -1;
-    if (podium.size() > 0 && podium.get(0) == bestStudentScore) podiumStep = 1;
-    else if (podium.size() > 1 && podium.get(1) == bestStudentScore) podiumStep = 2;
-    else if (podium.size() > 2 && podium.get(2) == bestStudentScore) podiumStep = 3;
+    if (podium.size() > 0 && podium.get(0).equals(bestStudentScore)) podiumStep = 1;
+    else if (podium.size() > 1 && podium.get(1).equals(bestStudentScore)) podiumStep = 2;
+    else if (podium.size() > 2 && podium.get(2).equals(bestStudentScore)) podiumStep = 3;
     return podiumStep;
   }
 }
