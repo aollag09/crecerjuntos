@@ -60,7 +60,13 @@ task startDatabase(type: Exec) {
     workingDir '../deployment'
     commandLine './start-database.sh'
 }
-vaadinAssembleClient.dependsOn back:startDatabase;
+vaadinAssembleClient.dependsOn startDatabase;
+
+task stopDatabase(type: Exec){
+    description("Stop the database docker image")
+    workingDir '../deployment'
+    commandLine './stop-database.sh'
+}
 
 sourceSets {
     main {
