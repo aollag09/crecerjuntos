@@ -13,7 +13,7 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
 
-    // postgresql db
+    // PostgreSQL database services
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
 
     // test
