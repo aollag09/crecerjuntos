@@ -26,16 +26,32 @@ dependencies {
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-// Start database task
-task startTestDatabase(type: Exec) {
+
+task startDatabase(type: Exec) {
     description("Start the database docker image")
     workingDir '../deployment'
-    commandLine './start-database.sh', '-n', 'crecer_juntos_test','-p', '54321'
+    commandLine './start-database.sh'
 }
-test.dependsOn startTestDatabase;
+
+task stopDatabase(type: Exec){
+    description("Stop the database docker image")
+    workingDir '../deployment'
+    commandLine './stop-database.sh'
+}
+
+task startTestDatabase(type: Exec) {
+    description("Start the test database docker image")
+    workingDir '../deployment'
+    commandLine './start-database.sh',
+            '-n', 'crecer_juntos_test',
+            '-p', '54321',
+            '-v', '/var/lib/postgresql/data',
+            '-d', 'cs_courses_test'
+}
+//test.dependsOn startTestDatabase;
 
 task stopTestDatabase(type: Exec){
-    description("Stop the database docker image")
+    description("Stop the test database docker image")
     workingDir '../deployment'
     commandLine './stop-database.sh', '-n', 'crecer_juntos_test'
 }

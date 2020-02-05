@@ -16,4 +16,4 @@ while getopts "n:" opt; do
 done
 
 echo "Stop PostgreSQL Docker image"
-docker ps -a --filter "name=$name" | grep -q . && docker stop $name && docker rm $name
+docker ps -a --filter "name=$name" | grep -q . && docker stop "$name" || true && docker rm "$name" || true
