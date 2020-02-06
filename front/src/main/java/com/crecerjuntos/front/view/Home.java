@@ -34,12 +34,15 @@ public class Home extends VerticalLayout {
   private static final Logger LOGGER = LoggerFactory.getLogger(Home.class);
 
   public Home() {
+    H2 title =
+        new H2(
+            getTranslation(Constants.Resource.Strings.Home.WELCOME, LoginServices.getUserName()));
+    add(title);
     add(buildPodiums());
   }
 
   private Component buildPodiums() {
     VerticalLayout podiumLayout = new VerticalLayout();
-    podiumLayout.add(new H2(getTranslation(Constants.Resource.Strings.Home.PODIUM)));
 
     IAchievementAccess achievementAccess = new AchievementService();
     final Student student = LoginServices.getStudent();
