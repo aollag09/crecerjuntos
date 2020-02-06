@@ -1,6 +1,7 @@
 package com.crecerjuntos.model.base;
 
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Position;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 
@@ -22,8 +23,14 @@ public interface IAchievementAccess {
   List<Achievement> getLasts(final Section section, final int nbAchievements);
 
   /** Get the max level finished by a student for a given exercise */
-  Integer getMaxLevel(Student student, String exerciseName);
+  Integer getMaxLevel(final Student student, final String exerciseName);
 
   /** Get the score of a student on a specific level of an exercise */
-  Integer getBestScore(Student student, int level, String exerciseName);
+  Integer getBestScore(final Student student, final int level, final String exerciseName);
+
+  /**
+   * Get position on the podium for the current student for a dedicated exercise  1 : first, 2 :
+   * second, 3 : third, -1 : not on podium
+   */
+  Position getPodium(final Student student, final int level, final String exerciseName);
 }

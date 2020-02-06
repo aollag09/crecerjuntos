@@ -90,6 +90,12 @@ public class Constants {
       private static final String PREFIX = "cs-first-layout__";
       public static final String INSTRUCTIONS = PREFIX + "instructions";
     }
+
+    public static class Home {
+      private static final String PREFIX = "home-layout__";
+      public static final String BADGE = PREFIX + "badge";
+      public static final String PODIUM = PREFIX + "podium";
+    }
   }
 
   public static class Route {
@@ -135,10 +141,15 @@ public class Constants {
 
     public static class Images {
       public static final String IMG_TERESA = "resources/img/teresa.png";
+
+      public static class Badges {
+        public static final String GOLD_MEDAL = "resources/img/badge/011-gold-medal-4.png";
+        public static final String SILVER_MEDAL = "resources/img/badge/010-silver-medal-3.png";
+        public static final String BRONZE_MEDAL = "resources/img/badge/009-bronze-medal-3.png";
+      }
     }
 
     public static class Templates {
-
       public static class Word {
         public static final String LEVEL1 = "template/word-kitchen.docx";
         public static final String LEVEL2 = "template/word-cv.docx";
@@ -184,6 +195,7 @@ public class Constants {
 
       public static class Home {
         private static final String PREFIX = "home-";
+        public static final String PODIUM = PREFIX + "podium";
         public static final String WELCOME = PREFIX + "welcome";
       }
 
@@ -222,6 +234,7 @@ public class Constants {
       public static class Dactylographie {
         private static final String PREFIX = "dactylographie-";
         public static final String TITLE = PREFIX + "title";
+        public static final String NAME = "dactylographie";
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String LVL3_NAME = PREFIX + "level3-name";

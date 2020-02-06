@@ -4,7 +4,6 @@ import com.crecerjuntos.model.Achievement;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import java.util.Collections;
 import java.util.List;
 
 public class AchievementRepositoryImpl implements AchievementRepository {
@@ -67,27 +66,46 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   public Integer getMaxLevel(Long studentId, String exerciseName) {
     TypedQuery<Integer> q =
         em.createQuery(
-            "SELECT level FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND progress = 100 ORDER BY level DESC",
+            "SELECT MAX(level) FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND progress = 100",
             Integer.class);
     q.setParameter("studentId", studentId);
     q.setParameter("exerciseName", exerciseName);
-    List<Integer> levels = q.getResultList();
-    if (levels.size() > 0) return levels.get(0);
-    else return null;
+    return q.getSingleResult();
   }
 
   @Override
   public Integer getBestScore(Long studentId, int level, String exerciseName) {
     TypedQuery<Integer> q =
         em.createQuery(
-            "SELECT score FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND level = :level",
+            "SELECT MAX(score) FROM Achievement a WHERE student_id = :studentId AND exercise = :exerciseName AND level = :level AND progress = 100",
             Integer.class);
     q.setParameter("studentId", studentId);
     q.setParameter("exerciseName", exerciseName);
     q.setParameter("level", level);
 
-    List<Integer> scores = q.getResultList();
-    if (scores.size() > 0) return Collections.max(scores);
-    else return null;
+    return q.getSingleResult();
+  }
+
+  @Override
+  public Integer getPodium(Long studentId, int level, String exerciseName) {
+    Integer bestStudentScore = getBestScore(studentId, level, exerciseName);
+
+    // Query the 3 best score of the current section
+    TypedQuery<Integer> q =
+        em.createQuery(
+            "SELECT DISTINCT(score) FROM Achievement a WHERE exercise = :exerciseName AND level = :level  "
+                + "AND progress = 100 ORDER BY score DESC",
+            Integer.class);
+    q.setParameter("exerciseName", exerciseName);
+    q.setParameter("level", level);
+    q.setMaxResults(3);
+
+    // Analyse podium
+    List<Integer> podium = q.getResultList();
+    int podiumStep = -1;
+    if (podium.size() > 0 && podium.get(0).equals(bestStudentScore)) podiumStep = 1;
+    else if (podium.size() > 1 && podium.get(1).equals(bestStudentScore)) podiumStep = 2;
+    else if (podium.size() > 2 && podium.get(2).equals(bestStudentScore)) podiumStep = 3;
+    return podiumStep;
   }
 }

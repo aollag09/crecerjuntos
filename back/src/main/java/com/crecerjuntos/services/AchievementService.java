@@ -4,6 +4,7 @@ import com.crecerjuntos.config.JpaEntityManagerFactory;
 import com.crecerjuntos.infrastructure.AchievementRepository;
 import com.crecerjuntos.infrastructure.AchievementRepositoryImpl;
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Position;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
@@ -62,5 +63,10 @@ public class AchievementService implements IAchievementAccess {
   @Override
   public Integer getBestScore(Student student, int level, String exerciseName) {
     return achievementRepository.getBestScore(student.getId(), level, exerciseName);
+  }
+
+  @Override
+  public Position getPodium(Student student, int level, String exerciseName) {
+    return Position.fromInt(achievementRepository.getPodium(student.getId(), level, exerciseName));
   }
 }
