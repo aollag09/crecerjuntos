@@ -34,10 +34,6 @@ public class Home extends VerticalLayout {
   private static final Logger LOGGER = LoggerFactory.getLogger(Home.class);
 
   public Home() {
-    H2 title =
-        new H2(
-            getTranslation(Constants.Resource.Strings.Home.WELCOME, LoginServices.getUserName()));
-    add(title);
     add(buildPodiums());
   }
 
