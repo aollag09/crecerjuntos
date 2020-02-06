@@ -184,6 +184,7 @@ public class Constants {
 
       public static class Home {
         private static final String PREFIX = "home-";
+        public static final String PODIUM = PREFIX + "podium";
         public static final String WELCOME = PREFIX + "welcome";
       }
 
