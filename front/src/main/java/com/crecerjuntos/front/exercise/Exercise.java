@@ -47,10 +47,6 @@ public abstract class Exercise {
 
   public abstract long getExpectedTime(final int level) throws NonExistingLevel;
 
-  protected String getLevelName(final int level){
-    return getName() + "-level" + level + "-name";
-  }
-
   public String getName() {
     return this.name;
   }
@@ -85,5 +81,9 @@ public abstract class Exercise {
 
   public String getUri() {
     return uri;
+  }
+
+  protected static String getLevelName(final String name, final int level){
+    return name + "-level" + level + "-name";
   }
 }

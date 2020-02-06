@@ -1,6 +1,7 @@
 package com.crecerjuntos.model.base;
 
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Position;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 
@@ -31,5 +32,5 @@ public interface IAchievementAccess {
    * Get position on the podium for the current student for a dedicated exercise  1 : first, 2 :
    * second, 3 : third, -1 : not on podium
    */
-  Integer getPodium(final Student student, final int level, final String exerciseName);
+  Position getPodium(final Student student, final int level, final String exerciseName);
 }

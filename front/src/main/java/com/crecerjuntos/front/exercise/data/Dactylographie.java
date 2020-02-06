@@ -41,13 +41,9 @@ public class Dactylographie extends Exercise {
 
   private static List<Level> buildLevels() {
     List<Level> levels = new ArrayList<Level>();
-    levels.add(new Level(1, Constants.Resource.Strings.Dactylographie.LVL1_NAME));
-    levels.add(new Level(2, Constants.Resource.Strings.Dactylographie.LVL2_NAME));
-    levels.add(new Level(3, Constants.Resource.Strings.Dactylographie.LVL3_NAME));
-    levels.add(new Level(4, Constants.Resource.Strings.Dactylographie.LVL4_NAME));
-    levels.add(new Level(5, Constants.Resource.Strings.Dactylographie.LVL5_NAME));
-    levels.add(new Level(6, Constants.Resource.Strings.Dactylographie.LVL6_NAME));
-    levels.add(new Level(7, Constants.Resource.Strings.Dactylographie.LVL7_NAME));
+    for (int i = 1; i <= 7; i++) {
+      levels.add(new Level(i, getLevelName(Constants.Resource.Strings.Dactylographie.NAME, i)));
+    }
     return levels;
   }
 

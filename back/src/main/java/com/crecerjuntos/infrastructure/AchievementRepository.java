@@ -22,4 +22,5 @@ public interface AchievementRepository {
   Integer getBestScore(Long studentId, int level, String exerciseName);
 
   Integer getPodium(Long studentId, int level, String exercise);
+
 }

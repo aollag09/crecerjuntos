@@ -1,6 +1,7 @@
 package com.crecerjuntos.services;
 
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Position;
 import com.crecerjuntos.model.Student;
 import org.junit.Assert;
 import org.junit.Test;
@@ -35,16 +36,16 @@ public class AchievementPodiumTest {
         new Achievement(s4, "session", date, exercise, level, 100, 50));
 
     Assert.assertEquals(
-        Integer.valueOf(1), TestServices.achievementAccess.getPodium(s1, level, exercise));
+        Position.FIRST, TestServices.achievementAccess.getPodium(s1, level, exercise));
     Assert.assertEquals(
-        Integer.valueOf(2), TestServices.achievementAccess.getPodium(s2, level, exercise));
+        Position.SECOND, TestServices.achievementAccess.getPodium(s2, level, exercise));
     Assert.assertEquals(
-        Integer.valueOf(2), TestServices.achievementAccess.getPodium(s21, level, exercise));
+        Position.SECOND, TestServices.achievementAccess.getPodium(s21, level, exercise));
     Assert.assertEquals(
-        Integer.valueOf(3), TestServices.achievementAccess.getPodium(s3, level, exercise));
+        Position.THIRD, TestServices.achievementAccess.getPodium(s3, level, exercise));
     Assert.assertEquals(
-        Integer.valueOf(-1), TestServices.achievementAccess.getPodium(s4, level, exercise));
+        Position.OUT, TestServices.achievementAccess.getPodium(s4, level, exercise));
     Assert.assertEquals(
-        Integer.valueOf(-1), TestServices.achievementAccess.getPodium(s5, level, exercise));
+        Position.OUT, TestServices.achievementAccess.getPodium(s5, level, exercise));
   }
 }
