@@ -12,4 +12,18 @@ public enum Position {
     if (pos == 3) return THIRD;
     else return OUT;
   }
+
+  public int toIncreasingInt() {
+    switch (this) {
+      case FIRST:
+        return 1;
+      case SECOND:
+        return 2;
+      case THIRD:
+        return 3;
+      case OUT:
+        return 4;
+    }
+    return 5;
+  }
 }

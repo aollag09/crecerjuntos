@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -71,7 +72,9 @@ public class Home extends VerticalLayout {
                       }
                     });
           });
-      podiums.forEach(podium -> podiumLayout.add(renderPodium(podium)));
+      podiums.stream()
+          .sorted(Comparator.comparingInt(podium -> podium.getPosition().toIncreasingInt()))
+          .forEach(podium -> podiumLayout.add(renderPodium(podium)));
     }
 
     return podiumLayout;
