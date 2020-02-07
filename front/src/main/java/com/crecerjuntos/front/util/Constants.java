@@ -95,6 +95,10 @@ public class Constants {
       private static final String PREFIX = "home-layout__";
       public static final String BADGE = PREFIX + "badge";
       public static final String PODIUM = PREFIX + "podium";
+      public static final String SCORE = PREFIX + "score" ;
+      public static final String EXERCISE = PREFIX + "exercise";
+      public static final String PODIUMS = PREFIX + "podiums";
+      public static final String LEVEL = PREFIX + "level";
     }
   }
 

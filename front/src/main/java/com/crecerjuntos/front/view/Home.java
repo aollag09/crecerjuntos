@@ -12,9 +12,11 @@ import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.services.AchievementService;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
+import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
+import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
@@ -43,7 +45,8 @@ public class Home extends VerticalLayout {
   }
 
   private Component buildPodiums() {
-    VerticalLayout podiumLayout = new VerticalLayout();
+    Div podiumLayout = new Div();
+    podiumLayout.addClassName(Constants.ClassStyle.Home.PODIUMS);
 
     IAchievementAccess achievementAccess = new AchievementService();
     final Student student = LoginServices.getStudent();
@@ -81,8 +84,9 @@ public class Home extends VerticalLayout {
   }
 
   private Component renderPodium(final Podium podium) {
-    HorizontalLayout layout = new HorizontalLayout();
+    VerticalLayout layout = new VerticalLayout();
     layout.addClassName(Constants.ClassStyle.Home.PODIUM);
+    layout.setWidth("320px");
 
     Image badge = new Image();
     badge.addClassName(Constants.ClassStyle.Home.BADGE);
@@ -102,15 +106,19 @@ public class Home extends VerticalLayout {
     }
     layout.add(badge);
 
-    H3 score = new H3("Score " + podium.getScore());
+    Span score = new Span("Score " + podium.getScore());
     score.addClassName(Constants.ClassStyle.Exercises.GREEN);
+    score.addClassName(Constants.ClassStyle.Home.SCORE);
     layout.add(score);
 
-    layout.add(
-        new H3(
-            getTranslation(podium.getExercise().getTitle())
-                + " "
-                + getTranslation(podium.getLevel().getName())));
+    Span exercise = new Span(getTranslation(podium.getExercise().getTitle()));
+    exercise.addClassName(Constants.ClassStyle.Home.EXERCISE);
+    layout.add(exercise);
+
+
+    Span level = new Span(getTranslation(podium.getLevel().getName()));
+    level.addClassName(Constants.ClassStyle.Home.LEVEL);
+    layout.add(level);
 
     return layout;
   }

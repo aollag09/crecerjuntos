@@ -274,19 +274,45 @@ html {
 
 /** Home */
 .home-layout__badge{
-    width: 50px;
-    height: 50px;
-    border-radius: 5px 20px 20px;
+    width: 80px;
+    height: 75px;
+    border-radius: 50%;
     padding: 10px;
     background: var(--lumo-primary-color);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
 .home-layout__podium{
    padding: 20px 40px;
-   margin: auto;
+   margin: 40px;
    margin-top: 40px;
    background-image: linear-gradient(var(--lumo-contrast-10pct), transparent);
    border-radius: var(--lumo-border-radius);
    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
    align-items:center;
+}
+
+.home-layout__podiums {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-layout__score{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.home-layout__exercise{
+    font-size: large;
+    font-weight: bold;
+    color: hsla(214, 42%, 18%, 0.72);
+    margin-top: 0px;
+}
+
+.home-layout__level{
+    margin: 5px;
+    font-size: unset;
+    text-align: center;
+    font-style: italic;
+    color: gray;
 }
