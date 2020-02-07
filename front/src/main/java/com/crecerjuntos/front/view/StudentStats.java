@@ -84,7 +84,7 @@ public class StudentStats extends VerticalLayout {
                     new LevelStat(
                         getTranslation(level.getName()),
                         achievementAccess.getBestScore(
-                            student, level.getLevel(), exercise.getName())))
+                            student, level.getDBLevel(), exercise.getName())))
             .collect(Collectors.toList());
 
      exerciseGrid.setItems(scoresMap);
