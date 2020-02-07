@@ -95,6 +95,10 @@ public class Constants {
       private static final String PREFIX = "home-layout__";
       public static final String BADGE = PREFIX + "badge";
       public static final String PODIUM = PREFIX + "podium";
+      public static final String SCORE = PREFIX + "score" ;
+      public static final String EXERCISE = PREFIX + "exercise";
+      public static final String PODIUMS = PREFIX + "podiums";
+      public static final String LEVEL = PREFIX + "level";
     }
   }
 
@@ -117,6 +121,7 @@ public class Constants {
     public static final String ERROR_VIEW = "error/common";
     public static final String DB_ERROR_VIEW = "error/database";
     public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
+    public static final String ADMIN_ERROR_VIEW = "error/admin";
 
     public static class QueryParameters {}
   }
@@ -159,6 +164,11 @@ public class Constants {
     public static class Strings {
 
       public static final String TITLE = "app-title";
+
+      public static class Admin {
+        public static final String PREFIX = "admin-";
+        public static final String BACK = PREFIX + "back-to";
+      }
 
       public static class Login {
         private static final String PREFIX = "login-";
@@ -223,6 +233,7 @@ public class Constants {
         public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
         public static final String ERROR = PREFIX + "common";
         public static final String DB_ERROR = PREFIX + "db-error";
+        public static final String ADMIN_ERROR = PREFIX + "admin";
         public static final String NOT_LOGIN_ERROR = PREFIX + "not-login";
       }
 

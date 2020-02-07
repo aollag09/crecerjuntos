@@ -2,8 +2,11 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
+import com.crecerjuntos.front.exercise.Level;
+import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
+import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -11,14 +14,14 @@ import org.javatuples.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StudentStats extends VerticalLayout {
 
   private final IAchievementAccess achievementAccess;
 
   private List<Pair<H3, Span>> maxLevelReached;
-  private List<Pair<H3, Span>> scores;
-
+  private List<Grid<LevelStat>> scores;
   private List<Exercise> exerciseList;
 
   public StudentStats(IAchievementAccess achievementAccess) {
@@ -31,19 +34,20 @@ public class StudentStats extends VerticalLayout {
     exerciseList.forEach(
         exercise -> {
           Pair<H3, Span> maxLevelReachedSpan =
-              new Pair<>(new H3(exercise.getName() + " max level achieved"), new Span());
+              new Pair<>(new H3(exercise.getName()), new Span());
           maxLevelReached.add(maxLevelReachedSpan);
 
-          Pair<H3, Span> exercisesScores =
-              new Pair<>(new H3(exercise.getName() + " scores"), new Span());
+          Grid<LevelStat> exercisesScores = new Grid<>();
+          exercisesScores.addColumn(LevelStat::getLevel).setHeader("Level");
+          exercisesScores.addColumn(LevelStat::getScore).setHeader("Score");
+          exercisesScores.setDetailsVisibleOnClick(true);
           scores.add(exercisesScores);
         });
 
     for (int i = 0; i < exerciseList.size(); i++) {
       add(maxLevelReached.get(i).getValue0());
       add(maxLevelReached.get(i).getValue1());
-      add(scores.get(i).getValue0());
-      add(scores.get(i).getValue1());
+      add(scores.get(i));
     }
 
     setVisible(false);
@@ -53,7 +57,7 @@ public class StudentStats extends VerticalLayout {
     if (s != null) {
       for (int i = 0; i < exerciseList.size(); i++) {
         maxLevelReached.get(i).getValue1().setText(getMaxLevelReached(s, exerciseList.get(i)));
-        scores.get(i).getValue1().setText(scoresList(s, exerciseList.get(i)));
+        buildScoreGrid(i, s, exerciseList.get(i));
       }
     }
     setVisible(true);
@@ -62,27 +66,51 @@ public class StudentStats extends VerticalLayout {
   public String getMaxLevelReached(Student s, Exercise exercise) {
     Integer level = achievementAccess.getMaxLevel(s, exercise.getName());
     if (level != null) {
-      return "Level " + level;
+      return "Max level reached : " + level + 1;
     } else {
       return "No level done";
     }
   }
 
-  public String scoresList(Student student, Exercise exercise) {
-    int nbLevel = exercise.getNbLevels();
-    StringBuilder s = new StringBuilder();
-    int levelsWithScores = 0;
-    for (int level = 0; level < nbLevel; level++) {
-      s.append("level").append(level).append(": ");
-      Integer levelScore = achievementAccess.getBestScore(student, level, exercise.getName());
-      if (levelScore != null) {
-        levelsWithScores++;
-        s.append(levelScore);
-      }
-      if (level != nbLevel - 1) s.append(", ");
+  public void buildScoreGrid(int index, Student student, Exercise exercise) {
+
+    Grid<LevelStat> exerciseGrid = scores.get(index);
+
+    List<Level> levels = exercise.getLevels();
+    List<LevelStat> scoresMap =
+        levels.stream()
+            .map(
+                level ->
+                    new LevelStat(
+                        getTranslation(level.getName()),
+                        achievementAccess.getBestScore(
+                            student, level.getDBLevel(), exercise.getName())))
+            .collect(Collectors.toList());
+
+     exerciseGrid.setItems(scoresMap);
+     exerciseGrid.getColumns().forEach(column -> column.setAutoWidth(true));
+     exerciseGrid.recalculateColumnWidths();
+     exerciseGrid.setHeightByRows(true);
+  }
+
+  private static class LevelStat {
+
+      private String level;
+      private String score;
+
+    public LevelStat(String level, Integer score) {
+      this.level = level;
+      if (score != null)
+        this.score = score.toString();
+      else
+        this.score = "No score";
     }
 
-    if (levelsWithScores == 0) return " _ ";
-    else return s.toString();
+      public String getLevel() {
+          return level;
+      }
+
+
+      public String getScore() { return score; }
   }
 }
