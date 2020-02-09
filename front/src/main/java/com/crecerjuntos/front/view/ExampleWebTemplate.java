@@ -1,4 +1,4 @@
-package com.example.front;
+package com.crecerjuntos.front.view;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;

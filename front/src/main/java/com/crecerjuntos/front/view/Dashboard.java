@@ -2,7 +2,6 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
-import com.vaadin.flow.component.dependency.HtmlImport;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -26,7 +25,7 @@ public class Dashboard extends VerticalLayout {
     H2 title = new H2(getTranslation(Constants.Resource.Strings.Dashboard.TITLE));
     add(title);
 
-    HelloWorld hello = new HelloWorld();
-    add(hello);
+    add(new ExampleWebTemplate());
+    add(new GoogleCalendar());
   }
 }
