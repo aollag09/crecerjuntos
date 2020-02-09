@@ -62,11 +62,11 @@ public class Home extends VerticalLayout {
                     level -> {
                       Position position =
                           achievementAccess.getPodium(student, level.getDBLevel(), exo.getName());
-                      LOGGER.debug(
+                      /*LOGGER.debug(
                           "Exercise {}, Level {}, Position {}",
                           exo.getName(),
                           level.getLevel(),
-                          position.toString());
+                          position.toString());*/
                       if (position != Position.OUT) {
                         int score =
                             achievementAccess.getBestScore(
