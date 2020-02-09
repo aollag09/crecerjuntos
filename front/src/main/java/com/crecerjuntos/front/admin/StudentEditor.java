@@ -1,6 +1,6 @@
-package com.crecerjuntos.front.view;
+package com.crecerjuntos.front.admin;
 
-import com.crecerjuntos.front.view.error.AdminOperationError;
+import com.crecerjuntos.front.admin.error.AdminOperationError;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAuthoringServices;
