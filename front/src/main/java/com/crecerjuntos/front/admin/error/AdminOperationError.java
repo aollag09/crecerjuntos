@@ -1,7 +1,7 @@
-package com.crecerjuntos.front.view.error;
+package com.crecerjuntos.front.admin.error;
 
 import com.crecerjuntos.front.MainAppLayout;
-import com.crecerjuntos.front.view.Admin;
+import com.crecerjuntos.front.admin.Admin;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
