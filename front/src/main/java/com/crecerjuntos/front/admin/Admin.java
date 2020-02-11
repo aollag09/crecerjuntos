@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.view;
+package com.crecerjuntos.front.admin;
 
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;

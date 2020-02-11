@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.view;
+package com.crecerjuntos.front.admin;
 
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
