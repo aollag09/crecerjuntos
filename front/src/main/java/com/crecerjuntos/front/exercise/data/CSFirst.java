@@ -16,13 +16,13 @@ public class CSFirst extends Exercise {
         Constants.Exercises.CS_FIRST_NAME,
         Constants.Resource.Strings.CSFirst.TITLE,
         Constants.Resource.Strings.CSFirst.INSTRUCTIONS,
-        buidLevels(),
+        buildLevels(),
         Difficulty.Advanced,
         5,
         Constants.Route.CS_FIRST);
   }
 
-  private static List<Level> buidLevels() {
+  private static List<Level> buildLevels() {
     List<Level> levels = new ArrayList<Level>();
     levels.add(new Level(1, Constants.Resource.Strings.CSFirst.LVL1_NAME));
     return levels;

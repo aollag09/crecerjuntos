@@ -40,7 +40,9 @@ public class CSFirstView extends AbstractExerciseView {
     go.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
     go.addClickListener(
         event -> {
-          UI.getCurrent().getPage().setLocation("https://scratch.mit.edu/projects/340739176/editor");
+          UI.getCurrent()
+              .getPage()
+              .setLocation("https://scratch.mit.edu/projects/340739176/editor");
         });
     instructions.add(go);
 

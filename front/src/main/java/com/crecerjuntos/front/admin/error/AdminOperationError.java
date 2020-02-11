@@ -26,7 +26,7 @@ public class AdminOperationError extends VerticalLayout {
 
   protected Component buildBackToAdmin() {
     Button backToAdmin =
-    new Button(
+        new Button(
             getTranslation(Constants.Resource.Strings.Admin.BACK), new Icon(VaadinIcon.ENTER));
     backToAdmin.addThemeVariants(ButtonVariant.LUMO_PRIMARY, ButtonVariant.LUMO_LARGE);
     backToAdmin.addClickShortcut(Key.ENTER);

@@ -7,11 +7,11 @@ dbname="cs_courses"
 
 while getopts "f:p:n:v:d:" opt; do
   case $opt in
-  f) filepath="$OPTARG";;
-  p) port="$OPTARG";;
-  n) name="$OPTARG";;
-  v) volume="$OPTARG";;
-  d) dbname="$OPTARG";;
+  f) filepath="$OPTARG" ;;
+  p) port="$OPTARG" ;;
+  n) name="$OPTARG" ;;
+  v) volume="$OPTARG" ;;
+  d) dbname="$OPTARG" ;;
   \?)
     echo "Usage : "
     echo "./start-database.sh Default, launch sql database container with local data or new database. "
@@ -20,7 +20,8 @@ while getopts "f:p:n:v:d:" opt; do
     echo "./start-database.sh -n name set a custom name of the docker image"
     echo "./start-database.sh -v path set a custom volume of the docker image"
     echo "./start-database.sh -d name set a custom name for the database"
-    exit 0;;
+    exit 0
+    ;;
   esac
 done
 

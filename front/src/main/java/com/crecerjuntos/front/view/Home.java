@@ -14,10 +14,8 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.H3;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import org.slf4j.Logger;
@@ -63,10 +61,10 @@ public class Home extends VerticalLayout {
                       Position position =
                           achievementAccess.getPodium(student, level.getDBLevel(), exo.getName());
                       /*LOGGER.debug(
-                          "Exercise {}, Level {}, Position {}",
-                          exo.getName(),
-                          level.getLevel(),
-                          position.toString());*/
+                      "Exercise {}, Level {}, Position {}",
+                      exo.getName(),
+                      level.getLevel(),
+                      position.toString());*/
                       if (position != Position.OUT) {
                         int score =
                             achievementAccess.getBestScore(
@@ -114,7 +112,6 @@ public class Home extends VerticalLayout {
     Span exercise = new Span(getTranslation(podium.getExercise().getTitle()));
     exercise.addClassName(Constants.ClassStyle.Home.EXERCISE);
     layout.add(exercise);
-
 
     Span level = new Span(getTranslation(podium.getLevel().getName()));
     level.addClassName(Constants.ClassStyle.Home.LEVEL);
