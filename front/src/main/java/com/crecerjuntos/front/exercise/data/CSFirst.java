@@ -33,6 +33,12 @@ public class CSFirst extends Exercise {
     return 0;
   }
 
+  public String getLink( final int level ) throws NonExistingLevel{
+    if(level == 0 )
+      return "https://scratch.mit.edu/projects/340739176/editor";
+    else throw new NonExistingLevel(name,level);
+  }
+
   public String getCSFirstExercise(int level) throws NonExistingLevel {
     if (level == 0) return "Programar tu superheroe";
     else throw new NonExistingLevel(name, level);
