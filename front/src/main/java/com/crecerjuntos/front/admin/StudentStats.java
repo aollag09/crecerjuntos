@@ -3,7 +3,6 @@ package com.crecerjuntos.front.admin;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.Level;
-import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
 import com.vaadin.flow.component.grid.Grid;
@@ -33,8 +32,7 @@ public class StudentStats extends VerticalLayout {
     exerciseList = ExerciseEnum.list();
     exerciseList.forEach(
         exercise -> {
-          Pair<H3, Span> maxLevelReachedSpan =
-              new Pair<>(new H3(exercise.getName()), new Span());
+          Pair<H3, Span> maxLevelReachedSpan = new Pair<>(new H3(exercise.getName()), new Span());
           maxLevelReached.add(maxLevelReachedSpan);
 
           Grid<LevelStat> exercisesScores = new Grid<>();
@@ -87,30 +85,29 @@ public class StudentStats extends VerticalLayout {
                             student, level.getDBLevel(), exercise.getName())))
             .collect(Collectors.toList());
 
-     exerciseGrid.setItems(scoresMap);
-     exerciseGrid.getColumns().forEach(column -> column.setAutoWidth(true));
-     exerciseGrid.recalculateColumnWidths();
-     exerciseGrid.setHeightByRows(true);
+    exerciseGrid.setItems(scoresMap);
+    exerciseGrid.getColumns().forEach(column -> column.setAutoWidth(true));
+    exerciseGrid.recalculateColumnWidths();
+    exerciseGrid.setHeightByRows(true);
   }
 
   private static class LevelStat {
 
-      private String level;
-      private String score;
+    private String level;
+    private String score;
 
     public LevelStat(String level, Integer score) {
       this.level = level;
-      if (score != null)
-        this.score = score.toString();
-      else
-        this.score = "No score";
+      if (score != null) this.score = score.toString();
+      else this.score = "No score";
     }
 
-      public String getLevel() {
-          return level;
-      }
+    public String getLevel() {
+      return level;
+    }
 
-
-      public String getScore() { return score; }
+    public String getScore() {
+      return score;
+    }
   }
 }

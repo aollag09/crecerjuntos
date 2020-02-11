@@ -1,7 +1,6 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.BaseEntity;
-import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.exception.DatabaseException;
 
 import javax.persistence.EntityManager;

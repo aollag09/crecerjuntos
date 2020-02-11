@@ -119,8 +119,8 @@ public class DactylographieView extends AbstractExerciseView {
       nonExistingLevel();
     }
     intScore -= mistake;
-    score.setScore(intScore);
 
+    score.setScore(intScore);
     return score;
   }
 }

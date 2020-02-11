@@ -29,7 +29,7 @@ public interface IAchievementAccess {
   Integer getBestScore(final Student student, final int level, final String exerciseName);
 
   /**
-   * Get position on the podium for the current student for a dedicated exercise  1 : first, 2 :
+   * Get position on the podium for the current student for a dedicated exercise 1 : first, 2 :
    * second, 3 : third, -1 : not on podium
    */
   Position getPodium(final Student student, final int level, final String exerciseName);

@@ -1,7 +1,6 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Achievement;
-import com.crecerjuntos.model.Student;
 
 import java.util.List;
 
@@ -22,5 +21,4 @@ public interface AchievementRepository {
   Integer getBestScore(Long studentId, int level, String exerciseName);
 
   Integer getPodium(Long studentId, int level, String exercise);
-
 }

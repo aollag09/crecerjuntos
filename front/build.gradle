@@ -64,7 +64,7 @@ task startDatabase(type: Exec) {
 }
 vaadinAssembleClient.dependsOn startDatabase;
 
-task stopDatabase(type: Exec){
+task stopDatabase(type: Exec) {
     description("Stop the database docker image")
     workingDir '../deployment'
     commandLine './stop-database.sh'
