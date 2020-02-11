@@ -1,10 +1,19 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+
 <dom-module id="calendar-chart">
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <template>
+        <h2> The Chart Calendar </h2>
+        <div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
+        <script type="text/javascript">
+
+        </script>
+
+    </template>
+
     <script type="text/javascript">
-          google.charts.load("current", {packages:["calendar"]});
-          google.charts.setOnLoadCallback(drawChart);
+       google.charts.load("current", {packages:["calendar"]});
+       google.charts.setOnLoadCallback(drawChart);
 
        function drawChart() {
            var dataTable = new google.visualization.DataTable();
@@ -27,19 +36,29 @@
               [ new Date(2013, 9, 30), 38447 ]
             ]);
 
-           var chart = new google.visualization.Calendar(document.getElementById('calendar_basic'));
+           var divChart = document.createElement("div");
+           divChart.setAttribute("id", "chart_div");
+           var chart = new google.visualization.Calendar(divChart);
+           document.body.appendChild(divChart)
 
            var options = {
              title: "Red Sox Attendance",
              height: 350,
            };
 
+
            chart.draw(dataTable, options);
+
        }
     </script>
 
-    <template>
-        <div id="calendar_basic" style="width: 1000px; height: 350px;"></div>
-    </template>
+    <script>
+        class CalendarChart extends Polymer.Element {
+            static get is() {
+                return 'calendar-chart'
+            }
+        }
+        customElements.define(CalendarChart.is, CalendarChart);
+    </script>
 
 </dom-module>

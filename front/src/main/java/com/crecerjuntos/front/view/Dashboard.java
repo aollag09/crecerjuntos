@@ -2,6 +2,7 @@ package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
+import com.vaadin.flow.component.dependency.JavaScript;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -26,6 +27,6 @@ public class Dashboard extends VerticalLayout {
     add(title);
 
     add(new ExampleWebTemplate());
-    add(new GoogleCalendar());
+    add(new GoogleChart());
   }
 }
