@@ -120,10 +120,6 @@ public class DactylographieView extends AbstractExerciseView {
     }
     intScore -= mistake;
 
-    // The score can't be negatif
-    if(intScore < 0 )
-      intScore = 0;
-
     score.setScore(intScore);
     return score;
   }

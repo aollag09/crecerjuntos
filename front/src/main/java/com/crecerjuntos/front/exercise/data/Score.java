@@ -16,7 +16,12 @@ public class Score {
   }
 
   public void setScore(final int score) {
-    this.score = score;
+    int newScore = score;
+    if(newScore < 0 )
+      newScore = 0;
+    if(newScore > 100 )
+      newScore = 100;  
+    this.score = newScore;
   }
 
   public void addKPI(final String name, final Object value) {
