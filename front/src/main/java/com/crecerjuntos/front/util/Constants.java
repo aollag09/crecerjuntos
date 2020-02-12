@@ -320,11 +320,8 @@ public class Constants {
 
         private static final String PREFIX = "cs-first-";
         public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
-        public static final String INSTRUCTION_1 = PREFIX + "instruction-1";
-        public static final String INSTRUCTION_2 = PREFIX + "instruction-2";
-        public static final String INSTRUCTION_3 = PREFIX + "instruction-3";
-        public static final String INSTRUCTION_4 = PREFIX + "instruction-4";
         public static final String INSTRUCTION = PREFIX + "instruction";
         public static final String GO = PREFIX + "go";
         public static final String TITLE = PREFIX + "title";
