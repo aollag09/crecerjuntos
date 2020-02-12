@@ -39,8 +39,14 @@ public class CSFirst extends Exercise {
     else throw new NonExistingLevel(name,level);
   }
 
+  public  String getInstructionLink(int level) throws NonExistingLevel {
+    if(level==0)
+      return "https://docs.google.com/presentation/d/1hYwKbinjNR9wDDPhv6zzfyZihTXqfVPgbpZD1ywPE1U/edit?usp=sharing";
+    else throw new NonExistingLevel(name,level);
+  }
+
   public String getCSFirstExercise(int level) throws NonExistingLevel {
-    if (level == 0) return "Programar tu superheroe";
+    if (level == 0) return Constants.Resource.Strings.CSFirst.LVL1_NAME;
     else throw new NonExistingLevel(name, level);
   }
 

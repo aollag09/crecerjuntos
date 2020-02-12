@@ -9,6 +9,7 @@ import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.model.Student;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasStyle;
@@ -135,10 +136,10 @@ public class Exercises extends VerticalLayout {
 
     if (!done.isPresent()) level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT, Color.BLUE));
     else {
-      if (done.get().getScore() >= Constants.Exercises.GOOD_SCORE) {
+      if (done.get().getScore() >= Score.GOOD_SCORE) {
         level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.GREEN));
         level.add(buildScore(done.get().getScore(), Color.GREEN));
-      } else if (done.get().getScore() >= Constants.Exercises.MINIMUM_SCORE) {
+      } else if (done.get().getScore() >= Score.MINIMUM_SCORE) {
         level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.ORANGE));
         level.add(buildScore(done.get().getScore(), Color.ORANGE));
       } else {

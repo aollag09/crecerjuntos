@@ -1,9 +1,12 @@
-package com.crecerjuntos.front.exercise.data;
+package com.crecerjuntos.model;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Score {
+
+  public static final int GOOD_SCORE = 75;
+  public static final int MINIMUM_SCORE = 50;
 
   /** Details of the result */
   private Map<String, Object> KPI;
