@@ -86,4 +86,5 @@ public abstract class Exercise {
   protected static String getLevelName(final String name, final int level) {
     return name + "-level" + level + "-name";
   }
+
 }
