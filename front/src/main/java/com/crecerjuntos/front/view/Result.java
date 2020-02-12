@@ -1,7 +1,7 @@
 package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.vaadin.flow.component.Component;
@@ -60,10 +60,10 @@ public class Result extends VerticalLayout {
 
     // Add title
     H2 title = null;
-    if (score.getScore() >= Constants.Exercises.GOOD_SCORE) {
+    if (score.getScore() >= Score.GOOD_SCORE) {
       title = new H2(getTranslation(Constants.Resource.Strings.Result.SUCCEEDED));
       scoreTitle.addClassName(Constants.ClassStyle.Result.SUCCEEDED);
-    } else if (score.getScore() >= Constants.Exercises.MINIMUM_SCORE) {
+    } else if (score.getScore() >= Score.MINIMUM_SCORE) {
       title = new H2(getTranslation(Constants.Resource.Strings.Result.TO_IMPROVE));
       scoreTitle.addClassName(Constants.ClassStyle.Result.TO_IMPROVED);
     } else {

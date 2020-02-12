@@ -3,7 +3,7 @@ package com.crecerjuntos.front.exercise.view;
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.CSFirst;
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.UI;

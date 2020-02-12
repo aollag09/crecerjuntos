@@ -137,8 +137,6 @@ public class Constants {
     public static final String EXCEL_NAME = "Excel";
     public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
     public static final String POWER_POINT_NAME = "PowerPoint";
-    public static final int GOOD_SCORE = 75;
-    public static final int MINIMUM_SCORE = 50;
     public static final String CS_FIRST_NAME = "CSFirst";
   }
 

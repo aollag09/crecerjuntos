@@ -23,17 +23,17 @@ public class AchievementPodiumTest {
     final String exercise = "exercise-test-podium";
     final int level = 1;
     TestServices.authoringServices.add(
-        new Achievement(s1, "session", date, exercise, level, 100, 80));
+        new Achievement(s1, "session", date, exercise, level, 100, 100));
     TestServices.authoringServices.add(
-        new Achievement(s1, "session", date, exercise, level, 100, 80));
+        new Achievement(s1, "session", date, exercise, level, 100, 100));
     TestServices.authoringServices.add(
-        new Achievement(s2, "session", date, exercise, level, 100, 70));
+        new Achievement(s2, "session", date, exercise, level, 100, 90));
     TestServices.authoringServices.add(
-        new Achievement(s21, "session", date, exercise, level, 100, 70));
+        new Achievement(s21, "session", date, exercise, level, 100, 90));
     TestServices.authoringServices.add(
-        new Achievement(s3, "session", date, exercise, level, 100, 60));
+        new Achievement(s3, "session", date, exercise, level, 100, 80));
     TestServices.authoringServices.add(
-        new Achievement(s4, "session", date, exercise, level, 100, 50));
+        new Achievement(s4, "session", date, exercise, level, 100, 76));
 
     Assert.assertEquals(
         Position.FIRST, TestServices.achievementAccess.getPodium(s1, level, exercise));
