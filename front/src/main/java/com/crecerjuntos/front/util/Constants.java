@@ -166,6 +166,7 @@ public class Constants {
       public static class Admin {
         public static final String PREFIX = "admin-";
         public static final String BACK = PREFIX + "back-to";
+        public static final String SECTION_FILTER = PREFIX + "section-filter";
       }
 
       public static class Login {
