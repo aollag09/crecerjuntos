@@ -19,6 +19,8 @@ dependencies {
 
     // Error Prone
     errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    // for JDK 8 support
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 
     // test
     // Use JUnit test framework
