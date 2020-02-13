@@ -20,7 +20,7 @@ public abstract class Exercise {
   protected final String uri;
 
   /** Levels */
-  protected List<Level> levels;
+  protected final List<Level> levels;
 
   /** Exercise difficulty */
   protected final Difficulty difficulty;

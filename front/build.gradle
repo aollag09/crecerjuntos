@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'org.gretty' version '3.0.1'
     id 'com.devsoap.vaadin-flow' version '1.2'
+    id 'net.ltgt.errorprone' version '0.7.1'
 }
 
 group = 'com.crecerjuntos.front'
@@ -26,6 +27,9 @@ dependencies {
 
     // Vaadin extra
     implementation group: 'org.vaadin.olli', name: 'file-download-wrapper', version: '3.0.1'
+
+    // Error Prone
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
 
     // back end
     implementation project(':back')
