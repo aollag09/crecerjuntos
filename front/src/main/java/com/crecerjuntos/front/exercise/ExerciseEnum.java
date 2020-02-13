@@ -16,9 +16,9 @@ public enum ExerciseEnum {
   POWER_POINT(new PowerPoint()),
   GOOGLE_SEARCH(new GoogleSearch());*/
 
-  private Exercise exercise;
+  private final Exercise exercise;
 
-  ExerciseEnum(Exercise exercise) {
+  ExerciseEnum(final Exercise exercise) {
     this.exercise = exercise;
   }
 

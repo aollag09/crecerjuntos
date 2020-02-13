@@ -1,7 +1,5 @@
 package com.crecerjuntos.model;
 
-import com.google.common.base.Objects;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -13,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student implements BaseEntity {
+public final class Student implements BaseEntity {
 
   public static final String DEFAULT_NAME = "Anonymous";
   public static final String DEFAULT_MAIL = "anonymous@gmail.com";
@@ -69,14 +67,15 @@ public class Student implements BaseEntity {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Student student = (Student) o;
-    return Objects.equal(id, student.id);
+    return getId() != null ? getId().equals(student.getId()) : student.getId() == null;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(id);
+    return getId() != null ? getId().hashCode() : 0;
   }
 
+  @Override
   public Long getId() {
     return id;
   }

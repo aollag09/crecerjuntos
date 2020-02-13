@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Entity
-public class Achievement implements BaseEntity {
+public final class Achievement implements BaseEntity {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -103,6 +103,7 @@ public class Achievement implements BaseEntity {
         + '}';
   }
 
+  @Override
   public Long getId() {
     return id;
   }
