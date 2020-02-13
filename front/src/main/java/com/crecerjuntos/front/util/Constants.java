@@ -317,10 +317,10 @@ public class Constants {
       }
 
       public static class CSFirst {
-
         private static final String PREFIX = "cs-first-";
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
         public static final String INSTRUCTION = PREFIX + "instruction";
         public static final String GO = PREFIX + "go";
