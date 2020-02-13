@@ -112,6 +112,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void start() {
+    int publicLevel = level + 1;
     title
         .getElement()
         .setText(
@@ -119,7 +120,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
                 + " "
                 + getTranslation(Constants.Resource.Strings.Exercises.LEVEL)
                 + ": "
-                + level);
+                + publicLevel);
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;
