@@ -2,7 +2,7 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
