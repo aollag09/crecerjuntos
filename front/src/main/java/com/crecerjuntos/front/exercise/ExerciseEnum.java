@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("ImmutableEnumChecker")
 public enum ExerciseEnum {
   DACTYLOGRAPHIE(new Dactylographie()),
   WORD(new Word()),
@@ -22,7 +23,7 @@ public enum ExerciseEnum {
     this.exercise = exercise;
   }
 
-  public Exercise get() {
+  public final Exercise get() {
     return exercise;
   }
 
