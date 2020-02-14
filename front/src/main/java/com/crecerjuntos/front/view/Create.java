@@ -108,15 +108,15 @@ public class Create extends VerticalLayout {
               }
               if(mail.getValue() == null || mail.getValue().isEmpty()){
                 error = true;
-                Notification.show(
-                    getTranslation(
-                        Constants.Resource.Strings.Login.EMPTY_MAIL));
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_MAIL));
+              }
+              if(mail.isInvalid()){
+                error = true;
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
               }
               if(password.getValue() == null || password.getValue().isEmpty()){
                 error = true;
-                Notification.show(
-                    getTranslation(
-                        Constants.Resource.Strings.Login.EMPTY_PASSWORD));
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_PASSWORD));
               }
               
               if( ! error ){
