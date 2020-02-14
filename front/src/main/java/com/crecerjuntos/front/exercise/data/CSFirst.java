@@ -38,7 +38,7 @@ public class CSFirst extends Exercise {
   public String getLink(final int level) throws NonExistingLevel {
     if (level == 0) return "https://scratch.mit.edu/projects/340739176/editor";
     if (level == 1) return "https://scratch.mit.edu/projects/367559553/editor";
-    if (level == 2) return "https://scratch.mit.edu/projects/367672800/editor";
+    if (level == 2) return "https://scratch.mit.edu/projects/368215391/editor/";
     else throw new NonExistingLevel(name, level);
   }
 
