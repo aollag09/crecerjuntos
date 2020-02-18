@@ -2,7 +2,7 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
@@ -112,6 +112,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void start() {
+    int publicLevel = level + 1;
     title
         .getElement()
         .setText(
@@ -119,7 +120,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
                 + " "
                 + getTranslation(Constants.Resource.Strings.Exercises.LEVEL)
                 + ": "
-                + level);
+                + publicLevel);
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;

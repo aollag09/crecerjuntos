@@ -47,9 +47,10 @@ public class MainAppLayout extends AppLayout {
   private void buildNavBar() {
     Image image = new Image(Constants.Resource.Images.IMG_TERESA, "teresa");
     image.addClassName(Constants.ClassStyle.Main.LOGO_TERESA);
-    image.addClickListener(event -> {
-      UI.getCurrent().navigate(Home.class);
-            });
+    image.addClickListener(
+        event -> {
+          UI.getCurrent().navigate(Home.class);
+        });
     this.addToNavbar(image);
     Span appName = new Span(getTranslation(Constants.Resource.Strings.TITLE));
     appName.addClassName(Constants.ClassStyle.Main.SPAN);

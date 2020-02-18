@@ -3,13 +3,12 @@ package com.crecerjuntos.front.exercise.view;
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.CSFirst;
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -34,32 +33,34 @@ public class CSFirstView extends AbstractExerciseView {
     instructions.addClassName(Constants.ClassStyle.CSFirst.INSTRUCTIONS);
     instructions.setWidth("600px");
 
+    Button instruction =
+            new Button(
+                    getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION),
+                    new Icon(VaadinIcon.INSTITUTION));
+    instruction.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+    instruction.addClickListener(
+            event -> {
+              try {
+                UI.getCurrent().getPage().setLocation(((CSFirst) exercise).getInstructionLink(level));
+              } catch (NonExistingLevel nonExistingLevel) {
+                UI.getCurrent().navigate(NonExistingLevelView.class);
+              }
+            });
+    instructions.add(instruction);
+
     Button go =
         new Button(
             getTranslation(Constants.Resource.Strings.CSFirst.GO), new Icon(VaadinIcon.PLAY));
     go.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
     go.addClickListener(
         event -> {
-          UI.getCurrent().getPage().setLocation("https://csfirst.withgoogle.com/login");
+          try {
+            UI.getCurrent().getPage().setLocation(((CSFirst) exercise).getLink(level));
+          } catch (NonExistingLevel nonExistingLevel) {
+            UI.getCurrent().navigate(NonExistingLevelView.class);
+          }
         });
     instructions.add(go);
-
-    instructions.add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_1)));
-    instructions.add(
-        new Span(
-            getTranslation(
-                Constants.Resource.Strings.CSFirst.INSTRUCTION_2,
-                ((CSFirst) exercise).getCSFirstCourseId())));
-    instructions.add(new Span(getTranslation(Constants.Resource.Strings.CSFirst.INSTRUCTION_3)));
-    try {
-      instructions.add(
-          new Span(
-              getTranslation(
-                  Constants.Resource.Strings.CSFirst.INSTRUCTION_4,
-                  ((CSFirst) exercise).getCSFirstExercise(level))));
-    } catch (NonExistingLevel nonExistingLevel) {
-      UI.getCurrent().navigate(NonExistingLevelView.class);
-    }
 
     add(instructions);
 

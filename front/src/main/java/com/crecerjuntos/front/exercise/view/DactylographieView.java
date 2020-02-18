@@ -3,8 +3,8 @@ package com.crecerjuntos.front.exercise.view;
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.data.Dactylographie;
-import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -113,14 +113,16 @@ public class DactylographieView extends AbstractExerciseView {
     // build score
     int intScore = 100;
     try {
-      if (getDurationMillis() > exercise.getExpectedTime(level))
-        intScore -= (getDurationMillis() - exercise.getExpectedTime(level)) / 1000;
+      if (getDurationMillis() > exercise.getExpectedTime(level)) {
+        int delta = Math.toIntExact((getDurationMillis() - exercise.getExpectedTime(level)) / 1000);
+        intScore -= delta;
+      }
     } catch (NonExistingLevel nonExistingLevel) {
       nonExistingLevel();
     }
     intScore -= mistake;
-    score.setScore(intScore);
 
+    score.setScore(intScore);
     return score;
   }
 }

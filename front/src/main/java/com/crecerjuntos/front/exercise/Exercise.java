@@ -4,6 +4,7 @@ import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.util.Difficulty;
 
 import java.util.List;
+import com.google.common.collect.ImmutableList;
 
 public abstract class Exercise {
 
@@ -20,7 +21,7 @@ public abstract class Exercise {
   protected final String uri;
 
   /** Levels */
-  protected List<Level> levels;
+  protected final ImmutableList<Level> levels;
 
   /** Exercise difficulty */
   protected final Difficulty difficulty;
@@ -39,7 +40,7 @@ public abstract class Exercise {
     this.name = name;
     this.title = title;
     this.instructions = instructions;
-    this.levels = levels;
+    this.levels = ImmutableList.copyOf(levels);
     this.difficulty = difficulty;
     this.time = time;
     this.uri = uri;
@@ -83,7 +84,8 @@ public abstract class Exercise {
     return uri;
   }
 
-  protected static String getLevelName(final String name, final int level){
+  protected static String getLevelName(final String name, final int level) {
     return name + "-level" + level + "-name";
   }
+
 }

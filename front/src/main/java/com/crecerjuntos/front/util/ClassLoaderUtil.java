@@ -3,10 +3,10 @@ package com.crecerjuntos.front.util;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
@@ -155,7 +155,7 @@ public class ClassLoaderUtil {
    */
   static class AggregateIterator<E> implements Iterator<E> {
 
-    LinkedList<Enumeration<E>> enums = new LinkedList<Enumeration<E>>();
+    ArrayList<Enumeration<E>> enums = new ArrayList<Enumeration<E>>();
     Enumeration<E> cur = null;
     E next = null;
     Set<E> loaded = new HashSet<E>();
@@ -172,10 +172,12 @@ public class ClassLoaderUtil {
       }
     }
 
+    @Override
     public boolean hasNext() {
       return (next != null);
     }
 
+    @Override
     public E next() {
       if (next != null) {
         E prev = next;
@@ -189,7 +191,7 @@ public class ClassLoaderUtil {
     private Enumeration<E> determineCurrentEnumeration() {
       if (cur != null && !cur.hasMoreElements()) {
         if (enums.size() > 0) {
-          cur = enums.removeLast();
+          cur = enums.remove(enums.size() - 1);
         } else {
           cur = null;
         }
@@ -215,6 +217,7 @@ public class ClassLoaderUtil {
       return null;
     }
 
+    @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }

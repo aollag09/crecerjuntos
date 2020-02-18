@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'net.ltgt.errorprone' version '0.7.1'
 }
 
 dependencies {
@@ -15,6 +16,11 @@ dependencies {
 
     // PostgreSQL database services
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
+
+    // Error Prone
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    // for JDK 8 support
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 
     // test
     // Use JUnit test framework

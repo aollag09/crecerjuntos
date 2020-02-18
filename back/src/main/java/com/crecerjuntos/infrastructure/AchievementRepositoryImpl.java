@@ -1,6 +1,7 @@
 package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Score;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -94,10 +95,11 @@ public class AchievementRepositoryImpl implements AchievementRepository {
     TypedQuery<Integer> q =
         em.createQuery(
             "SELECT DISTINCT(score) FROM Achievement a WHERE exercise = :exerciseName AND level = :level  "
-                + "AND progress = 100 ORDER BY score DESC",
+                + "AND progress = 100 AND score >= :minScore ORDER BY score DESC",
             Integer.class);
     q.setParameter("exerciseName", exerciseName);
     q.setParameter("level", level);
+    q.setParameter("minScore", Score.GOOD_SCORE);
     q.setMaxResults(3);
 
     // Analyse podium

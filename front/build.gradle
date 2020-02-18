@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'org.gretty' version '3.0.1'
     id 'com.devsoap.vaadin-flow' version '1.2'
+    id 'net.ltgt.errorprone' version '0.7.1'
 }
 
 group = 'com.crecerjuntos.front'
@@ -26,6 +27,11 @@ dependencies {
 
     // Vaadin extra
     implementation group: 'org.vaadin.olli', name: 'file-download-wrapper', version: '3.0.1'
+
+    // Error Prone
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    // for JDK 8 support
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 
     // back end
     implementation project(':back')
@@ -64,7 +70,7 @@ task startDatabase(type: Exec) {
 }
 vaadinAssembleClient.dependsOn startDatabase;
 
-task stopDatabase(type: Exec){
+task stopDatabase(type: Exec) {
     description("Stop the database docker image")
     workingDir '../deployment'
     commandLine './stop-database.sh'

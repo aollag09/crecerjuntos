@@ -98,13 +98,29 @@ public class Create extends VerticalLayout {
           } else {
             if (getUI().isPresent()) {
 
+              boolean error = false;
               boolean exists = LoginServices.exists(mail.getValue());
               if (exists) {
+                error = true;
                 Notification.show(
                     getTranslation(
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
-              } else {
-                // create & log in current user
+              }
+              if(mail.getValue() == null || mail.getValue().isEmpty()){
+                error = true;
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_MAIL));
+              }
+              if(mail.isInvalid()){
+                error = true;
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
+              }
+              if(password.getValue() == null || password.getValue().isEmpty()){
+                error = true;
+                Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_PASSWORD));
+              }
+              
+              if( ! error ){
+              // create & log in current user
                 Student student = null;
                 try {
                   student =
