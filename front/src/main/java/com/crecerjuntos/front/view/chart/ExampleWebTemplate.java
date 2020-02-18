@@ -1,4 +1,4 @@
-package com.crecerjuntos.front.view;
+package com.crecerjuntos.front.view.chart;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
@@ -10,7 +10,7 @@ import com.vaadin.flow.templatemodel.TemplateModel;
 @HtmlImport("templates/ExampleWebTemplate.html")
 public class ExampleWebTemplate extends PolymerTemplate<ExampleWebTemplate.ExampleWebTemplateModel> {
 
-    ExampleWebTemplate() {
+    public ExampleWebTemplate() {
         getModel().setCaption("Hello template!");
     }
 

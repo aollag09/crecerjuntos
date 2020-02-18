@@ -49,6 +49,7 @@ vaadin {
 // repositories and dependencies sections
 vaadin.autoconfigure()
 vaadin.submitStatistics = true
+//vaadin.productionMode = true
 
 // Gretty server configuration
 gretty {
