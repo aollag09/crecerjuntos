@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>google-chart</title>
+    <base href = "http://polygit.org/components/">
+    <script src = "webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel = "import" href = "google-chart/google-chart.html">
+</head>
+
+<body>
+<google-chart
+        type = 'pie'
+        options = '{"title": "Pie Chart", "vAxis": {"minValue" : 0, "maxValue": 8}}'
+        cols = '[{"label": "Country", "type": "string"},{"label": "Value", "type": "number"}]'
+        rows = '[["Germany", 5.0],["US", 4.0],["Africa", 11.0],["France", 4.0]]'>
+</google-chart>
+</body>
+</html>

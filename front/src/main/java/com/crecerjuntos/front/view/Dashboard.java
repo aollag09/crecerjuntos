@@ -3,7 +3,8 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.view.chart.ExampleWebTemplate;
-import com.crecerjuntos.front.view.chart.GoogleCalendar;
+import com.crecerjuntos.front.view.chart.GooglePieChart;
+import com.crecerjuntos.front.view.chart.HelloWorld;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -27,10 +28,13 @@ public class Dashboard extends VerticalLayout {
     H2 title = new H2(getTranslation(Constants.Resource.Strings.Dashboard.TITLE));
     add(title);
 
+    add(new H2("HELLO WORLD"));
+    add(new HelloWorld());
+
     add(new H2("EXAMPLE TEMPLATE"));
     add(new ExampleWebTemplate());
 
     add(new H2("GOOGLE CHART"));
-    add(new GoogleCalendar());
+    //add(new GooglePieChart());
   }
 }
