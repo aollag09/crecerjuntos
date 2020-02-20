@@ -16,15 +16,16 @@ public class AchievementSectionPodiumTest {
     Student s1 = TestServices.generateTestStudent("s1", Section.PRIMARIO);
     Student s2 = TestServices.generateTestStudent("s2", Section.PRIMARIO);
     Student s21 = TestServices.generateTestStudent("s21", Section.PRIMARIO);
-    Student s3 = TestServices.generateTestStudent( "s3", Section.PRIMARIO);
+    Student s3 = TestServices.generateTestStudent("s3", Section.PRIMARIO);
     Student s4 = TestServices.generateTestStudent("s4", Section.PRIMARIO);
-    Student s5 = TestServices.generateTestStudent( "s5", Section.PRIMARIO);
+    Student s5 = TestServices.generateTestStudent("s5", Section.PRIMARIO);
 
     Student e1 = TestServices.generateTestStudent("e1", Section.SECONDARIO);
     Student e2 = TestServices.generateTestStudent("e2", Section.SECONDARIO);
 
     Timestamp date = TestServices.getTimestamp();
-    final String exercise = "exercise-test-podium" + TestServices.random.nextLong();;
+    final String exercise = "exercise-test-podium" + TestServices.random.nextLong();
+    ;
     final int level = 1;
     TestServices.authoringServices.add(
         new Achievement(s1, "session", date, exercise, level, 100, 100));
@@ -40,9 +41,9 @@ public class AchievementSectionPodiumTest {
         new Achievement(s4, "session", date, exercise, level, 100, 76));
 
     TestServices.authoringServices.add(
-            new Achievement(e1, "session", date, exercise, level, 100, 95));
+        new Achievement(e1, "session", date, exercise, level, 100, 95));
     TestServices.authoringServices.add(
-            new Achievement(e2, "session", date, exercise, level, 100, 85));
+        new Achievement(e2, "session", date, exercise, level, 100, 85));
 
     Assert.assertEquals(
         Position.FIRST, TestServices.achievementAccess.getSectionPodium(s1, level, exercise));
@@ -58,9 +59,8 @@ public class AchievementSectionPodiumTest {
         Position.OUT, TestServices.achievementAccess.getSectionPodium(s5, level, exercise));
 
     Assert.assertEquals(
-            Position.FIRST, TestServices.achievementAccess.getSectionPodium(e1, level, exercise));
+        Position.FIRST, TestServices.achievementAccess.getSectionPodium(e1, level, exercise));
     Assert.assertEquals(
-            Position.SECOND, TestServices.achievementAccess.getSectionPodium(e2, level, exercise));
-
+        Position.SECOND, TestServices.achievementAccess.getSectionPodium(e2, level, exercise));
   }
 }

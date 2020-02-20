@@ -34,10 +34,3 @@ artillery quick --count $user -n $nb $url
 url=$rootUrl/admin
 echo "Test : '$url'"
 artillery quick --count $user -n $nb $url
-
-
-
-
-
-
-

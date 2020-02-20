@@ -106,21 +106,21 @@ public class Create extends VerticalLayout {
                     getTranslation(
                         Constants.Resource.Strings.Login.ALREADY_EXIST, mail.getValue()));
               }
-              if(mail.getValue() == null || mail.getValue().isEmpty()){
+              if (mail.getValue() == null || mail.getValue().isEmpty()) {
                 error = true;
                 Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_MAIL));
               }
-              if(mail.isInvalid()){
+              if (mail.isInvalid()) {
                 error = true;
                 Notification.show(getTranslation(Constants.Resource.Strings.Login.WRONG_MAIL));
               }
-              if(password.getValue() == null || password.getValue().isEmpty()){
+              if (password.getValue() == null || password.getValue().isEmpty()) {
                 error = true;
                 Notification.show(getTranslation(Constants.Resource.Strings.Login.EMPTY_PASSWORD));
               }
-              
-              if( ! error ){
-              // create & log in current user
+
+              if (!error) {
+                // create & log in current user
                 Student student = null;
                 try {
                   student =

@@ -1,7 +1,5 @@
 package com.crecerjuntos.front.util;
 
-import com.sun.org.apache.xml.internal.utils.PrefixResolverDefault;
-
 public class Constants {
 
   public static class Session {

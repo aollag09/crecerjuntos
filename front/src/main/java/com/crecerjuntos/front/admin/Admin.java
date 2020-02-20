@@ -75,14 +75,16 @@ public class Admin extends VerticalLayout {
     add(studentDetails);
   }
 
-  private ComboBox<String> buildSectionFilter(){
-    ComboBox<String> cb = new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
+  private ComboBox<String> buildSectionFilter() {
+    ComboBox<String> cb =
+        new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
     List<String> values = new ArrayList<>(Section.list());
     cb.setDataProvider(new ListDataProvider<>(values));
     cb.setValue(Section.NOVENO.getName());
-    cb.addValueChangeListener(event -> {
-      listStudents();
-    });
+    cb.addValueChangeListener(
+        event -> {
+          listStudents();
+        });
     return cb;
   }
 
@@ -99,7 +101,8 @@ public class Admin extends VerticalLayout {
   }
 
   private void listStudents() {
-    List<Student> studentList = studentAccess.getStudents( Section.fromString(sectionFilter.getValue()));
+    List<Student> studentList =
+        studentAccess.getStudents(Section.fromString(sectionFilter.getValue()));
     students.setItems(studentList);
   }
 }

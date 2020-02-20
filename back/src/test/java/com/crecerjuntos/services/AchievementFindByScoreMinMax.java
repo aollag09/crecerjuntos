@@ -27,16 +27,13 @@ public class AchievementFindByScoreMinMax {
     TestServices.authoringServices.add(createAchievement(s1, date, exercise, level, 60));
     TestServices.authoringServices.add(createAchievement(s1, date, exercise, level, 50));
 
-
     List<Achievement> res = TestServices.achievementAccess.get(s1, 80, 100);
     Assert.assertNotNull(res);
     Assert.assertEquals(3, res.size());
 
-
     res = TestServices.achievementAccess.get(s1, 0, 100);
     Assert.assertNotNull(res);
     Assert.assertEquals(6, res.size());
-
 
     res = TestServices.achievementAccess.get(s1, 51, 59);
     Assert.assertNotNull(res);

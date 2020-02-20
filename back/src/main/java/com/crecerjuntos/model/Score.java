@@ -22,10 +22,8 @@ public class Score {
 
   public void setScore(final int score) {
     int newScore = score;
-    if(newScore < 0 )
-      newScore = 0;
-    if(newScore > 100 )
-      newScore = 100;  
+    if (newScore < 0) newScore = 0;
+    if (newScore > 100) newScore = 100;
     this.score = newScore;
   }
 
