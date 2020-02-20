@@ -1,5 +1,7 @@
 package com.crecerjuntos.front.util;
 
+import com.sun.org.apache.xml.internal.utils.PrefixResolverDefault;
+
 public class Constants {
 
   public static class Session {
@@ -98,6 +100,12 @@ public class Constants {
       public static final String SCORE = PREFIX + "score";
       public static final String EXERCISE = PREFIX + "exercise";
       public static final String PODIUMS = PREFIX + "podiums";
+      public static final String NUMBERS = PREFIX + "numbers";
+      public static final String NUMBER = PREFIX + "number";
+      public static final String NUMBER_RED = PREFIX + "number-red";
+      public static final String NUMBER_GREEN = PREFIX + "number-green";
+      public static final String NUMBER_ORANGE = PREFIX + "number-orange";
+      public static final String SPAN_NUMBER = PREFIX + "span-number";
       public static final String LEVEL = PREFIX + "level";
     }
   }
@@ -206,8 +214,10 @@ public class Constants {
 
       public static class Home {
         private static final String PREFIX = "home-";
-        public static final String PODIUM = PREFIX + "podium";
         public static final String WELCOME = PREFIX + "welcome";
+        public static final String PODIUM_TITLE = PREFIX + "podium-title";
+        public static final String SUMMARY_TITLE = PREFIX + "summary-title";
+        public static final String SECTION_PODIUM_TITLE = PREFIX + "podium-section-title";
       }
 
       public static class Dashboard {
