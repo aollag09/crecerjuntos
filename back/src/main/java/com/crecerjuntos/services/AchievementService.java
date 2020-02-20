@@ -69,4 +69,11 @@ public class AchievementService implements IAchievementAccess {
   public Position getPodium(Student student, int level, String exerciseName) {
     return Position.fromInt(achievementRepository.getPodium(student.getId(), level, exerciseName));
   }
+
+  @Override
+  public Position getSectionPodium(Student student, int level, String exerciseName) {
+    return Position.fromInt(
+        achievementRepository.getSectionPodium(
+            student.getId(), student.getSectionName(), level, exerciseName));
+  }
 }

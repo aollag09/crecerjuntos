@@ -20,7 +20,7 @@ public class AchievementPodiumTest {
     Student s5 = TestServices.generateTestStudent();
 
     Timestamp date = TestServices.getTimestamp();
-    final String exercise = "exercise-test-podium";
+    final String exercise = "exercise-test-podium-" + TestServices.random.nextLong();
     final int level = 1;
     TestServices.authoringServices.add(
         new Achievement(s1, "session", date, exercise, level, 100, 100));

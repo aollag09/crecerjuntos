@@ -2,6 +2,7 @@ package com.crecerjuntos.infrastructure;
 
 import com.crecerjuntos.model.Achievement;
 import com.crecerjuntos.model.Score;
+import com.crecerjuntos.model.Section;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -46,6 +47,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
 
   @Override
   public List<Achievement> findBySection(String sectionName) {
+    // FIXME no section in achievements
     TypedQuery<Achievement> q =
         em.createQuery(
             "SELECT a FROM Achievement a WHERE section = :sectionName", Achievement.class);
@@ -55,6 +57,7 @@ public class AchievementRepositoryImpl implements AchievementRepository {
 
   @Override
   public List<Achievement> findLastsBySection(String sectionName, int nbAchievements) {
+    // FIXME  no section in achievements
     TypedQuery<Achievement> q =
         em.createQuery(
             "SELECT a FROM Achievement a WHERE section = :sectionName ORDER BY timestamp DESC",
@@ -97,6 +100,38 @@ public class AchievementRepositoryImpl implements AchievementRepository {
             "SELECT DISTINCT(score) FROM Achievement a WHERE exercise = :exerciseName AND level = :level  "
                 + "AND progress = 100 AND score >= :minScore ORDER BY score DESC",
             Integer.class);
+    q.setParameter("exerciseName", exerciseName);
+    q.setParameter("level", level);
+    q.setParameter("minScore", Score.GOOD_SCORE);
+    q.setMaxResults(3);
+
+    // Analyse podium
+    List<Integer> podium = q.getResultList();
+    int podiumStep = -1;
+    if (podium.size() > 0 && podium.get(0).equals(bestStudentScore)) podiumStep = 1;
+    else if (podium.size() > 1 && podium.get(1).equals(bestStudentScore)) podiumStep = 2;
+    else if (podium.size() > 2 && podium.get(2).equals(bestStudentScore)) podiumStep = 3;
+    return podiumStep;
+  }
+
+  @Override
+  public Integer getSectionPodium(Long studentId, String section, int level, String exerciseName) {
+    Integer bestStudentScore = getBestScore(studentId, level, exerciseName);
+
+    // Query the 3 best score of the current section
+    TypedQuery<Integer> q =
+        em.createQuery(
+            "SELECT DISTINCT(a.score) "
+                + "FROM Achievement a "
+                + "INNER JOIN a.student "
+                + "WHERE a.exercise = :exerciseName "
+                + "AND a.student.section = :section  "
+                + "AND a.level = :level  "
+                + "AND a.progress = 100 "
+                + "AND a.score >= :minScore "
+                + "ORDER BY a.score DESC",
+            Integer.class);
+    q.setParameter("section", Section.fromString(section));
     q.setParameter("exerciseName", exerciseName);
     q.setParameter("level", level);
     q.setParameter("minScore", Score.GOOD_SCORE);
