@@ -28,9 +28,5 @@
         <module name="crecerjuntos.front.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="crecerjuntos.app.main" target="11" />
-      <module name="crecerjuntos.app.test" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
