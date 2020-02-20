@@ -15,6 +15,9 @@ public interface IAchievementAccess {
   /** Retrieve all achievements where progression is >= 100 */
   List<Achievement> getDone(final Student student);
 
+  /** Retrieve all achievements where final score is between min & max */
+  List<Achievement> get(final Student student, final int scoreMin, final int scoreMax);
+
   /** Get the lasts achievements for a student ordering by timestamp */
   List<Achievement> getLasts(final Student student, final int nbAchievement);
 

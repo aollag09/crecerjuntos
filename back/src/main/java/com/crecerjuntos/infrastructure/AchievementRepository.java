@@ -10,6 +10,8 @@ public interface AchievementRepository {
 
   List<Achievement> findDoneByStudent(Long studentId);
 
+  List<Achievement> findByScoreByStudent(Long id, int scoreMin, int scoreMax);
+
   List<Achievement> findLastsByStudent(Long studentId, int nbAchievements);
 
   List<Achievement> findBySection(String sectionName);
@@ -23,4 +25,5 @@ public interface AchievementRepository {
   Integer getPodium(Long studentId, int level, String exercise);
 
   Integer getSectionPodium(Long id, String sectionName, int level, String exerciseName);
-}
+
+ }

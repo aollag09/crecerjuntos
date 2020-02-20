@@ -36,6 +36,22 @@ public class AchievementRepositoryImpl implements AchievementRepository {
   }
 
   @Override
+  public List<Achievement> findByScoreByStudent(Long studentId, int scoreMin, int scoreMax) {
+    TypedQuery<Achievement> q =
+        em.createQuery(
+            "SELECT a FROM Achievement a "
+                + "WHERE student_id = :studentId "
+                + "AND progress >= 100 "
+                + "AND score >= :scoreMin "
+                + "AND score <= :scoreMax",
+            Achievement.class);
+    q.setParameter("studentId", studentId);
+    q.setParameter("scoreMin", scoreMin);
+    q.setParameter("scoreMax", scoreMax);
+    return q.getResultList();
+  }
+
+  @Override
   public List<Achievement> findLastsByStudent(Long studentId, int nbAchievements) {
     TypedQuery<Achievement> q =
         em.createQuery(

@@ -35,6 +35,11 @@ public class AchievementService implements IAchievementAccess {
   }
 
   @Override
+  public List<Achievement> get(Student student, int scoreMin, int scoreMax) {
+    return achievementRepository.findByScoreByStudent(student.getId(), scoreMin, scoreMax);
+  }
+
+  @Override
   public List<Achievement> getLasts(Student student, int nbAchievement) {
     // TODO: replace with pageable
     return achievementRepository
