@@ -35,6 +35,11 @@ public class AchievementService implements IAchievementAccess {
   }
 
   @Override
+  public List<Achievement> get(Student student, int scoreMin, int scoreMax) {
+    return achievementRepository.findByScoreByStudent(student.getId(), scoreMin, scoreMax);
+  }
+
+  @Override
   public List<Achievement> getLasts(Student student, int nbAchievement) {
     // TODO: replace with pageable
     return achievementRepository
@@ -68,5 +73,12 @@ public class AchievementService implements IAchievementAccess {
   @Override
   public Position getPodium(Student student, int level, String exerciseName) {
     return Position.fromInt(achievementRepository.getPodium(student.getId(), level, exerciseName));
+  }
+
+  @Override
+  public Position getSectionPodium(Student student, int level, String exerciseName) {
+    return Position.fromInt(
+        achievementRepository.getSectionPodium(
+            student.getId(), student.getSectionName(), level, exerciseName));
   }
 }

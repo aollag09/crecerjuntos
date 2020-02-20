@@ -64,7 +64,8 @@ public class StudentStats extends VerticalLayout {
   public String getMaxLevelReached(Student s, Exercise exercise) {
     Integer level = achievementAccess.getMaxLevel(s, exercise.getName());
     if (level != null) {
-      return "Max level reached : " + level + 1;
+      int publicLevel = level + 1;
+      return "Max level reached : " + publicLevel;
     } else {
       return "No level done";
     }

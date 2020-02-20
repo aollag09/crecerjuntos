@@ -23,8 +23,13 @@ public class TestServices {
   }
 
   public static final Student generateTestStudent(String studentName) throws Exception {
+    return generateTestStudent(studentName, Section.DEFAULT);
+  }
+
+  public static final Student generateTestStudent(String studentName, Section section)
+      throws Exception {
     String mail = "student.test" + UUID.randomUUID() + "@gmail.com";
-    Student student = new Student(studentName, mail, "password", Section.DEFAULT);
+    Student student = new Student(studentName, mail, "password", section);
     authoringServices.add(student);
     return studentAccess.byMail(mail);
   }

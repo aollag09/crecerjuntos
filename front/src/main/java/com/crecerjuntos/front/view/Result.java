@@ -1,9 +1,9 @@
 package com.crecerjuntos.front.view;
 
 import com.crecerjuntos.front.MainAppLayout;
-import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ScoreServices;
+import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.Text;

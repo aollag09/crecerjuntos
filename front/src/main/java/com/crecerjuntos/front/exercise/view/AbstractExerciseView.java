@@ -2,7 +2,6 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
-import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
@@ -11,6 +10,7 @@ import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;

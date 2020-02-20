@@ -2,10 +2,10 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
-import com.crecerjuntos.model.Score;
 import com.crecerjuntos.front.exercise.data.Word;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;

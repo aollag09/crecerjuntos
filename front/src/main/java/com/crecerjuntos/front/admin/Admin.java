@@ -17,6 +17,7 @@ import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.Route;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@com.vaadin.flow.router.Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
+@Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {
@@ -74,14 +75,16 @@ public class Admin extends VerticalLayout {
     add(studentDetails);
   }
 
-  private ComboBox<String> buildSectionFilter(){
-    ComboBox<String> cb = new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
+  private ComboBox<String> buildSectionFilter() {
+    ComboBox<String> cb =
+        new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
     List<String> values = new ArrayList<>(Section.list());
     cb.setDataProvider(new ListDataProvider<>(values));
     cb.setValue(Section.NOVENO.getName());
-    cb.addValueChangeListener(event -> {
-      listStudents();
-    });
+    cb.addValueChangeListener(
+        event -> {
+          listStudents();
+        });
     return cb;
   }
 
@@ -98,7 +101,8 @@ public class Admin extends VerticalLayout {
   }
 
   private void listStudents() {
-    List<Student> studentList = studentAccess.getStudents( Section.fromString(sectionFilter.getValue()));
+    List<Student> studentList =
+        studentAccess.getStudents(Section.fromString(sectionFilter.getValue()));
     students.setItems(studentList);
   }
 }

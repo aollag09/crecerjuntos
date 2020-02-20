@@ -5,8 +5,10 @@ import java.util.Map;
 
 public class Score {
 
+  public static final int MIN_SCORE = 0;
   public static final int GOOD_SCORE = 75;
   public static final int MINIMUM_SCORE = 50;
+  public static final int MAX_SCORE = 100;
 
   /** Details of the result */
   private Map<String, Object> KPI;
@@ -20,10 +22,8 @@ public class Score {
 
   public void setScore(final int score) {
     int newScore = score;
-    if(newScore < 0 )
-      newScore = 0;
-    if(newScore > 100 )
-      newScore = 100;  
+    if (newScore < 0) newScore = 0;
+    if (newScore > 100) newScore = 100;
     this.score = newScore;
   }
 

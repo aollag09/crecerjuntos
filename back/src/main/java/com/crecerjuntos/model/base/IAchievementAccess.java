@@ -9,14 +9,19 @@ import java.util.List;
 
 public interface IAchievementAccess {
 
+  /** List achievements for a student */
   List<Achievement> get(final Student student);
 
   /** Retrieve all achievements where progression is >= 100 */
   List<Achievement> getDone(final Student student);
 
+  /** Retrieve all achievements where final score is between min & max */
+  List<Achievement> get(final Student student, final int scoreMin, final int scoreMax);
+
   /** Get the lasts achievements for a student ordering by timestamp */
   List<Achievement> getLasts(final Student student, final int nbAchievement);
 
+  /** List achievement for a section */
   List<Achievement> get(final Section section);
 
   /** Get the lasts achievements for an entire section ordering by timestamp */
@@ -28,9 +33,9 @@ public interface IAchievementAccess {
   /** Get the score of a student on a specific level of an exercise */
   Integer getBestScore(final Student student, final int level, final String exerciseName);
 
-  /**
-   * Get position on the podium for the current student for a dedicated exercise 1 : first, 2 :
-   * second, 3 : third, -1 : not on podium
-   */
+  /** Get position on the podium for the current student for a dedicated exercise */
   Position getPodium(final Student student, final int level, final String exerciseName);
+
+  /** Get position on the podium for the current student, current section and for an exercise */
+  Position getSectionPodium(final Student student, final int level, final String exerciseName);
 }

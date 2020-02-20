@@ -2,9 +2,9 @@ package com.crecerjuntos.front.exercise;
 
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.util.Difficulty;
+import com.google.common.collect.ImmutableList;
 
 import java.util.List;
-import com.google.common.collect.ImmutableList;
 
 public abstract class Exercise {
 
@@ -87,5 +87,4 @@ public abstract class Exercise {
   protected static String getLevelName(final String name, final int level) {
     return name + "-level" + level + "-name";
   }
-
 }
