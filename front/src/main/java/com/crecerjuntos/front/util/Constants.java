@@ -107,6 +107,7 @@ public class Constants {
     public static final String EXERCISES = "exercises";
     public static final String HOME = "home";
     public static final String ADMIN = "admin";
+    public static final String ACTIVITY = "activity";
     public static final String LOGIN = "";
     public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
@@ -123,7 +124,8 @@ public class Constants {
     public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
     public static final String ADMIN_ERROR_VIEW = "error/admin";
 
-    public static class QueryParameters {}
+
+      public static class QueryParameters {}
   }
 
   public static class Title {
