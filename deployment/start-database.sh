@@ -52,13 +52,13 @@ fi
 
 # Check database was created and if not, create it
 if [[ -z $filepath ]]; then
-  echo "Initializing db from scratch"
+  echo "Initializing db"
   docker exec "$name" psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = '$dbname'" | grep -q 1 || docker exec "$name" psql -U postgres -tc "CREATE DATABASE $dbname;" && docker exec "$name" psql -U postgres -tc "grant all privileges on database $dbname to postgres;"
 else
   echo "Initializing db from database dump in $filepath"
   echo "Remove previous database"
   docker exec "$name" psql -U postgres -tc "DROP DATABASE $dbname;"
-  echo "Initializing db from scratch"
+  echo "Initializing db"
   docker exec "$name" psql -U postgres -tc "SELECT 1 FROM pg_database WHERE datname = '$dbname'" | grep -q 1 || docker exec "$name" psql -U postgres -tc "CREATE DATABASE $dbname;" && docker exec "$name" psql -U postgres -tc "grant all privileges on database $dbname to postgres;"
   echo "Copy to docker database dump file $filepath"
   docker cp "$filepath" "$name":/dump.sql
