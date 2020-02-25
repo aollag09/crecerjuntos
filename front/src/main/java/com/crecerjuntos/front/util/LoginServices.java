@@ -58,7 +58,7 @@ public class LoginServices {
     return student;
   }
 
-  private static Student getAnonymous() throws DatabaseException {
+  public static Student getAnonymous() throws DatabaseException {
     Student anonymous = get(Student.ANONYMOUS_MAIL);
     if (anonymous == null) {
       logger.info("Create anonymous user in the database !");
