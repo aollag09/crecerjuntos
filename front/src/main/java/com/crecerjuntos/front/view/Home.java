@@ -4,14 +4,17 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.exercise.Level;
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.model.Position;
 import com.crecerjuntos.model.Score;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.base.IAchievementAccess;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.crecerjuntos.services.AchievementService;
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.html.H2;
@@ -38,15 +41,19 @@ public class Home extends VerticalLayout {
   private static final IAchievementAccess achievementAccess = new AchievementService();
 
   public Home() {
-    H2 title =
-        new H2(
-            getTranslation(Constants.Resource.Strings.Home.WELCOME, LoginServices.getUserName()));
-    add(title);
-    final Student student = LoginServices.getStudent();
-    if (student != null) {
-      add(buildSummary(student));
-      add(buildPodiums(student, false));
-      add(buildPodiums(student, true));
+    try {
+      H2 title =
+          new H2(
+              getTranslation(Constants.Resource.Strings.Home.WELCOME, LoginServices.getUserName()));
+      add(title);
+      final Student student = LoginServices.getStudent();
+      if (student != null) {
+        add(buildSummary(student));
+        add(buildPodiums(student, false));
+        add(buildPodiums(student, true));
+      }
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
     }
   }
 

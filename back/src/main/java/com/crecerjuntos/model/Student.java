@@ -13,8 +13,8 @@ import javax.persistence.Table;
 @Table(name = "student")
 public final class Student implements BaseEntity {
 
-  public static final String DEFAULT_NAME = "Anonymous";
-  public static final String DEFAULT_MAIL = "anonymous@gmail.com";
+  public static final String ANONYMOUS_NAME = "Anonymous";
+  public static final String ANONYMOUS_MAIL = "anonymous@gmail.com";
 
   /** Private generated id */
   @Id
@@ -38,7 +38,7 @@ public final class Student implements BaseEntity {
   private Section section;
 
   public Student() {
-    this(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
+    this(ANONYMOUS_NAME, ANONYMOUS_MAIL, "", Section.DEFAULT);
   }
 
   public Student(String name, String mail, String password, Section section) {
@@ -50,14 +50,14 @@ public final class Student implements BaseEntity {
 
   public Student(final String name, final Section section) {
     this.name = name;
-    this.mail = DEFAULT_MAIL;
+    this.mail = ANONYMOUS_MAIL;
     this.password = "";
     this.section = section;
   }
 
   public Student(final String name) {
     this.name = name;
-    this.mail = DEFAULT_MAIL;
+    this.mail = ANONYMOUS_MAIL;
     this.password = "";
     this.section = Section.DEFAULT;
   }

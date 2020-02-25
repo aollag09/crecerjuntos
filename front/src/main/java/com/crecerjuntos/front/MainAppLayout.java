@@ -1,11 +1,13 @@
 package com.crecerjuntos.front;
 
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.view.Dashboard;
 import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.UI;
@@ -107,7 +109,12 @@ public class MainAppLayout extends AppLayout {
   }
 
   private Tab buildUserName() {
-    Student student = LoginServices.getStudent();
+    Student student = null;
+    try {
+      student = LoginServices.getStudent();
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    }
     Text studentName = new Text("");
     if (student != null) studentName.setText(student.getName());
     return createTab(studentName);

@@ -46,23 +46,36 @@ public class LoginServices {
     return access.byMail(mail);
   }
 
-  public static Student getStudent() {
+  public static Student getStudent() throws DatabaseException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = null;
     if (Objects.nonNull(session)
         && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
       student = (Student) session.getAttribute(Constants.Session.STUDENT);
+
+    // If no student is log into the session, default is now anonymous
+    student = getAnonymous();
     return student;
   }
 
-  public static String getUserName() {
+  public static Student getAnonymous() throws DatabaseException {
+    Student anonymous = get(Student.ANONYMOUS_MAIL);
+    if (anonymous == null) {
+      logger.info("Create anonymous user in the database !");
+      anonymous =
+          create(Student.ANONYMOUS_MAIL, Student.ANONYMOUS_NAME, "", Section.DEFAULT.getName());
+    }
+    return anonymous;
+  }
+
+  public static String getUserName() throws DatabaseException {
     String name = "";
     Student student = getStudent();
     if (student != null) name = student.getName();
     return name;
   }
 
-  public static void logout() {
+  public static void logout() throws DatabaseException {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = getStudent();
     if (student != null) {

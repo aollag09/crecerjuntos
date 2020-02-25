@@ -1,8 +1,10 @@
 package com.crecerjuntos.front.view;
 
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
@@ -106,6 +108,23 @@ public class Login extends VerticalLayout {
           UI.getCurrent().navigate(Create.class);
         });
     login.add(create);
+
+    Button anonymous = new Button(getTranslation(Constants.Resource.Strings.Login.ANONYMOUS));
+    anonymous.addThemeVariants(ButtonVariant.LUMO_CONTRAST);
+    anonymous.addClassName(Constants.ClassStyle.Login.FORM);
+    anonymous.addClickListener(
+        event -> {
+          Student student = null;
+          try {
+            student = LoginServices.getAnonymous();
+          } catch (DatabaseException e) {
+            UI.getCurrent().navigate(DatabaseErrorView.class);
+          }
+          assert student != null;
+          LoginServices.login(student);
+          UI.getCurrent().navigate(Home.class);
+        });
+    login.add(anonymous);
 
     return login;
   }

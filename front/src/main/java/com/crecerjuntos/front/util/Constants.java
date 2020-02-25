@@ -176,7 +176,7 @@ public class Constants {
       }
 
       public static class Login {
-        private static final String PREFIX = "login-";
+          private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
@@ -184,6 +184,7 @@ public class Constants {
         public static final String PASSWORD = PREFIX + "password";
         public static final String CONFIRM_PASSWORD = PREFIX + "confirm-password";
         public static final String LOGIN = PREFIX + "login";
+        public static final String ANONYMOUS = PREFIX + "anonymous";
         public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
         public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
