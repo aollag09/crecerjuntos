@@ -50,11 +50,9 @@ public class LoginServices {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = null;
     if (Objects.nonNull(session)
-        && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
+            && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
       student = (Student) session.getAttribute(Constants.Session.STUDENT);
 
-    // If no student is log into the session, default is now anonymous
-    student = getAnonymous();
     return student;
   }
 
