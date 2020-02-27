@@ -2,7 +2,6 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
-import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.view.error.CommonErrorView;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
@@ -11,6 +10,7 @@ import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.front.util.ScoreServices;
 import com.crecerjuntos.front.view.Result;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Key;
@@ -23,10 +23,12 @@ import com.vaadin.flow.component.icon.Icon;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.NumberField;
 import com.vaadin.flow.component.textfield.PasswordField;
 import com.vaadin.flow.router.BeforeEvent;
 import com.vaadin.flow.router.HasUrlParameter;
 import com.vaadin.flow.server.VaadinSession;
+import org.javatuples.Pair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -110,6 +112,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
   }
 
   private void start() {
+    int publicLevel = level + 1;
     title
         .getElement()
         .setText(
@@ -117,7 +120,7 @@ public abstract class AbstractExerciseView extends VerticalLayout
                 + " "
                 + getTranslation(Constants.Resource.Strings.Exercises.LEVEL)
                 + ": "
-                + level);
+                + publicLevel);
     startTime = System.currentTimeMillis();
     start.setVisible(false);
     state = State.GAME;
@@ -153,6 +156,24 @@ public abstract class AbstractExerciseView extends VerticalLayout
 
     // Navigate to result page
     UI.getCurrent().navigate(Result.class);
+  }
+
+  protected Pair<VerticalLayout, NumberField> buildScore() {
+    VerticalLayout layout = new VerticalLayout();
+    layout.addClassName(Constants.ClassStyle.Exercises.ADMIN);
+    layout.setWidth("400px");
+    layout.setAlignItems(Alignment.CENTER);
+
+    NumberField score = new NumberField(getTranslation(Constants.Resource.Strings.Result.SCORE));
+    score.setMax(100);
+    score.setMin(0);
+    score.setStep(10);
+    score.setValue(50.0);
+    score.setHasControls(true);
+    score.addClassName(Constants.ClassStyle.Login.FORM);
+    layout.add(score);
+
+    return new Pair<>(layout, score);
   }
 
   protected Component buildAdminValidation() {

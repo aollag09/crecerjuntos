@@ -66,7 +66,6 @@ public class Constants {
       public static final String CONTENT = PREFIX + "content";
       public static final String TEMPLATE = PREFIX + "template";
       public static final String FORM = PREFIX + "form";
-
     }
 
     public static class Result {
@@ -87,6 +86,26 @@ public class Constants {
       public static final String LOGOUT = PREFIX + "logout";
     }
 
+    public static class CSFirst {
+      private static final String PREFIX = "cs-first-layout__";
+      public static final String INSTRUCTIONS = PREFIX + "instructions";
+    }
+
+    public static class Home {
+      private static final String PREFIX = "home-layout__";
+      public static final String BADGE = PREFIX + "badge";
+      public static final String PODIUM = PREFIX + "podium";
+      public static final String SCORE = PREFIX + "score";
+      public static final String EXERCISE = PREFIX + "exercise";
+      public static final String PODIUMS = PREFIX + "podiums";
+      public static final String NUMBERS = PREFIX + "numbers";
+      public static final String NUMBER = PREFIX + "number";
+      public static final String NUMBER_RED = PREFIX + "number-red";
+      public static final String NUMBER_GREEN = PREFIX + "number-green";
+      public static final String NUMBER_ORANGE = PREFIX + "number-orange";
+      public static final String SPAN_NUMBER = PREFIX + "span-number";
+      public static final String LEVEL = PREFIX + "level";
+    }
   }
 
   public static class Route {
@@ -101,12 +120,14 @@ public class Constants {
     public static final String WORD = "exercise/word";
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
+    public static final String CS_FIRST = "exercise/cs-first";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
     public static final String ERROR_VIEW = "error/common";
     public static final String DB_ERROR_VIEW = "error/database";
     public static final String NOT_LOGIN_ERROR_VIEW = "error/not-login";
+    public static final String ADMIN_ERROR_VIEW = "error/admin";
 
     public static class QueryParameters {}
   }
@@ -122,18 +143,22 @@ public class Constants {
     public static final String EXCEL_NAME = "Excel";
     public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
     public static final String POWER_POINT_NAME = "PowerPoint";
-    public static final int GOOD_SCORE = 75;
-    public static final int MINIMUM_SCORE = 50;
+    public static final String CS_FIRST_NAME = "CSFirst";
   }
 
   public static class Resource {
 
     public static class Images {
       public static final String IMG_TERESA = "resources/img/teresa.png";
+
+      public static class Badges {
+        public static final String GOLD_MEDAL = "resources/img/badge/011-gold-medal-4.png";
+        public static final String SILVER_MEDAL = "resources/img/badge/010-silver-medal-3.png";
+        public static final String BRONZE_MEDAL = "resources/img/badge/009-bronze-medal-3.png";
+      }
     }
 
     public static class Templates {
-
       public static class Word {
         public static final String LEVEL1 = "template/word-kitchen.docx";
         public static final String LEVEL2 = "template/word-cv.docx";
@@ -144,8 +169,14 @@ public class Constants {
 
       public static final String TITLE = "app-title";
 
+      public static class Admin {
+        public static final String PREFIX = "admin-";
+        public static final String BACK = PREFIX + "back-to";
+        public static final String SECTION_FILTER = PREFIX + "section-filter";
+      }
+
       public static class Login {
-        private static final String PREFIX = "login-";
+          private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
@@ -153,10 +184,13 @@ public class Constants {
         public static final String PASSWORD = PREFIX + "password";
         public static final String CONFIRM_PASSWORD = PREFIX + "confirm-password";
         public static final String LOGIN = PREFIX + "login";
+        public static final String ANONYMOUS = PREFIX + "anonymous";
         public static final String EMPTY_USERNAME = PREFIX + "error-empty-username";
         public static final String DOES_NOT_EXIST = PREFIX + "error-does-not-exists";
         public static final String ALREADY_EXIST = PREFIX + "error-already-exists";
         public static final String WRONG_MAIL = PREFIX + "error-wrong-email";
+        public static final String EMPTY_MAIL = PREFIX + "error-empty-email";
+        public static final String EMPTY_PASSWORD = PREFIX + "error-empty-password";
         public static final String NOT_SAME_PASSWORDS = PREFIX + "error-not-same-passwords";
         public static final String WRONG_PASSWORD = PREFIX + "error-wrong-password";
       }
@@ -180,6 +214,9 @@ public class Constants {
       public static class Home {
         private static final String PREFIX = "home-";
         public static final String WELCOME = PREFIX + "welcome";
+        public static final String PODIUM_TITLE = PREFIX + "podium-title";
+        public static final String SUMMARY_TITLE = PREFIX + "summary-title";
+        public static final String SECTION_PODIUM_TITLE = PREFIX + "podium-section-title";
       }
 
       public static class Dashboard {
@@ -206,6 +243,7 @@ public class Constants {
         public static final String NON_EXISTING_LEVEL = PREFIX + "non-existing-level";
         public static final String ERROR = PREFIX + "common";
         public static final String DB_ERROR = PREFIX + "db-error";
+        public static final String ADMIN_ERROR = PREFIX + "admin";
         public static final String NOT_LOGIN_ERROR = PREFIX + "not-login";
       }
 
@@ -217,6 +255,7 @@ public class Constants {
       public static class Dactylographie {
         private static final String PREFIX = "dactylographie-";
         public static final String TITLE = PREFIX + "title";
+        public static final String NAME = "dactylographie";
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String LVL3_NAME = PREFIX + "level3-name";
@@ -287,6 +326,17 @@ public class Constants {
         public static final String SUCCESSFULLY_LOGOUT = PREFIX + "successfully-logout";
         public static final String LOGIN = PREFIX + "login";
         public static final String LOGOUT = PREFIX + "logout";
+      }
+
+      public static class CSFirst {
+        private static final String PREFIX = "cs-first-";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String LVL2_NAME = PREFIX + "level2-name";
+        public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String INSTRUCTION = PREFIX + "instruction";
+        public static final String GO = PREFIX + "go";
+        public static final String TITLE = PREFIX + "title";
       }
     }
   }

@@ -3,6 +3,7 @@ plugins {
     id 'idea'
     id 'org.gretty' version '3.0.1'
     id 'com.devsoap.vaadin-flow' version '1.2'
+    id 'net.ltgt.errorprone' version '0.7.1'
 }
 
 group = 'com.crecerjuntos.front'
@@ -13,7 +14,7 @@ targetCompatibility = 1.8
 
 dependencies {
     // Google tools
-    implementation 'com.google.guava:guava:23.0'
+    implementation group: 'com.google.guava', name: 'guava', version: '28.2-android'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
 
     // tuple handling
@@ -21,12 +22,16 @@ dependencies {
 
     // logging
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.2'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.9'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.0.9'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.0'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.1.11'
 
     // Vaadin extra
     implementation group: 'org.vaadin.olli', name: 'file-download-wrapper', version: '3.0.1'
 
+    // Error Prone
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    // for JDK 8 support
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 
     // back end
     implementation project(':back')
@@ -43,7 +48,7 @@ vaadin {
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
 // repositories and dependencies sections
 vaadin.autoconfigure()
-vaadin.submitStatistics=true
+vaadin.submitStatistics = true
 
 // Gretty server configuration
 gretty {
@@ -53,7 +58,22 @@ gretty {
     loggingLevel = "INFO"
     consoleLogEnabled = true
     fileLogEnabled = true
+    httpsEnabled = true
+    httpsPort = 2018
     logFileName = 'crecer-juntos.log'
+}
+
+task startDatabase(type: Exec) {
+    description("Start the database docker image")
+    workingDir '../deployment'
+    commandLine './start-database.sh'
+}
+vaadinAssembleClient.dependsOn startDatabase;
+
+task stopDatabase(type: Exec) {
+    description("Stop the database docker image")
+    workingDir '../deployment'
+    commandLine './stop-database.sh'
 }
 
 sourceSets {

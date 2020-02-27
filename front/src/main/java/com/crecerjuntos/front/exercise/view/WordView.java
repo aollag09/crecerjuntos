@@ -2,10 +2,10 @@ package com.crecerjuntos.front.exercise.view;
 
 import com.crecerjuntos.front.exception.NonExistingLevel;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
-import com.crecerjuntos.front.exercise.data.Score;
 import com.crecerjuntos.front.exercise.data.Word;
 import com.crecerjuntos.front.exercise.view.error.NonExistingLevelView;
 import com.crecerjuntos.front.util.Constants;
+import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -103,8 +103,9 @@ public class WordView extends AbstractExerciseView {
   protected Score computeScore() {
     Score score = new Score();
     int finalScore = 0;
-    for (Checkbox box : steps.keySet()) {
-      Word.Step step = steps.get(box);
+    for (Map.Entry<Checkbox, Word.Step> entry : steps.entrySet()) {
+      Checkbox box = entry.getKey();
+      Word.Step step = entry.getValue();
       int stepScore = box.getValue() ? step.getScore() : 0;
       score.addKPI(step.getTitle(), stepScore);
       finalScore += stepScore;

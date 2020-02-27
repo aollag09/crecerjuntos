@@ -44,7 +44,7 @@ public class StudentService implements IStudentAccess {
 
   @Override
   public List<Student> getStudents(Section section) {
-    return studentRepository.findStudentsBySection(section.getName());
+    return studentRepository.findStudentsBySection(section);
   }
 
   @Override

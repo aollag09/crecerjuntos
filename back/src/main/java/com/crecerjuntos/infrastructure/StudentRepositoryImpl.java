@@ -1,5 +1,6 @@
 package com.crecerjuntos.infrastructure;
 
+import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 
 import javax.persistence.EntityManager;
@@ -35,10 +36,10 @@ public class StudentRepositoryImpl implements StudentRepository {
   }
 
   @Override
-  public List<Student> findStudentsBySection(String sectionName) {
+  public List<Student> findStudentsBySection(Section section) {
     TypedQuery<Student> q =
-        em.createQuery("SELECT s FROM Student s WHERE section = :sectionName", Student.class);
-    q.setParameter("sectionName", sectionName);
+        em.createQuery("SELECT s FROM Student s WHERE section = :sectionObject", Student.class);
+    q.setParameter("sectionObject", section);
     return q.getResultList();
   }
 

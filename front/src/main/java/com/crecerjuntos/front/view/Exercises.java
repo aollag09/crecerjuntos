@@ -4,12 +4,15 @@ import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.exception.NotLoginException;
 import com.crecerjuntos.front.exercise.Exercise;
 import com.crecerjuntos.front.exercise.ExerciseEnum;
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.exercise.view.error.NotLoginErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.util.ProgressServices;
 import com.crecerjuntos.model.Achievement;
+import com.crecerjuntos.model.Score;
 import com.crecerjuntos.model.Student;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.HasStyle;
 import com.vaadin.flow.component.UI;
@@ -55,6 +58,8 @@ public class Exercises extends VerticalLayout {
       bestLevelsDone = getBestLevelsDone(exercise);
     } catch (NotLoginException e) {
       UI.getCurrent().navigate(NotLoginErrorView.class);
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
     }
 
     VerticalLayout exerciseCard = new VerticalLayout();
@@ -135,10 +140,10 @@ public class Exercises extends VerticalLayout {
 
     if (!done.isPresent()) level.add(buildIcon(VaadinIcon.CLIPBOARD_TEXT, Color.BLUE));
     else {
-      if (done.get().getScore() >= Constants.Exercises.GOOD_SCORE) {
+      if (done.get().getScore() >= Score.GOOD_SCORE) {
         level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.GREEN));
         level.add(buildScore(done.get().getScore(), Color.GREEN));
-      } else if (done.get().getScore() >= Constants.Exercises.MINIMUM_SCORE) {
+      } else if (done.get().getScore() >= Score.MINIMUM_SCORE) {
         level.add(buildIcon(VaadinIcon.CHECK_CIRCLE, Color.ORANGE));
         level.add(buildScore(done.get().getScore(), Color.ORANGE));
       } else {
@@ -155,11 +160,12 @@ public class Exercises extends VerticalLayout {
     return level;
   }
 
-  private List<Achievement> getBestLevelsDone(final Exercise exercise) throws NotLoginException {
+  private List<Achievement> getBestLevelsDone(final Exercise exercise)
+      throws NotLoginException, DatabaseException {
     Student student = LoginServices.getStudent();
     if (student == null) throw new NotLoginException();
     List<Achievement> dones = new ArrayList<Achievement>();
-    if (student != null && !student.getName().equals(Student.DEFAULT_NAME)) {
+    if (!student.getName().equals(Student.ANONYMOUS_NAME)) {
       dones =
           ProgressServices.getDone(student).stream()
               .filter(achievement -> exercise.getName().equals(achievement.getExercise()))

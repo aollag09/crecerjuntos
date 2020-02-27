@@ -2,12 +2,18 @@ package com.crecerjuntos.model;
 
 import com.google.common.base.Objects;
 
-import javax.persistence.*;
-import java.sql.Date;
-import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
-public class Achievement implements BaseEntity {
+public final class Achievement implements BaseEntity {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -37,7 +43,7 @@ public class Achievement implements BaseEntity {
   private String sessionId;
 
   /** Timestamp of the achievement */
-  private Date timestamp;
+  private Timestamp timestamp;
 
   /** Name of the current exercise */
   @Column(nullable = false)
@@ -54,13 +60,13 @@ public class Achievement implements BaseEntity {
   private int score;
 
   public Achievement() {
-    this(new Student(), "0", Date.valueOf(LocalDate.now()), "No exercise", 0, 0, 0);
+    this(new Student(), "0", Timestamp.valueOf(LocalDateTime.now()), "No exercise", 0, 0, 0);
   }
 
   public Achievement(
       Student student,
       String sessionId,
-      Date timestamp,
+      Timestamp timestamp,
       String exercise,
       int level,
       double progress,
@@ -97,6 +103,7 @@ public class Achievement implements BaseEntity {
         + '}';
   }
 
+  @Override
   public Long getId() {
     return id;
   }
@@ -109,7 +116,7 @@ public class Achievement implements BaseEntity {
     return sessionId;
   }
 
-  public Date getTimestamp() {
+  public Timestamp getTimestamp() {
     return timestamp;
   }
 

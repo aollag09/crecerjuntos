@@ -17,6 +17,15 @@ public class Level {
     return level;
   }
 
+  /**
+   * DB Level starts at 0
+   *
+   * @return
+   */
+  public int getDBLevel() {
+    return level - 1;
+  }
+
   public String getName() {
     return name;
   }

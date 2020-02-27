@@ -1,7 +1,9 @@
 package com.crecerjuntos.front.view;
 
+import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
+import com.crecerjuntos.model.exception.DatabaseException;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
@@ -18,7 +20,11 @@ public class Logout extends VerticalLayout {
   public static final Logger LOGGER = LoggerFactory.getLogger(Login.class);
 
   public Logout() {
-    LoginServices.logout();
+    try {
+      LoginServices.logout();
+    } catch (DatabaseException e) {
+      UI.getCurrent().navigate(DatabaseErrorView.class);
+    }
     buildLogout();
   }
 

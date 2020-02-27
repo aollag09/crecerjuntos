@@ -1,15 +1,20 @@
 package com.crecerjuntos.model;
 
-import com.google.common.base.Objects;
-
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student implements BaseEntity {
+public final class Student implements BaseEntity {
 
-  public static final String DEFAULT_NAME = "Anonymous";
-  public static final String DEFAULT_MAIL = "anonymous@gmail.com";
+  public static final String ANONYMOUS_NAME = "Anonymous";
+  public static final String ANONYMOUS_MAIL = "anonymous@gmail.com";
 
   /** Private generated id */
   @Id
@@ -33,7 +38,7 @@ public class Student implements BaseEntity {
   private Section section;
 
   public Student() {
-    this(DEFAULT_NAME, DEFAULT_MAIL, "", Section.DEFAULT);
+    this(ANONYMOUS_NAME, ANONYMOUS_MAIL, "", Section.DEFAULT);
   }
 
   public Student(String name, String mail, String password, Section section) {
@@ -45,15 +50,15 @@ public class Student implements BaseEntity {
 
   public Student(final String name, final Section section) {
     this.name = name;
-    this.mail = DEFAULT_MAIL;
-    this.password = null;
+    this.mail = ANONYMOUS_MAIL;
+    this.password = "";
     this.section = section;
   }
 
   public Student(final String name) {
     this.name = name;
-    this.mail = DEFAULT_MAIL;
-    this.password = null;
+    this.mail = ANONYMOUS_MAIL;
+    this.password = "";
     this.section = Section.DEFAULT;
   }
 
@@ -62,14 +67,15 @@ public class Student implements BaseEntity {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Student student = (Student) o;
-    return Objects.equal(id, student.id);
+    return getId() != null ? getId().equals(student.getId()) : student.getId() == null;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(id);
+    return getId() != null ? getId().hashCode() : 0;
   }
 
+  @Override
   public Long getId() {
     return id;
   }
@@ -86,8 +92,8 @@ public class Student implements BaseEntity {
     return section;
   }
 
-  public void setSection(Section section){
-    this.section=section;
+  public void setSection(Section section) {
+    this.section = section;
   }
 
   public String getSectionName() {
@@ -98,7 +104,7 @@ public class Student implements BaseEntity {
     return mail;
   }
 
-  public void setMail(String mail){
+  public void setMail(String mail) {
     this.mail = mail;
   }
 
@@ -106,7 +112,7 @@ public class Student implements BaseEntity {
     return password;
   }
 
-  public void setPassword(String password){
+  public void setPassword(String password) {
     this.password = password;
   }
 

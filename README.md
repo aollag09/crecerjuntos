@@ -3,13 +3,14 @@
  A website to help young student learn and interact with a computer
 
 
-# Initialize database (tmp)
-
-* Launch deployment/init-db-dev.sh script (this will start a postgresql docker and initialize the database and necessary tables from scratch)
-** You will need PGPASSWORD environment variable or to prompt it when asked
-
-# Launch UI
+# Launch Project
 
 * Launch ./gradlew appRun
 * Build product with ./gradlew buildProduct and then launch ./start.sh
 
+# Database
+
+* ./deployment/start-database.sh
+* ./deployment/stop-database.sh
+* ./deployment/dump-database.sh
+* ./deployment/performance-test.sh

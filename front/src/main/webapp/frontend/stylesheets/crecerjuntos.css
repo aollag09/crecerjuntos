@@ -179,6 +179,7 @@ html {
 
 .exercises-layout__admin{
     margin: auto;
+    margin-bottom:30px;
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 30px;
@@ -259,7 +260,91 @@ html {
     font-size:x-large;
 }
 
+/** CS First */
+.cs-first-layout__instructions{
+    margin: auto;
+    align-items: center;
+    margin-bottom: 45px;
+    font-size: large;
+}
 
 /** Logout */
 .logout-layout__logout{
+}
+
+/** Home */
+.home-layout__badge{
+    width: 80px;
+    height: 75px;
+    border-radius: 50%;
+    padding: 10px;
+    background: var(--lumo-primary-color);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.home-layout__podium{
+   padding: 20px 40px;
+   margin: 40px;
+   margin-top: 40px;
+   background-image: linear-gradient(var(--lumo-contrast-10pct), transparent);
+   border-radius: var(--lumo-border-radius);
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+   align-items:center;
+}
+
+.home-layout__podiums {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-layout__span-number{
+    font-size: -webkit-xxx-large;
+    color: var(--lumo-base-color);
+}
+
+.home-layout__number-green{
+    background-image: linear-gradient(var(--lumo-success-color), var(--lumo-success-color-50pct));
+}
+
+.home-layout__number-red{
+    background-image: linear-gradient(var(--lumo-error-color), var(--lumo-error-color-50pct));
+}
+
+.home-layout__number-orange{
+    background-image: linear-gradient(rgb(255, 165, 0),rgba(255, 165, 0,0.55));
+}
+
+
+.home-layout__number{
+   padding: 20px 40px;
+   margin: 40px;
+   margin-top: 40px;
+   border-radius: 110px;
+   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+   align-items:center;
+}
+
+.home-layout__numbers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-layout__score{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.home-layout__exercise{
+    font-size: large;
+    font-weight: bold;
+    color: hsla(214, 42%, 18%, 0.72);
+    margin-top: 0px;
+}
+
+.home-layout__level{
+    margin: 5px;
+    font-size: unset;
+    text-align: center;
+    font-style: italic;
+    color: gray;
 }

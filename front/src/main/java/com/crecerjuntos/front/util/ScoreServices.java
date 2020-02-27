@@ -1,6 +1,6 @@
 package com.crecerjuntos.front.util;
 
-import com.crecerjuntos.front.exercise.data.Score;
+import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.server.VaadinSession;
 

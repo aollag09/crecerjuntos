@@ -21,7 +21,7 @@ public enum Section {
   PROCESSO_BASICO("Processo Básico"),
   ACCELERACION("Acceleración");
 
-  private String name;
+  private final String name;
 
   Section(final String name) {
     this.name = name;
@@ -44,5 +44,4 @@ public enum Section {
     }
     return DEFAULT;
   }
-
 }

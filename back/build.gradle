@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'net.ltgt.errorprone' version '0.7.1'
 }
 
 dependencies {
@@ -13,16 +14,32 @@ dependencies {
     compile group: 'org.hibernate', name: 'hibernate-core', version: '5.4.10.Final'
     compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.4.10.Final'
 
-    // postgresql db
+    // PostgreSQL database services
     runtimeOnly group: 'org.postgresql', name: 'postgresql', version: '9.4.1212'
+
+    // Error Prone
+    errorprone 'com.google.errorprone:error_prone_core:2.3.2'
+    // for JDK 8 support
+    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
 
     // test
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.12'
+    testImplementation('junit:junit:4.12') {
+        exclude group: 'org.hamcrest'
+    }
     testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-core', version: '1.3'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-library', version: '1.3'
 
 }
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+task startTestDatabase(type: Exec) {
+    description("Start the test database docker image")
+    workingDir '../deployment'
+    commandLine './start-database.sh',
+            '-d', 'cs_courses_test'
+}
+test.dependsOn startTestDatabase;
