@@ -3,6 +3,7 @@ package com.crecerjuntos.front.view;
 import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.front.util.LoginServices;
+import com.crecerjuntos.front.util.NameSanetizer;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
 import com.crecerjuntos.model.exception.DatabaseException;
@@ -78,6 +79,11 @@ public class Create extends VerticalLayout {
 
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
+    username.addValueChangeListener(
+        event-> {
+            username.setValue( NameSanetizer.sanetize(username.getValue()));
+        }
+    );
     create.add(username);
 
     ComboBox<String> section =

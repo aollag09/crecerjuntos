@@ -14,7 +14,7 @@ targetCompatibility = 1.8
 
 dependencies {
     // Google tools
-    implementation 'com.google.guava:guava:23.0'
+    implementation group: 'com.google.guava', name: 'guava', version: '28.2-android'
     implementation group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
 
     // tuple handling
@@ -22,8 +22,8 @@ dependencies {
 
     // logging
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.2'
-    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.9'
-    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.0.9'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.0'
+    implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.1.11'
 
     // Vaadin extra
     implementation group: 'org.vaadin.olli', name: 'file-download-wrapper', version: '3.0.1'
