@@ -68,6 +68,13 @@ public class Constants {
       public static final String FORM = PREFIX + "form";
     }
 
+    public static class FakeNews {
+      private static final String PREFIX = "word-layout__";
+      public static final String CONTENT = PREFIX + "content";
+      public static final String QUESTION = PREFIX + "question";
+      public static final String ANSWERS = PREFIX + "answers";
+    }
+
     public static class Result {
       private static final String PREFIX = "result-layout__";
       public static final String NO_SCORE = PREFIX + "no-score";
@@ -121,6 +128,7 @@ public class Constants {
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
     public static final String CS_FIRST = "exercise/cs-first";
+    public static final String FAKE_NEWS = "exercise/fakenews";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
@@ -144,6 +152,7 @@ public class Constants {
     public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final String CS_FIRST_NAME = "CSFirst";
+    public static final String FAKE_NEWS_NAME = "Fake News";
   }
 
   public static class Resource {
@@ -308,6 +317,14 @@ public class Constants {
         private static final String PREFIX = "google-search-";
         public static final String TITLE = PREFIX + "title";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
+      }
+
+      public static class FakeNews {
+        private static final String PREFIX = "fake-news-";
+        public static final String NAME = "fake-news";
+        public static final String TITLE = PREFIX + "title";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
       }
 
       public static class Result {
