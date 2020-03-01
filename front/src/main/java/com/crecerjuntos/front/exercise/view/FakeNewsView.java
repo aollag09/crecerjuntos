@@ -9,6 +9,7 @@ import com.crecerjuntos.model.Score;
 import com.vaadin.flow.component.Text;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.Notification.Position;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.radiobutton.RadioButtonGroup;
 import com.vaadin.flow.router.PageTitle;
@@ -90,11 +91,13 @@ public class FakeNewsView extends AbstractExerciseView {
               if (selectedAnswer.equals(actualAnswer)) {
                   success++;
                   Notification notification = new Notification("Buena Repuesta !", 3000);
+                  notification.setPosition(Position.MIDDLE);
                   notification.open();
               } else {
                   mistake++;
                   Notification notification =
-                          new Notification("Qué pena, la repuesta estaba : " + actualAnswer, 3000);
+                          new Notification("Qué pena, la repuesta es : " + actualAnswer, 3000);
+                  notification.setPosition(Position.MIDDLE);
                   notification.open();
               }
               next();
