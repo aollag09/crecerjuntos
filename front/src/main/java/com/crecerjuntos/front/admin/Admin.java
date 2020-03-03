@@ -58,7 +58,10 @@ public class Admin extends VerticalLayout {
         .asSingleSelect()
         .addValueChangeListener(
             e -> {
-              studentDetails.showStudentsDetails(e.getValue());
+              if (e.getValue() != null) {
+                studentDetails.setVisible(true);
+                studentDetails.showStudentsDetails(e.getValue());
+              } else studentDetails.setVisible(false);
             });
 
     // Listen changes made by the editor, refresh data from backend
