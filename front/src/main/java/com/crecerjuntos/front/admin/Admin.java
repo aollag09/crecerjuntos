@@ -14,6 +14,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
@@ -36,7 +37,7 @@ public class Admin extends VerticalLayout {
   private IAuthoringServices authoringService;
   private StudentDetails studentDetails;
   private ComboBox<String> sectionFilter;
-  private Grid<Student> students;
+  private Grid<Student> studentGrid;
 
   public Admin() {
     studentAccess = new StudentService();
@@ -49,11 +50,11 @@ public class Admin extends VerticalLayout {
     sectionFilter = buildSectionFilter();
 
     // Build students
-    students = buildStudents();
+    studentGrid = buildStudents();
     listStudents();
 
     // Connect selected student to editor or hide if none is selected
-    students
+    studentGrid
         .asSingleSelect()
         .addValueChangeListener(
             e -> {
@@ -71,8 +72,17 @@ public class Admin extends VerticalLayout {
 
     add(new H2("Student List"));
     add(sectionFilter);
-    add(students);
-    add(studentDetails);
+
+    HorizontalLayout layout = new HorizontalLayout();
+    studentGrid.setMinWidth("800px");
+    studentGrid.setMinHeight("800px");
+    studentGrid.setHeightFull();
+    layout.add(studentGrid);
+
+    studentDetails.setSizeFull();
+    layout.add(studentDetails);
+
+    add(layout);
   }
 
   private ComboBox<String> buildSectionFilter() {
@@ -80,7 +90,7 @@ public class Admin extends VerticalLayout {
         new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
     List<String> values = new ArrayList<>(Section.list());
     cb.setDataProvider(new ListDataProvider<>(values));
-    cb.setValue(Section.NOVENO.getName());
+    cb.setValue(Section.DEFAULT.getName());
     cb.addValueChangeListener(
         event -> {
           listStudents();
@@ -90,9 +100,8 @@ public class Admin extends VerticalLayout {
 
   private Grid<Student> buildStudents() {
     Grid<Student> grid = new Grid<>();
-    grid.addColumn(Student::getMail).setHeader("Mail");
-    grid.addColumn(Student::getName).setHeader("Name");
-    grid.addColumn(Student::getSectionName).setHeader("Section");
+    grid.addColumn(Student::getMail).setHeader("Mail").setAutoWidth(true);
+    grid.addColumn(Student::getName).setHeader("Name").setAutoWidth(true);
 
     grid.setDetailsVisibleOnClick(true);
     grid.setColumnReorderingAllowed(true);
@@ -103,6 +112,6 @@ public class Admin extends VerticalLayout {
   private void listStudents() {
     List<Student> studentList =
         studentAccess.getStudents(Section.fromString(sectionFilter.getValue()));
-    students.setItems(studentList);
+    studentGrid.setItems(studentList);
   }
 }
