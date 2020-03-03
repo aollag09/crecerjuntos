@@ -50,7 +50,7 @@ public class LoginServices {
     VaadinSession session = UI.getCurrent().getSession();
     Student student = null;
     if (Objects.nonNull(session)
-            && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
+        && Objects.nonNull(session.getAttribute(Constants.Session.STUDENT)))
       student = (Student) session.getAttribute(Constants.Session.STUDENT);
 
     return student;

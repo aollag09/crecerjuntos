@@ -176,7 +176,7 @@ public class Constants {
       }
 
       public static class Login {
-          private static final String PREFIX = "login-";
+        private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";

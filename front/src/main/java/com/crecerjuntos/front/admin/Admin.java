@@ -32,17 +32,15 @@ import java.util.List;
 @PageTitle(Constants.Title.ADMIN)
 public class Admin extends VerticalLayout {
 
-  private IAchievementAccess achievementAccess;
   private IStudentAccess studentAccess;
-  private IAuthoringServices authoringService;
   private StudentDetails studentDetails;
   private ComboBox<String> sectionFilter;
   private Grid<Student> studentGrid;
 
   public Admin() {
     studentAccess = new StudentService();
-    authoringService = new AuthoringService();
-    achievementAccess = new AchievementService();
+    IAuthoringServices authoringService = new AuthoringService();
+    IAchievementAccess achievementAccess = new AchievementService();
 
     studentDetails = new StudentDetails(achievementAccess, studentAccess, authoringService);
 
