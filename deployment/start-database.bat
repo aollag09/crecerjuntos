@@ -64,5 +64,5 @@ netstat /o /a | find /i "listening" | find ":%port%" >nul 2>nul &&(
 )
 
 :: Check database was created and if not, create it
-docker exec "%name%" psql -U postgres -tc ""CREATE DATABASE %dbname%;""
-docker exec "$name" psql -U postgres -tc "grant all privileges on database $dbname to postgres;"
+docker exec "%name%" psql -U postgres -tc ""CREATE DATABASE %dbname%;"" >nul 2>nul
+docker exec "%name%" psql -U postgres -tc ""grant all privileges on database %dbname% to postgres;""
