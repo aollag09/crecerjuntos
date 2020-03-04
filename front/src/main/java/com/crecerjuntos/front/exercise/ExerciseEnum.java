@@ -2,6 +2,7 @@ package com.crecerjuntos.front.exercise;
 
 import com.crecerjuntos.front.exercise.data.CSFirst;
 import com.crecerjuntos.front.exercise.data.Dactylographie;
+import com.crecerjuntos.front.exercise.data.FakeNews;
 import com.crecerjuntos.front.exercise.data.Word;
 
 import java.util.Arrays;
@@ -12,7 +13,8 @@ import java.util.stream.Collectors;
 public enum ExerciseEnum {
   DACTYLOGRAPHIE(new Dactylographie()),
   WORD(new Word()),
-  CS_FIRST(new CSFirst());
+  CS_FIRST(new CSFirst()),
+  FAKE_NEWS(new FakeNews());
   /*EXCEL(new Excel()),
   POWER_POINT(new PowerPoint()),
   GOOGLE_SEARCH(new GoogleSearch());*/
