@@ -1,13 +1,8 @@
 package com.crecerjuntos.front.test.exercise;
 
-import com.crecerjuntos.front.exercise.Exercise;
-import com.crecerjuntos.front.exercise.ExerciseEnum;
 import com.crecerjuntos.front.util.NameSanetizer;
-
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.List;
 
 public class NameSanetizerTest {
 
@@ -21,6 +16,4 @@ public class NameSanetizerTest {
     Assert.assertEquals("Michael Jordan", NameSanetizer.sanetize("michael jordan  "));
     Assert.assertEquals("Michael Jordan", NameSanetizer.sanetize("MICHAEL JORDAN"));
   }
-
-
 }

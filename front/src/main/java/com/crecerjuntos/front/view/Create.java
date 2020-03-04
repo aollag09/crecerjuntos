@@ -80,10 +80,9 @@ public class Create extends VerticalLayout {
     TextField username = new TextField(getTranslation(Constants.Resource.Strings.Login.USERNAME));
     username.addClassName(Constants.ClassStyle.Login.FORM);
     username.addValueChangeListener(
-        event-> {
-            username.setValue( NameSanetizer.sanetize(username.getValue()));
-        }
-    );
+        event -> {
+          username.setValue(NameSanetizer.sanetize(username.getValue()));
+        });
     create.add(username);
 
     ComboBox<String> section =
