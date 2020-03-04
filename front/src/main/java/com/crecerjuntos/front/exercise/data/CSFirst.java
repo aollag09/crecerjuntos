@@ -27,6 +27,7 @@ public class CSFirst extends Exercise {
     levels.add(new Level(1, Constants.Resource.Strings.CSFirst.LVL1_NAME));
     levels.add(new Level(2, Constants.Resource.Strings.CSFirst.LVL2_NAME));
     levels.add(new Level(3, Constants.Resource.Strings.CSFirst.LVL3_NAME));
+    levels.add(new Level(4, Constants.Resource.Strings.CSFirst.LVL4_NAME));
     return levels;
   }
 
@@ -38,7 +39,8 @@ public class CSFirst extends Exercise {
   public String getLink(final int level) throws NonExistingLevel {
     if (level == 0) return "https://scratch.mit.edu/projects/340739176/editor";
     if (level == 1) return "https://scratch.mit.edu/projects/367559553/editor";
-    if (level == 2) return "https://scratch.mit.edu/projects/368215391/editor/";
+    if (level == 2) return "https://scratch.mit.edu/projects/373041502/editor";
+    if (level == 3) return "https://scratch.mit.edu/projects/368215391/editor";
     else throw new NonExistingLevel(name, level);
   }
 
@@ -48,15 +50,9 @@ public class CSFirst extends Exercise {
     if (level == 1)
       return "https://docs.google.com/presentation/d/1QnIA5wQXVDSboyBZ8A3gHGnJdfhWMJGP5h3NrimJ74o/edit?usp=sharing";
     if (level == 2)
-      // FIXME update the power point link when it's done !
       return "https://docs.google.com/presentation/d/1QnIA5wQXVDSboyBZ8A3gHGnJdfhWMJGP5h3NrimJ74o/edit?usp=sharing";
-    else throw new NonExistingLevel(name, level);
-  }
-
-  public String getCSFirstExercise(int level) throws NonExistingLevel {
-    if (level == 0) return Constants.Resource.Strings.CSFirst.LVL1_NAME;
-    if (level == 1) return Constants.Resource.Strings.CSFirst.LVL2_NAME;
-    if (level == 2) return Constants.Resource.Strings.CSFirst.LVL3_NAME;
+    if (level == 3)
+      return "https://docs.google.com/presentation/d/1hYwKbinjNR9wDDPhv6zzfyZihTXqfVPgbpZD1ywPE1U/edit?usp=sharing";
     else throw new NonExistingLevel(name, level);
   }
 

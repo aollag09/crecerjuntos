@@ -5,11 +5,11 @@ import com.crecerjuntos.model.base.IAchievementAccess;
 import com.crecerjuntos.model.base.IAuthoringServices;
 import com.crecerjuntos.model.base.IStudentAccess;
 import com.vaadin.flow.component.KeyNotifier;
-import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class StudentDetails extends HorizontalLayout implements KeyNotifier {
+public class StudentDetails extends VerticalLayout implements KeyNotifier {
 
   private Logger logger = LoggerFactory.getLogger(StudentDetails.class);
   private final IAuthoringServices authoringService;

@@ -1,6 +1,5 @@
 package com.crecerjuntos.front.admin;
 
-import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
@@ -14,6 +13,7 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.html.H2;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.PageTitle;
@@ -26,22 +26,20 @@ import java.util.List;
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
+@Route(value = Constants.Route.ADMIN, layout = AdminAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle(Constants.Title.ADMIN)
-public class Admin extends VerticalLayout {
+public class AdminStudents extends VerticalLayout {
 
-  private IAchievementAccess achievementAccess;
   private IStudentAccess studentAccess;
-  private IAuthoringServices authoringService;
   private StudentDetails studentDetails;
   private ComboBox<String> sectionFilter;
-  private Grid<Student> students;
+  private Grid<Student> studentGrid;
 
-  public Admin() {
+  public AdminStudents() {
     studentAccess = new StudentService();
-    authoringService = new AuthoringService();
-    achievementAccess = new AchievementService();
+    IAuthoringServices authoringService = new AuthoringService();
+    IAchievementAccess achievementAccess = new AchievementService();
 
     studentDetails = new StudentDetails(achievementAccess, studentAccess, authoringService);
 
@@ -49,15 +47,18 @@ public class Admin extends VerticalLayout {
     sectionFilter = buildSectionFilter();
 
     // Build students
-    students = buildStudents();
+    studentGrid = buildStudents();
     listStudents();
 
     // Connect selected student to editor or hide if none is selected
-    students
+    studentGrid
         .asSingleSelect()
         .addValueChangeListener(
             e -> {
-              studentDetails.showStudentsDetails(e.getValue());
+              if (e.getValue() != null) {
+                studentDetails.setVisible(true);
+                studentDetails.showStudentsDetails(e.getValue());
+              } else studentDetails.setVisible(false);
             });
 
     // Listen changes made by the editor, refresh data from backend
@@ -71,8 +72,17 @@ public class Admin extends VerticalLayout {
 
     add(new H2("Student List"));
     add(sectionFilter);
-    add(students);
-    add(studentDetails);
+
+    HorizontalLayout layout = new HorizontalLayout();
+    studentGrid.setMinWidth("800px");
+    studentGrid.setMinHeight("800px");
+    studentGrid.setHeightFull();
+    layout.add(studentGrid);
+
+    studentDetails.setSizeFull();
+    layout.add(studentDetails);
+
+    add(layout);
   }
 
   private ComboBox<String> buildSectionFilter() {
@@ -80,7 +90,7 @@ public class Admin extends VerticalLayout {
         new ComboBox<>(getTranslation(Constants.Resource.Strings.Admin.SECTION_FILTER));
     List<String> values = new ArrayList<>(Section.list());
     cb.setDataProvider(new ListDataProvider<>(values));
-    cb.setValue(Section.NOVENO.getName());
+    cb.setValue(Section.DEFAULT.getName());
     cb.addValueChangeListener(
         event -> {
           listStudents();
@@ -90,9 +100,8 @@ public class Admin extends VerticalLayout {
 
   private Grid<Student> buildStudents() {
     Grid<Student> grid = new Grid<>();
-    grid.addColumn(Student::getMail).setHeader("Mail");
-    grid.addColumn(Student::getName).setHeader("Name");
-    grid.addColumn(Student::getSectionName).setHeader("Section");
+    grid.addColumn(Student::getMail).setHeader("Mail").setAutoWidth(true);
+    grid.addColumn(Student::getName).setHeader("Name").setAutoWidth(true);
 
     grid.setDetailsVisibleOnClick(true);
     grid.setColumnReorderingAllowed(true);
@@ -103,6 +112,6 @@ public class Admin extends VerticalLayout {
   private void listStudents() {
     List<Student> studentList =
         studentAccess.getStudents(Section.fromString(sectionFilter.getValue()));
-    students.setItems(studentList);
+    studentGrid.setItems(studentList);
   }
 }

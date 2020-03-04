@@ -68,6 +68,13 @@ public class Constants {
       public static final String FORM = PREFIX + "form";
     }
 
+    public static class FakeNews {
+      private static final String PREFIX = "fake-news-layout__";
+      public static final String CONTENT = PREFIX + "content";
+      public static final String QUESTION = PREFIX + "question";
+      public static final String ANSWERS = PREFIX + "answers";
+    }
+
     public static class Result {
       private static final String PREFIX = "result-layout__";
       public static final String NO_SCORE = PREFIX + "no-score";
@@ -113,6 +120,7 @@ public class Constants {
     public static final String EXERCISES = "exercises";
     public static final String HOME = "home";
     public static final String ADMIN = "admin";
+    public static final String ADMIN_RESULTS = "admin-results";
     public static final String LOGIN = "";
     public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
@@ -121,6 +129,7 @@ public class Constants {
     public static final String EXCEL = "exercise/excel";
     public static final String POWER_POINT = "exercise/power-point";
     public static final String CS_FIRST = "exercise/cs-first";
+    public static final String FAKE_NEWS = "exercise/fakenews";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
@@ -144,6 +153,7 @@ public class Constants {
     public static final String GOOGLE_SEARCH_NAME = "GoogleSearch";
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final String CS_FIRST_NAME = "CSFirst";
+    public static final String FAKE_NEWS_NAME = "Fake News";
   }
 
   public static class Resource {
@@ -173,10 +183,12 @@ public class Constants {
         public static final String PREFIX = "admin-";
         public static final String BACK = PREFIX + "back-to";
         public static final String SECTION_FILTER = PREFIX + "section-filter";
+        public static final String USER = PREFIX + "user";
+        public static final String RESULT = PREFIX + "result";
       }
 
       public static class Login {
-          private static final String PREFIX = "login-";
+        private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
@@ -192,6 +204,7 @@ public class Constants {
         public static final String EMPTY_MAIL = PREFIX + "error-empty-email";
         public static final String EMPTY_PASSWORD = PREFIX + "error-empty-password";
         public static final String NOT_SAME_PASSWORDS = PREFIX + "error-not-same-passwords";
+        public static final String NOT_LOGIN = PREFIX + "error-not-login";
         public static final String WRONG_PASSWORD = PREFIX + "error-wrong-password";
       }
 
@@ -310,6 +323,14 @@ public class Constants {
         public static final String INSTRUCTIONS = PREFIX + "instructions";
       }
 
+      public static class FakeNews {
+        private static final String PREFIX = "fake-news-";
+        public static final String NAME = "fake-news";
+        public static final String TITLE = PREFIX + "title";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+      }
+
       public static class Result {
         private static final String PREFIX = "result-";
         public static final String NO_SCORE = PREFIX + "no-score";
@@ -333,6 +354,7 @@ public class Constants {
         public static final String LVL1_NAME = PREFIX + "level1-name";
         public static final String LVL2_NAME = PREFIX + "level2-name";
         public static final String LVL3_NAME = PREFIX + "level3-name";
+        public static final String LVL4_NAME = PREFIX + "level4-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
         public static final String INSTRUCTION = PREFIX + "instruction";
         public static final String GO = PREFIX + "go";
