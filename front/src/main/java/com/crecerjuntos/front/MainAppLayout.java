@@ -1,19 +1,12 @@
 package com.crecerjuntos.front;
 
-import com.crecerjuntos.front.exercise.view.error.DatabaseErrorView;
 import com.crecerjuntos.front.util.Constants;
-import com.crecerjuntos.front.util.LoginServices;
 import com.crecerjuntos.front.view.Dashboard;
 import com.crecerjuntos.front.view.Exercises;
 import com.crecerjuntos.front.view.Home;
-import com.crecerjuntos.model.Student;
-import com.crecerjuntos.model.exception.DatabaseException;
-import com.vaadin.flow.component.Text;
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.dependency.StyleSheet;
 import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.tabs.Tab;
-import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.server.VaadinServlet;
 
 import java.util.ArrayList;
@@ -32,6 +25,7 @@ public class MainAppLayout extends CommonAppLayout {
     super();
   }
 
+  @Override
   protected Tab[] buildTabs() {
     final int nbTabs = 4;
     final List<Tab> tabs = new ArrayList<>(nbTabs);
@@ -55,6 +49,4 @@ public class MainAppLayout extends CommonAppLayout {
     tabs.add(buildUserName());
     return tabs.toArray(new Tab[nbTabs]);
   }
-
-
 }

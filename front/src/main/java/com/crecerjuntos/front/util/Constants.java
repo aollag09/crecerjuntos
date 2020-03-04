@@ -113,6 +113,7 @@ public class Constants {
     public static final String EXERCISES = "exercises";
     public static final String HOME = "home";
     public static final String ADMIN = "admin";
+    public static final String ADMIN_RESULTS = "admin-results";
     public static final String LOGIN = "";
     public static final String CREATE = "create";
     public static final String DACTYLOGRAPHIE = "exercise/dactylographie";
@@ -174,10 +175,11 @@ public class Constants {
         public static final String BACK = PREFIX + "back-to";
         public static final String SECTION_FILTER = PREFIX + "section-filter";
         public static final String USER = PREFIX + "user";
+        public static final String RESULT = PREFIX + "result";
       }
 
       public static class Login {
-          private static final String PREFIX = "login-";
+        private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";

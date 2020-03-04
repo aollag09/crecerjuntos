@@ -27,9 +27,9 @@ public class AdminAppLayout extends CommonAppLayout {
             AdminStudents.class));
     tabs.add(
         buildTab(
-            VaadinIcon.CLOCK,
-            getTranslation(Constants.Resource.Strings.Main.DASHBOARD),
-            Dashboard.class));
+            VaadinIcon.DIPLOMA,
+            getTranslation(Constants.Resource.Strings.Admin.RESULT),
+            AdminResults.class));
 
     final String contextPath = VaadinServlet.getCurrent().getServletContext().getContextPath();
     tabs.add(buildLogOut(contextPath));
