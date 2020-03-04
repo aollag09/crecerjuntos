@@ -461,7 +461,6 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 547	Dactylographie	1	89	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:49:04.431	519	100
 548	Dactylographie	3	0	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 08:49:07.829	429	0
 549	Dactylographie	1	82	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:49:13.838	492	100
-550	Dactylographie	0	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:49:17.845	535	0
 551	Dactylographie	1	76	node04azmexg67ekb1vn88ewwauesz41	2020-02-18 08:49:20.432	468	100
 552	Dactylographie	1	28	node0x1dqqhdpq9rb11br051skhetu19	2020-02-18 08:49:20.689	478	100
 553	Dactylographie	2	0	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:49:20.986	519	0
@@ -469,20 +468,16 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 555	Dactylographie	2	0	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:49:25.981	492	0
 556	Dactylographie	3	100	node017kh6jlcpq6gf1gw3d3qa7fozp47	2020-02-18 08:49:46.426	428	100
 557	Dactylographie	2	0	node0x1dqqhdpq9rb11br051skhetu19	2020-02-18 08:49:47.893	478	0
-558	Dactylographie	0	94	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:49:49.969	535	100
 559	Dactylographie	4	0	node017kh6jlcpq6gf1gw3d3qa7fozp47	2020-02-18 08:49:59.789	428	0
 560	Dactylographie	3	99	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 08:50:01.779	429	100
-561	Dactylographie	1	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:50:05.687	535	0
 562	Dactylographie	2	0	node04azmexg67ekb1vn88ewwauesz41	2020-02-18 08:50:12.044	468	0
 563	Dactylographie	5	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 08:50:19.265	523	0
 564	Dactylographie	4	0	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 08:50:20.644	429	0
 565	Dactylographie	2	16	node0y43kylt96djv1tstbyyuqzb3a43	2020-02-18 08:50:21.91	476	100
 566	Dactylographie	2	90	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:50:28.523	519	100
-567	Dactylographie	1	89	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:50:37.058	535	100
 568	Dactylographie	0	0	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:50:42.071	519	0
 569	Dactylographie	3	0	node016efjjd64qo581l91iqgrs6aqx8	2020-02-18 08:50:42.935	432	100
 570	Dactylographie	3	0	node0y43kylt96djv1tstbyyuqzb3a43	2020-02-18 08:50:44.351	476	0
-571	Dactylographie	2	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:50:48.535	535	0
 573	Dactylographie	0	99	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:51:10.036	519	100
 574	Dactylographie	0	0	node03rxqaztt9q651rul48q7at8yp12	2020-02-18 08:51:10.288	485	100
 575	Dactylographie	1	0	node03rxqaztt9q651rul48q7at8yp12	2020-02-18 08:51:23.204	485	0
@@ -496,11 +491,9 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 583	Dactylographie	2	4	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:51:47.291	492	100
 584	Dactylographie	3	0	node0x1dqqhdpq9rb11br051skhetu19	2020-02-18 08:51:49.731	478	0
 585	Dactylographie	5	0	node017kh6jlcpq6gf1gw3d3qa7fozp47	2020-02-18 08:51:55.163	428	0
-586	Dactylographie	2	90	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:51:56.427	535	100
 587	Dactylographie	0	86	node016efjjd64qo581l91iqgrs6aqx8	2020-02-18 08:52:00.485	432	100
 588	Dactylographie	2	0	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:52:02.054	492	0
 589	Dactylographie	3	0	node0wkonknr6qmwa1kyfpythhggzu37	2020-02-18 08:52:19.051	455	100
-590	Dactylographie	3	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:52:19.751	535	0
 591	Dactylographie	2	26	node04azmexg67ekb1vn88ewwauesz41	2020-02-18 08:52:24.321	468	100
 592	Dactylographie	6	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 08:52:27.14	523	0
 593	Dactylographie	2	0	node016efjjd64qo581l91iqgrs6aqx8	2020-02-18 08:52:27.217	432	0
@@ -519,11 +512,9 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 610	Dactylographie	0	0	node010pvg2dxrn7u2yah0evwqtwhz15	2020-02-18 08:53:39.636	602	0
 611	Dactylographie	4	0	node016g0fxev11z1c12ctqqop56e8s33	2020-02-18 08:53:50.798	464	0
 612	Dactylographie	0	61	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 08:53:54.005	523	100
-613	Dactylographie	3	66	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:53:56.771	535	100
 615	Dactylographie	2	23	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:54:00.336	492	100
 616	Dactylographie	1	82	node0vwjvne73sqm01j69qg6357sr438	2020-02-18 08:54:08.121	597	100
 617	Dactylographie	0	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 08:54:09.045	523	0
-618	Dactylographie	4	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:54:11.149	535	0
 619	Dactylographie	2	0	node017xmkf1uagvw01u1160eg5c15a2	2020-02-18 08:54:11.494	492	0
 620	Dactylographie	2	54	node016efjjd64qo581l91iqgrs6aqx8	2020-02-18 08:54:13.44	432	100
 621	Dactylographie	1	0	node0vwjvne73sqm01j69qg6357sr438	2020-02-18 08:54:19.679	597	0
@@ -546,14 +537,12 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 638	Dactylographie	1	92	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 08:55:26.77	523	100
 639	Dactylographie	3	0	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:55:32.239	519	100
 640	Dactylographie	3	0	node0wkonknr6qmwa1kyfpythhggzu37	2020-02-18 08:55:42.633	455	100
-641	Dactylographie	4	59	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:55:45.034	535	100
 642	Dactylographie	1	0	node01izwtb9dv72rf1kgoj5gspqaez3	2020-02-18 08:55:45.369	614	0
 643	Dactylographie	4	0	node01ce8w7ms15w2q3s21kr5kh3au17	2020-02-18 08:55:45.983	519	0
 644	Dactylographie	2	11	node04azmexg67ekb1vn88ewwauesz41	2020-02-18 08:55:48.51	468	100
 645	Dactylographie	0	0	node02w8hw3g13vy61ij7rq7tduaue44	2020-02-18 08:55:49.406	601	0
 646	Dactylographie	3	0	node0y43kylt96djv1tstbyyuqzb3a43	2020-02-18 08:55:51.533	476	100
 648	Dactylographie	0	95	node016g0fxev11z1c12ctqqop56e8s33	2020-02-18 08:55:53.255	464	100
-649	Dactylographie	5	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 08:55:57.039	535	0
 650	Dactylographie	1	69	node010pvg2dxrn7u2yah0evwqtwhz15	2020-02-18 08:55:57.219	602	100
 651	Dactylographie	3	0	node010pvg2dxrn7u2yah0evwqtwhz15	2020-02-18 08:56:13.579	602	0
 652	Dactylographie	1	0	node016g0fxev11z1c12ctqqop56e8s33	2020-02-18 08:56:22.91	464	0
@@ -630,9 +619,7 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 726	Dactylographie	2	52	node010pvg2dxrn7u2yah0evwqtwhz15	2020-02-18 09:03:25.861	685	100
 727	Dactylographie	6	0	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 09:03:26.943	429	0
 728	Dactylographie	2	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 09:03:26.964	710	0
-729	Dactylographie	5	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 09:03:30.582	535	100
 730	Dactylographie	0	72	node0vwjvne73sqm01j69qg6357sr438	2020-02-18 09:03:44.508	716	100
-731	Dactylographie	6	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 09:03:46.273	535	0
 732	Dactylographie	1	0	node0vwjvne73sqm01j69qg6357sr438	2020-02-18 09:04:12.084	716	0
 733	Dactylographie	4	97	node017kh6jlcpq6gf1gw3d3qa7fozp47	2020-02-18 09:04:15.056	431	100
 735	Dactylographie	5	0	node017kh6jlcpq6gf1gw3d3qa7fozp47	2020-02-18 09:04:24.226	431	0
@@ -719,7 +706,6 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 821	Dactylographie	3	0	node01vgaflgbxvr8o1brkm1cb6kh1q50	2020-02-18 09:11:46.169	779	0
 823	Dactylographie	4	88	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 09:11:59.403	450	100
 824	Dactylographie	5	0	node0nsprtk8ah26q1juragevudqyj16	2020-02-18 09:12:10.573	450	0
-825	Dactylographie	6	0	node012pr0nveno5cf1avesfk4gy58z40	2020-02-18 09:12:41.031	535	100
 826	Dactylographie	4	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 09:12:57.652	710	100
 827	Dactylographie	3	0	node0y43kylt96djv1tstbyyuqzb3a43	2020-02-18 09:13:03.682	742	100
 828	Dactylographie	5	0	node01xzh149sr13vbcgaarcqjj2e026	2020-02-18 09:13:14.513	710	0
@@ -767,8 +753,6 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 872	Dactylographie	3	0	node018pgtrp573ayc16ufn1w99o2vz179	2020-02-19 08:30:52.664	181	0
 873	CSFirst	0	0	node06etw98pyl6qt1btavts388mso183	2020-02-19 08:31:17.416	410	0
 874	CSFirst	2	0	node018pgtrp573ayc16ufn1w99o2vz179	2020-02-19 08:31:52.759	181	0
-876	Dactylographie	0	0	node055mm8xe066m4wj7iiwenjoev54	2020-02-26 10:45:39.859	875	0
-877	Dactylographie	0	96	node055mm8xe066m4wj7iiwenjoev54	2020-02-26 10:46:06.217	875	100
 878	Dactylographie	1	0	node01p3d83m73mt5blk65gupwe10915	2020-02-26 11:17:57.997	4	0
 879	Dactylographie	1	67	node01p3d83m73mt5blk65gupwe10915	2020-02-26 11:18:44.57	4	100
 881	Dactylographie	0	0	node0gx6vl9qpruwp1h4pe49h0vki122	2020-02-26 11:22:33.575	880	0
@@ -1015,6 +999,543 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 1159	Dactylographie	0	0	node0x9467kuhprvr122d6u5z9gbrz33	2020-02-26 12:11:33.196	1115	0
 1160	Dactylographie	2	0	node0lcw0x8wuhjld19yajjw1ppbhp11	2020-02-26 12:11:41.91	1139	0
 1163	Dactylographie	0	65	node0x9467kuhprvr122d6u5z9gbrz33	2020-02-26 12:12:34.419	1115	100
+1166	Word	1	0	node01iuumteqaepctgdg50rzhsi7o0	2020-03-03 12:06:35.457	4	0
+1167	Fake News	0	0	node01iuumteqaepctgdg50rzhsi7o0	2020-03-03 12:09:31.962	4	0
+1168	Fake News	0	100	node01iuumteqaepctgdg50rzhsi7o0	2020-03-03 12:10:10.134	4	100
+1169	Fake News	0	0	node01ehxi0c6597e2cw4a54elwv3p0	2020-03-04 07:58:19.559	4	0
+1170	Fake News	0	50	node01ehxi0c6597e2cw4a54elwv3p0	2020-03-04 07:58:24.977	4	100
+1171	Word	1	0	node01977ljz3it7lxz2o3sd6s9wv81	2020-03-04 08:00:24.604	1165	0
+1172	Word	1	0	node017sixk9zftcm4zdgux1t64d1h6	2020-03-04 08:27:06.368	1165	0
+1173	Word	1	0	node0124x8n6ufs28r1li6mrdnb5dqw14	2020-03-04 08:27:20.842	1165	0
+1174	Word	1	0	node01ol5ia27lgij3qkx06ozuotkf20	2020-03-04 08:27:27.258	1165	0
+1175	Word	1	0	node01eqyofv885bpx1x56g6e22b0lm13	2020-03-04 08:27:37.27	1165	0
+1176	Word	1	0	node01ouiqnqzl3yyer15dyeh4wldj18	2020-03-04 08:27:44.734	1165	0
+1177	Word	1	0	node01rs0ajzv54i617n210dtty4ov16	2020-03-04 08:27:49.939	1165	0
+1178	Word	1	0	node018a08fynny4dtbhio0sucmew310	2020-03-04 08:28:08.193	1165	0
+1179	Word	1	0	node09vwpmygzp856dindtztgsil319	2020-03-04 08:28:21.024	1165	0
+1180	Word	1	0	node0lj4qk166sxn6nffi8ds0jho423	2020-03-04 08:28:23.789	1165	0
+1181	Word	1	0	node06a1mv4ck80wn1wgnyml0053ui4	2020-03-04 08:28:30.039	1165	0
+1182	Word	1	0	node0ow7pb8lgvdsj1ihh4l8df2i6o21	2020-03-04 08:29:05.321	1165	0
+1183	Word	1	0	node01gcq7101i158drp26kfwqyej611	2020-03-04 08:29:08.146	223	0
+1184	Word	1	0	node0x1ljp3l1ydod1m9qg40oyif97	2020-03-04 08:29:38.748	1165	0
+1185	Word	1	0	node01gcq7101i158drp26kfwqyej611	2020-03-04 08:29:57.92	223	0
+1187	Word	1	0	node01lxn41qlbktbv1ns8lup8vikha26	2020-03-04 08:30:20.086	1165	0
+1188	Word	1	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 08:30:38.062	1165	0
+1189	Word	1	0	node0rssppoinwa41f0y0oni4gqbm2	2020-03-04 08:30:38.707	1186	0
+1190	Word	1	0	node0p0xu47a3fj8y83ckstky2a4c29	2020-03-04 08:30:40.17	1165	0
+1191	Word	1	0	node016fee7fpwjawgq37cvktl1p4928	2020-03-04 08:30:43.154	1165	0
+1192	Word	1	0	node01ehxi0c6597e2cw4a54elwv3p0	2020-03-04 08:30:52.337	167	0
+1193	Word	1	0	node01679arcv07kpigwz96d9vkwmf12	2020-03-04 08:31:10.418	1165	0
+1194	Word	1	0	node0v0pxqz0zhzblokoacij16xqw15	2020-03-04 08:32:40.869	171	0
+1195	Word	1	0	node01dr5no4fp1el1wf7r5qkpvop48	2020-03-04 08:32:51.904	1165	0
+1196	Word	1	0	node02zih3wv0n678cnxwdqvkqmty31	2020-03-04 08:32:58.62	1165	0
+1197	Word	1	0	node01d23vdtkr8bkf1egbc494sozvl32	2020-03-04 08:37:59.724	211	0
+1198	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 11:23:42.785	1042	0
+1199	Dactylographie	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:24:37.983	1091	0
+1200	Dactylographie	0	100	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:25:04.907	1091	100
+1201	Dactylographie	1	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:25:25.559	1091	0
+1202	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:25:37.884	1123	0
+1203	Fake News	0	0	node02q8w7nc42ylck4ihcmeaz6dm89	2020-03-04 11:25:39.514	1165	0
+1204	Dactylographie	1	62	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:26:17.49	1091	100
+1205	Dactylographie	1	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:26:25.51	1091	0
+1206	Dactylographie	1	100	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:26:45.209	1091	100
+1207	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:26:47.591	1123	0
+1208	Dactylographie	2	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:26:57.196	1091	0
+1210	Fake News	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 11:27:28.201	916	0
+1211	Fake News	0	0	node0l7grv6iwdzbmwvdbf68sterp81	2020-03-04 11:27:39.748	1209	0
+1212	Dactylographie	2	86	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:28:08.861	1091	100
+1213	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:28:35.889	1162	0
+1214	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 11:28:45.21	1139	0
+1216	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 11:29:18.332	1091	0
+1217	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:29:28.091	1107	0
+1218	Fake News	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 11:29:41.087	916	0
+1219	Fake News	0	0	node018o1rv2dpt17p2i64qinqlqcv79	2020-03-04 11:29:47.955	1122	0
+1220	Fake News	0	0	node02q8w7nc42ylck4ihcmeaz6dm89	2020-03-04 11:30:04.045	1165	0
+1221	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:30:05.004	1045	0
+1222	Dactylographie	5	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:30:14.964	897	0
+1223	Fake News	0	0	node012ocrvdzqjkd61dtp9j8hpu4yx61	2020-03-04 11:30:27.931	1046	0
+1224	CSFirst	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:30:33.973	1045	0
+1227	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:31:23.807	897	0
+1228	Dactylographie	0	0	node08ph3khs9wj4d1jlfsia0s8j9a58	2020-03-04 11:31:29.29	1225	0
+1229	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 11:31:31.45	1100	0
+1230	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:31:36.985	897	100
+1231	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:31:38.092	1045	0
+1232	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:31:42.396	914	0
+1233	Fake News	0	0	node0kjpuy3eqleket9cra9202smc90	2020-03-04 11:31:47.827	1226	0
+1234	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:32:00.805	897	0
+1235	Dactylographie	0	92	node08ph3khs9wj4d1jlfsia0s8j9a58	2020-03-04 11:32:03.797	1225	100
+1236	Dactylographie	1	0	node08ph3khs9wj4d1jlfsia0s8j9a58	2020-03-04 11:32:14.46	1225	0
+1237	Dactylographie	1	93	node08ph3khs9wj4d1jlfsia0s8j9a58	2020-03-04 11:32:41.366	1225	100
+1238	Fake News	0	30	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:32:59.591	897	100
+1239	Dactylographie	2	0	node0wgwa3fvn1ele1fochwnxzi37591	2020-03-04 11:33:01.373	1113	0
+1240	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:33:05.793	1164	0
+1241	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:33:54.617	897	0
+1242	Fake News	0	30	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:34:08.953	897	100
+1243	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:34:25.878	1165	0
+1244	Fake News	0	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 11:34:33.542	1215	0
+1245	Dactylographie	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:34:36.413	1132	0
+1246	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:34:42.119	897	0
+1247	Fake News	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 11:34:42.419	916	0
+1248	Fake News	0	0	node01gcd1x4i9ies31o0ptk5t8ex6u96	2020-03-04 11:35:01.969	918	0
+1249	Fake News	0	50	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 11:35:12.896	1139	100
+1250	Fake News	0	60	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 11:35:14.238	1100	100
+1251	Fake News	0	0	node0wgwa3fvn1ele1fochwnxzi37591	2020-03-04 11:35:16.524	1113	0
+1252	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:35:22.419	1162	0
+1253	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:35:25.166	1132	0
+1254	Fake News	0	80	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:35:48.633	1123	100
+1255	Fake News	0	30	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:36:11.197	1107	100
+1256	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 11:36:17.343	1100	0
+1257	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:36:37.533	1107	0
+1258	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:36:48.66	891	0
+1259	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 11:36:53.982	1139	0
+1260	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:37:15.527	891	0
+1261	Fake News	0	80	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:37:19.411	1132	100
+1262	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:37:36.881	1123	0
+1263	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:38:09.868	1123	100
+1264	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:38:11.335	1165	0
+1265	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:38:29.179	1132	0
+1266	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:38:31.447	897	0
+1267	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:38:34.783	1123	0
+1268	Fake News	0	0	node06vas1tvwxm3l1a5biff7jnwmg84	2020-03-04 11:38:38.795	1165	0
+1269	Fake News	0	90	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:38:47.253	897	100
+1270	Fake News	0	0	node0a0ly7gfq5g6v1iwmq3dgwi68z103	2020-03-04 11:39:15.674	1045	0
+1271	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:39:16.769	1123	100
+1273	Fake News	0	80	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:39:24.739	1132	100
+1274	Fake News	0	0	node01grgaqwubuugwcgwha7hqcxun99	2020-03-04 11:39:43.828	1272	0
+1275	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:40:03.645	1132	0
+1276	Word	0	0	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:40:22.659	880	0
+1277	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:40:31.262	1123	0
+1278	Fake News	0	40	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:40:35.7	1132	100
+1279	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:41:00.767	1132	0
+1280	Fake News	0	0	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:41:08.074	880	0
+1281	Fake News	0	40	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:41:11.389	1132	100
+1282	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:41:38.515	1107	0
+1283	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:41:50.523	897	0
+1284	Fake News	0	50	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:41:53.623	1107	100
+1285	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:41:59.846	897	100
+1286	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:42:06.574	1132	0
+1287	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:42:08.232	1107	0
+1288	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:42:14.179	897	0
+1289	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:42:25.645	897	100
+1291	Fake News	0	70	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:42:35.881	1123	100
+1292	Fake News	0	0	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 11:42:36.804	1290	0
+1293	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:42:45.958	897	0
+1294	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:42:55.957	897	100
+1295	Fake News	0	30	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:43:08.253	1132	100
+1296	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:43:08.948	897	0
+1297	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:43:19.3	1165	0
+1298	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:43:20.706	1123	0
+1299	Fake News	0	20	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:43:22.159	897	100
+1300	Fake News	0	40	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:44:47.327	880	100
+1301	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:45:24.168	897	0
+1302	Fake News	0	60	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:45:36.169	897	100
+1303	Fake News	0	0	node0a0ly7gfq5g6v1iwmq3dgwi68z103	2020-03-04 11:45:38.632	1045	0
+1304	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:45:48.718	897	0
+1305	Fake News	0	70	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:45:55.873	897	100
+1306	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:09.696	897	0
+1307	Fake News	0	30	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:16.122	897	100
+1308	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:31.733	897	0
+1309	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:42.745	897	100
+1310	Fake News	0	70	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:46:47.536	1123	100
+1311	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:48.64	897	0
+1312	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:46:56.076	885	0
+1313	Fake News	0	60	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:46:56.202	897	100
+1314	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:47:01.497	897	0
+1315	Fake News	0	60	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:47:10.404	897	100
+1316	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:47:12.883	1123	0
+1317	Fake News	0	70	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:47:45.223	885	100
+1318	Fake News	0	40	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:47:55.796	891	100
+1319	Fake News	0	70	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:47:56.24	914	100
+1320	Fake News	0	0	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:47:58.873	880	0
+1321	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:48:09.308	891	0
+1322	Fake News	0	40	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:48:17.923	891	100
+1323	Fake News	0	70	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:48:35.753	880	100
+1324	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:48:35.82	891	0
+1325	Fake News	0	0	node0198qtsaz9takh1p0gc5ovfv6bm105	2020-03-04 11:48:49.205	1058	0
+1326	Fake News	0	60	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:48:52.603	891	100
+1327	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:48:58.85	885	0
+1328	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:49:08.877	891	0
+1329	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:49:12.501	914	0
+1330	Fake News	0	70	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:49:21.013	891	100
+1331	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:49:23.324	897	0
+1332	Fake News	0	40	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:49:23.86	914	100
+1333	Fake News	0	0	node0198qtsaz9takh1p0gc5ovfv6bm105	2020-03-04 11:49:29.169	1058	0
+1334	Fake News	0	40	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:49:33.246	897	100
+1335	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:49:36.533	891	0
+1336	Fake News	0	90	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:49:41.345	885	100
+1337	Fake News	0	40	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:49:44.958	891	100
+1338	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:50:32.735	914	0
+1339	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:50:39.974	885	0
+1340	Fake News	0	50	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:51:41.693	885	100
+1341	Fake News	0	0	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:52:23.411	880	0
+1342	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:52:24.466	1107	0
+1343	Fake News	0	50	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:52:49.857	880	100
+1344	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:52:55.092	897	0
+1345	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:53:00.241	885	0
+1346	Fake News	0	60	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:53:01.95	914	100
+1347	Fake News	0	50	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:53:03.86	897	100
+1348	Fake News	0	40	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:53:13.762	1045	100
+1349	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:53:23.37	914	0
+1350	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:53:31.471	1045	0
+1351	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:53:33.508	897	0
+1352	Fake News	0	50	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:53:34.082	914	100
+1353	Fake News	0	40	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:53:48.544	1045	100
+1354	Fake News	0	40	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:53:49.49	1164	100
+1355	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:54:00.285	914	0
+1356	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:54:03.878	891	0
+1357	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:54:05.576	1045	0
+1358	Fake News	0	70	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:54:11.16	885	100
+1359	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:54:19.514	1164	0
+1360	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:54:22.315	885	0
+1361	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:54:25.141	891	0
+1362	Fake News	0	50	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:54:27.495	885	100
+1363	Fake News	0	40	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:54:27.589	1165	100
+1364	Fake News	0	40	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:54:38.049	1164	100
+1365	Fake News	0	40	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:54:38.349	914	100
+1366	Fake News	0	40	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:54:39.691	1045	100
+1367	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:54:47.962	885	0
+1368	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:54:49.158	1165	0
+1369	Fake News	0	50	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:54:54.207	885	100
+1370	Fake News	0	50	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:54:55.89	891	100
+1371	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:54:59.703	1045	0
+1372	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:55:01.61	1164	0
+1373	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:55:04.188	914	0
+1374	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:55:12.647	891	0
+1375	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:55:13.499	885	0
+1376	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:55:17.487	1123	100
+1377	Fake News	0	70	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:55:21.913	885	100
+1378	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:55:28.41	1162	100
+1379	Fake News	0	60	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:55:29.443	1045	100
+1380	Fake News	0	70	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:55:30.205	891	100
+1381	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:55:34.688	885	0
+1382	Fake News	0	50	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:55:39.617	1164	100
+1383	CSFirst	1	0	node01subnwjgkkpkr1dvj3e444qqwq80	2020-03-04 11:55:42.097	880	0
+1384	Fake News	0	60	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:55:43.134	897	100
+1385	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:55:47.185	1123	0
+1386	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:55:50.331	1164	0
+1387	Fake News	0	0	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 11:55:52.951	1085	0
+1388	CSFirst	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:55:55.305	891	0
+1389	Fake News	0	30	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 11:55:56.416	885	100
+1390	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:55:56.767	1162	0
+1391	Fake News	0	50	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:56:04.598	1165	100
+1392	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:56:16.136	1045	0
+1393	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 11:56:17.131	891	0
+1394	Fake News	0	50	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:56:19.733	1123	100
+1395	Fake News	0	50	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:56:28.673	1164	100
+1396	Fake News	0	60	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:56:31.289	1162	100
+1397	Fake News	0	40	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:56:32.842	914	100
+1398	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:56:35.148	1165	0
+1399	Fake News	0	30	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:56:36.081	1045	100
+1400	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:56:50.504	1045	0
+1401	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:56:53.617	914	0
+1402	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:56:55.603	1123	0
+1403	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:57:02.57	1164	0
+1404	Fake News	0	60	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:57:08.789	1045	100
+1405	Fake News	0	60	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:57:09.198	914	100
+1406	Fake News	0	40	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:57:10.705	1164	100
+1407	Fake News	0	50	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:57:18.265	1165	100
+1408	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:57:24.168	1162	0
+1409	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:57:25.405	1165	0
+1410	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:57:30.035	914	0
+1411	Word	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:57:31.67	1045	0
+1412	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:57:32.906	1164	0
+1413	Fake News	0	50	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:57:37.678	914	100
+1414	Fake News	0	40	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:57:41.504	1165	100
+1415	Fake News	0	70	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:57:43.521	1123	100
+1416	Dactylographie	0	0	node0wgwa3fvn1ele1fochwnxzi37591	2020-03-04 11:57:45.425	1113	0
+1417	Fake News	0	50	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:57:47.945	1164	100
+1418	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:57:49.104	1165	0
+1419	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:57:55.99	914	0
+1420	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:58:12.689	1164	0
+1421	Fake News	0	50	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:58:13.188	914	100
+1422	Fake News	0	60	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:58:17.637	1165	100
+1423	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:58:17.666	1045	0
+1424	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:58:19.916	1162	100
+1425	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:58:20.414	1123	0
+1427	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:58:43.333	897	0
+1428	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:58:43.394	1162	0
+1429	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:58:44.09	1165	0
+1430	Fake News	0	50	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:58:45.459	1045	100
+1431	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:59:02.231	914	0
+1432	Fake News	0	50	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:59:03.575	1165	100
+1433	Fake News	0	60	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:59:05.832	1164	100
+1434	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:59:05.886	1045	0
+1435	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:59:10.924	1123	0
+1436	Fake News	0	40	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:59:11.67	914	100
+1437	Fake News	0	40	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 11:59:15.623	897	100
+1438	Fake News	0	40	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 11:59:15.838	1042	100
+1439	Fake News	0	60	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 11:59:18.191	1139	100
+1440	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:59:18.279	1165	0
+1441	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:59:18.41	1164	0
+1442	Fake News	0	70	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 11:59:19.63	1107	100
+1443	Fake News	0	60	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 11:59:19.746	1100	100
+1444	Fake News	0	30	node01miatvl4f160mtz6zlszupva273	2020-03-04 11:59:21.303	1045	100
+1445	Fake News	0	40	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:59:25.04	1162	100
+1446	Fake News	0	70	node01grgaqwubuugwcgwha7hqcxun99	2020-03-04 11:59:25.703	1272	100
+1447	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:59:29.194	914	0
+1448	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 11:59:34.275	1165	0
+1449	Fake News	0	60	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:59:34.463	1164	100
+1450	Fake News	0	20	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 11:59:38.392	1123	100
+1451	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 11:59:40.203	1162	0
+1452	Fake News	0	60	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 11:59:45.2	914	100
+1453	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 11:59:51.722	1164	0
+1454	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 11:59:53.86	1100	0
+1455	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 11:59:59.563	1139	0
+1456	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:00:00.749	914	0
+1457	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:00:04.107	1123	0
+1458	Fake News	0	40	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:00:07.384	1164	100
+1459	Fake News	0	40	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:00:08.554	1162	100
+1460	Fake News	0	30	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:00:14.433	914	100
+1461	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:00:15.461	1107	0
+1462	Fake News	0	50	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:00:16.632	1139	100
+1463	Fake News	0	0	node0kjpuy3eqleket9cra9202smc90	2020-03-04 12:00:17.655	1226	0
+1464	Fake News	0	50	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:00:18.178	1100	100
+1465	Fake News	0	50	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:00:20.711	1107	100
+1466	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:00:22.342	1162	0
+1467	Fake News	0	30	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:00:30.778	1165	100
+1468	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:00:31.91	1100	0
+1469	Fake News	0	50	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 12:00:32.415	1085	100
+1470	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:00:35.095	1139	0
+1471	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:00:37.043	1162	100
+1472	Fake News	0	50	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:00:38.163	1100	100
+1473	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:00:39.785	1107	0
+1474	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:00:42.814	1165	0
+1475	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:00:45.776	914	0
+1476	Fake News	0	80	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:00:48.112	1139	100
+1477	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:00:52.753	1042	0
+1478	Fake News	0	40	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:00:55.926	1165	100
+1479	Fake News	0	60	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:00:56.687	1107	100
+1480	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:00:57.251	1162	0
+1481	Fake News	0	80	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:00:58.748	1123	100
+1482	Fake News	0	40	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:01:01.639	914	100
+1483	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:01:08.783	1100	0
+1484	Dactylographie	3	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 12:01:17.287	885	0
+1485	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:01:19.768	1165	0
+1486	Fake News	0	70	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:01:23.346	1100	100
+1487	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:01:25.483	1107	0
+1488	Dactylographie	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 12:01:26.63	897	0
+1489	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:01:26.702	1162	100
+1490	Fake News	0	70	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:01:34.113	1107	100
+1491	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:01:34.444	1123	0
+1492	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:01:39.101	1100	0
+1493	Fake News	0	30	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:01:42.103	1165	100
+1494	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:01:46.903	1162	0
+1495	Fake News	0	70	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:01:51.62	1100	100
+1496	CSFirst	3	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:01:58.548	1165	0
+1497	Fake News	0	0	node01nl6q3aa49rd51dwndpk7kffz293	2020-03-04 12:01:58.747	1107	0
+1498	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:02:02.628	1100	0
+1499	Dactylographie	0	88	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 12:02:04.546	897	100
+1500	Fake News	0	0	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 12:02:14.603	1085	0
+1501	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:02:15.107	1042	0
+1502	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:02:17.901	1165	0
+1503	Fake News	0	40	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:02:19.226	1162	100
+1504	Fake News	0	70	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:02:19.347	1100	100
+1505	Fake News	0	50	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:02:19.747	1123	100
+1506	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:02:31.806	1100	0
+1507	Fake News	0	60	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:02:34.731	1165	100
+1508	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:02:49.972	1162	0
+1509	Fake News	0	60	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:02:51.876	1100	100
+1510	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 12:02:55.964	1045	0
+1511	Fake News	0	50	node01miatvl4f160mtz6zlszupva273	2020-03-04 12:02:59.287	1045	100
+1512	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:02:59.339	1123	0
+1513	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:03:03.139	1100	0
+1514	Dactylographie	3	0	node01gcd1x4i9ies31o0ptk5t8ex6u96	2020-03-04 12:03:06.575	918	0
+1515	Dactylographie	3	0	node01gcd1x4i9ies31o0ptk5t8ex6u96	2020-03-04 12:03:06.59	918	0
+1516	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:03:17.485	1162	100
+1517	Fake News	0	80	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:03:18.235	1100	100
+1518	Dactylographie	0	0	node0wgwa3fvn1ele1fochwnxzi37591	2020-03-04 12:03:21.232	1113	100
+1519	Fake News	0	70	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:03:22.19	1042	100
+1520	Dactylographie	4	0	node01gcd1x4i9ies31o0ptk5t8ex6u96	2020-03-04 12:03:22.258	918	0
+1521	CSFirst	1	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:03:25.698	914	0
+1522	Fake News	0	80	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:03:29.659	1123	100
+1523	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:03:33.151	1162	0
+1524	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 12:03:33.464	1045	0
+1525	Fake News	0	50	node01miatvl4f160mtz6zlszupva273	2020-03-04 12:03:37.767	1045	100
+1526	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:03:39.278	914	0
+1527	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:03:56.283	1162	100
+1528	Fake News	0	30	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:03:59.733	914	100
+1529	Fake News	0	60	node0198qtsaz9takh1p0gc5ovfv6bm105	2020-03-04 12:04:03.027	1058	100
+1530	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:04:11.115	1162	0
+1531	Fake News	0	50	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 12:04:15.3	891	100
+1532	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:04:18.168	1164	0
+1533	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:04:21.648	1162	100
+1534	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:04:23.901	1165	0
+1535	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 12:04:25.14	891	0
+1536	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:04:30.939	914	0
+1537	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:04:32.824	1042	0
+1538	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:04:35.887	1162	0
+1539	Fake News	0	60	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 12:04:38.436	891	100
+1540	Fake News	0	60	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:04:42.955	914	100
+1541	Fake News	0	0	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 12:04:47.371	891	0
+1542	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:04:51.418	1165	0
+1543	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:04:54.246	1123	0
+1544	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:04:56.551	1100	0
+1545	Fake News	0	70	node01w55qvux0vujlgmlbvb5p854102	2020-03-04 12:04:57.653	891	100
+1546	Fake News	0	50	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:05:00.894	1165	100
+1547	Fake News	0	60	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:05:04.293	1100	100
+1548	Fake News	0	20	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:05:08.469	1162	100
+1549	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:05:10.344	1139	0
+1550	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:05:17.509	1165	0
+1551	Fake News	0	40	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:05:17.795	916	100
+1552	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:05:20.263	1100	0
+1553	Fake News	0	20	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:05:23.501	1139	100
+1554	Fake News	0	60	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:05:24.515	1042	100
+1555	Fake News	0	30	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:05:28.637	1165	100
+1556	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:05:32.077	914	0
+1557	Fake News	0	40	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:05:32.845	1100	100
+1558	Fake News	0	70	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:05:35.803	1290	100
+1559	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:05:38.45	1139	0
+1560	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:05:43.683	1042	0
+1561	Fake News	0	0	node0xzoqzzfbbhekq9948fihw5xl66	2020-03-04 12:05:44.986	885	0
+1562	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:05:46.516	1123	100
+1563	Fake News	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:05:47.586	916	0
+1564	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:05:47.943	1100	0
+1565	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:05:49.524	1162	0
+1566	Fake News	0	0	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:05:49.836	1165	0
+1567	Fake News	0	60	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:05:51.656	1139	100
+1568	Fake News	0	50	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:05:57.523	1215	100
+1569	Fake News	0	60	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:06:04.148	1164	100
+1570	Fake News	0	50	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:06:04.989	1100	100
+1571	Fake News	0	70	node028jufeepjold1iqsjto2610o1101	2020-03-04 12:06:06.809	1165	100
+1572	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:06:10.059	1139	0
+1573	Fake News	0	0	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:06:14.303	1058	0
+1574	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:06:18.207	1100	0
+1575	Fake News	0	50	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:06:19.502	916	100
+1576	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:06:21.976	1162	100
+1577	Dactylographie	5	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:06:23.143	1123	0
+1578	Fake News	0	70	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:06:23.44	1139	100
+1579	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:06:33.012	1139	0
+1580	Fake News	0	40	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:06:34.11	1042	100
+1581	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:06:40.809	1100	0
+1582	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:06:42.497	1162	0
+1583	Fake News	0	80	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:06:45.665	1139	100
+1584	CSFirst	0	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:06:49.877	1215	0
+1585	Fake News	0	50	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:06:51.631	914	100
+1586	CSFirst	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:06:53.165	916	0
+1587	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:06:55.663	1042	0
+1588	Fake News	0	60	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:06:57.274	1162	100
+1589	Dactylographie	5	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:07:04.355	914	0
+1590	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:07:06.216	1123	0
+1591	Fake News	0	50	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:07:11.451	1058	100
+1592	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:07:16.288	1162	0
+1593	CSFirst	1	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:07:18.841	1215	0
+1594	Dactylographie	3	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:07:23.131	916	0
+1595	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:07:30.798	1164	0
+1596	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:07:31.307	1162	100
+1597	Fake News	0	40	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:07:31.895	1100	100
+1598	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:07:35.069	1123	100
+1599	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:07:35.311	1139	0
+1600	Fake News	0	50	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:07:36.721	1042	100
+1601	Fake News	0	0	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:07:38.654	1058	0
+1602	Fake News	0	60	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:07:43.075	1164	100
+1603	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:07:45.378	1162	0
+1604	Fake News	0	0	node016i1922uqwo1mxk7uyttl6bcj78	2020-03-04 12:07:50.836	914	0
+1605	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:07:51.057	1100	0
+1606	Fake News	0	40	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:07:55.502	1139	100
+1607	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:07:57.441	1042	0
+1608	Fake News	0	40	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:08:00.102	1162	100
+1609	Fake News	0	50	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:08:03.326	1100	100
+1610	Dactylographie	0	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:08:03.948	1215	0
+1611	Fake News	0	50	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:08:06.947	1058	100
+1612	Fake News	0	50	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:08:07.397	1042	100
+1613	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:08:10.699	1139	0
+1614	Fake News	0	30	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 12:08:11.129	1085	100
+1615	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:08:12.316	1162	0
+1616	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:08:13.069	1123	0
+1617	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:08:16.897	1100	0
+1618	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:08:17.444	1164	0
+1619	Fake News	0	0	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:08:22.087	1058	0
+1620	Dactylographie	0	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:08:22.556	1215	0
+1621	Fake News	0	60	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:08:28.025	1162	100
+1622	Fake News	0	60	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:08:28.982	1139	100
+1623	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:08:30.134	1042	0
+1624	Fake News	0	50	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:08:37.967	1123	100
+1625	Fake News	0	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:08:38.031	1100	0
+1626	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:08:41.045	1139	0
+1627	Fake News	0	40	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:08:48.716	1042	100
+1628	Fake News	0	80	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:08:49.37	1058	100
+1629	Dactylographie	0	97	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:08:52.406	1215	100
+1630	Dactylographie	2	0	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:08:55.35	1290	0
+1631	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:08:57.715	1123	0
+1632	Dactylographie	2	0	node01grgaqwubuugwcgwha7hqcxun99	2020-03-04 12:08:59.769	1272	0
+1633	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:09:02.112	1162	0
+1634	Dactylographie	1	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:09:05.976	1215	0
+1635	Fake News	0	0	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:09:13.379	1058	0
+1636	Fake News	0	60	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:09:15.241	1139	100
+1637	Dactylographie	4	0	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:09:17.825	1290	0
+1638	Fake News	0	0	node01miatvl4f160mtz6zlszupva273	2020-03-04 12:09:21.107	1045	0
+1639	Fake News	0	0	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 12:09:21.19	1085	0
+1640	Fake News	0	60	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:09:22.849	1123	100
+1641	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:09:31.608	1042	0
+1642	Dactylographie	2	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:09:36.049	1139	0
+1643	Fake News	0	50	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:09:37.44	1164	100
+1644	Dactylographie	1	87	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:09:39.255	1215	100
+1645	Fake News	0	40	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:09:41.312	1058	100
+1646	Fake News	0	60	node08m8onjvasi5s1vhb2pir5ow3f106	2020-03-04 12:09:43.123	1085	100
+1647	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:09:43.341	1162	100
+1648	Fake News	0	30	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:09:51.931	1042	100
+1649	Dactylographie	2	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:09:53.723	1215	0
+1650	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:09:55.391	1162	0
+1651	Fake News	0	0	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 12:10:00.803	897	0
+1652	Fake News	0	30	node0dkgcgyxokdy1e97cp57n5c1z63	2020-03-04 12:10:08.863	897	100
+1653	Fake News	0	60	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:10:13.858	1091	100
+1654	Fake News	0	0	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:10:14.703	1058	0
+1655	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:10:15.946	1042	0
+1656	Dactylographie	2	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:10:16.262	1215	0
+1657	Fake News	0	50	node01s9c3bcwiw2sr1cw8uivbgpzwu107	2020-03-04 12:10:22.036	1058	100
+1658	Fake News	0	0	node010v7xh3a5wmgz13ljs8brqatsq83	2020-03-04 12:10:30.113	1139	0
+1659	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:10:34.62	1042	0
+1660	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:10:44.949	1164	0
+1661	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:10:54.232	1162	100
+1662	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:11:02.521	1091	0
+1663	Dactylographie	0	0	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:11:03.295	1290	0
+1664	Fake News	0	60	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:11:14.381	1042	100
+1665	Fake News	0	0	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:11:19.916	1123	0
+1666	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:11:26.702	1162	0
+1667	Fake News	0	70	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:11:32.697	1091	100
+1668	Dactylographie	1	0	node01gcd1x4i9ies31o0ptk5t8ex6u96	2020-03-04 12:11:38.375	918	0
+1669	Dactylographie	2	77	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:11:39.536	1215	100
+1670	Fake News	0	50	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:11:40.779	1162	100
+1671	Dactylographie	2	0	node01grgaqwubuugwcgwha7hqcxun99	2020-03-04 12:11:42.892	1272	100
+1672	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:11:44.841	1091	0
+1673	Dactylographie	3	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:11:50.945	1215	0
+1674	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:11:55.351	1162	0
+1675	Fake News	0	0	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:12:04.999	1042	0
+1676	Fake News	0	40	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:12:09.088	1091	100
+1677	Dactylographie	0	39	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:12:11.092	1290	100
+1678	Fake News	0	30	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:12:12.308	1162	100
+1679	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:12:24.785	1091	0
+1680	Fake News	0	0	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:12:26.366	916	0
+1681	Fake News	0	0	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:12:32.64	1162	0
+1682	Fake News	0	0	node0l7grv6iwdzbmwvdbf68sterp81	2020-03-04 12:12:33.071	1209	0
+1683	Dactylographie	3	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:12:36.377	1215	0
+1684	Fake News	0	40	node01tt7094v1sg5k12mk9jz5kbqya86	2020-03-04 12:12:36.66	1123	100
+1685	Dactylographie	1	0	node0mf9f97susc8tuwujugrq0yis104	2020-03-04 12:12:45.32	1290	0
+1686	Fake News	0	60	node040wj7wxrk9m91bywp9nks8h4e27	2020-03-04 12:12:49.964	1042	100
+1687	Fake News	0	80	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:13:03.682	1091	100
+1688	Dactylographie	3	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:13:14.99	1215	0
+1689	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:13:27.626	1091	0
+1690	Dactylographie	3	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:13:31.624	1215	0
+1691	Fake News	0	50	node0l7grv6iwdzbmwvdbf68sterp81	2020-03-04 12:13:31.938	1209	100
+1692	Fake News	0	70	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:13:49.595	1091	100
+1693	Fake News	0	40	node0xtvmlq19zhqz1ths3jha1z3bp82	2020-03-04 12:13:51.315	1162	100
+1694	Fake News	0	50	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:14:04.566	1164	100
+1695	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:14:15.069	1091	0
+1696	Dactylographie	0	0	node0l7grv6iwdzbmwvdbf68sterp81	2020-03-04 12:14:44.555	1209	0
+1697	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:14:53.545	1164	0
+1698	Fake News	0	60	node01dgtixl5etmoo1bkk9g0hihimd67	2020-03-04 12:15:05.195	916	100
+1699	Fake News	0	60	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:15:11.249	1100	100
+1700	Dactylographie	1	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:15:27.547	1100	0
+1701	Dactylographie	3	26	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:15:41.779	1215	100
+1702	CSFirst	1	0	node01er0wsqq66iwdwuwoscs4y24n97	2020-03-04 12:15:45.275	1100	0
+1703	Fake News	0	40	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:15:51.118	1164	100
+1704	Dactylographie	4	0	node0pkjesnvtxy6p16ia6x1mzwm2x76	2020-03-04 12:15:53.353	1215	0
+1705	Fake News	0	70	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:15:54.066	1091	100
+1706	Fake News	0	0	node01g3x8hpv0bff0a3jjtworvipp72	2020-03-04 12:16:09.054	1164	0
+1707	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:16:13.388	1091	0
+1708	Fake News	0	70	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:17:15.679	1091	100
+1709	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:17:26.411	1091	0
+1710	Fake News	0	50	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:18:08.323	1091	100
 \.
 
 
@@ -1022,7 +1543,7 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 -- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.hibernate_sequence', 1164, true);
+SELECT pg_catalog.setval('public.hibernate_sequence', 1710, true);
 
 
 --
@@ -1067,8 +1588,6 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 173	Wendymena55@gmail.com	Wendy Mena	3005367806	NOVENO
 180	Yadisp104@gmail.com	Yadis Perez	yadis1234	NOVENO
 198	sarasuare808@gmail.com	Sara Suarez	manuela	NOVENO
-211	paulina1999tangarife@gmail.com	Paulina Quintero 	1021804115	NOVENO
-351	danielruiz  2002	daniel  estiben	daniel ruiz	OCTAVO_2
 166	mateolopez51	Mateo Lopez		NOVENO
 175	mateolopez52	Mateo Lopez	mateo78	NOVENO
 188	restrepodairon4@gmail.com	Dairon Restrepo	dairon2002	NOVENO
@@ -1080,8 +1599,6 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 158	estebangallego2105@gmail.com	Esteban Gallego	jj.ee.vv.	NOVENO
 344	CRISTIANRV2005@GMAIL	Cristian Andres Rave Rivera	2527111109	OCTAVO_2
 163	urreadayana60@gmail.com	Dayana Urrea	dayana	NOVENO
-323	vasquezjulian803@gmail.com	julian sucerquia	linputos2	OCTAVO_2
-329	juanp23@gmail.com	juan carlos perez	2003juan	OCTAVO_2
 336	valentinaperes@gmail.com	Valentina Peres	valentina16	OCTAVO_2
 159	victorserna28@gmail.com	Victor Serna	victormanuel123	NOVENO
 380	wendymena@gmail.com	Wendy Mena	3005367806	NOVENO
@@ -1106,88 +1623,98 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 432	julianrojas@smgolegio.com	Julian Fernando Rojas Areiza	anatemo	SEXTO_2
 434	MAIGNORRANGEL@SMDCOLEGIO.COM	Maignor Rangle Gonzalez	MAIGNOR.COM	SEXTO_2
 436	leilichaverra@smdcolegio.com	Leili Vanesa Chaverra Bermudes	teresa	SEXTO_2
-456	editheliana2005@smdcolegio.com	EDITH ELIANA ESTRADA VALLE	eliana2005	SEXTO_2
-461	jovaniricardo@smdgelegio.com	jovani ricardo ortega	yovani12345	SEXTO_2
-464	sebastian@gmail.com	sebas chavarria	yonca te amo	SEXTO_2
-468	eduardoperdomo@smdcolejio.com	eduardoperdomo	3023947884	SEXTO_2
-469	dannypaola@smdcolegio.com	dannypaola	PAOLA	SEXTO_2
+351	danielruiz  2002	Daniel Estiben	daniel ruiz	OCTAVO_2
+323	vasquezjulian803@gmail.com	Julian Sucerquia	linputos2	OCTAVO_2
+211	paulina1999tangarife@gmail.com	Paulina Quintero	1021804115	NOVENO
+329	juanp23@gmail.com	Juan Carlos Perez	2003juan	OCTAVO_2
 473	jhorfarypalacios@smdcolegiocom	Jhorfary Palacios Castro	liliana	SEXTO_2
-476	edwuarorozco@gmail.com	edwuar orozco	edwuar7	SEXTO_2
-478	GIRLEZAAGUIRRE@SMD.COLEGIO.COM	GIRLEZA LISSETH AGUIRRE AREIZA	OLGATEAMO	SEXTO_2
-485	yodelisantos@smd.colegio	yodeli santos	yodeli	SEXTO_2
-492	TALIAGMEZ@SMDCOLEGIO.COM	TALIA GOMEZ	TALIA	SEXTO_2
-519	estefaniaalzate@smd.colegio.com	estefania alzate	estefania55	SEXTO_2
-520	fabianburitica@smdcolegio.com	fabian buritica restrepo	fabian2006	SEXTO_2
-523	anyflorez@smdcolegio.com	any luz florez borja	123456789	SEXTO_2
-535	jhorfarypalacios@smdcolegio.com	Jhorfary palacios castro	liliana	SEXTO_2
-546	juanpablorestrepoduarte@smdgolrgio.com	juan pablo restrepo duarte	leyditqm	SEXTO_2
-572	alumnosextodos@smdcolegio.com	carlosmariomuñosnuñes	nacionallds	SEXTO_2
 597	andrestorres@smd.com	andressantiagotorresgoez	andrestorres	PRIMARIO
-601	juanpabloduarte@smdgolegio.com	juan pablo duarte	leyditqm	SEXTO_2
-602	Yefersondionicio@gmail.con	yeferson gomes	santaclos	SEXTO_2
-605	danielcaisedo@gmail.comSMDcom	danieldavidcaisedo	danieldavidcaisedo copete	SEXTO_2
-614	YONATANOCHOA@SMDCOLEGIO.COM	YONATANOCHOA	OCHOA	SEXTO_2
-685	brayanbrou1407@gmail.com	brayanbrowster	yulisofia	SEXTO_2
-710	editheliana2005@cmdcolegio.com	edith eliana estrada valle	eliana2005	SEXTO_2
-716	fredispalacios@smdcolegio.com	fredispalaciospalacios	nacional	SEXTO_2
-734	jhondrey@smd colejio.com	jhon drey sepulbedad	fornite	SEXTO_2
-736	eduardoperdo@smdcolegio.com	eduardoperdomo	3023947884	SEXTO_2
-742	luisfernandomosqueramena@smdcolegio.com	luisfernandomosqueramena	fernando	SEXTO_2
-752	colegiobasico@smdcolegio.com	estivenborja	123456	SEXTO_2
-779	andrescuesta@smdgolegio.com	andresfelipecuestagarsia	darlenis12345	SEXTO_2
-822	taliagomez@smdcolegio.com	talia gomez	talia123	SEXTO_2
-850	leilichavera@smdcolegio.com	leily vanesa chaverra	teresa	SEXTO_2
-864	dannyflorez@smdcolegio.com	danny paola	paola123	SEXTO_2
-429	alexanderramirez@smd.com	cleiber alexander amirez pulgarin	alex123	SEXTO_2
-442	andrestorres@smdcolegio	andressantiagotorresgoez	andretorrre	SEXTO_2
-786	brayanbrow1407@gmail.com	brayanbrowsterd	yulisofia	SEXTO_2
+786	brayanbrow1407@gmail.com	Brayan Browsterd	yulisofia	SEXTO_2
+931	anaricardo@gmail.com	Ana Victoria Ricardo Amante	092007	SEXTO_1
 440	taliagomez@smd.colegio	Yisney Talia Gomez Bedoya	natalia	SEXTO_2
 447	Brayanzapata@SMDcolegio.com	Brayan Zapata	brayan	SEXTO_2
 450	natahkayeguez@smd.com	Natahka Yeguez	natasha@32157	SEXTO_2
 452	ESTEFANIAALZATE@SMD.COLEGIO.COM	Estefania Alzate Franco	estefania22	SEXTO_2
 455	diegoandreszapata@smdgolegio.com	Diego Andres Arango Zapata	diego	SEXTO_2
-875	anonymous@gmail.com	Anonymous		DEFAULT
-880	yisedzapata@gmail.com	yised zapata	1025645653	SEXTO_1
-882	nicolas@palaciosmai	nicolas moreno	mosquera	SEXTO_1
-885	gregory.romero@gmail.com	gregory.romero	31240661	SEXTO_1
-891	camila.menaaqmier@gmail.com	camilamena	mamiteamo	SEXTO_1
-897	nicolas@palaciosimai	nicolas el papacito	mosquera	SEXTO_1
 916	maryuriposso@gmail.com	Maryuri	16junio2008	SEXTO_1
-918	jhonjader.palomeque@gmail.com	jhon  palomeqe	1023639680	SEXTO_1
-931	anaricardo@gmail.com	Ana victoria Ricardo Amante	092007	SEXTO_1
-914	jonathan.esteiner@gmail.com	jonathan	12345	SEXTO_1
-1038	joseph.yostin@gmail.com	joseph yostin caballero perez	porno07	SEXTO_1
-1042	karina.garcia@gmail.com	karina garcia	karina	SEXTO_1
 1045	karen.minota@gmail.com	karen minota	karenluisa	PRIMARIO
-1046	manuela.toro@gmail.com	manuela toro ruiz	manuela	SEXTO_1
 1051	juanjoseurrea.@gimail,com	juan jose urrea usuga	juanjose	SECONDARIO
-1057	valentina.oquendo@gmail.com	Diany valentina oquendo blando	valentina.vanessa	SEXTO_1
-1058	YHONNDRI.ARAUJO@GMAIL.COM	YHONNDRI ARAUJO	17.COM	SEXTO_1
-1059	nicolas.cardenas@gmail.com	nicolas david jimenez cardenas	2311210	SEXTO_1
-1063	laura.gutierrez@gmail.com	laura gutierrez	lauraliam	SEXTO_1
-1080	torres.paola@gmail.com	paola  andrea  torres  giraldo	1234687	SEXTO_1
-1085	alex.ibarra@gmail.com	john alexander ibarra galvis	1013342359	SEXTO_1
-1091	anlibeth.hermes@gmail.com	anlibeth hermes	200801	SEXTO_1
-1097	ximena.toro@gmail.com	ximena toro ruiz	ximena	SEXTO_1
-1100	valeria.gutierrez@gimail.com	valeria andrea gutirrez de avila	marilin	SEXTO_1
-1105	guisao.quintero@gmail.com	berenicelopez	mariacarmelina	SEXTO_1
-1107	mariana.avendano@gmail.com	mariana avendano	jose mariano	SEXTO_1
-1113	yenifer.montoya@gmail.com	yenifer yulieht perez montoya	paulina y yenifer 123	SEXTO_1
-1115	daniela.palacio@gmail.com	daniela  palacios 	daniela	SEXTO_1
 1117	jhonfredy.perea@gmail.com	jhonfredy perea	soveniperea	PRIMARIO
-1122	nicol.zapata@gmail.com	nicol yahaira zapata mosquera 	isaacc	SEXTO_1
 1123	juanjoseurrea@gimail.com	juan jose urrea usuga	juanjose	SECONDARIO
-1125	darwin.perez@gmail.com	darwin stiven bejumea perez	perez.pere	SEXTO_1
-1132	isaac.garcia@gmail.com	isaacgarcia	2007	SEXTO_1
-1139	manuela.rengifo@gmail.com	yulieth manuela rengifo quiroz	manuela	SEXTO_1
-1140	kelly.vanegas@gmail.com	kellysisleyvanegastuberquia	adriana	SEXTO_1
-1145	joseph.caballero@gmail.com	joseph caballero 	mejora	SEXTO_1
-1151	yostin.perez@gmail.com	yostin perez lopez	pornolomejor	SEXTO_1
-1152	lienyerson.gil@gmail.com	lienyerson gutierrez	lienyerson	SEXTO_1
-1155	wendy.borja@gmail.com	wendy borja	wendy	SEXTO_1
-1162	brayan.tangarife@gmail.com	brayan estiven tangarife	brayan61	SEXTO_1
-1161	HENRY.SEPULVEDA@Gmail.com	HENRYSEPULVEDA	2008	SEXTO_1
-1164	camila.serna@gmail.com	sernaalzate	3126751619 camilagustavo	SEXTO_1
+1151	yostin.perez@gmail.com	Yostin Perez Lopez	pornolomejor	SEXTO_1
+1145	joseph.caballero@gmail.com	Joseph Caballero 	mejora	SEXTO_1
+1140	kelly.vanegas@gmail.com	Kelly Sisley Vanega Stuberquia	adriana	SEXTO_1
+1139	manuela.rengifo@gmail.com	Yulieth Manuela Rengifo Quiroz	manuela	SEXTO_1
+1132	isaac.garcia@gmail.com	Isaac Garcia	2007	SEXTO_1
+1125	darwin.perez@gmail.com	Darwin Stiven Bejumea Perez	perez.pere	SEXTO_1
+1122	nicol.zapata@gmail.com	Nicol Yahaira Zapata Mosquera 	isaacc	SEXTO_1
+1115	daniela.palacio@gmail.com	Daniela  Palacios 	daniela	SEXTO_1
+1113	yenifer.montoya@gmail.com	Yenifer Yulieht Perez Montoya	paulina y yenifer 123	SEXTO_1
+1107	mariana.avendano@gmail.com	Mariana Avendano	jose mariano	SEXTO_1
+1105	guisao.quintero@gmail.com	Berenice Lopez	mariacarmelina	SEXTO_1
+1100	valeria.gutierrez@gimail.com	Valeria Andrea Gutirrez de Avila	marilin	SEXTO_1
+1097	ximena.toro@gmail.com	Ximena Toro Ruiz	ximena	SEXTO_1
+1091	anlibeth.hermes@gmail.com	Anlibeth Hermes	200801	SEXTO_1
+1080	torres.paola@gmail.com	Paola  Andrea  Torres  Giraldo	1234687	SEXTO_1
+1063	laura.gutierrez@gmail.com	Laura Gutierrez	lauraliam	SEXTO_1
+1059	nicolas.cardenas@gmail.com	Nicolas David Jimenez Cardenas	2311210	SEXTO_1
+1085	alex.ibarra@gmail.com	John Alexander Ibarra Galvis	10133423	SEXTO_1
+1046	manuela.toro@gmail.com	Manuela Toro Ruiz	manuela	SEXTO_1
+1042	karina.garcia@gmail.com	Karina Garcia	karina	SEXTO_1
+1038	joseph.yostin@gmail.com	Joseph Yostin Caballero Perez	porno07	SEXTO_1
+914	jonathan.esteiner@gmail.com	Jonathan Esteiner	12345	SEXTO_1
+918	jhonjader.palomeque@gmail.com	Jhon Palomeqe	1023639680	SEXTO_1
+891	camila.menaaqmier@gmail.com	Camila Mena	mamiteamo	SEXTO_1
+885	gregory.romero@gmail.com	Gregory Romero	31240661	SEXTO_1
+882	nicolas@palaciosmai	Nicolas Moreno	mosquera	SEXTO_1
+456	editheliana2005@smdcolegio.com	Edith Eliana Estrada Valle	eliana2005	SEXTO_2
+461	jovaniricardo@smdgelegio.com	Jovani Ricardo Ortega	yovani12345	SEXTO_2
+464	sebastian@gmail.com	Sebas Chavarria	yonca te amo	SEXTO_2
+468	eduardoperdomo@smdcolejio.com	Eduardo Perdomo	3023947884	SEXTO_2
+469	dannypaola@smdcolegio.com	Danny Paola	PAOLA	SEXTO_2
+476	edwuarorozco@gmail.com	Edwuar Orozco	edwuar7	SEXTO_2
+478	GIRLEZAAGUIRRE@SMD.COLEGIO.COM	Girelza Lisseth Aguirre Areiza	OLGATEAMO	SEXTO_2
+485	yodelisantos@smd.colegio	Yodeli Santos	yodeli	SEXTO_2
+492	TALIAGMEZ@SMDCOLEGIO.COM	Talia Gomez	TALIA	SEXTO_2
+519	estefaniaalzate@smd.colegio.com	Estefania Alzate	estefania55	SEXTO_2
+520	fabianburitica@smdcolegio.com	Fabian Buritica Restrepo	fabian2006	SEXTO_2
+523	anyflorez@smdcolegio.com	Any Luz Florez Borja	123456789	SEXTO_2
+546	juanpablorestrepoduarte@smdgolrgio.com	Juan Pablo Restrepo Duarte	leyditqm	SEXTO_2
+572	alumnosextodos@smdcolegio.com	Carlos Mario Muños Nuñes	nacionallds	SEXTO_2
+601	juanpabloduarte@smdgolegio.com	Juan Pablo Duarte	leyditqm	SEXTO_2
+602	Yefersondionicio@gmail.con	Yeferson Gomes	santaclos	SEXTO_2
+605	danielcaisedo@gmail.comSMDcom	Daniel David Caisedo	danieldavidcaisedo copete	SEXTO_2
+614	YONATANOCHOA@SMDCOLEGIO.COM	Yonatan Ochoa	OCHOA	SEXTO_2
+685	brayanbrou1407@gmail.com	Brayan Browster	yulisofia	SEXTO_2
+710	editheliana2005@cmdcolegio.com	Edith Eliana Estrada Valle	eliana2005	SEXTO_2
+716	fredispalacios@smdcolegio.com	Fredis Palacio Spalacios	nacional	SEXTO_2
+734	jhondrey@smd colejio.com	Jhon Drey Sepulbedad	fornite	SEXTO_2
+736	eduardoperdo@smdcolegio.com	Eduardo Perdomo	3023947884	SEXTO_2
+742	luisfernandomosqueramena@smdcolegio.com	Luis Fernando Mosquera Mena	fernando	SEXTO_2
+752	colegiobasico@smdcolegio.com	Estiven Borja	123456	SEXTO_2
+779	andrescuesta@smdgolegio.com	Andres Felipe Cuesta Garsia	darlenis12345	SEXTO_2
+822	taliagomez@smdcolegio.com	Talia Gomez	talia123	SEXTO_2
+850	leilichavera@smdcolegio.com	Leily Vanesa Chaverra	teresa	SEXTO_2
+864	dannyflorez@smdcolegio.com	Danny Paola	paola123	SEXTO_2
+429	alexanderramirez@smd.com	Cleiber Alexander Amirez Pulgarin	alex123	SEXTO_2
+442	andrestorres@smdcolegio	Andres Santiago Torres Goez	andretorrre	SEXTO_2
+1057	valentina.oquendo@gmail.com	Diany Valentina Oquendo Blando	valentina.vanessa	SEXTO_1
+1058	yhonndri.araujo@gmail.com	Yhondri Araujo	17.com	SEXTO_1
+1162	brayan.tangarife@gmail.com	Brayan Estiven Tangarife	brayan61	SEXTO_1
+1155	wendy.borja@gmail.com	Wendy Borja	wendy	SEXTO_1
+880	yisedzapata@gmail.com	Yised Zapata	1025645653	SEXTO_1
+1161	HENRY.SEPULVEDA@Gmail.com	Henry Sepulveda	2008	SEXTO_1
+1152	lienyerson.gil@gmail.com	Lienyerson Gutierrez	lienyerson	SEXTO_1
+897	nicolas@palaciosimai	Nicolas el Papacito	mosquera	SEXTO_1
+1165	anonymous@gmail.com	Anonymous		DEFAULT
+1186	2003carlos1077421667@gmail.com	Carlos Andrade	carlos1077421667	NOVENO
+1209	daniela.palacios@gmail.com	Danielapalacios	daniela	SEXTO_1
+1164	camila.serna@gmail.com	Camila Serna	3126751619	SEXTO_1
+1215	wendy.montoya@gmail.com	Wendy Vaneza Montoya	wendyvanessa123	SEXTO_1
+1225	valentina.gutierrez@gamil.com	Valentina Gutierrez	oquendogutierrez2104	SEXTO_1
+1226	blanca.tapias@gmail.com	Blanca Yoheny Chavarria Tapias	futbool y nada mas	PRIMARIO
+1272	Valentina.Gutierrez@gmail.com	Valentina Gutierrez	oquendogutierrez2104	SEXTO_1
+1290	gimena.@toro.com	Ximena Toro Ruiz	gimena123	SEXTO_1
 \.
 
 
