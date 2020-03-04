@@ -173,10 +173,11 @@ public class Constants {
         public static final String PREFIX = "admin-";
         public static final String BACK = PREFIX + "back-to";
         public static final String SECTION_FILTER = PREFIX + "section-filter";
+        public static final String USER = PREFIX + "user";
       }
 
       public static class Login {
-        private static final String PREFIX = "login-";
+          private static final String PREFIX = "login-";
         public static final String SECTION = PREFIX + "section";
         public static final String USERNAME = PREFIX + "username";
         public static final String CREATE = PREFIX + "create";
@@ -192,6 +193,7 @@ public class Constants {
         public static final String EMPTY_MAIL = PREFIX + "error-empty-email";
         public static final String EMPTY_PASSWORD = PREFIX + "error-empty-password";
         public static final String NOT_SAME_PASSWORDS = PREFIX + "error-not-same-passwords";
+        public static final String NOT_LOGIN = PREFIX + "error-not-login";
         public static final String WRONG_PASSWORD = PREFIX + "error-wrong-password";
       }
 

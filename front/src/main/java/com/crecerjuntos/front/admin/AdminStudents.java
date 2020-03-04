@@ -1,6 +1,5 @@
 package com.crecerjuntos.front.admin;
 
-import com.crecerjuntos.front.MainAppLayout;
 import com.crecerjuntos.front.util.Constants;
 import com.crecerjuntos.model.Section;
 import com.crecerjuntos.model.Student;
@@ -27,17 +26,17 @@ import java.util.List;
  * Tells Vaadin to direct the root URL to this view. The URL parameter is optional and is derived
  * from the class name, if not given
  */
-@Route(value = Constants.Route.ADMIN, layout = MainAppLayout.class)
+@Route(value = Constants.Route.ADMIN, layout = AdminAppLayout.class)
 @StyleSheet(Constants.StyleSheet.CRECER_JUNTOS)
 @PageTitle(Constants.Title.ADMIN)
-public class Admin extends VerticalLayout {
+public class AdminStudents extends VerticalLayout {
 
   private IStudentAccess studentAccess;
   private StudentDetails studentDetails;
   private ComboBox<String> sectionFilter;
   private Grid<Student> studentGrid;
 
-  public Admin() {
+  public AdminStudents() {
     studentAccess = new StudentService();
     IAuthoringServices authoringService = new AuthoringService();
     IAchievementAccess achievementAccess = new AchievementService();
