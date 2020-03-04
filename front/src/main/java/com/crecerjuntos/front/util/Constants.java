@@ -69,7 +69,7 @@ public class Constants {
     }
 
     public static class FakeNews {
-      private static final String PREFIX = "word-layout__";
+      private static final String PREFIX = "fake-news-layout__";
       public static final String CONTENT = PREFIX + "content";
       public static final String QUESTION = PREFIX + "question";
       public static final String ANSWERS = PREFIX + "answers";

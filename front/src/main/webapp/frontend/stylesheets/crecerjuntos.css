@@ -269,11 +269,12 @@ html {
 }
 
 /** Fake News layout*/
-.fake-news-layout__content{
+.fake-news-layout__question{
+   text-align: center;
 }
 
-.fake-news-layout__question{
-    font-size: xx-large;
+.fake-news-layout__content{
+    font-size: large;
     margin: auto;
     border-radius: var(--lumo-border-radius);
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
