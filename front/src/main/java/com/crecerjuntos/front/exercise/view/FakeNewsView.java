@@ -115,7 +115,7 @@ public class FakeNewsView extends AbstractExerciseView {
         score.addKPI(Constants.Resource.Strings.ScoreKPI.SUCCESS, success);
         score.addKPI(Constants.Resource.Strings.ScoreKPI.MISTAKES, mistake);
 
-        int intScore= (int) round((success / 1.0 * FakeNews.NB_ROUND_LEVEL_1) * 100);
+        int intScore= (int) round((success / (1.0 * FakeNews.NB_ROUND_LEVEL_1)) * 100);
 
         score.setScore(intScore);
         return score;
