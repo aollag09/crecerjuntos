@@ -91,14 +91,14 @@ public class FakeNewsView extends AbstractExerciseView {
               if (selectedAnswer.equals(actualAnswer)) {
                   success++;
                   Notification notification = new Notification("Buena Respuesta !", 3000);
-                  notification.setPosition(Position.MIDDLE);
-                  notification.open();
+//                  notification.setPosition(Position.MIDDLE);
+//                  notification.open();
               } else {
                   mistake++;
                   Notification notification =
                           new Notification("Qué pena, la respuesta es : " + actualAnswer, 3000);
-                  notification.setPosition(Position.MIDDLE);
-                  notification.open();
+//                  notification.setPosition(Position.MIDDLE);
+//                  notification.open();
               }
               next();
           }
