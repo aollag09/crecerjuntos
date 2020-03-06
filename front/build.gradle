@@ -63,19 +63,6 @@ gretty {
     logFileName = 'crecer-juntos.log'
 }
 
-task startDatabase(type: Exec) {
-    description("Start the database docker image")
-    workingDir '../deployment'
-    commandLine './start-database.sh'
-}
-vaadinAssembleClient.dependsOn startDatabase;
-
-task stopDatabase(type: Exec) {
-    description("Stop the database docker image")
-    workingDir '../deployment'
-    commandLine './stop-database.sh'
-}
-
 sourceSets {
     main {
         java {

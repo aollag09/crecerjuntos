@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'com.avast.gradle.docker-compose' version '0.7.1'
     id 'net.ltgt.errorprone' version '0.7.1'
 }
 
@@ -33,13 +34,14 @@ dependencies {
 
 }
 
+
+dockerCompose {
+    useComposeFiles = ['../docker-compose.yml']
+}
+
+compileJava.dependsOn(composeUp)
+
+
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-task startTestDatabase(type: Exec) {
-    description("Start the test database docker image")
-    workingDir '../deployment'
-    commandLine './start-database.sh',
-            '-d', 'cs_courses_test'
-}
-test.dependsOn startTestDatabase;
