@@ -1536,6 +1536,39 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 1708	Fake News	0	70	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:17:15.679	1091	100
 1709	Fake News	0	0	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:17:26.411	1091	0
 1710	Fake News	0	50	node016aoekercg2wub3vutiy5lgsg65	2020-03-04 12:18:08.323	1091	100
+1711	CSFirst	2	0	node06dhbqzicgx1a11qll75kcu13u20	2020-03-05 08:36:08.034	30	0
+1712	Dactylographie	0	0	node0uo23ulko3ccx1mnmtpbqfiunc11	2020-03-05 08:36:13.183	37	0
+1715	CSFirst	2	0	node0v3hzflts08431avn99bp9sgxf5	2020-03-05 08:36:57.966	1713	0
+1716	CSFirst	2	0	node030exjznuqsul1kdtm3w2metjz21	2020-03-05 08:37:06.479	44	0
+1717	CSFirst	2	0	node013c49nq8iypjmvq1anlutr1rp13	2020-03-05 08:37:36.038	31	0
+1718	CSFirst	2	0	node0uo23ulko3ccx1mnmtpbqfiunc11	2020-03-05 08:37:46.679	37	0
+1719	CSFirst	2	0	node01n61ghklqb88iwhof84edhck018	2020-03-05 08:37:47.757	28	0
+1720	CSFirst	2	0	node01alswncdv1it81vtdmyt49oi3y25	2020-03-05 08:38:04.969	99	0
+1721	CSFirst	2	0	node016g8bd5u8dj171rjv92t47ss8816	2020-03-05 08:39:04.299	39	0
+1722	CSFirst	2	0	node0112d5lw8er6z3j1pgfzstuiwy17	2020-03-05 08:39:05.943	27	0
+1723	CSFirst	2	0	node0wbbvnk07adk5c5bmci59g8lr22	2020-03-05 08:39:18.992	20	0
+1724	CSFirst	2	0	node0v3hzflts08431avn99bp9sgxf5	2020-03-05 08:39:22.724	1713	0
+1725	CSFirst	2	0	node01ao693fwx5nhg1ge8gpwaj80nl15	2020-03-05 08:40:18.431	22	0
+1727	Dactylographie	1	0	node01vl4qegljaihdgbkc08bt91is28	2020-03-05 08:40:40.075	35	0
+1728	CSFirst	2	0	node0v3hzflts08431avn99bp9sgxf5	2020-03-05 08:40:52.213	1713	0
+1729	Dactylographie	1	99	node01vl4qegljaihdgbkc08bt91is28	2020-03-05 08:41:01.799	35	100
+1731	CSFirst	2	0	node01182nj3qlr3mq17qkrg4e76ibf6	2020-03-05 08:41:08.217	34	0
+1732	Dactylographie	0	0	node01vl4qegljaihdgbkc08bt91is28	2020-03-05 08:41:24.2	35	0
+1733	CSFirst	2	0	node01lhmpa9vlli3a16o64pptsghil30	2020-03-05 08:41:38.453	26	0
+1734	CSFirst	2	0	node0bwyp78y18m7g1k1ioq7e8ftw729	2020-03-05 08:41:42.094	1726	0
+1735	CSFirst	2	0	node01sw9pz87sud3l1mxjso4rrojm19	2020-03-05 08:41:45.992	40	0
+1736	CSFirst	2	0	node01myt1garjhmjibu6zggt4tpva10	2020-03-05 08:41:51.021	1730	0
+1737	CSFirst	2	0	node01vl4qegljaihdgbkc08bt91is28	2020-03-05 08:41:51.345	35	0
+1738	CSFirst	2	0	node01lhmpa9vlli3a16o64pptsghil30	2020-03-05 08:42:03.268	26	0
+1739	CSFirst	2	0	node0haxdracx5cej1psmmgl0pm86a4	2020-03-05 08:42:10.125	24	0
+1740	CSFirst	2	0	node07sy07gxeereuf374fhimdbmu9	2020-03-05 08:42:21.33	36	0
+1741	CSFirst	2	0	node01ao693fwx5nhg1ge8gpwaj80nl15	2020-03-05 08:42:33.495	22	0
+1743	CSFirst	2	0	node07sy07gxeereuf374fhimdbmu9	2020-03-05 08:43:10.135	36	0
+1744	CSFirst	2	0	node0bwyp78y18m7g1k1ioq7e8ftw729	2020-03-05 08:43:35.459	1726	0
+1745	CSFirst	2	0	node0j9hbiay71ckl3rv5fo00tbpi12	2020-03-05 08:46:22.999	1742	0
+1746	CSFirst	2	0	node01n61ghklqb88iwhof84edhck018	2020-03-05 08:51:12.828	28	0
+1747	CSFirst	2	0	node0j9hbiay71ckl3rv5fo00tbpi12	2020-03-05 08:58:29.578	1742	0
+1748	CSFirst	2	0	node01n61ghklqb88iwhof84edhck018	2020-03-05 09:04:41.218	28	0
 \.
 
 
@@ -1543,7 +1576,7 @@ COPY public.achievement (id, exercise, level, score, sessionid, "timestamp", stu
 -- Name: hibernate_sequence; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.hibernate_sequence', 1710, true);
+SELECT pg_catalog.setval('public.hibernate_sequence', 1749, true);
 
 
 --
@@ -1577,7 +1610,6 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 42	jp460112@gmail.com	Juan Perez	juanperez	OCTAVO_2
 33	nataliatapasco@gmail.con	Natalia Tapasco	martin2018	OCTAVO_2
 73	oe9125173@gmail.com	Estefania Ochoa 	mechitas012	OCTAVO_2
-99	camilagomez271219@gmil.com	Camila Gomez	29072005	OCTAVO_2
 104	cristianrv2006@gmail	Andres Rivera	25271111090	OCTAVO_2
 182	yefesongrax@gmail.com	Yeferson Graciano	fre1ddy23	NOVENO
 43	cristianrv2005@gmail	Cristian Andres Rave Rivera	2527111109	OCTAVO_2
@@ -1627,6 +1659,7 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 323	vasquezjulian803@gmail.com	Julian Sucerquia	linputos2	OCTAVO_2
 211	paulina1999tangarife@gmail.com	Paulina Quintero	1021804115	NOVENO
 329	juanp23@gmail.com	Juan Carlos Perez	2003juan	OCTAVO_2
+99	camilagomez271219@gmail.com	Camila Gomez	29072005	OCTAVO_2
 473	jhorfarypalacios@smdcolegiocom	Jhorfary Palacios Castro	liliana	SEXTO_2
 597	andrestorres@smd.com	andressantiagotorresgoez	andrestorres	PRIMARIO
 786	brayanbrow1407@gmail.com	Brayan Browsterd	yulisofia	SEXTO_2
@@ -1715,6 +1748,12 @@ COPY public.student (id, mail, name, password, section) FROM stdin;
 1226	blanca.tapias@gmail.com	Blanca Yoheny Chavarria Tapias	futbool y nada mas	PRIMARIO
 1272	Valentina.Gutierrez@gmail.com	Valentina Gutierrez	oquendogutierrez2104	SEXTO_1
 1290	gimena.@toro.com	Ximena Toro Ruiz	gimena123	SEXTO_1
+1713	jorge1234@gmail.com	Jorge Macias	jorge@123	OCTAVO_2
+1714	felipe12345@gmail.com	Juan Felipe Arroyave Zuleta	felipejuan12	OCTAVO_2
+1726	LOPEZJUANDAVID@GMAIL.COM	Juanda	YESICA12345	OCTAVO_2
+1730	felipe2010@gmail.com	Juan Felipe Arroyave Zuleta	felipejuan1234	OCTAVO_2
+1742	jheimersmithcordobaalvarez@gmei.com	Jheimer Smith Cordoba Alvarez	3202450038	OCTAVO_2
+1749	julianandres158@gmail.com	Julian Serna	123456789julianandres@	OCTAVO_2
 \.
 
 
