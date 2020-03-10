@@ -113,6 +113,7 @@ public class Constants {
       public static final String SPAN_NUMBER = PREFIX + "span-number";
       public static final String LEVEL = PREFIX + "level";
     }
+
   }
 
   public static class Route {
@@ -130,6 +131,7 @@ public class Constants {
     public static final String POWER_POINT = "exercise/power-point";
     public static final String CS_FIRST = "exercise/cs-first";
     public static final String FAKE_NEWS = "exercise/fakenews";
+    public static final String IA = "exercise/ia";
     public static final String LOGOUT = "logout";
     public static final String RESULT = "result";
     public static final String NON_EXISTING_LEVEL = "error/no-level";
@@ -154,6 +156,7 @@ public class Constants {
     public static final String POWER_POINT_NAME = "PowerPoint";
     public static final String CS_FIRST_NAME = "CSFirst";
     public static final String FAKE_NEWS_NAME = "Fake News";
+    public static final String IA_NAME = "Artificial Intelligence";
   }
 
   public static class Resource {
@@ -357,6 +360,14 @@ public class Constants {
         public static final String LVL4_NAME = PREFIX + "level4-name";
         public static final String INSTRUCTIONS = PREFIX + "instructions";
         public static final String INSTRUCTION = PREFIX + "instruction";
+        public static final String GO = PREFIX + "go";
+        public static final String TITLE = PREFIX + "title";
+      }
+
+      public static class IA {
+        private static final String PREFIX = "ia-";
+        public static final String LVL1_NAME = PREFIX + "level1-name";
+        public static final String INSTRUCTIONS = PREFIX + "instructions";
         public static final String GO = PREFIX + "go";
         public static final String TITLE = PREFIX + "title";
       }

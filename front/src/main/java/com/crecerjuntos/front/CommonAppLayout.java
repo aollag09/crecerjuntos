@@ -21,11 +21,11 @@ import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 
 @PWA(
-        name = "Crecer Juntos Project",
-        shortName = "cercer-juntos",
-        startPath = "login",
-        backgroundColor = "#227aef",
-        themeColor = "#227aef")
+    name = "Crecer Juntos Project",
+    shortName = "cercer-juntos",
+    startPath = "login",
+    backgroundColor = "#227aef",
+    themeColor = "#227aef")
 public abstract class CommonAppLayout extends AppLayout {
 
   public CommonAppLayout() {
