@@ -1,3 +1,5 @@
+
+# Compilation of the project
 steps:
   - name: 'gcr.io/cloud-builders/gradle'
-    args: ['appRun']
+    args: ['appRun', '-i']
