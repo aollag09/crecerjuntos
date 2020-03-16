@@ -52,7 +52,7 @@ vaadin.submitStatistics = true
 
 // Gretty server configuration
 gretty {
-    httpPort = 1998
+    httpPort = 8080 
     contextPath = ''
     debugPort = 2006
     loggingLevel = "INFO"
