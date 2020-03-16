@@ -7,6 +7,7 @@ services:
     container_name: "database"
     environment:
       # Configure postgres
+      - POSTGRE_DB=cs_courses
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker
       - PGDATA=/var/lib/postgresql/data
@@ -16,9 +17,9 @@ services:
       # Persist data even if container shuts down
       - database-data:/var/lib/postgresql/data
       # Initialization script
-      - ./deployment/init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - ./deployment/init.sql:/docker-entrypoint-initdb.d/init.sql
       - ./deployment/dump.sql:/docker-entrypoint-initdb.d/dump.sql
 volumes:
   database-data: # named volumes can be managed easier using docker-compose
 
-  
+

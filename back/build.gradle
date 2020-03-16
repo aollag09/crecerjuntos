@@ -39,9 +39,6 @@ dockerCompose {
     useComposeFiles = ['../docker-compose.yml']
 }
 
-compileJava.dependsOn(composeUp)
-
-
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 

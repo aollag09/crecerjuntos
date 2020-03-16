@@ -1,5 +1,11 @@
 
 # Compilation of the project
 steps:
+  - name: 'docker/compose:1.19.0'
+    args: ['up', '-d'] 
+
   - name: 'gcr.io/cloud-builders/gradle'
-    args: ['appRun', '-i']
+    args: ['buildProduct', '-i']
+
+  - name: 'ubuntu' 
+    args: ['bash', './front/build/output/front/start.sh']
