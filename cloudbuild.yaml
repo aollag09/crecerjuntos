@@ -7,3 +7,10 @@ steps:
   - name: 'gcr.io/cloud-builders/gradle'
     args: ['buildProduct', '-i']
 
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/crecer-juntos/webapp', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/crecer-juntos/webapp']
+
+

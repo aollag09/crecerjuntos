@@ -4,6 +4,7 @@ plugins {
     id 'org.gretty' version '3.0.1'
     id 'com.devsoap.vaadin-flow' version '1.2'
     id 'net.ltgt.errorprone' version '0.7.1'
+    id 'com.google.cloud.tools.jib' version '2.1.0'
 }
 
 group = 'com.crecerjuntos.front'
@@ -43,6 +44,24 @@ dependencies {
 vaadin {
     // Vaadin version to use
     version = '14.1.2'
+}
+
+jib {
+  from {
+    image = 'openjdk:alpine'
+  }
+  to {
+    image = 'gcr.io/crecer-juntos/webapp'
+    //credHelper = 'osxkeychain'
+    //tags = ['tag2', 'latest']
+  }
+  container {
+    jvmFlags = ['-Xms512m', '-Xdebug', '-Xmy:flag=jib-rules']
+    mainClass = 'com.crecerjuntos.front.MainAppServlet'
+    //ports = ['1000', '2000-2003/udp']
+    //labels = [key1:'value1', key2:'value2']
+    //format = 'OCI'
+  }
 }
 
 // We specify here manually the dependencies, another option would be to just autoconfigure and remove the
