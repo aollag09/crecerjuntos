@@ -7,5 +7,3 @@ steps:
   - name: 'gcr.io/cloud-builders/gradle'
     args: ['buildProduct', '-i']
 
-  - name: 'ubuntu' 
-    args: ['bash', './front/build/output/front/start.sh']
